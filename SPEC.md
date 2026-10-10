@@ -17,11 +17,11 @@ Describe el servicio tal como responde desde las 15:57 del 10 de octubre (versi�
 | ENT-03 | La ruta se compara exacta: `/msg/` y `/MSG` dan E404 | 66, 67 | probable |
 | ENT-04 | La ruta no se normaliza ni se decodifica: `//msg`, `/msg%2F`, `/%6Dsg`, `/./msg`, `/msg/.`, `/msg%00` y una ruta de 9.001 caracteres dan E404. La query se ignora (`/msg?x=1`, `/msg?`, una query de 9.000 caracteres) y `/msg#x` en la línea del request funciona como `/msg` | 68, 501–507, 1422–1424 | probable |
 | ENT-05 | Autenticación con `Authorization: Bearer <token>`, comparada exacta salvo los espacios finales (ver ENT-18). Sin header, sin el esquema `Bearer`, con un token inventado, con esquema Basic, con `bearer` en minúscula o con dos espacios después de `Bearer`: error E001 | 50, 51, 52, 510, 511, 1427 | confirmado |
-| ENT-06 | `POST /__reset` con token responde 200 `{"ok":true}`; sin token o con un token inventado, E001 | 55, 56, 12554, 12850 | confirmado |
+| ENT-06 | `POST /__reset` con token responde 200 `{"ok":true}`; sin token o con un token inventado, E001 | 55, 56, 570, 571, 10040, 12554, 12850 | confirmado |
 | ENT-07 | `GET /health` con token responde 200 `{"ok":true}`; sin token, E001 | 53, 54, 11136, 11208, 11209 | confirmado |
 | ENT-08 | Un cuerpo de más de 8.192 bytes, contados en bytes y no en caracteres, da error E101 (413). 8.192 pasa | 10976, 10977, 10987, 10989 | confirmado |
 | ENT-09 | El cuerpo tiene que ser JSON estricto: texto, JSON truncado, cuerpo vacío, `NaN`, `Infinity`, coma final o BOM al inicio dan error E100 | 69, 70, 71, 10962–10966 | confirmado |
-| ENT-10 | Más de 20 niveles de anidamiento dan E100 aunque `m` sea válido; arrays y objetos cuentan igual y el objeto exterior es el nivel 1 | 10999, 11007, 11011, 11012 | confirmado |
+| ENT-10 | Más de 20 niveles de anidamiento dan E100 aunque `m` sea válido; arrays y objetos cuentan igual y el objeto exterior es el nivel 1 | 10999, 11007, 11011, 11012, 10992–10996, 11000–11005 | confirmado |
 | ENT-11 | Sin un campo `m` de tipo string (objeto vacío, `M`, número, null, array) da error E102 | 72–78, 12657 | confirmado |
 | ENT-12 | Las claves extra junto a `m` se ignoran, incluso un número fuera de rango como `1e400`; un `m` de 5.000 caracteres se procesa | 79, 80, 10973 | probable |
 | ENT-13 | El header `Content-Type` no se mira: ausente o `text/plain` con un cuerpo JSON válido responde normal | 508, 509 | probable |
@@ -47,7 +47,7 @@ Describe el servicio tal como responde desde las 15:57 del 10 de octubre (versi�
 | INT-05 | Los caracteres no ASCII se descartan antes de pasar a mayúsculas: `ß` no cuenta como `SS` | 32, 222, 278, 279 | confirmado |
 | INT-06 | El control se compara como texto: `03` no vale aunque el esperado sea 3. Si no coincide: error E202 | 2, 21, 24, 38, 40, 44 | confirmado |
 | INT-07 | PING no valida el control: `PING;XX`, `PING;0`, `PING;161` y `PING;-33` responden pong | 25–29, 81, 82, 1442 | confirmado |
-| INT-08 | El nombre del comando no distingue mayúsculas (`CONSULTa` funciona), pero solo en ASCII: `tranſfer` y `pıng` no son comandos. Tampoco se le quitan espacios: `PING ` no es PING | 11, 34, 35, 86, 91, 1239, 1241, 1261, 1263 | confirmado |
+| INT-08 | El nombre del comando no distingue mayúsculas (`CONSULTa` funciona), pero solo en ASCII: `tranſfer` y `pıng` no son comandos. Tampoco se le quitan espacios: `PING ` no es PING | 11, 34, 35, 86, 91, 12641, 1239, 1241, 1261, 1263 | confirmado |
 
 ## 3. Comandos
 
@@ -87,13 +87,13 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 | CMD-DEPOSITO-02 | Monto válido: entero de 1 a 10 dígitos sin ceros a la izquierda, signos, espacios ni decimales (`^[1-9][0-9]{0,9}$`). 0, negativos, `10.50`, `1e3`, `007`, `+5`, `１０` en ancho completo o 11 dígitos: error E303 | 94–99, 144, 206–213, 365–374, 12784, 1408 | confirmado |
 | CMD-DEPOSITO-03 | No hay límite por depósito | 93, 271–276, 12670 | confirmado |
 | CMD-DEPOSITO-04 | Cuenta inexistente: error E401 | 100, 101, 11349, 12119 | confirmado |
-| CMD-DEPOSITO-05 | El saldo no tiene tope ni desborda | 379, 382, 12671 | probable |
+| CMD-DEPOSITO-05 | El saldo no tiene tope ni desborda | 12671; en v1: 379, 382 | probable |
 
 **TRANSFER;origen;destino;monto;control**
 
 | ID | Comportamiento | Evidencia | Confianza |
 |---|---|---|---|
-| CMD-TRANSFER-01 | 200 `{"status":"recieved","operacionId":"OP-0002"}`; resta del origen y suma al destino | 7, 109, 12758 | confirmado |
+| CMD-TRANSFER-01 | 200 `{"status":"recieved","operacionId":"OP-0002"}`; resta del origen y suma al destino | 7, 12758, 1337 | confirmado |
 | CMD-TRANSFER-02 | Monto con las mismas reglas que DEPOSITO: si no, error E303 | 111, 112, 12580 | confirmado |
 | CMD-TRANSFER-03 | Origen igual a destino: error E304 | 103, 140, 12629 | confirmado |
 | CMD-TRANSFER-04 | Origen o destino inexistente: error E401 | 104, 105, 106, 12667 | confirmado |
@@ -109,9 +109,9 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 
 | ID | Comportamiento | Evidencia | Confianza |
 |---|---|---|---|
-| CMD-ANULA-01 | 200 `{"ok":true,"anulada":"OP-0003"}` y revierte el efecto: un depósito resta el monto de la cuenta; una transferencia lo devuelve al origen y lo resta del destino | 13, 19, 121, 124, 125, 12620 | confirmado |
-| CMD-ANULA-02 | Anular de nuevo la misma operación: 200 `{"ok":false,"motivo":"ya anulada"}` | 14, 10015, 11027, 11736, 12194 | confirmado |
-| CMD-ANULA-03 | No revisa saldos: puede dejar una cuenta en negativo | 122, 231, 12789 | confirmado |
+| CMD-ANULA-01 | 200 `{"ok":true,"anulada":"OP-0003"}` y revierte el efecto: un depósito resta el monto de la cuenta; una transferencia lo devuelve al origen y lo resta del destino | 121, 124, 125, 1117, 1141, 12620 | confirmado |
+| CMD-ANULA-02 | Anular de nuevo la misma operación: 200 `{"ok":false,"motivo":"ya anulada"}` | 11736, 12194; en v1: 14, 10015, 11027 | confirmado |
+| CMD-ANULA-03 | No revisa saldos: puede dejar una cuenta en negativo | 12789; en v1: 122, 231 | confirmado |
 | CMD-ANULA-04 | Operación inexistente o con otro formato (`op-0003`, `OP-1`, `OP-0000`, `OP-00001`, un id `AC-`): error E402 | 126–128, 223–225 | confirmado |
 
 **HALT;argumento;control** (comando no documentado)
@@ -139,15 +139,15 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 | ID | Comportamiento | Evidencia | Confianza |
 |---|---|---|---|
 | MEM-01 | Cada token tiene su estado. `POST /__reset` lo vuelve al inicio: sin cuentas ni operaciones, contadores en cero, sin bloqueos y sin HALT | 11138–11140, 11210, 11211, 12555, 12851 | confirmado |
-| MEM-02 | Las cuentas se numeran `AC-0001`, `AC-0002`… en orden de creación. Las operaciones se numeran `OP-0001`… con un solo contador para depósitos y transferencias | 3, 4, 6, 7, 10, 12851–12853 | confirmado |
-| MEM-03 | Solo una operación exitosa toma número: una transferencia rechazada y ANULA no consumen | 9, 10, 18, 129, 11738, 12183 | confirmado |
-| MEM-04 | Rechazos seguidos: cada TRANSFER rechazada por E506 o E507 suma uno a la cuenta de origen. Con tres seguidos la cuenta queda bloqueada y la siguiente TRANSFER desde ella da E510, aunque el monto y el saldo alcancen | 200, 249, 269, 12557–12565, 12590–12593 | confirmado |
-| MEM-05 | Solo cuentan E506 y E507: tres E303, E304 o E401 seguidos no bloquean, y un E303 en medio no corta la racha | 330–333, 337–340, 344–347, 351–355, 12579–12583 | confirmado |
+| MEM-02 | Las cuentas se numeran `AC-0001`, `AC-0002`… en orden de creación. Las operaciones se numeran `OP-0001`… con un solo contador para depósitos y transferencias | 3, 4, 6, 7, 519, 520, 531, 12851–12853 | confirmado |
+| MEM-03 | Solo una operación exitosa toma número: una transferencia rechazada y ANULA no consumen | 9, 129, 531, 11738, 12183 | confirmado |
+| MEM-04 | Rechazos seguidos: cada TRANSFER rechazada por E506 o E507 suma uno a la cuenta de origen. Con tres seguidos la cuenta queda bloqueada y la siguiente TRANSFER desde ella da E510, aunque el monto y el saldo alcancen | 200, 12557–12565, 12590–12593, 743, 765 | confirmado |
+| MEM-05 | Solo cuentan E506 y E507: tres E303, E304 o E401 seguidos no bloquean, y un E303 en medio no corta la racha | 330–333, 337–340, 344–347, 351–354, 12579–12583 | confirmado |
 | MEM-06 | Una TRANSFER exitosa desde la cuenta pone la racha en cero | 258–262, 12570–12575 | confirmado |
 | MEM-07 | La racha es por cuenta de origen, aunque cambie el destino | 12590–12593 | probable |
 | MEM-08 | El bloqueo es por cuenta: otra cuenta transfiere normal, y la bloqueada puede recibir | 320, 321, 456 | confirmado |
-| MEM-09 | Solo un depósito exitoso en la cuenta la desbloquea y pone la racha en cero. Recibir una transferencia, ANULA o el paso del tiempo (probado hasta 10 minutos) no la desbloquean | 250, 323, 324, 466, 467, 456, 457, 477, 478, 492–495 | confirmado |
-| MEM-10 | Un depósito rechazado (E303) no desbloquea, y anular el depósito que desbloqueó no vuelve a bloquear: hacen falta otros tres rechazos | 12584, 12585, 12560–12565 | probable |
+| MEM-09 | Solo un depósito exitoso en la cuenta la desbloquea y pone la racha en cero. Recibir una transferencia o ANULA no la desbloquean. En v1 siguió bloqueada a los 1, 5 y 10 minutos, en una sola secuencia (492–495) | 250, 323, 324, 466, 467, 456, 970, 993, 1003, 1011, 492–495 | confirmado |
+| MEM-10 | Un depósito rechazado (E303) no desbloquea, y anular el depósito que desbloqueó no vuelve a bloquear: hacen falta otros tres rechazos | 12584, 12585, 12560–12565, 1141, 1142, 1212, 1213 | confirmado |
 | MEM-11 | Cada E510 seguido de la misma cuenta incrementa `intentos` (1, 2, 3… se vio hasta 6); tras el depósito que desbloquea, el próximo E510 vuelve a empezar en 1 | 12772–12774, 12583, 12585, 12779, 1458–1463 | confirmado |
 | MEM-12 | El titular de cada cuenta (el nombre del ALTA) decide si una transferencia tiene límite (CMD-TRANSFER-05 a 07) | 11782, 11788 | confirmado |
 | MEM-13 | Después de `HALT;1` el token queda detenido hasta el próximo reset: todo `POST /msg` con token da E599, incluso PING, JSON inválido o un cuerpo demasiado grande. `GET /health` sigue en 200 | 11135, 11137, 11202–11207, 11320, 11324, 11136, 11209 | confirmado |
@@ -200,11 +200,11 @@ Cada respuesta tiene un solo error: el de la primera validación que falla, en e
 
 | ID | Comportamiento | Evidencia | Confianza |
 |---|---|---|---|
-| RIE-01 | ANULA no revisa saldo y deja cuentas en negativo. Lo cerraríamos rechazando la anulación con un error propio | 122, 231, 12789 | confirmado |
+| RIE-01 | ANULA no revisa saldo y deja cuentas en negativo. Lo cerraríamos rechazando la anulación con un error propio | 12789; en v1: 122, 231 | confirmado |
 | RIE-02 | El control es un dígito de verificación que cualquiera calcula: detecta errores de tipeo, pero no autentica. Lo cerraríamos firmando el mensaje con HMAC y un secreto por cliente | 1–20, 11782 | confirmado |
 | RIE-03 | La ruta se evalúa antes que el token: sin credenciales se puede saber qué rutas existen (404 frente a 401). Lo cerraríamos autenticando primero | 57, 50, 12651, 12652 | confirmado |
 | RIE-04 | `/health` pide token, así que un balanceador no puede chequearlo. Lo dejaríamos público y sin datos | 53, 11208 | confirmado |
-| RIE-05 | HALT detiene el servicio, cualquier cliente con token llega a él, la sugerencia de E301 revela su nombre y la confirmación es un `1`. Lo sacaríamos de la API pública y no sugeriríamos comandos internos | 171, 292, 11134 | confirmado |
+| RIE-05 | HALT detiene el servicio, cualquier cliente con token llega a él, la sugerencia de E301 revela su nombre y la confirmación es un `1`. Lo sacaríamos de la API pública y no sugeriríamos comandos internos | 171, 292, 11134, 238, 239, 393–398 | confirmado |
 | RIE-06 | Tres reintentos rechazados bloquean la cuenta (un cliente que reintenta en paralelo se bloquea solo) y un depósito de cualquier monto la libera, así que el bloqueo no protege. Lo cerraríamos contando rechazos en una ventana de tiempo y desbloqueando por acción de un operador | 200, 466, 467 | confirmado |
 | RIE-07 | El límite de transferencia no aplica entre cuentas del mismo titular, y el titular es un nombre libre: abrir dos cuentas con el mismo nombre evita el límite | 11782, 12604 | confirmado |
 | RIE-08 | El servicio cambió formato, status y límite sin aviso ni versión (saldo como string, E510 de 409 a 423): un cliente que leía el saldo como número se rompe. Lo cerraríamos versionando la API | 12638, 12565 | confirmado |

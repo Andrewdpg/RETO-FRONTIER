@@ -4,6 +4,7 @@
     BB_TOKEN=... python3 lab/canary.py vigilar   # corre a las :05, :25 y :45, y a las 19:55; para a las 20:00
     python3 lab/canary.py comparar               # compara cada corrida del log con la línea base
     python3 lab/canary.py aceptar t2-sN          # esa corrida pasa a ser la línea base
+    python3 lab/canary.py mostrar BASE ROJA      # reimprime el CAMBIO entre dos corridas, p. ej. t2-s267 t2-s283
 
 Mientras exista logs/canario.pausa, vigilar se salta las corridas (por ejemplo, durante la tanda de HALT).
 Salida de comparar: 0 sin cambios, 1 cambió, 2 no hay corrida completa.
@@ -230,6 +231,26 @@ def compare():
     return 0
 
 
+def show(base_seq, red_seq):
+    """Reimprime el reporte de CAMBIO entre dos corridas del log, igual que lo imprimió vigilar."""
+    found = [(s, st) for s, st, ok in runs(load_log()) if ok]
+    names = [s for s, _ in found]
+    for s in (base_seq, red_seq):
+        if s not in names:
+            sys.exit(f"{s} no es una corrida completa del canario en {LOG}")
+    steps = dict(found)
+    before = [s for s in names[:names.index(red_seq)] if not diffs(steps[base_seq], steps[s])]
+    d = diffs(steps[base_seq], steps[red_seq])
+    regla = [c[3] for c in cases()]
+    print(f"CAMBIO contra la línea base {base_seq}: {len(d)} de {len(steps[base_seq])} pasos difieren")
+    print("  última en verde: " + span(before[-1], steps[before[-1]]))
+    print("  primera en rojo: " + span(red_seq, steps[red_seq]))
+    for n, (i, e, g) in enumerate(d):
+        print(f"  {'causa ' if n == 0 else 'efecto'} paso {i + 1} ({regla[i]}) {key_of_row(g)[3]}")
+        print(f"    antes {e['status']} {json.dumps(e['response'], ensure_ascii=False)}  (log {e['id']})")
+        print(f"    ahora {g['status']} {json.dumps(g['response'], ensure_ascii=False)}  (log {g['id']})")
+
+
 def accept(seq, motivo):
     found = {s: ok for s, _, ok in runs(load_log())}
     if not found.get(seq):
@@ -296,6 +317,8 @@ def main():
         return compare()
     elif cmd == "aceptar" and len(sys.argv) == 3 and re.fullmatch(r"\w+-s\d+", sys.argv[2]):
         accept(sys.argv[2], "aceptada a mano")
+    elif cmd == "mostrar" and len(sys.argv) == 4:
+        show(sys.argv[2], sys.argv[3])
     elif cmd == "vigilar":
         watch()
     else:
