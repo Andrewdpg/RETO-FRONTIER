@@ -6,9 +6,9 @@
 2. Tiene seis comandos visibles y uno oculto (`HALT`), errores que se evalúan en un orden fijo que medimos, y un bloqueo de cuenta después de tres transferencias rechazadas seguidas.
 3. El reemplazo es un único proceso Node con el estado en memoria y las reglas declaradas en tablas, sin LLM (decisiones D1 a D5, aprobadas).
 4. La fidelidad se mide con pruebas diferenciales locales contra el original; el set oculto se usa solo 3 veces: calibración, después del incidente y final.
-5. El cambio de las 15:30 lo detecta un canario cada 10 minutos, y el diferencial completo del área afectada dice qué hay que ajustar.
+5. El servicio puede cambiar sin aviso (la agenda marca un incidente a las 15:30, y puede haber más de uno). Un canario corre cada 20 minutos desde las 13:00 contra una línea base móvil, y el diferencial del área afectada dice qué hay que ajustar.
 
-Todas las referencias entre paréntesis, como (log 122), son números de línea de `experimentos.jsonl`. Cada línea del log tiene los campos del README más `metodo`, `ruta` y `auth` (propio, sin token, token ajeno o esquema Basic; nunca el token en sí). Algunas líneas llevan además `par` (pasos mandados en paralelo, en la misma ráfaga), `espera` (milisegundos de pausa antes de mandarlo) o `texto` (el cuerpo de la respuesta no era JSON).
+Todas las referencias entre paréntesis, como (log 122), son ids de `experimentos.jsonl`. Ese archivo no se edita a mano: lo arma `python3 lab/logs.py armar` a partir de `logs/t1.jsonl` y `logs/t2.jsonl`, uno por token. Los ids 1–497 son del token 1 durante el diseño; los 10001–10958 son del token 2 durante el diseño, renumerados +10000 (con `id_original`, mapeo en `logs/MAPEO.md`); desde las 12:40 cada token sigue en su rango (t1 desde 498, t2 desde 10959). Cada línea tiene los campos del README más `token`, `metodo`, `ruta` y `auth` (propio, sin token, token ajeno o esquema Basic; nunca el token en sí), y desde las 12:40 `ts` (hora UTC). Algunas líneas llevan además `par` (pasos mandados en paralelo, en la misma ráfaga), `espera` (milisegundos de pausa antes de mandarlo), `texto` (el cuerpo de la respuesta no era JSON) o `headers` (headers de la respuesta, solo en las sondas de huella del stack). En los ids 1–497 el arnés de entonces (`exploracion/arnes.ts`) no registraba los `POST /__reset` de inicio de secuencia ni la hora: cada secuencia de ese rango empieza tras un reset que no tiene línea propia.
 
 ## 1. Problema
 
@@ -51,6 +51,14 @@ La confianza sigue la regla del README. **Confirmado** significa que lo vimos en
 | Cuerpo que no es JSON (texto, JSON truncado, vacío) | 400 `{"error":"E100","mensaje":"json inválido"}` | 69, 70, 71 | confirmado |
 | JSON válido sin un campo `m` de tipo string (objeto vacío, `M`, número, null, array, string JSON) | 400 `{"error":"E102","mensaje":"falta m"}` | 72–78 | confirmado |
 | Claves extra junto a `m` se ignoran; un `m` de 5.000 caracteres se procesa | respuesta normal | 79, 80 | probable |
+| `HEAD`, `OPTIONS` y `PATCH` a `/msg` | 404 `E404`; en HEAD sin cuerpo | 10967–10969 | probable |
+| `HEAD /health` con token: no se deriva de GET | 404 sin cuerpo | 10970 | probable |
+| Cuerpo de más de 8.192 bytes, contados en bytes (8.192 pasa; 8.193 no; 8.200 bytes con `ñ`, que son 4.112 caracteres, tampoco) | 413 `{"error":"E101","mensaje":"cuerpo demasiado grande"}` | 10976, 10977, 10987, 10989 | probable |
+| El tamaño se evalúa después de la ruta y del token: un cuerpo grande sin token da E001 y a `/nada` da E404 | 401 `E001` / 404 `E404` | 10984, 10985 | probable |
+| JSON con más de 20 niveles de anidamiento. Arrays y objetos cuentan igual y el objeto exterior es el nivel 1; vale aunque `m` sea válido | 400 `E100` | 10999, 11007, 11011, 11012 | probable |
+| JSON no estricto: `NaN`, `Infinity`, coma final, BOM al inicio | 400 `E100` | 10962–10966 | probable |
+| Un número fuera de rango como `1e400` en una clave extra se acepta | respuesta normal | 10973 | probable |
+| Todas las respuestas llevan `Content-Type: application/json; charset=utf-8`, sin `ETag` ni `X-Powered-By` (headers: no se comparan, sirven para la huella del stack, ver D6) | — | 10959–10970 | probable |
 | El header `X-Req` cuenta los `/msg` autenticados del token y `/__reset` no lo reinicia | header, no se compara | todo el log | confirmado |
 
 ### 3.2 Integridad del mensaje
@@ -161,13 +169,14 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 
 ### 3.11 Orden de los errores
 
-El orden medido es: E404 → E001 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57), el token antes que el cuerpo (296–298), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Queda una sola posición sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303.
+El orden medido es: E404 → E001 → E101 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57) y que el tamaño (10985), el token antes que el cuerpo (296–298) y que el tamaño (10984), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Queda una sola posición sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303.
 
 | Estación | Qué revisa | Error si falla | Log que prueba su lugar |
 |---|---|---|---|
-| 1. Ruta | Método y ruta conocidos (`POST /msg`, `POST /__reset`, `GET /health`) | 404 `E404` | 57 (antes que el token) |
-| 2. Token | Bearer igual al token del equipo | 401 `E001` | 296–298 (antes que el cuerpo) |
-| 3. JSON | El cuerpo se puede parsear | 400 `E100` | 69 |
+| 1. Ruta | Método y ruta exactos (`POST /msg`, `POST /__reset`, `GET /health`); cualquier otro método, incluidos HEAD y OPTIONS, no existe | 404 `E404` | 57 (antes que el token), 10985 (antes que el tamaño) |
+| 2. Token | Bearer igual al token del equipo | 401 `E001` | 296–298 (antes que el cuerpo), 10984 (antes que el tamaño) |
+| 2b. Tamaño | Cuerpo de 8.192 bytes o menos, contados en bytes | 413 `E101` | 10977, 10987, 10989 |
+| 3. JSON | El cuerpo se puede parsear como JSON estricto y no pasa de 20 niveles de anidamiento | 400 `E100` | 69, 10962–10966, 11007, 11012 |
 | 4. Campo m | `m` existe y es string | 400 `E102` | 72 |
 | 5. Segmentos | Hay al menos un `;` y ningún segmento vacío | 400 `E103` / `E104` | 30, 31 (antes que el control) |
 | 6. Control | Uno o dos dígitos e igual al calculado; PING la saltea | 400 `E201` / `E202` | 38–41 (antes que comando y aridad), 81 |
@@ -208,8 +217,11 @@ Los diagramas están en `docs/arquitectura/` y su índice en `docs/arquitectura/
 | D1. Estado en memoria y Cloud Run con min=1 y max=1. Aprobada por Andres Parra a las 11:17. | Neon con 1 a 3 instancias, como pide la plantilla | El set le habla a un solo proceso y llama a `/__reset` antes de cada test, así que no hay estado que deba sobrevivir ni que compartir. Neon agregaría latencia de red y un punto de falla externo para guardar unos pocos KB. |
 | D2. Reglas declarativas: una tabla de comandos (aridad, tipo de cada argumento, efecto, cuerpo de respuesta) y una lista ordenada de validaciones. Aprobada por Andres Parra a las 11:33. | Un `if` por comando con la lógica mezclada | Si a las 15:30 cambia un código, un límite, la aridad o el orden de los errores, se cambia una fila y no hay que rastrear el código. El orden queda escrito en un solo lugar y coincide con la sección 3.11. |
 | D3. Reemplazo sin LLM. Aprobada por Andres Parra a las 11:33. | Un LLM de respaldo para lo que no conocemos | La comparación es exacta, carácter por carácter. Un LLM no es determinista, cuesta dinero y arriesga el límite de 5 s. Para lo desconocido aplicamos un supuesto escrito. |
-| D4. Canario: cada 10 minutos desde las 15:00, `arnes.ts replay` de unos 45 requests que tocan cada error y cada comando, comparados con el log. Cuando detecta un cambio, se corre el diferencial completo sobre el área afectada (el comando o la etapa del pipeline donde apareció la diferencia). Aprobada por Andres Parra a las 11:33. | Repetir el log completo cada vez | 30 corridas de 45 requests son unos 1.350 requests, y detectamos el cambio en 10 minutos o menos sin agotar el cupo. El diferencial dirigido después del aviso encuentra lo que el canario no cubre. |
+| D4 (reemplazada por D8). Canario: cada 10 minutos desde las 15:00, `arnes.ts replay` de unos 45 requests que tocan cada error y cada comando, comparados con el log. Cuando detecta un cambio, se corre el diferencial completo sobre el área afectada (el comando o la etapa del pipeline donde apareció la diferencia). Aprobada por Andres Parra a las 11:33. | Repetir el log completo cada vez | 30 corridas de 45 requests son unos 1.350 requests, y detectamos el cambio en 10 minutos o menos sin agotar el cupo. El diferencial dirigido después del aviso encuentra lo que el canario no cubre. |
 | D5. Las 3 corridas del set oculto se reservan: calibración, después del incidente y final. El feedback del día a día son las diferenciales locales contra el original. Aprobada por Andres Parra a las 11:33. | Usar el set oculto para iterar | Solo hay 3 corridas en el día y su resultado es un número sin detalle; una diferencial dice qué secuencia y qué paso difieren. Ver la sección 8. |
+| D6. Node 26 con `node:http`, sin framework ni dependencias, en Cloud Run. Decidido por el equipo a las 12:50 con la regla acordada antes de medir: "si la huella dice Python, Python; si no, Node". | Python con `http.server` en Railway (el diseño individual del token 2); Express, Fastify, Flask o FastAPI | La huella apunta a JavaScript con un router propio: `NaN` e `Infinity` dan E100 (Python los acepta), `1e400` se acepta (Go no), `{"M":…}` da E102 (Go no distingue mayúsculas), `charset=utf-8` en todas las respuestas, sin `ETag` ni `X-Powered-By` (no es Express) y `HEAD /health` da 404 (Express y Fastify lo derivan de GET) (log 73, 10960–10973). Un framework agrega respuestas propias (405, redirecciones, HEAD y OPTIONS automáticos) que el original no tiene. Lo que JavaScript no hace solo y hay que escribir: el tope de 8.192 bytes medido con `Buffer.byteLength` y la profundidad máxima de 20, porque `JSON.parse` acepta 20.000 niveles. |
+| D7. Un log por token (`logs/t1.jsonl`, `logs/t2.jsonl`) en rangos de ids separados, `lab/send.py` como único arnés y `experimentos.jsonl` generado con `lab/logs.py armar`. Decidido por el equipo a las 12:45. | Un solo archivo que escriben los dos; renumerar todo seguido | Con un archivo por token no hay conflictos de git ni ids repetidos. Renumerar seguido rompería todas las citas de este documento. `send.py` registra cada reset, la hora y, si se pide, los headers; `arnes.ts` no lo hacía. |
+| D8. El canario corre desde las 13:00 cada 20 minutos (y a las 19:45 y 19:55) contra la última línea base aceptada, y reemplaza a D4. Decidido por el equipo a las 12:45. | D4: cada 10 minutos desde las 15:00 contra el log de la mañana | El servicio puede cambiar sin aviso y más de una vez; empezar a las 15:00 dejaba ciego el mediodía. La línea base móvil hace visible un segundo cambio o una reversión. |
 
 ### 7.1 Modelo de datos del estado
 
@@ -296,15 +308,14 @@ Cada comportamiento lleva un ID por sección (ENT-xx, INT-xx, CMD-ALTA-xx, MEM-x
 
 Tenemos dos tokens con 8.000 requests cada uno y estados separados. Como el límite de 10 por segundo es por token, los dos pueden trabajar a la vez sin estorbarse.
 
-| Etapa | Token 1 (Andres) | Token 2 (compañero) |
+| Etapa | Token 1 | Token 2 |
 |---|---|---|
-| Diseño, hasta las 12:00 | 314 usados: entrada, integridad, comandos, concurrencia, bloqueo | — |
-| 12:00 a 15:00 | Pendientes de la sección 12, unos 300 | Generador diferencial: 3 corridas de unos 450 requests, unos 1.350 |
-| 15:00 a 20:00 | Canario cada 10 minutos, unos 1.350 | Después del cambio: replay del log completo (unos 350) y 2 corridas diferenciales (unos 900) |
-| Reacción al cambio | Experimentos dirigidos sobre lo que cambió, hasta 1.500 | Reserva para repetir corridas, hasta 1.500 |
-| Total planificado | unos 3.500 | unos 4.100 |
+| Diseño, hasta las 12:00 | unos 530 (497 líneas más los resets sin registrar) | 958 |
+| 12:00 a 13:00 | — | 54: huella del stack, tope del cuerpo y profundidad |
+| 13:00 a 20:00 | Experimentos dirigidos cuando las evals del reemplazo muestren algo que el log no explica, hasta 1.500 | Canario (unos 45 requests cada 20 minutos, unos 1.000), diferencial (hasta 3.000), HALT y tandas dirigidas después de cada cambio |
+| Total planificado | unos 2.000 | unos 5.000 |
 
-A cada token le quedan unos 4.000 requests de reserva para imprevistos. El canario va en un token y el diferencial en el otro para que, si el cambio llega en medio de una corrida diferencial, el canario lo vea igual.
+Cada token admite 8.000 por día, así que a los dos les queda reserva. El canario y el diferencial van en el token 2 por turnos; el token 1 queda libre para preguntas puntuales del servidor y como respaldo si el token 2 se acerca al tope.
 
 ## 11. Riesgos
 
@@ -330,3 +341,5 @@ El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo de
 | Comandos ocultos fuera del barrido | No hay más: el barrido de 76 palabras solo encontró HALT | Sondeo por sugerencia con palabras nuevas si el diferencial muestra un E301 inesperado |
 | Desborde de los ids `AC-9999` y `OP-9999` | Pasan a 5 dígitos | No se prueba: cuesta 10.000 requests. Supuesto del reemplazo: seguir con 5 dígitos |
 | Bloqueo después de 10 minutos | Permanente hasta un depósito o `/__reset` (sigue bloqueada a los 1, 5 y 10 min) | Re-chequear una cuenta bloqueada a los 30 minutos |
+| Orden entre E301/E302 y E303 | E301/E302 antes, porque sin comando conocido no hay fila que diga qué argumento es un monto | Comando a distancia 1 con monto inválido y control correcto; DEPOSITO con un argumento de más y monto 0 |
+| Respuestas del proxy de Cloud Run frente al de Railway ante requests raros a nivel HTTP (rutas con `//` o `%2F`, headers malformados) | Pueden diferir, porque el original está detrás del proxy de Railway | Misma tanda contra el original y contra el reemplazo desplegado, apenas exista |
