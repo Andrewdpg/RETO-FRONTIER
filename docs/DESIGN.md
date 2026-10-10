@@ -80,6 +80,7 @@ El mensaje se parte por `;`. El último segmento es el control y el resto es el 
 | `í`, `ñ` y `ß` se descartan; `ß` no se convierte en `SS` | — | 32, 222, 278, 279 | confirmado |
 | PING no valida el control: acepta `XX`, `0`, `161`, `-33` | 200 `{"pong":true}` | 25–29, 81, 82 | confirmado |
 | El nombre del comando no distingue mayúsculas, pero no se le quitan espacios | — | 11, 34, 35, 86, 91 | confirmado |
+| El comando se pasa a mayúsculas solo en ASCII: `tranſfer` (ſ larga) y `pıng` (ı sin punto) no son comandos, aunque `toUpperCase` de JS los convierta | 400 `E301` con sugerencia TRANSFER / PING | 1239, 1261, 1241, 1263 | confirmado |
 
 ### 3.3 PING
 
