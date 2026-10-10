@@ -1,0 +1,7 @@
+2026-10-10T20:58:28.311Z contra https://cheerful-generosity-production-4366.up.railway.app
+pasos iguales: 2892/2892 (100.0 %)
+secuencias iguales: 305/305 (100.0 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 83.7 ms, p95 133.4 ms, máx 1404.0 ms
+
+id | seq | esperado | obtenido

@@ -1,0 +1,7 @@
+{"hipotesis": "v2: corte exacto del límite nuevo: secuencia propia", "reset": true}
+{"hipotesis": "v2: AC-0001 Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "v2: AC-0002 Beto", "m": "ALTA;Beto;11"}
+{"hipotesis": "v2: saldo de 1.000.000", "m": "DEPOSITO;AC-0001;1000000;51"}
+{"hipotesis": "v2: 50.001: 422 E506 si el tope nuevo es 50.000 (50.000 pasó en 12758, 75.000 no en 12760)", "m": "TRANSFER;AC-0001;AC-0002;50001;56"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: 50.000 otra vez: 200, para confirmar el borde", "m": "TRANSFER;AC-0001;AC-0002;50000;59"}

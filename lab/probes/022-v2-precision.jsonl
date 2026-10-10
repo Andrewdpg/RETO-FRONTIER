@@ -1,0 +1,40 @@
+{"hipotesis": "v2: límite nuevo de TRANSFER entre titulares distintos: secuencia propia", "reset": true}
+{"hipotesis": "v2: AC-0001 Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "v2: AC-0002 Beto", "m": "ALTA;Beto;11"}
+{"hipotesis": "v2: saldo de 1.000.000 para que el saldo no sea el motivo", "m": "DEPOSITO;AC-0001;1000000;51"}
+{"hipotesis": "v2: TRANSFER de 99999: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: TRANSFER de 100000: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;100000;12"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: TRANSFER de 50000: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;50000;59"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: TRANSFER de 75000: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;75000;40"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: TRANSFER de 90000: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;90000;48"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: TRANSFER de 99000: 200 si está bajo el límite nuevo, 422 E506 si no (100.000 dio E506 en 12640)", "m": "TRANSFER;AC-0001;AC-0002;99000;14"}
+{"hipotesis": "v2: depósito de 1 para cortar la racha y que un E506 no bloquee la cuenta", "m": "DEPOSITO;AC-0001;1;28"}
+{"hipotesis": "v2: intentos de E510: secuencia propia", "reset": true}
+{"hipotesis": "v2: AC-0001 Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "v2: AC-0002 Beto", "m": "ALTA;Beto;11"}
+{"hipotesis": "v2: rechazo 1 por saldo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: rechazo 2 por saldo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: rechazo 3 por saldo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: E510 número 1: 423 con intentos 1 si cuenta cada E510 (12585 dio 2 en el segundo)", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: E510 número 2: 423 con intentos 2 si cuenta cada E510 (12585 dio 2 en el segundo)", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: E510 número 3: 423 con intentos 3 si cuenta cada E510 (12585 dio 2 en el segundo)", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: depósito desbloquea, como en v1 (250, 323–324)", "m": "DEPOSITO;AC-0001;100;82"}
+{"hipotesis": "v2: rechazo 1 después del desbloqueo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;1000;37"}
+{"hipotesis": "v2: rechazo 2 después del desbloqueo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;1000;37"}
+{"hipotesis": "v2: rechazo 3 después del desbloqueo: 422 E507", "m": "TRANSFER;AC-0001;AC-0002;1000;37"}
+{"hipotesis": "v2: E510 después de desbloquear: intentos 1 si el depósito lo reinicia, 4 si no", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "v2: CONSULTA de un saldo de 100: \"1.00\" si el saldo nuevo es el entero dividido por 100", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "v2: decimales y negativos en el formato nuevo: secuencia propia", "reset": true}
+{"hipotesis": "v2: AC-0001 Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "v2: AC-0002 Beto", "m": "ALTA;Beto;11"}
+{"hipotesis": "v2: monto con decimales: 400 E303 si las reglas del monto no cambiaron (94–99); 200 si v2 acepta decimales", "m": "DEPOSITO;AC-0001;10.50;79"}
+{"hipotesis": "v2: depósito de 1.050", "m": "DEPOSITO;AC-0001;1050;79"}
+{"hipotesis": "v2: TRANSFER de 1.000", "m": "TRANSFER;AC-0001;AC-0002;1000;37"}
+{"hipotesis": "v2: CONSULTA AC-0002: \"10.00\" si el saldo es entero / 100", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "v2: ANULA del depósito deja AC-0001 en -1.000 (122, 231)", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "v2: CONSULTA de un saldo negativo: ¿\"-10.00\"?", "m": "CONSULTA;AC-0001;14"}

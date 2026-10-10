@@ -3,6 +3,7 @@
     python3 lab/diff.py generar [--semilla N]          # escribe lab/probes/NNN-diff-sN.jsonl y muestra el --dry
     BB_TOKEN=... python3 lab/diff.py grabar ARCHIVO     # pausa el canario, la manda con send.py y lo despausa
     REPL_URL=... REPL_TOKEN=... python3 lab/diff.py comparar [--semilla N] [--canario] [--log L --seq S ...]
+    python3 lab/diff.py cambios --semilla N            # primera grabación contra la última, para ver qué cambió
 
 Cada tanda tiene 100 secuencias como el set: 40 de 1 paso, 45 de 2 a 5 y 15 de 6 a 12, cada una tras un reset.
 Cerca del 70 % de los pasos son mensajes bien formados (control correcto, aridad e ids que existen en el
@@ -328,6 +329,38 @@ def sequences(log, prefixes, only=None):
     return out
 
 
+def changes(seed):
+    """Primera grabación de cada secuencia de la semilla contra la última: qué respondió distinto el original."""
+    runs = {}
+    for seq, steps in sequences(load_log(), [f"diferencial s{seed} "]):
+        n = re.search(r"#(\d+)", steps[0]["hipotesis"]).group(1)
+        runs.setdefault(int(n), []).append(steps)
+    pairs = {n: (r[0], r[-1]) for n, r in runs.items() if len(r) > 1}
+    if not pairs:
+        sys.exit(f"la semilla {seed} tiene una sola grabación en {LOG}: hay que regrabarla")
+    diff_seqs, rules = 0, {}
+    for n, (old, new) in sorted(pairs.items()):
+        first = True
+        for j, (a, b) in enumerate(zip(old, new), 1):
+            if a["status"] == b["status"] and same(a["response"], b["response"]):
+                continue
+            # Un cambio temprano corre los ids y los saldos de lo que sigue: solo el primero es causa.
+            tag = "causa " if first else "efecto"
+            if first:
+                diff_seqs += 1
+                key = (a["status"], json.dumps(a["response"], ensure_ascii=False),
+                       b["status"], json.dumps(b["response"], ensure_ascii=False))
+                rules.setdefault(key, []).append((a["id"], b["id"], a["request"]["m"]))
+            first = False
+            print(f"{tag} #{n} paso {j} | {a['request']['m']} | v1 {a['status']} "
+                  f"{json.dumps(a['response'], ensure_ascii=False)} (log {a['id']}) | ahora {b['status']} "
+                  f"{json.dumps(b['response'], ensure_ascii=False)} (log {b['id']})")
+    print(f"\n{diff_seqs} de {len(pairs)} secuencias cambiaron. Causas agrupadas por respuesta:")
+    for (s1, r1, s2, r2), ex in sorted(rules.items(), key=lambda kv: -len(kv[1])):
+        print(f"- {len(ex)}× v1 {s1} {r1} → ahora {s2} {r2}; ej. {ex[0][2]} (log {ex[0][0]} → {ex[0][1]})")
+    return 1 if diff_seqs else 0
+
+
 class Replacement:
     def __init__(self):
         self.url = urllib.parse.urlsplit(os.environ.get("REPL_URL") or sys.exit("falta REPL_URL"))
@@ -408,6 +441,8 @@ def main():
     # Para reproducir otras secuencias, como la tanda de HTTP raro de t1: --log logs/t1.jsonl --seq t1-s3
     c.add_argument("--seq", nargs="*")
     c.add_argument("--log")
+    ch = sub.add_parser("cambios")
+    ch.add_argument("--semilla", type=int, required=True)
     a = ap.parse_args()
     if a.cmd == "generar":
         # Una semilla nueva por grabación; queda en el nombre del archivo para poder regenerarla.
@@ -417,6 +452,8 @@ def main():
         return 0
     if a.cmd == "grabar":
         return record(a.archivo)
+    if a.cmd == "cambios":
+        return changes(a.semilla)
     return compare(a.semilla, a.canario, a.seq, a.log)
 
 

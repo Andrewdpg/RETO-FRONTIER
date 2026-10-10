@@ -1,0 +1,76 @@
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 201 ok", "m": "ALTA;Beto;11"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;100;82"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 200 ok", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: anular el depósito que desbloqueó: ¿vuelve el bloqueo o la racha sigue en 0?: el catálogo predice 409 E510", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 201 ok", "m": "ALTA;Beto;11"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;100;82"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;5000;65"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;5000;65"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 200 ok", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;5000;65"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;5000;65"}
+{"hipotesis": "exploración v1: una TRANSFER exitosa corta la racha (log 258–262, visto una vez): el catálogo predice 200 ok", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 201 ok", "m": "ALTA;Beto;11"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 400 E303", "m": "TRANSFER;AC-0001;AC-0002;0;44"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 409 E510", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 400 E303", "m": "DEPOSITO;AC-0001;0;31"}
+{"hipotesis": "exploración v1: un E303 en medio no corta la racha (log 351–355, visto una vez); un depósito rechazado no desbloquea: el catálogo predice 409 E510", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 201 ok", "m": "ALTA;Beto;11"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 201 ok", "m": "ALTA;Caro;61"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0003;10;4"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "exploración v1: la racha cuenta por origen aunque cambie el destino (todas las rachas del log van al mismo destino): el catálogo predice 409 E510", "m": "TRANSFER;AC-0001;AC-0003;10;4"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;200000;33"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;200000;33"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 422 E507", "m": "TRANSFER;AC-0001;AC-0002;200000;33"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 409 E510", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 200 ok", "m": "TRANSFER;AC-0001;AC-0002;200000;33"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;9999999999;4"}
+{"hipotesis": "exploración v1: mismo titular: los E507 sin límite bloquean, el depósito desbloquea y no hay tope ni con 10 dígitos: el catálogo predice 200 ok", "m": "TRANSFER;AC-0001;AC-0002;9999999999;58"}
+{"hipotesis": "exploración v1: titular con un espacio adelante: ¿se recorta el nombre?: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: titular con un espacio adelante: ¿se recorta el nombre?: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: titular con un espacio adelante: ¿se recorta el nombre?: el catálogo predice 201 ok", "m": "ALTA; Ana;50"}
+{"hipotesis": "exploración v1: titular con un espacio adelante: ¿se recorta el nombre?: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "exploración v1: titular con un espacio adelante: ¿se recorta el nombre?: el catálogo predice 422 E506", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "exploración v1: titular con tilde y sin tilde: ¿José y Jose son el mismo?: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: titular con tilde y sin tilde: ¿José y Jose son el mismo?: el catálogo predice 201 ok", "m": "ALTA;José;61"}
+{"hipotesis": "exploración v1: titular con tilde y sin tilde: ¿José y Jose son el mismo?: el catálogo predice 201 ok", "m": "ALTA;Jose;4"}
+{"hipotesis": "exploración v1: titular con tilde y sin tilde: ¿José y Jose son el mismo?: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "exploración v1: titular con tilde y sin tilde: ¿José y Jose son el mismo?: el catálogo predice 422 E506", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 201 ok", "m": "ALTA;Ana;50"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 200 ok", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 200 ok", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 200 ok", "m": "ANULA;OP-0002;69"}
+{"hipotesis": "exploración v1: ANULA de una transferencia entre el mismo titular: el catálogo predice 200 ok", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "exploración v1: HALT en minúscula confirmado: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: HALT en minúscula confirmado: el catálogo predice 503 E599", "m": "halt;1;19"}
+{"hipotesis": "exploración v1: ALTA con un nombre de un solo espacio: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: ALTA con un nombre de un solo espacio: el catálogo predice 201 ok", "m": "ALTA; ;85"}
+{"hipotesis": "exploración v1: ALTA con espacio al final del nombre: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: ALTA con espacio al final del nombre: el catálogo predice 201 ok", "m": "ALTA;Ana ;50"}
+{"hipotesis": "exploración v1: TRANSFER al mismo id como primer paso: secuencia propia", "reset": true}
+{"hipotesis": "exploración v1: TRANSFER al mismo id como primer paso: el catálogo predice 400 E304", "m": "TRANSFER;AC-0001;AC-0001;10;22"}

@@ -103,7 +103,7 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 
 | Caso | Respuesta exacta | Log | Confianza |
 |---|---|---|---|
-| Cuenta existente (ojo: la clave es `cuenta_id`, en snake_case, y en ALTA es `cuentaId`) | 200 `{"cuenta_id":"AC-0001","saldo":0}` | 5, 8, 19 | confirmado |
+| Cuenta existente (ojo: la clave es `cuenta_id`, en snake_case, y en ALTA es `cuentaId`). **v2:** el saldo es un string con el entero dividido por 100 y dos decimales (ver 3.12) | v1: 200 `{"cuenta_id":"AC-0001","saldo":0}`; v2: `"saldo":"0.00"` | 5, 8, 19; v2: 12635 | confirmado |
 | Cuenta inexistente; el id se compara exacto, sin normalizar (`ac-0001`, `AC-1`, `AC-0001 `, un id `OP-`) | 404 `{"error":"E401","mensaje":"cuenta inexistente"}` | 15, 100, 101, 115, 136 | confirmado |
 | Sin argumento | 400 `E302` | 142 | probable |
 
@@ -129,14 +129,17 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 | Monto inválido (mismas reglas que DEPOSITO) | 400 `E303` | 111, 112 | confirmado |
 | Origen igual a destino | 400 `{"error":"E304","mensaje":"origen y destino iguales"}` | 103, 140 | confirmado |
 | Origen o destino inexistente | 404 `E401` | 104, 105, 106 | confirmado |
-| Monto mayor que 100.000 (100.000 exacto pasa) entre cuentas de titulares distintos. Es por transferencia: seis de 100.000 seguidas pasan todas | 422 `{"error":"E506","mensaje":"límite excedido"}` | 9, 108, 109, 155–157, 386–392 | confirmado |
+| Monto mayor que el límite entre cuentas de titulares distintos. v1: 100.000 (100.000 exacto pasa). **v2: 50.000** (50.000 pasa, 50.001 no; ver 3.12). Es por transferencia: seis de 100.000 seguidas pasan todas | 422 `{"error":"E506","mensaje":"límite excedido"}` | 9, 108, 109, 155–157, 386–392 | confirmado |
 | Entre dos cuentas del mismo titular (el nombre del ALTA) no hay límite: 150.000 pasan, y con saldo insuficiente el error es E507 aunque el monto pase de 100.000 | 200 / 422 `E507` | 11575, 11782, 11783, 11794, 11795, 11805; control con titulares distintos: 11624, 11788 | confirmado |
-| El titular se compara exacto: `Ana` y `ana` son titulares distintos | 422 `E506` | 11800 | probable |
+| El titular se compara exacto, sin recortar ni normalizar: `Ana` y `ana`, `Ana` y ` Ana`, `José` y `Jose` son titulares distintos | 422 `E506` | 11800, 12609, 12614 | confirmado |
+| Entre el mismo titular tampoco hay tope con montos de 10 dígitos | 200 | 12604 | probable |
 | Saldo menor que el monto | 422 `{"error":"E507","mensaje":"saldo insuficiente"}` | 16, 246 | confirmado |
-| Después de tres rechazos E506 o E507 seguidos con el mismo origen, la siguiente TRANSFER desde ese origen se bloquea, aunque alcance el saldo | 409 `{"error":"E510","mensaje":"cuenta bloqueada"}` | 200, 249, 269, 319, 455 | confirmado |
+| Después de tres rechazos E506 o E507 seguidos con el mismo origen, la siguiente TRANSFER desde ese origen se bloquea, aunque alcance el saldo | v1: 409 `{"error":"E510","mensaje":"cuenta bloqueada"}`; **v2: 423** con `"intentos"` (ver 3.12) | 200, 249, 269, 319, 455 | confirmado |
 | Solo cuentan E506 y E507. Tres E303, tres E304 o tres E401 seguidos no bloquean | la siguiente TRANSFER válida da 200 | 330–333, 337–340, 344–347 | confirmado |
-| Un E303 en medio de la racha no la corta: E507, E507, E303, E507 bloquea igual | E510 | 351–355 | probable |
-| Una transferencia exitosa desde la cuenta pone en 0 los rechazos | 200 | 258–262 | probable |
+| Un E303 en medio de la racha no la corta: E507, E507, E303, E507 bloquea igual | E510 | 351–355, 12579–12583 | confirmado |
+| La racha cuenta por origen aunque cambie el destino | E510 al cuarto intento | 12590–12593 | probable |
+| Un depósito rechazado (E303) no desbloquea | E510 sigue | 12584, 12585 | probable |
+| Una transferencia exitosa desde la cuenta pone en 0 los rechazos | 200 | 258–262, 12570–12575 | confirmado |
 | El bloqueo es por cuenta: otra cuenta con fondos transfiere normal, y la bloqueada puede recibir | 200 | 320, 321, 456 | confirmado |
 | Lo único que la desbloquea es un depósito en ella (ver 3.6). Recibir una transferencia no la desbloquea ni corta la racha, ANULA tampoco, y el tiempo tampoco: sigue bloqueada a los 1, 5 y 10 minutos | E510 sigue | 456–457, 477–478, 485–487, 492–495 | confirmado |
 | Mientras está bloqueada, E303, E304 y E401 se evalúan antes que E510, y E510 antes que E506 y E507 | 400 / 404 / 409 | 305–309 | probable |
@@ -147,10 +150,10 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 | Caso | Respuesta exacta | Log | Confianza |
 |---|---|---|---|
 | Primera anulación: revierte el efecto de un depósito o de una transferencia en las dos cuentas | 200 `{"ok":true,"anulada":"OP-0003"}` | 13, 19, 121, 124, 125 | confirmado |
-| Segunda anulación de la misma operación | 200 `{"ok":false,"motivo":"ya anulada"}` | 14 | probable |
+| Segunda anulación de la misma operación | 200 `{"ok":false,"motivo":"ya anulada"}` | 14, 10015, 11027, 11736, 12194, 12204, 12299 | confirmado |
 | No revisa saldo: puede dejar una cuenta en negativo | 200, saldo −50.000 o −50 | 122, 231 | confirmado |
 | Operación inexistente o con otro formato (`op-0003`, `OP-1`, `OP-0000`, `OP-00001`, un id `AC-`) | 404 `{"error":"E402","mensaje":"operación inexistente"}` | 126–128, 223–225 | confirmado |
-| ANULA no consume un número de operación | el siguiente depósito toma el OP que seguía | 129 | probable |
+| ANULA no consume un número de operación | la siguiente operación toma el OP que seguía | 18, 129, 11738, 12183, 12205 | confirmado |
 
 ### 3.9 HALT (comando oculto)
 
@@ -203,6 +206,21 @@ El orden medido es: E404 → E001 → E599 (solo con el servicio detenido) → E
 | 12. Límite | Monto de TRANSFER ≤ 100.000 | 422 `E506` | 110 (antes que E507) |
 | 13. Saldo | Saldo del origen ≥ monto | 422 `E507` | 16, 246 |
 | 14. Efecto y respuesta | Aplica el cambio y responde con el cuerpo exacto | 200 o 201 | 1–20 |
+
+### 3.12 Versión 2 del servicio (incidente de las 15:30)
+
+La última corrida del canario igual a v1 terminó a las 15:35:11 (`t2-s270`, ids 12495–12553) y la primera respuesta distinta fue a las 15:57:17 (12565). Las corridas del canario de las 16:01 y 16:05 (`t2-s283`, `t2-s284`) son idénticas entre sí: v2 es estable, y `t2-s284` es la línea base nueva. De los 18 pasos del canario que difieren, estos tres cambios son las causas; el resto son efectos (una TRANSFER que ya no pasa corre la numeración de las operaciones siguientes y deja a ANULA sin su OP).
+
+| Cambio | v1 | v2 | Log | Confianza |
+|---|---|---|---|---|
+| Saldo de CONSULTA como string: el entero dividido por 100 con dos decimales | `"saldo":40000` | `"saldo":"400.00"`; 0 → `"0.00"`, 991 → `"9.91"`, 9.999.999.999 → `"99999999.99"`, −1.000 → `"-10.00"` | 12635–12686 (dos corridas), 12780, 12787, 12789 | confirmado |
+| Los montos de entrada no cambian de escala ni aceptan decimales | `10.50` → E303 | `10.50` → E303 | 12784 | probable |
+| E510 responde 423 y agrega `intentos`: cuenta los E510 seguidos de la cuenta | 409 `{"error":"E510","mensaje":"cuenta bloqueada"}` | 423 `{"error":"E510","mensaje":"cuenta bloqueada","intentos":1}`; después 2, 3 | 12565, 12583, 12585, 12593, 12600, 12676, 12772–12774 | confirmado |
+| `intentos` vuelve a 1 después del depósito que desbloquea | — | 1 | 12779 | probable |
+| Límite por transferencia entre titulares distintos | 100.000 | 50.000: 50.000 pasa, 50.001, 75.000, 99.999 y 100.000 dan E506 | 12640, 12754–12764, 12854, 12856 | confirmado |
+| Entre cuentas del mismo titular sigue sin límite | 150.000 pasan | 150.000 pasan | 12685 | confirmado |
+
+Siguen igual en v2: la regla del bloqueo (3 rechazos, solo un depósito desbloquea), el titular exacto, ANULA, HALT y el resto de los 59 pasos del canario (tanda 021, ids 12554–12629; canario `t2-s283`).
 
 ## 4. Supuestos
 
