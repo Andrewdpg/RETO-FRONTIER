@@ -1,0 +1,35 @@
+{"hipotesis": "HALT con argumento '0': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT;0: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT;0;22"}
+{"hipotesis": "después de HALT;0: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT con argumento '2': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT;2: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT;2;16"}
+{"hipotesis": "después de HALT;2: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT con argumento '01': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT;01: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT;01;14"}
+{"hipotesis": "después de HALT;01: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT con argumento '10': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT;10: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT;10;84"}
+{"hipotesis": "después de HALT;10: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT con argumento '-1': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT;-1: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT;-1;19"}
+{"hipotesis": "después de HALT;-1: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT con argumento ' 1': secuencia propia; el reset también repara un HALT anterior (log 11138)", "reset": true}
+{"hipotesis": "HALT; 1: si cualquier número confirma, responde 503 E599 como HALT;1 (log 11134); si no, 409 E520", "m": "HALT; 1;19"}
+{"hipotesis": "después de HALT; 1: PING da 503 E599 si se detuvo (log 11135) o 200 pong si no", "m": "PING;64"}
+{"hipotesis": "HALT;1 con control mal calculado: secuencia propia", "reset": true}
+{"hipotesis": "HALT;1;20: si el control se valida antes, 400 E202 (log 2, 38) y no se detiene", "m": "HALT;1;20"}
+{"hipotesis": "después de HALT;1;20: PING 200 si no se detuvo", "m": "PING;64"}
+{"hipotesis": "orden de E599: secuencia propia", "reset": true}
+{"hipotesis": "repetición de log 11134: HALT;1;19 responde 503 E599 y detiene", "m": "HALT;1;19"}
+{"hipotesis": "detenido: sin token, ¿401 E001 (estación 2) o 503 E599?", "m": "PING;64", "auth": "none"}
+{"hipotesis": "detenido: ruta inexistente, ¿404 E404 (estación 1) o 503 E599?", "method": "POST", "path": "/nada"}
+{"hipotesis": "detenido: JSON inválido, ¿400 E100 o 503 E599?", "raw": "hola"}
+{"hipotesis": "detenido: sin m, ¿400 E102 o 503 E599?", "body": {}}
+{"hipotesis": "detenido: sin ;, ¿400 E103 o 503 E599?", "m": "PING"}
+{"hipotesis": "detenido: control incorrecto, ¿400 E202 o 503 E599?", "m": "ALTA;Ana;49"}
+{"hipotesis": "detenido: comando desconocido, ¿400 E301 o 503 E599?", "m": "XXXX;AC-0001;69"}
+{"hipotesis": "detenido: HALT;1 otra vez, ¿503 E599?", "m": "HALT;1;19"}
+{"hipotesis": "detenido: /health sin token, ¿401 E001 (log 53) o 200 ok (log 11136)?", "method": "GET", "path": "/health", "auth": "none"}
+{"hipotesis": "detenido: /health con token sigue en 200 ok (log 11136)", "method": "GET", "path": "/health"}
+{"hipotesis": "cierre: reset repara el HALT (log 11138)", "reset": true}
+{"hipotesis": "cierre: PING 200 pong después del reset", "m": "PING;64"}

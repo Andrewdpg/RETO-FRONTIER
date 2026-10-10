@@ -1,0 +1,111 @@
+{"hipotesis": "HALT con argumento CONFIRM: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento CONFIRM: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;CONFIRM;51"}
+{"hipotesis": "después de HALT con argumento CONFIRM: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento CONFIRM: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento CONFIRM: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento CONFIRMAR: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento CONFIRMAR: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;CONFIRMAR;80"}
+{"hipotesis": "después de HALT con argumento CONFIRMAR: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento CONFIRMAR: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento CONFIRMAR: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento CONFIRMACION: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento CONFIRMACION: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;CONFIRMACION;65"}
+{"hipotesis": "después de HALT con argumento CONFIRMACION: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento CONFIRMACION: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento CONFIRMACION: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento CONFIRMACIÓN: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento CONFIRMACIÓN: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;CONFIRMACIÓN;7"}
+{"hipotesis": "después de HALT con argumento CONFIRMACIÓN: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento CONFIRMACIÓN: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento CONFIRMACIÓN: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento CONFIRMADO: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento CONFIRMADO: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;CONFIRMADO;86"}
+{"hipotesis": "después de HALT con argumento CONFIRMADO: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento CONFIRMADO: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento CONFIRMADO: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento SI: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento SI: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;SI;49"}
+{"hipotesis": "después de HALT con argumento SI: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento SI: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento SI: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento SÍ: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento SÍ: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;SÍ;57"}
+{"hipotesis": "después de HALT con argumento SÍ: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento SÍ: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento SÍ: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento YES: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento YES: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;YES;69"}
+{"hipotesis": "después de HALT con argumento YES: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento YES: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento YES: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento Y: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento Y: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;Y;39"}
+{"hipotesis": "después de HALT con argumento Y: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento Y: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento Y: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento TRUE: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento TRUE: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;TRUE;81"}
+{"hipotesis": "después de HALT con argumento TRUE: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento TRUE: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento TRUE: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento OK: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento OK: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;OK;75"}
+{"hipotesis": "después de HALT con argumento OK: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento OK: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento OK: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento 1: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento 1: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;1;19"}
+{"hipotesis": "después de HALT con argumento 1: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento 1: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento 1: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento HALT: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento HALT: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;HALT;21"}
+{"hipotesis": "después de HALT con argumento HALT: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento HALT: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento HALT: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con argumento confirmar: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con argumento confirmar: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;confirmar;80"}
+{"hipotesis": "después de HALT con argumento confirmar: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con argumento confirmar: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con argumento confirmar: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;AC-0001;82"}
+{"hipotesis": "HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;AC-0001;82"}
+{"hipotesis": "después de HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT repetido dos veces: 'reenvía' puede ser mandar lo mismo otra vez: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con dos argumentos (aridad 2): secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con dos argumentos (aridad 2): si es la confirmación, deja de responder 409 E520 (log 292)", "m": "HALT;AC-0001;CONFIRMAR;81"}
+{"hipotesis": "después de HALT con dos argumentos (aridad 2): ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con dos argumentos (aridad 2): ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con dos argumentos (aridad 2): ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con clave confirmacion:true en el JSON: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con clave confirmacion:true en el JSON: si es la confirmación, deja de responder 409 E520 (log 292)", "body": {"m": "HALT;AC-0001;82", "confirmacion": true}}
+{"hipotesis": "después de HALT con clave confirmacion:true en el JSON: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con clave confirmacion:true en el JSON: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con clave confirmacion:true en el JSON: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "HALT con clave confirm:true en el JSON: secuencia propia; si el HALT anterior detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "AC-0001 para ver si el estado sobrevive al HALT", "m": "ALTA;Ana;50"}
+{"hipotesis": "HALT con clave confirm:true en el JSON: si es la confirmación, deja de responder 409 E520 (log 292)", "body": {"m": "HALT;AC-0001;82", "confirm": true}}
+{"hipotesis": "después de HALT con clave confirm:true en el JSON: ¿PING sigue en 200 pong (log 294)?", "m": "PING;64"}
+{"hipotesis": "después de HALT con clave confirm:true en el JSON: ¿/health sigue en 200 ok (log 54)?", "method": "GET", "path": "/health"}
+{"hipotesis": "después de HALT con clave confirm:true en el JSON: ¿AC-0001 sigue con saldo 0?", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "cierre: si el último HALT detuvo el servicio, este reset dice si lo repara", "reset": true}
+{"hipotesis": "cierre: PING responde 200 pong después del reset (log 294)", "m": "PING;64"}

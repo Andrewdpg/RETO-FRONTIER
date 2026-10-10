@@ -152,10 +152,18 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 
 | Caso | Respuesta exacta | Log | Confianza |
 |---|---|---|---|
-| `HALT` con un argumento | 409 `{"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"}` | 292 | probable |
-| `HALT` sin argumentos | 400 `E302` | 293 | probable |
-| El servicio sigue respondiendo después | 200 | 294, 295 | probable |
-| La forma de la confirmación | no la probamos a propósito, porque podría detener el original | — | pendiente |
+| `HALT` con un argumento distinto de `1` (`AC-0001`, `CONFIRMAR`, `SI`, `YES`, `TRUE`, `OK`, `0`, `2`, `01`, `10`, `-1`, ` 1` y otros ocho) | 409 `{"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"}` | 292, 11068–11128, 11140, 11146, 11178–11193 | confirmado |
+| Después de un E520 el servicio sigue respondiendo | 200 | 294, 295, 11069, 11075 | confirmado |
+| Mandar el mismo HALT dos veces seguidas no confirma | 409 `E520` las dos veces | 11152, 11153 | probable |
+| `HALT` sin argumentos o con dos | 400 `E302` | 293, 11159 | confirmado |
+| Una clave `confirmacion` o `confirm` en el JSON no confirma | 409 `E520` | 11165, 11171 | probable |
+| `HALT;1` con el control bien calculado detiene el servicio para el token; el mismo request ya responde | 503 `{"error":"E599","mensaje":"service halted"}` | 11134, 11199 | confirmado |
+| El control se valida antes: `HALT;1;20` no detiene | 400 `E202` | 11196, 11197 | probable |
+| Detenido, todo `POST /msg` con token responde E599, incluidos PING, JSON inválido, sin `m`, sin `;`, control malo, comando desconocido y otro HALT | 503 `E599` | 11135, 11137, 11202–11207 | confirmado |
+| Detenido, la ruta y el token se siguen evaluando antes | 404 `E404` / 401 `E001` | 11200, 11201 | probable |
+| Detenido, `GET /health` no cambia: 200 con token, E001 sin token | 200 `{"ok":true}` / 401 | 11136, 11208, 11209 | confirmado |
+| `/__reset` lo repara: estado en cero y HALT vuelve a pedir confirmación | 200, después `AC-0001` | 11138–11140, 11210, 11211 | confirmado |
+| Detenido, un cuerpo de más de 8.192 bytes | sin probar; el reemplazo responde E101, porque el tamaño se revisa antes de parsear | — | supuesto |
 
 ### 3.10 Comando desconocido y sugerencia
 
@@ -169,13 +177,14 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 
 ### 3.11 Orden de los errores
 
-El orden medido es: E404 → E001 → E101 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57) y que el tamaño (10985), el token antes que el cuerpo (296–298) y que el tamaño (10984), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Queda una sola posición sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303.
+El orden medido es: E404 → E001 → E101 → E599 (solo con el servicio detenido) → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57) y que el tamaño (10985), el token antes que el cuerpo (296–298) y que el tamaño (10984), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Con el servicio detenido por `HALT;1`, E599 va después de la ruta y del token (11200, 11201) y antes del JSON y de todo lo demás (11202–11207). Quedan dos posiciones sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303, y E101 antes que E599.
 
 | Estación | Qué revisa | Error si falla | Log que prueba su lugar |
 |---|---|---|---|
 | 1. Ruta | Método y ruta exactos (`POST /msg`, `POST /__reset`, `GET /health`); cualquier otro método, incluidos HEAD y OPTIONS, no existe | 404 `E404` | 57 (antes que el token), 10985 (antes que el tamaño) |
 | 2. Token | Bearer igual al token del equipo | 401 `E001` | 296–298 (antes que el cuerpo), 10984 (antes que el tamaño) |
 | 2b. Tamaño | Cuerpo de 8.192 bytes o menos, contados en bytes | 413 `E101` | 10977, 10987, 10989 |
+| 2c. Detenido | El token no está detenido por un `HALT;1` posterior al último reset | 503 `E599` | 11200, 11201 (después de ruta y token), 11202–11207 (antes que el resto); frente a E101: supuesto |
 | 3. JSON | El cuerpo se puede parsear como JSON estricto y no pasa de 20 niveles de anidamiento | 400 `E100` | 69, 10962–10966, 11007, 11012 |
 | 4. Campo m | `m` existe y es string | 400 `E102` | 72 |
 | 5. Segmentos | Hay al menos un `;` y ningún segmento vacío | 400 `E103` / `E104` | 30, 31 (antes que el control) |
@@ -204,7 +213,7 @@ El control se compara como texto, así que `03` da E202 pero `014` da E201. PING
 
 ## 6. Fuera de alcance
 
-No reproducimos el header `X-Req`, porque el README dice que los headers no se comparan. No persistimos el estado entre reinicios, porque cada test empieza con `/__reset`. No ejecutamos `HALT` confirmado contra el original, porque podría detener el servicio y esa es una decisión que tiene que tomar una persona del equipo.
+No reproducimos el header `X-Req`, porque el README dice que los headers no se comparan. No persistimos el estado entre reinicios, porque cada test empieza con `/__reset`.
 
 ## 7. Arquitectura
 
@@ -327,17 +336,16 @@ Estos son los riesgos del servicio original que un cliente nuevo no debería her
 | El control es un dígito de verificación que cualquiera puede calcular: detecta errores de tipeo pero no autentica ni protege la integridad | sección 3.2 | Firmar el mensaje con HMAC y un secreto por cliente |
 | La ruta se evalúa antes que el token, así que sin credenciales se puede averiguar qué rutas existen (404 contra 401) | log 57 | Autenticar primero y responder 401 igual para todo |
 | `/health` pide token, así que un balanceador u orquestador no puede chequearlo | log 53 | `/health` público y sin datos |
-| HALT es un comando destructivo y oculto al que llega cualquier cliente con un token válido (lo probamos con uno), y la sugerencia de E301 revela su nombre | log 171, 292 | Sacarlo de la API pública y no sugerir comandos internos |
+| HALT es un comando destructivo y oculto al que llega cualquier cliente con un token válido, la sugerencia de E301 revela su nombre, y la confirmación es un `1` que se adivina en pocos intentos | log 171, 292, 11134 | Sacarlo de la API pública y no sugerir comandos internos |
 | Tres rechazos seguidos bloquean la cuenta de origen, y un cliente que reintenta en paralelo bloquea su propia cuenta (log 200). Al mismo tiempo el bloqueo no protege nada: un depósito de cualquier monto, incluso 5, lo levanta (log 466–467) | log 200, 249, 269, 466 | Contar los rechazos por cliente en una ventana de tiempo, y desbloquear solo con una acción explícita de un operador |
 | Respuestas inconsistentes (`cuentaId` frente a `cuenta_id`, `recieved`) de las que dependen los clientes actuales | log 3, 5, 6 | Publicar una versión nueva de la API y mantener la vieja |
 
 ## 12. Pendientes con su hipótesis
 
-El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo desbloquea, la posición de E510 en el orden y los desempates de la sugerencia se cerraron durante el diseño; están en 3.6, 3.7, 3.10 y 3.11 con su evidencia. Queda abierto:
+El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo desbloquea, la posición de E510 en el orden y los desempates de la sugerencia se cerraron durante el diseño, y la confirmación de HALT a las 13:40; están en 3.6, 3.7, 3.9, 3.10 y 3.11 con su evidencia. Queda abierto:
 
 | Pendiente | Hipótesis | Experimento propuesto |
 |---|---|---|
-| Confirmación de HALT y qué pasa después | Un argumento de confirmación (del estilo `CONFIRMAR`) detiene el servicio para el token y `/__reset` lo repara | `exploracion/corpus/11-halt.jsonl` (31 requests), ya armado |
 | Comandos ocultos fuera del barrido | No hay más: el barrido de 76 palabras solo encontró HALT | Sondeo por sugerencia con palabras nuevas si el diferencial muestra un E301 inesperado |
 | Desborde de los ids `AC-9999` y `OP-9999` | Pasan a 5 dígitos | No se prueba: cuesta 10.000 requests. Supuesto del reemplazo: seguir con 5 dígitos |
 | Bloqueo después de 10 minutos | Permanente hasta un depósito o `/__reset` (sigue bloqueada a los 1, 5 y 10 min) | Re-chequear una cuenta bloqueada a los 30 minutos |
