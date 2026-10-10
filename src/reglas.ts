@@ -2,7 +2,9 @@
 // Si el servicio cambia, se edita una fila de COMANDOS o se reordena ESTACIONES; el pipeline no se toca.
 import { controlEsperado } from './control.ts';
 
-type Cuenta = { id: string; nombre: string; saldo: number; rechazosSeguidos: number };
+// intentosBloqueada: cuántos E510 seguidos respondió la cuenta (log 12772–12774). No lo reinician recibir una transferencia
+// ni ANULA (log 968–970, 991–993); el depósito que desbloquea sí (log 12779).
+type Cuenta = { id: string; nombre: string; saldo: number; rechazosSeguidos: number; intentosBloqueada: number };
 type Operacion = { id: string; tipo: 'DEPOSITO' | 'TRANSFER'; origen?: Cuenta; destino: Cuenta; monto: number; anulada: boolean };
 // detenido: lo prende HALT;1 y solo /__reset lo apaga, porque reset crea un estado nuevo (log 11138–11140, 11210).
 export type Estado = { cuentas: Map<string, Cuenta>; operaciones: Map<string, Operacion>; detenido: boolean };
@@ -21,7 +23,7 @@ const ERRORES = {
   E304: [400, 'origen y destino iguales'],
   E401: [404, 'cuenta inexistente'],
   E402: [404, 'operación inexistente'],
-  E510: [409, 'cuenta bloqueada'],
+  E510: [423, 'cuenta bloqueada'], // 423 desde la v2 (log 968)
   E506: [422, 'límite excedido'],
   E507: [422, 'saldo insuficiente'],
   E520: [409, 'operación destructiva: detiene el servicio; reenvía con confirmación'],
@@ -51,6 +53,13 @@ type Comando = {
   efecto: (p: Pedido, e: Estado) => Respuesta;
 };
 
+// Desde la v2 CONSULTA muestra el saldo en unidades con dos decimales, armado como texto para no pasar por floats:
+// 991 → "9.91", -50 → "-0.50" (log 518, 640, 723, 745, 891).
+function comoDecimal(saldo: number): string {
+  const digitos = String(Math.abs(saldo)).padStart(3, '0');
+  return `${saldo < 0 ? '-' : ''}${digitos.slice(0, -2)}.${digitos.slice(-2)}`;
+}
+
 const nuevoId = (prefijo: string, n: number) => `${prefijo}-${String(n).padStart(4, '0')}`;
 
 function registrar(e: Estado, op: Omit<Operacion, 'id' | 'anulada'>): Respuesta {
@@ -66,7 +75,7 @@ const COMANDOS: Record<string, Comando> = {
     args: ['texto'], validaControl: true,
     efecto: (p, e) => {
       const id = nuevoId('AC', e.cuentas.size + 1);
-      e.cuentas.set(id, { id, nombre: p.args[0], saldo: 0, rechazosSeguidos: 0 });
+      e.cuentas.set(id, { id, nombre: p.args[0], saldo: 0, rechazosSeguidos: 0, intentosBloqueada: 0 });
       return [201, { cuentaId: id }]; // camelCase aquí, snake_case en CONSULTA (log 3, 5)
     },
   },
@@ -84,7 +93,7 @@ const COMANDOS: Record<string, Comando> = {
   },
   CONSULTA: {
     args: ['cuenta'], validaControl: true,
-    efecto: (p) => [200, { cuenta_id: p.cuentas.cuenta!.id, saldo: p.cuentas.cuenta!.saldo }],
+    efecto: (p) => [200, { cuenta_id: p.cuentas.cuenta!.id, saldo: comoDecimal(p.cuentas.cuenta!.saldo) }],
   },
   DEPOSITO: {
     args: ['cuenta', 'monto'], validaControl: true,
@@ -92,6 +101,7 @@ const COMANDOS: Record<string, Comando> = {
       const cuenta = p.cuentas.cuenta!;
       cuenta.saldo += p.monto;
       cuenta.rechazosSeguidos = 0; // el depósito desbloquea (log 250, 323–324, 466–467)
+      cuenta.intentosBloqueada = 0; // y el próximo E510 vuelve a decir 1 (log 12779, visto una vez)
       return registrar(e, { tipo: 'DEPOSITO', destino: cuenta, monto: p.monto });
     },
   },
@@ -112,8 +122,9 @@ const COMANDOS: Record<string, Comando> = {
   TRANSFER: {
     args: ['origen', 'destino', 'monto'], validaControl: true,
     limite: {
-      monto: 100_000, // 100.000 pasa (log 155–157)
+      monto: 50_000, // v2: 50.000 pasa y 50.001 da E506 (log 12758, 12856, 12854). En la v1 era 100.000 (log 155–157)
       // Mismo titular: nombre del ALTA idéntico, distinguiendo mayúsculas (log 11782, 11794; Ana→Beto 11788, Ana→ana 11800).
+      // En la v2 sigue sin límite (log 12604, 12685).
       // El saldo se sigue revisando (log 11575, 11805). Supuesto sin medir: como no hay E506, no suma al bloqueo.
       salvo: (p) => p.cuentas.origen!.nombre === p.cuentas.destino!.nombre,
     },
@@ -196,8 +207,11 @@ const ESTACIONES: ((p: Pedido, e: Estado) => Respuesta | undefined)[] = [
     const i = indice(p.fila!, 'operacion');
     if (i >= 0 && !(p.operacion = e.operaciones.get(p.args[i]))) return error('E402');
   },
-  // 11. Bloqueo del origen
-  (p) => ((p.cuentas.origen?.rechazosSeguidos ?? 0) >= RECHAZOS_PARA_BLOQUEO ? error('E510') : undefined),
+  // 11. Bloqueo del origen; cada E510 suma un intento a la cuenta (log 968, 970)
+  (p) => {
+    const o = p.cuentas.origen;
+    if (o && o.rechazosSeguidos >= RECHAZOS_PARA_BLOQUEO) return error('E510', { intentos: ++o.intentosBloqueada });
+  },
   // 12. Límite por operación
   (p) => {
     const l = p.fila!.limite;
@@ -213,8 +227,10 @@ export const servicioDetenido = (e: Estado): Respuesta | undefined => (e.detenid
 // Recibe un m ya validado como string (estaciones 1–4 en server.ts). Síncrono de punta a punta (§7.3).
 export function procesar(m: string, e: Estado): Respuesta {
   const segmentos = m.split(';');
-  // El nombre va en mayúsculas sin recortar espacios (log 11, 34, 35, 86, 91).
-  const nombre = segmentos[0].toUpperCase();
+  // El nombre va en mayúsculas sin recortar espacios (log 11, 34, 35, 86, 91), y solo de a–z: toUpperCase
+  // convertiría ſ en S e ı en I, y el original las deja y responde E301 (log 1239, 1241, 1261, 1263).
+  // La sugerencia se calcula sobre este mismo texto.
+  const nombre = segmentos[0].replace(/[a-z]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 32));
   const p: Pedido = {
     segmentos, nombre, args: segmentos.slice(1, -1), fila: Object.hasOwn(COMANDOS, nombre) ? COMANDOS[nombre] : undefined,
     cuentas: {}, monto: 0,

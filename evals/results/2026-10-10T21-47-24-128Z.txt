@@ -1,0 +1,10 @@
+2026-10-10T21:47:24.128Z contra http://localhost:8080
+pasos iguales: 1120/1122 (99.8 %)
+secuencias iguales: 106/108 (98.1 %)
+solo seqs grabadas desde 2026-10-10T20:57:00Z
+saltadas: 0 secuencias con par, 0 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.5 ms, p95 0.9 ms, máx 52.9 ms
+
+id | seq | esperado | obtenido
+1289 | t1-s89 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 400 {"error":"E301","mensaje":"comando desconocido "}
+1314 | t1-s91 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 400 {"error":"E301","mensaje":"comando desconocido "}
