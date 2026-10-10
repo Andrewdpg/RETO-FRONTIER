@@ -1,0 +1,16 @@
+2026-10-10T19:00:53.231Z contra http://localhost:8080
+pasos iguales: 1718/1728 (99.4 %)
+secuencias iguales: 87/89 (97.8 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+
+id | seq | esperado | obtenido
+11134 | t2-s37 | 503 {"error":"E599","mensaje":"service halted"} | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"}
+11135 | t2-s37 | 503 {"error":"E599","mensaje":"service halted"} | 200 {"pong":true}
+11137 | t2-s37 | 503 {"error":"E599","mensaje":"service halted"} | 200 {"cuenta_id":"AC-0001","saldo":0}
+11199 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"}
+11202 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 400 {"error":"E100","mensaje":"json inválido"}
+11203 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 400 {"error":"E102","mensaje":"falta m"}
+11204 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 400 {"error":"E103","mensaje":"falta control"}
+11205 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 400 {"error":"E202","mensaje":"control inválido"}
+11206 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 400 {"error":"E301","mensaje":"comando desconocido "}
+11207 | t2-s52 | 503 {"error":"E599","mensaje":"service halted"} | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"}

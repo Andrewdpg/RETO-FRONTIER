@@ -1,0 +1,6 @@
+2026-10-10T19:06:13.137Z contra http://localhost:8080
+pasos iguales: 1728/1728 (100.0 %)
+secuencias iguales: 89/89 (100.0 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+
+id | seq | esperado | obtenido

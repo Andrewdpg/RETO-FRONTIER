@@ -1,0 +1,1360 @@
+2026-10-10T18:37:59.089Z contra http://localhost:8080
+pasos iguales: 122/1476 (8.3 %)
+secuencias iguales: 3/59 (5.1 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+
+id | seq | esperado | obtenido
+1 | t1-s01-ejemplos | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+2 | t1-s01-ejemplos | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+3 | t1-s01-ejemplos | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+4 | t1-s01-ejemplos | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+5 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {"todo":"estaciones 5–14"}
+6 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+7 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+8 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0002","saldo":40000} | 501 {"todo":"estaciones 5–14"}
+9 | t1-s01-ejemplos | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+10 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+11 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0001","saldo":110000} | 501 {"todo":"estaciones 5–14"}
+12 | t1-s01-ejemplos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+13 | t1-s01-ejemplos | 200 {"ok":true,"anulada":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+14 | t1-s01-ejemplos | 200 {"ok":false,"motivo":"ya anulada"} | 501 {"todo":"estaciones 5–14"}
+15 | t1-s01-ejemplos | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+16 | t1-s01-ejemplos | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+17 | t1-s01-ejemplos | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+18 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+19 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0002","saldo":40700} | 501 {"todo":"estaciones 5–14"}
+20 | t1-s01-ejemplos | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+21 | t1-s02-integridad | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+22 | t1-s02-integridad | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+23 | t1-s02-integridad | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+24 | t1-s02-integridad | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+25 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+26 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+27 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+28 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+29 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+30 | t1-s02-integridad | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+31 | t1-s02-integridad | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+32 | t1-s02-integridad | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+33 | t1-s02-integridad | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+34 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+35 | t1-s02-integridad | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {"todo":"estaciones 5–14"}
+36 | t1-s02-integridad | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+37 | t1-s02-integridad | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+38 | t1-s02-integridad | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+39 | t1-s02-integridad | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+40 | t1-s02-integridad | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+41 | t1-s02-integridad | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+42 | t1-s02-integridad | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+43 | t1-s02-integridad | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+44 | t1-s02-integridad | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+45 | t1-s02-integridad | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+46 | t1-s02-integridad | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+47 | t1-s02-integridad | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+48 | t1-s02-integridad | 201 {"cuentaId":"AC-0004"} | 501 {"todo":"estaciones 5–14"}
+49 | t1-s02-integridad | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+68 | t1-s03-entrada | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+79 | t1-s03-entrada | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+80 | t1-s03-entrada | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+81 | t1-s04-ping-sugerencia | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+82 | t1-s04-ping-sugerencia | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+83 | t1-s04-ping-sugerencia | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+84 | t1-s04-ping-sugerencia | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+85 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+86 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {"todo":"estaciones 5–14"}
+87 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {"todo":"estaciones 5–14"}
+88 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"DEPOSITO"} | 501 {"todo":"estaciones 5–14"}
+89 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+90 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+91 | t1-s04-ping-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {"todo":"estaciones 5–14"}
+92 | t1-s05-montos-orden | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+93 | t1-s05-montos-orden | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+94 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+95 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+96 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+97 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+98 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+99 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+100 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+101 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+102 | t1-s05-montos-orden | 200 {"cuenta_id":"AC-0001","saldo":1000000} | 501 {"todo":"estaciones 5–14"}
+103 | t1-s05-montos-orden | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+104 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+105 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+106 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+107 | t1-s05-montos-orden | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+108 | t1-s05-montos-orden | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+109 | t1-s05-montos-orden | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+110 | t1-s05-montos-orden | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+111 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+112 | t1-s05-montos-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+113 | t1-s05-montos-orden | 200 {"cuenta_id":"AC-0002","saldo":100000} | 501 {"todo":"estaciones 5–14"}
+114 | t1-s05-montos-orden | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+115 | t1-s05-montos-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+116 | t1-s06-anula | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+117 | t1-s06-anula | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+118 | t1-s06-anula | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+119 | t1-s06-anula | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+120 | t1-s06-anula | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+121 | t1-s06-anula | 200 {"ok":true,"anulada":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+122 | t1-s06-anula | 200 {"cuenta_id":"AC-0002","saldo":-50000} | 501 {"todo":"estaciones 5–14"}
+123 | t1-s06-anula | 200 {"cuenta_id":"AC-0001","saldo":100000} | 501 {"todo":"estaciones 5–14"}
+124 | t1-s06-anula | 200 {"ok":true,"anulada":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+125 | t1-s06-anula | 200 {"cuenta_id":"AC-0001","saldo":50000} | 501 {"todo":"estaciones 5–14"}
+126 | t1-s06-anula | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+127 | t1-s06-anula | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+128 | t1-s06-anula | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+129 | t1-s06-anula | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+130 | t1-s07-bordes | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+131 | t1-s07-bordes | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+132 | t1-s07-bordes | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+133 | t1-s07-bordes | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+134 | t1-s07-bordes | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+135 | t1-s07-bordes | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+136 | t1-s07-bordes | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+137 | t1-s07-bordes | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+138 | t1-s07-bordes | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+139 | t1-s07-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+140 | t1-s07-bordes | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+141 | t1-s07-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+142 | t1-s07-bordes | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+143 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+144 | t1-s07-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+145 | t1-s07-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+146 | t1-s07-bordes | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {"todo":"estaciones 5–14"}
+147 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {"todo":"estaciones 5–14"}
+148 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {"todo":"estaciones 5–14"}
+149 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {"todo":"estaciones 5–14"}
+150 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"DEPOSITO"} | 501 {"todo":"estaciones 5–14"}
+151 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+152 | t1-s07-bordes | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {"todo":"estaciones 5–14"}
+153 | t1-s07-bordes | 201 {"cuentaId":"AC-0004"} | 501 {"todo":"estaciones 5–14"}
+154 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+155 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+156 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+157 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+158 | t1-s08-ocultos | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+159 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+160 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+161 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+162 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+163 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+164 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+165 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+166 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+167 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+168 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+169 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+170 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {"todo":"estaciones 5–14"}
+171 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {"todo":"estaciones 5–14"}
+172 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+173 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+174 | t1-s08-ocultos | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+205 | t1-s12-bordes | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+206 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+207 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+208 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+209 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+210 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+211 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+212 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+213 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+214 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+215 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+216 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+217 | t1-s12-bordes | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+218 | t1-s12-bordes | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {"todo":"estaciones 5–14"}
+219 | t1-s12-bordes | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+220 | t1-s12-bordes | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+221 | t1-s12-bordes | 201 {"cuentaId":"AC-0004"} | 501 {"todo":"estaciones 5–14"}
+222 | t1-s12-bordes | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+223 | t1-s12-bordes | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+224 | t1-s12-bordes | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+225 | t1-s12-bordes | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+226 | t1-s14-anula-deposito | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+227 | t1-s14-anula-deposito | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+228 | t1-s14-anula-deposito | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+229 | t1-s14-anula-deposito | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+230 | t1-s14-anula-deposito | 200 {"ok":true,"anulada":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+231 | t1-s14-anula-deposito | 200 {"cuenta_id":"AC-0001","saldo":-50} | 501 {"todo":"estaciones 5–14"}
+232 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {"todo":"estaciones 5–14"}
+233 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {"todo":"estaciones 5–14"}
+234 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+235 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+236 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {"todo":"estaciones 5–14"}
+237 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+238 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+239 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+240 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {"todo":"estaciones 5–14"}
+241 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {"todo":"estaciones 5–14"}
+242 | t1-s13-sugerencia | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+243 | t1-s15-bloqueo-serie | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+244 | t1-s15-bloqueo-serie | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+245 | t1-s15-bloqueo-serie | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+246 | t1-s15-bloqueo-serie | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+247 | t1-s15-bloqueo-serie | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+248 | t1-s15-bloqueo-serie | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+249 | t1-s15-bloqueo-serie | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+250 | t1-s15-bloqueo-serie | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+251 | t1-s15-bloqueo-serie | 200 {"cuenta_id":"AC-0001","saldo":105} | 501 {"todo":"estaciones 5–14"}
+252 | t1-s15-bloqueo-serie | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+253 | t1-s15-bloqueo-serie | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+254 | t1-s15-bloqueo-serie | 200 {"ok":true,"anulada":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+255 | t1-s16-bloqueo-cuenta | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+256 | t1-s16-bloqueo-cuenta | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+257 | t1-s16-bloqueo-cuenta | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+258 | t1-s16-bloqueo-cuenta | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+259 | t1-s16-bloqueo-cuenta | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+260 | t1-s16-bloqueo-cuenta | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+261 | t1-s16-bloqueo-cuenta | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+262 | t1-s16-bloqueo-cuenta | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+263 | t1-s17-bloqueo-e506 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+264 | t1-s17-bloqueo-e506 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+265 | t1-s17-bloqueo-e506 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+266 | t1-s17-bloqueo-e506 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+267 | t1-s17-bloqueo-e506 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+268 | t1-s17-bloqueo-e506 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+269 | t1-s17-bloqueo-e506 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+270 | t1-s18-monto-max | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+271 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+272 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+273 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+274 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+275 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {"todo":"estaciones 5–14"}
+276 | t1-s18-monto-max | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {"todo":"estaciones 5–14"}
+277 | t1-s18-monto-max | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+278 | t1-s18-monto-max | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+279 | t1-s18-monto-max | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+280 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+281 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+282 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+283 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+284 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+285 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+286 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+287 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+288 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+289 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+290 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+291 | t1-s19-oculto-sondeo | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+292 | t1-s19-oculto-sondeo | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"} | 501 {"todo":"estaciones 5–14"}
+293 | t1-s20-halt | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+294 | t1-s20-halt | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+295 | t1-s20-halt | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+299 | t1-s22-bloqueo-orden | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+300 | t1-s22-bloqueo-orden | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+301 | t1-s22-bloqueo-orden | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+302 | t1-s22-bloqueo-orden | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+303 | t1-s22-bloqueo-orden | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+304 | t1-s22-bloqueo-orden | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+305 | t1-s22-bloqueo-orden | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+306 | t1-s22-bloqueo-orden | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+307 | t1-s22-bloqueo-orden | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+308 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+309 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+310 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+311 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+312 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+313 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0003"} | 501 {"todo":"estaciones 5–14"}
+314 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+315 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+316 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+317 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+318 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+319 | t1-s23-bloqueo-alcance | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+320 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+321 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+322 | t1-s23-bloqueo-alcance | 200 {"cuenta_id":"AC-0001","saldo":110} | 501 {"todo":"estaciones 5–14"}
+323 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {"todo":"estaciones 5–14"}
+324 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {"todo":"estaciones 5–14"}
+325 | t1-s23-bloqueo-alcance | 200 {"ok":true,"anulada":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+326 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {"todo":"estaciones 5–14"}
+327 | t1-s24-rechazo-e303 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+328 | t1-s24-rechazo-e303 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+329 | t1-s24-rechazo-e303 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+330 | t1-s24-rechazo-e303 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+331 | t1-s24-rechazo-e303 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+332 | t1-s24-rechazo-e303 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+333 | t1-s24-rechazo-e303 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+334 | t1-s24-rechazo-e304 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+335 | t1-s24-rechazo-e304 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+336 | t1-s24-rechazo-e304 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+337 | t1-s24-rechazo-e304 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+338 | t1-s24-rechazo-e304 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+339 | t1-s24-rechazo-e304 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {"todo":"estaciones 5–14"}
+340 | t1-s24-rechazo-e304 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+341 | t1-s24-rechazo-e401 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+342 | t1-s24-rechazo-e401 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+343 | t1-s24-rechazo-e401 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+344 | t1-s24-rechazo-e401 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+345 | t1-s24-rechazo-e401 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+346 | t1-s24-rechazo-e401 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+347 | t1-s24-rechazo-e401 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+348 | t1-s24-rechazo-mixto | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+349 | t1-s24-rechazo-mixto | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+350 | t1-s24-rechazo-mixto | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+351 | t1-s24-rechazo-mixto | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+352 | t1-s24-rechazo-mixto | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+353 | t1-s24-rechazo-mixto | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+354 | t1-s24-rechazo-mixto | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+355 | t1-s24-rechazo-mixto | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+356 | t1-s24-rechazo-deposito | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+357 | t1-s24-rechazo-deposito | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+358 | t1-s24-rechazo-deposito | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+359 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+360 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+361 | t1-s24-rechazo-deposito | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+362 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+363 | t1-s24-rechazo-deposito | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+364 | t1-s26-monto-tope | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+365 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+366 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+367 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+368 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+369 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {"todo":"estaciones 5–14"}
+370 | t1-s26-monto-tope | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+371 | t1-s26-monto-tope | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+372 | t1-s26-monto-tope | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+373 | t1-s26-monto-tope | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+374 | t1-s26-monto-tope | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {"todo":"estaciones 5–14"}
+375 | t1-s27-saldo-grande | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+376 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+377 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+378 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+379 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":3000000000} | 501 {"todo":"estaciones 5–14"}
+380 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+381 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {"todo":"estaciones 5–14"}
+382 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":5000000000} | 501 {"todo":"estaciones 5–14"}
+383 | t1-s28-limite-diario | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+384 | t1-s28-limite-diario | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+385 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+386 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+387 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+388 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+389 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {"todo":"estaciones 5–14"}
+390 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {"todo":"estaciones 5–14"}
+391 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {"todo":"estaciones 5–14"}
+392 | t1-s28-limite-diario | 200 {"cuenta_id":"AC-0001","saldo":400000} | 501 {"todo":"estaciones 5–14"}
+393 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {"todo":"estaciones 5–14"}
+394 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {"todo":"estaciones 5–14"}
+395 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+396 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+397 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {"todo":"estaciones 5–14"}
+398 | t1-s29-sugerencia-empates | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {"todo":"estaciones 5–14"}
+399 | t1-s30-ocultos-admin | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+400 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+401 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+402 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+403 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+404 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+405 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+406 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+407 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+408 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+409 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+410 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+411 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+412 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+413 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+414 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+415 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+416 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+417 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+418 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+419 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+420 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+421 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+422 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+423 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+424 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+425 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+426 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+427 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+428 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+429 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+430 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+431 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+432 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+433 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+434 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+435 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+436 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+437 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+438 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+439 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+440 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+441 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+442 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+443 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+444 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+445 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+446 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+447 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+448 | t1-s32-desbloqueo-entrante | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+449 | t1-s32-desbloqueo-entrante | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+450 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+451 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+452 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+453 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+454 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+455 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+456 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+457 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+458 | t1-s33-desbloqueo-deposito | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+459 | t1-s33-desbloqueo-deposito | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+460 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+461 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+462 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+463 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+464 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+465 | t1-s33-desbloqueo-deposito | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+466 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+467 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+468 | t1-s34-desbloqueo-anula | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+469 | t1-s34-desbloqueo-anula | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+470 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+471 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+472 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+473 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+474 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+475 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+476 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+477 | t1-s34-desbloqueo-anula | 200 {"ok":true,"anulada":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+478 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+479 | t1-s35-racha-entrante | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+480 | t1-s35-racha-entrante | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+481 | t1-s35-racha-entrante | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+482 | t1-s35-racha-entrante | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+483 | t1-s35-racha-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+484 | t1-s35-racha-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+485 | t1-s35-racha-entrante | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+486 | t1-s35-racha-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+487 | t1-s35-racha-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+488 | t1-s25-bloqueo-tiempo | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+489 | t1-s25-bloqueo-tiempo | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+490 | t1-s25-bloqueo-tiempo | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+491 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+492 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+493 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+494 | t1-s25-bloqueo-tiempo | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {"todo":"estaciones 5–14"}
+10002 | t2-s1 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10003 | t2-s1 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10004 | t2-s1 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+10005 | t2-s1 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+10006 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {"todo":"estaciones 5–14"}
+10007 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {"todo":"estaciones 5–14"}
+10008 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {"todo":"estaciones 5–14"}
+10009 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 501 {"todo":"estaciones 5–14"}
+10010 | t2-s1 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {"todo":"estaciones 5–14"}
+10011 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+10012 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 501 {"todo":"estaciones 5–14"}
+10013 | t2-s1 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {"todo":"estaciones 5–14"}
+10014 | t2-s1 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {"todo":"estaciones 5–14"}
+10015 | t2-s1 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {"todo":"estaciones 5–14"}
+10016 | t2-s1 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10017 | t2-s1 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {"todo":"estaciones 5–14"}
+10018 | t2-s1 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10019 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {"todo":"estaciones 5–14"}
+10020 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 501 {"todo":"estaciones 5–14"}
+10021 | t2-s1 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+10023 | t2-s2 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10038 | t2-s2 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10048 | t2-s2 | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+10049 | t2-s2 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10050 | t2-s2 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10051 | t2-s2 | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+10052 | t2-s2 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+10053 | t2-s2 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {"todo":"estaciones 5–14"}
+10054 | t2-s2 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10056 | t2-s3 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+10057 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10058 | t2-s3 | 201 {"cuentaId":"AC-0002"} | 501 {"todo":"estaciones 5–14"}
+10059 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10060 | t2-s3 | 400 {"error":"E103","mensaje":"falta control"} | 501 {"todo":"estaciones 5–14"}
+10061 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10062 | t2-s3 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10063 | t2-s3 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10064 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10065 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10066 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10067 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10068 | t2-s3 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {"todo":"estaciones 5–14"}
+10069 | t2-s3 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {"todo":"estaciones 5–14"}
+10071 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10072 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10073 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10074 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10075 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10076 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10077 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10078 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10079 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10080 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10081 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10082 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10083 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10084 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10085 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10086 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10087 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10088 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10089 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10090 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10091 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10092 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10093 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10094 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10095 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10096 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10097 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10098 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10099 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10100 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10101 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10102 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10103 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10104 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10105 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10106 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10107 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10108 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10109 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10110 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10111 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10112 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10113 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10114 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10115 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10116 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10117 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10118 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10119 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10120 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10121 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10122 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10123 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10124 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10125 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10126 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10127 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10128 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10129 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10130 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10131 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10132 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10133 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10134 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10135 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10136 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10137 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10138 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10139 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10140 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10141 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10142 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10143 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10144 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10145 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10146 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10147 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10148 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10149 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10150 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10151 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10152 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10153 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10154 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10155 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10156 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10157 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10158 | t2-s4 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10159 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10160 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10161 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10162 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10163 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10164 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10165 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10166 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10167 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10168 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10169 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10170 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10171 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10172 | t2-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10174 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10175 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10176 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10177 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10178 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10179 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10180 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10181 | t2-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10182 | t2-s5 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10184 | t2-s6 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10185 | t2-s6 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10186 | t2-s6 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10187 | t2-s6 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10188 | t2-s6 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10189 | t2-s6 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10191 | t2-s7 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10192 | t2-s7 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10193 | t2-s7 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10195 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10196 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10197 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10198 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10199 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10200 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10201 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10202 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10203 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10204 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10205 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10206 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10207 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10208 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10209 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10210 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10211 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10212 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10213 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10214 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10215 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10216 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10217 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10218 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10219 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10220 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10221 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10222 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10223 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10224 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10225 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10226 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10227 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10228 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10229 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10230 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10231 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10232 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10233 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10234 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10235 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10236 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10237 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10238 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10239 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10240 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10241 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10242 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10243 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10244 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10245 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10246 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10247 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10248 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10249 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10250 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10251 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10252 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10253 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10254 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10255 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10256 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10257 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10258 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10259 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10260 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10261 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10262 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10263 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10264 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10265 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10266 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10267 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10268 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10269 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10270 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10271 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10272 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10273 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10274 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10275 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10276 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10277 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10278 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10279 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10280 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10281 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10282 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10283 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10284 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10285 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10286 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10287 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10288 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10289 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10290 | t2-s8 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10291 | t2-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10293 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10294 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10295 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10296 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10297 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10298 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10299 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10300 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10301 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10302 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10303 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10304 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10305 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10306 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10307 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10308 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10309 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10310 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10311 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10312 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10313 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10314 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10315 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10316 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10317 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10318 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10319 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10320 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10321 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10322 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10323 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10324 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10325 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10326 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10327 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10328 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10329 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10330 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10331 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10332 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10333 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10334 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10335 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10336 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10337 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10338 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10339 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10340 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10341 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10342 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10343 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10344 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10345 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10346 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10347 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10348 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10349 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10350 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10351 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10352 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10353 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10354 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10355 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10356 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10357 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10358 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10359 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10360 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10361 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10362 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10363 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10364 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10365 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10366 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10367 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10368 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10369 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10370 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10371 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10372 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10373 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10374 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10375 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10376 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10377 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10378 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10379 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10380 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10381 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10382 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10383 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10384 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10385 | t2-s9 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10386 | t2-s9 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10388 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10389 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10390 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10391 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10392 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10393 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10394 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10395 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10396 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10397 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10398 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10399 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10400 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10401 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10402 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10403 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10404 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10405 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10406 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10407 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10408 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10409 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10410 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10411 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10412 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10413 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10414 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10415 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10416 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10417 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10418 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10419 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10420 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10421 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10422 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10423 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10424 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10425 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10426 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10427 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10428 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10429 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10430 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10431 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10432 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10433 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10434 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10435 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10436 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10437 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10438 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10439 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10440 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10441 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10442 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10443 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10444 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10445 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10446 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10447 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10448 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10449 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10450 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10451 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10452 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10453 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10454 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10455 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10456 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10457 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10458 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10459 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10460 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10461 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10462 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10463 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10464 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10465 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10466 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10467 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10468 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10469 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10470 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10471 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10472 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10473 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10474 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10475 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10476 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10477 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10478 | t2-s10 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10480 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10481 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10482 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10483 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10484 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10485 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10486 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10487 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10488 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10489 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10490 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10491 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10492 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10493 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10494 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10495 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10496 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10497 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10498 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10499 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10500 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10501 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10502 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10503 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10504 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10505 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10506 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10507 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10508 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10509 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10510 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10511 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10512 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10513 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10514 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10515 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10516 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10517 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10518 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10519 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10520 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10521 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10522 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10523 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10524 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10525 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10526 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10527 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10528 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10529 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10530 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10531 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10532 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10533 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10534 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10535 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10536 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10537 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10538 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10539 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10540 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10541 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10542 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10543 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10544 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10545 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10546 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10547 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10548 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10549 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10550 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10551 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10552 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10553 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10554 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10555 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10556 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10557 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10558 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10559 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10560 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10561 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10562 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10563 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10564 | t2-s11 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10566 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10567 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10568 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10569 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10570 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10571 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10572 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10573 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10574 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10575 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10576 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10577 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10578 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10579 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10580 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10581 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10582 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10583 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10584 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10585 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10586 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10587 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10588 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10589 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10590 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10591 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10592 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10593 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10594 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10595 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10596 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10597 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10598 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10599 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10600 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10601 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10602 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10603 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10604 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10605 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10606 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10607 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10608 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10609 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10610 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10611 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10612 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10613 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10614 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10615 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10616 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10617 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10618 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10619 | t2-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10620 | t2-s12 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10622 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10623 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10624 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10625 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10626 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10627 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10628 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10629 | t2-s13 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10630 | t2-s13 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10632 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10633 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10634 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10635 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10636 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10637 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10638 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10639 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10640 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10641 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10642 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10643 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10644 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10645 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10646 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10647 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10648 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10649 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10650 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10651 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10652 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10653 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10654 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10655 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10656 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10657 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10658 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10659 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10660 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10661 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10662 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10663 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10664 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10665 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10666 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10667 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10668 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10669 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10670 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10671 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10672 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10673 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10674 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10675 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10676 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10677 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10678 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10679 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10680 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10681 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10682 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10683 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10684 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10685 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10686 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10687 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10688 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10689 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10690 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10691 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10692 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10693 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10694 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10695 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10696 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10697 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10698 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10699 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10700 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10701 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10702 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10703 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10704 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10705 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10706 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10707 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10708 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10709 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10710 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10711 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10712 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10713 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10714 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10715 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10716 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10717 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10718 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10719 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10720 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10721 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10722 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10723 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10724 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10725 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10726 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10727 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10728 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10729 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10730 | t2-s14 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10732 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10733 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10734 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10735 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10736 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10737 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10738 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10739 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10740 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10741 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10742 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10743 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10744 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10745 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10746 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10747 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10748 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10749 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10750 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10751 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10752 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10753 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10754 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10755 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10756 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10757 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10758 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10759 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10760 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10761 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10762 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10763 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10764 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10765 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10766 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10767 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10768 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10769 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10770 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10771 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10772 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10773 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10774 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10775 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10776 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10777 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10778 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10779 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10780 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10781 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10782 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10783 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10784 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10785 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10786 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10787 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10788 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10789 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10790 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10791 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10792 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10793 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10794 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10795 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10796 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10797 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10798 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10799 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10800 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10801 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10802 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10803 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10804 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10805 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10806 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10807 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10808 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10809 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10810 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10811 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10812 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10813 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10814 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10815 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10816 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10817 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10818 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10819 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10820 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10821 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10822 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10823 | t2-s15 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10824 | t2-s15 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10826 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10827 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10828 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10829 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10830 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10831 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10832 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10833 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10834 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10835 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10836 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10837 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10838 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10839 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10840 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10841 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10842 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10843 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10844 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10845 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10846 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10847 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10848 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10849 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10850 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10851 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10852 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10853 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10854 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10855 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10856 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10857 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10858 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10859 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10860 | t2-s16 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10861 | t2-s16 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+10863 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10864 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10865 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10866 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10867 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10868 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10869 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10870 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10871 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10872 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10873 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10874 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10875 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10876 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10877 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10878 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10879 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10880 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10881 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10882 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10883 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10884 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10885 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10886 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10887 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10888 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10889 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10890 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10891 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10892 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10893 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10894 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10895 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10896 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10897 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10898 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10899 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10900 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10901 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10902 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10903 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10904 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10905 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10906 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10907 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10908 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10909 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10910 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10911 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10912 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10913 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10914 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10915 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10916 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10917 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10918 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10919 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10920 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10921 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10922 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10923 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10924 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10925 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10926 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10927 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10928 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10929 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10930 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10931 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10932 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10933 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10934 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10935 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10936 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10937 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10938 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10939 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10940 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10941 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10942 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10943 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10944 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10945 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10946 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10947 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10948 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10949 | t2-s17 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10950 | t2-s17 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10952 | t2-s18 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10953 | t2-s18 | 201 {"cuentaId":"AC-0001"} | 501 {"todo":"estaciones 5–14"}
+10954 | t2-s18 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10955 | t2-s18 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {"todo":"estaciones 5–14"}
+10956 | t2-s18 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {"todo":"estaciones 5–14"}
+10957 | t2-s18 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10958 | t2-s18 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {"todo":"estaciones 5–14"}
+10960 | t2-s19 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10973 | t2-s20 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+10976 | t2-s21 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}
+11011 | t2-s24 | 200 {"pong":true} | 501 {"todo":"estaciones 5–14"}

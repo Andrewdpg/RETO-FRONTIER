@@ -1,0 +1,6 @@
+2026-10-10T18:58:59.491Z contra https://reemplazo-lusnqphkuq-uc.a.run.app
+pasos iguales: 1479/1479 (100.0 %)
+secuencias iguales: 59/59 (100.0 %)
+saltadas: 3 secuencias con par, 0 pasos con espera
+
+id | seq | esperado | obtenido
