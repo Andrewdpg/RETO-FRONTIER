@@ -203,8 +203,8 @@ El orden medido es: E404 → E001 → E599 (solo con el servicio detenido) → E
 | 8. Monto | Entero positivo de hasta 10 dígitos sin ceros a la izquierda | 400 `E303` | 139, 141 (antes que E304 y E401) |
 | 9. Origen y destino | En TRANSFER, origen distinto de destino | 400 `E304` | 140 (antes que E401) |
 | 10. Existencia | Las cuentas o la operación existen | 404 `E401` / `E402` | 106, 307 (antes que E506 y E510) |
-| 11. Bloqueo | El origen no tiene 3 rechazos seguidos | 409 `E510` | 308, 309 (antes que E506 y E507) |
-| 12. Límite | Monto de TRANSFER ≤ 100.000 | 422 `E506` | 110 (antes que E507) |
+| 11. Bloqueo | El origen no tiene 3 rechazos seguidos | 423 `E510` con `intentos` (v1: 409) | 308, 309 (antes que E506 y E507) |
+| 12. Límite | Entre titulares distintos, monto de TRANSFER ≤ 50.000 (v1: 100.000) | 422 `E506` | 110 (antes que E507) |
 | 13. Saldo | Saldo del origen ≥ monto | 422 `E507` | 16, 246 |
 | 14. Efecto y respuesta | Aplica el cambio y responde con el cuerpo exacto | 200 o 201 | 1–20 |
 
