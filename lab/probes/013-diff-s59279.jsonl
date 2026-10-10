@@ -1,0 +1,442 @@
+{"hipotesis": "diferencial s59279 #1: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #1 paso 1: control alterado", "m": "ALTA;Lucia;83"}
+{"hipotesis": "diferencial s59279 #2: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #2 paso 1: formato", "m": ";PING;64"}
+{"hipotesis": "diferencial s59279 #3: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #3 paso 1: comando cercano", "m": "ASLTAM;Beto;27"}
+{"hipotesis": "diferencial s59279 #4: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #4 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #5: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #5 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #6: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #6 paso 1: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #7: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #7 paso 1: id inexistente", "m": "DEPOSITO;op-0001;582;91"}
+{"hipotesis": "diferencial s59279 #8: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #8 paso 1: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #9: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #9 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #10: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #10 paso 1: control alterado", "m": "ALTA;Maria Paz;21"}
+{"hipotesis": "diferencial s59279 #11: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #11 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #12: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #12 paso 1: control alterado", "m": "ALTA;X;85"}
+{"hipotesis": "diferencial s59279 #13: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #13 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #14: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #14 paso 1: control alterado", "m": "ALTA;Maria Paz;21"}
+{"hipotesis": "diferencial s59279 #15: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #15 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #16: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #16 paso 1: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #17: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #17 paso 1: formato", "m": "ALTA;Ñandú;"}
+{"hipotesis": "diferencial s59279 #18: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #18 paso 1: control mal formado", "m": "ALTA;Maria Paz;5X"}
+{"hipotesis": "diferencial s59279 #19: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #19 paso 1: control mal formado", "m": "PING;+64"}
+{"hipotesis": "diferencial s59279 #20: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #20 paso 1: origen igual a destino", "m": "TRANSFER;AC-0001;AC-0001;10;22"}
+{"hipotesis": "diferencial s59279 #21: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #21 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #22: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #22 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #23: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #23 paso 1: formato", "m": "PING;"}
+{"hipotesis": "diferencial s59279 #24: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #24 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #25: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #25 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #26: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #26 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #27: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #27 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #28: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #28 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #29: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #29 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #30: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #30 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #31: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #31 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #32: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #32 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #33: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #33 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #34: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #34 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #35: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #35 paso 1: control alterado", "m": "ALTA;Maria Paz;21"}
+{"hipotesis": "diferencial s59279 #36: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #36 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #37: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #37 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #38: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #38 paso 1: aridad", "m": "ALTA;007;X;54"}
+{"hipotesis": "diferencial s59279 #39: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #39 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #40: reset abre la secuencia de 1 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #40 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #41: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #41 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #41 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #41 paso 3: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #41 paso 4: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #41 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #42: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #42 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #42 paso 2: HALT;1", "m": "HALT;1;19"}
+{"hipotesis": "diferencial s59279 #42 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #43: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #43 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #43 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #43 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;88857;62"}
+{"hipotesis": "diferencial s59279 #43 paso 4: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #44: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #44 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #44 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #44 paso 3: control alterado", "m": "CONSULTA;AC-0001;15"}
+{"hipotesis": "diferencial s59279 #44 paso 4: control alterado", "m": "ALTA;Lucia;83"}
+{"hipotesis": "diferencial s59279 #45: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #45 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #45 paso 2: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #46: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #46 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #46 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #46 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;789;52"}
+{"hipotesis": "diferencial s59279 #47: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #47 paso 1: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #47 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #47 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;74132;5"}
+{"hipotesis": "diferencial s59279 #47 paso 4: comando cercano", "m": "ANULG;OP-0001;69"}
+{"hipotesis": "diferencial s59279 #48: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #48 paso 1: origen igual a destino", "m": "TRANSFER;AC-0001;AC-0001;0;74"}
+{"hipotesis": "diferencial s59279 #48 paso 2: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #48 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #49: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #49 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #49 paso 2: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #49 paso 3: control alterado", "m": "TRANSFER;AC-0002;AC-0001;100001;38"}
+{"hipotesis": "diferencial s59279 #49 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;208981;50"}
+{"hipotesis": "diferencial s59279 #49 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;20;47"}
+{"hipotesis": "diferencial s59279 #50: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #50 paso 1: aridad", "m": "ALTA;Ñandú;X;49"}
+{"hipotesis": "diferencial s59279 #50 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #51: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #51 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #51 paso 2: id inexistente", "m": "ANULA;OP-0099;69"}
+{"hipotesis": "diferencial s59279 #52: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #52 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #52 paso 2: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #52 paso 3: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #52 paso 4: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #52 paso 5: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #53: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #53 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #53 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #53 paso 3: formato", "m": "TRANSFER;AC-0001;AC-0002;21407;"}
+{"hipotesis": "diferencial s59279 #53 paso 4: control alterado", "m": "DEPOSITO;AC-0002;258340;12"}
+{"hipotesis": "diferencial s59279 #53 paso 5: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;135;4"}
+{"hipotesis": "diferencial s59279 #54: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #54 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #54 paso 2: DEPOSITO", "m": "DEPOSITO;AC-0001;224551;94"}
+{"hipotesis": "diferencial s59279 #55: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #55 paso 1: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #55 paso 2: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #55 paso 3: origen igual a destino", "m": "TRANSFER;AC-0001;AC-0001;10;22"}
+{"hipotesis": "diferencial s59279 #55 paso 4: aridad", "m": "PING;X;21"}
+{"hipotesis": "diferencial s59279 #55 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;628;50"}
+{"hipotesis": "diferencial s59279 #56: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #56 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #56 paso 2: HALT;1", "m": "HALT;1;19"}
+{"hipotesis": "diferencial s59279 #56 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #57: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #57 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #57 paso 2: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #57 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0002;810;93"}
+{"hipotesis": "diferencial s59279 #57 paso 4: ANULA", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "diferencial s59279 #57 paso 5: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #58: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #58 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #58 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #58 paso 3: aridad", "m": "DEPOSITO;AC-0002;98"}
+{"hipotesis": "diferencial s59279 #58 paso 4: minúsculas", "m": "cOnSULTa;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #58 paso 5: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #59: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #59 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #59 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #59 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;928;23"}
+{"hipotesis": "diferencial s59279 #59 paso 4: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #59 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;43513;23"}
+{"hipotesis": "diferencial s59279 #60: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #60 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #60 paso 2: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #60 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;51308;92"}
+{"hipotesis": "diferencial s59279 #61: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #61 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #61 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #61 paso 3: minúsculas", "m": "TRAnSFEr;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #61 paso 4: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #61 paso 5: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;39742;48"}
+{"hipotesis": "diferencial s59279 #62: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #62 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #62 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #62 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #62 paso 4: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #62 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;43984;65"}
+{"hipotesis": "diferencial s59279 #63: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #63 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #63 paso 2: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #63 paso 3: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #63 paso 4: control mal formado", "m": "CONSULTA;AC-0002;5X"}
+{"hipotesis": "diferencial s59279 #64: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #64 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #64 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #64 paso 3: HALT;1", "m": "HALT;1;19"}
+{"hipotesis": "diferencial s59279 #64 paso 4: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #65: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #65 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #65 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #65 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0002;210892;56"}
+{"hipotesis": "diferencial s59279 #66: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #66 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #66 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #66 paso 3: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #66 paso 4: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #67: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #67 paso 1: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #67 paso 2: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #68: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #68 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #68 paso 2: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #68 paso 3: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #69: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #69 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #69 paso 2: DEPOSITO", "m": "DEPOSITO;AC-0001;212;37"}
+{"hipotesis": "diferencial s59279 #69 paso 3: ANULA", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "diferencial s59279 #69 paso 4: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #70: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #70 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #70 paso 2: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #70 paso 3: formato", "m": "DEPOSITO;;25"}
+{"hipotesis": "diferencial s59279 #70 paso 4: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #70 paso 5: comando cercano", "m": "PVNG;50"}
+{"hipotesis": "diferencial s59279 #71: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #71 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #71 paso 2: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #71 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;97556;58"}
+{"hipotesis": "diferencial s59279 #71 paso 4: aridad", "m": "PING;X;21"}
+{"hipotesis": "diferencial s59279 #72: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #72 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #72 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #72 paso 3: control alterado", "m": "DEPOSITO;AC-0002;950;62"}
+{"hipotesis": "diferencial s59279 #72 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0002;212623;4"}
+{"hipotesis": "diferencial s59279 #72 paso 5: ANULA", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "diferencial s59279 #73: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #73 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #73 paso 2: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #73 paso 3: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #73 paso 4: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;100001;37"}
+{"hipotesis": "diferencial s59279 #74: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #74 paso 1: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #74 paso 2: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #75: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #75 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #75 paso 2: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #75 paso 3: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #75 paso 4: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #75 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;228639;52"}
+{"hipotesis": "diferencial s59279 #76: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #76 paso 1: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #76 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #77: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #77 paso 1: id inexistente", "m": "ANULA;ac-0001;59"}
+{"hipotesis": "diferencial s59279 #77 paso 2: formato", "m": ""}
+{"hipotesis": "diferencial s59279 #78: reset abre la secuencia de 4 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #78 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #78 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #78 paso 3: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #78 paso 4: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #79: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #79 paso 1: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #79 paso 2: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #79 paso 3: comando cercano", "m": "TRKNSER;AC-0002;AC-0001;390;6"}
+{"hipotesis": "diferencial s59279 #79 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;730;35"}
+{"hipotesis": "diferencial s59279 #79 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;220791;25"}
+{"hipotesis": "diferencial s59279 #80: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #80 paso 1: control alterado", "m": "ALTA;Ñandú;42"}
+{"hipotesis": "diferencial s59279 #80 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #80 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;251;17"}
+{"hipotesis": "diferencial s59279 #80 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;13;68"}
+{"hipotesis": "diferencial s59279 #80 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;23750;25"}
+{"hipotesis": "diferencial s59279 #81: reset abre la secuencia de 2 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #81 paso 1: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #81 paso 2: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #82: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #82 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #82 paso 2: ALTA", "m": "ALTA;José;61"}
+{"hipotesis": "diferencial s59279 #82 paso 3: aridad", "m": "DEPOSITO;AC-0002;405;X;67"}
+{"hipotesis": "diferencial s59279 #83: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #83 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #83 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #83 paso 3: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;473;69"}
+{"hipotesis": "diferencial s59279 #83 paso 4: origen igual a destino", "m": "TRANSFER;AC-0002;AC-0002;0;10"}
+{"hipotesis": "diferencial s59279 #83 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #84: reset abre la secuencia de 3 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #84 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #84 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #84 paso 3: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;100001;37"}
+{"hipotesis": "diferencial s59279 #85: reset abre la secuencia de 5 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #85 paso 1: ALTA", "m": "ALTA;007;75"}
+{"hipotesis": "diferencial s59279 #85 paso 2: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #85 paso 3: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #85 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0002;132788;16"}
+{"hipotesis": "diferencial s59279 #85 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0001;615;89"}
+{"hipotesis": "diferencial s59279 #86: reset abre la secuencia de 6 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #86 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #86 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #86 paso 3: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #86 paso 4: control alterado", "m": "TRANSFER;AC-0001;AC-0002;1;42"}
+{"hipotesis": "diferencial s59279 #86 paso 5: control alterado", "m": "CONSULTA;AC-0002;12"}
+{"hipotesis": "diferencial s59279 #86 paso 6: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #87: reset abre la secuencia de 11 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #87 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #87 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #87 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;534;41"}
+{"hipotesis": "diferencial s59279 #87 paso 4: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #87 paso 5: racha", "m": "TRANSFER;AC-0001;AC-0002;900000;83"}
+{"hipotesis": "diferencial s59279 #87 paso 6: racha", "m": "TRANSFER;AC-0001;AC-0002;900000;83"}
+{"hipotesis": "diferencial s59279 #87 paso 7: racha", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "diferencial s59279 #87 paso 8: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #87 paso 9: monto en el borde", "m": "TRANSFER;AC-0002;AC-0001;-5;25"}
+{"hipotesis": "diferencial s59279 #87 paso 10: CONSULTA", "m": "CONSULTA;AC-0003;8"}
+{"hipotesis": "diferencial s59279 #87 paso 11: id inexistente", "m": "TRANSFER;AC-0001;AC-0099;935;41"}
+{"hipotesis": "diferencial s59279 #88: reset abre la secuencia de 7 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #88 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #88 paso 2: monto en el borde", "m": "DEPOSITO;AC-0001;10000000000;63"}
+{"hipotesis": "diferencial s59279 #88 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #88 paso 4: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #88 paso 5: aridad", "m": "ALTA;85"}
+{"hipotesis": "diferencial s59279 #88 paso 6: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #88 paso 7: DEPOSITO", "m": "DEPOSITO;AC-0001;930;17"}
+{"hipotesis": "diferencial s59279 #89: reset abre la secuencia de 8 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #89 paso 1: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #89 paso 2: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #89 paso 3: PING", "m": "PING;64"}
+{"hipotesis": "diferencial s59279 #89 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;236412;13"}
+{"hipotesis": "diferencial s59279 #89 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;118206;5"}
+{"hipotesis": "diferencial s59279 #89 paso 6: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;882;91"}
+{"hipotesis": "diferencial s59279 #89 paso 7: ANULA", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "diferencial s59279 #89 paso 8: monto en el borde", "m": "TRANSFER;AC-0001;AC-0002;007;12"}
+{"hipotesis": "diferencial s59279 #90: reset abre la secuencia de 12 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #90 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #90 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #90 paso 3: id inexistente", "m": "TRANSFER;AC-0001;AC-0001 ;935;34"}
+{"hipotesis": "diferencial s59279 #90 paso 4: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;100000;40"}
+{"hipotesis": "diferencial s59279 #90 paso 5: control mal formado", "m": "CONSULTA;AC-0002;+11"}
+{"hipotesis": "diferencial s59279 #90 paso 6: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #90 paso 7: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;218;58"}
+{"hipotesis": "diferencial s59279 #90 paso 8: monto en el borde", "m": "DEPOSITO;AC-0002;0;98"}
+{"hipotesis": "diferencial s59279 #90 paso 9: origen igual a destino", "m": "TRANSFER;AC-0002;AC-0002;100001;53"}
+{"hipotesis": "diferencial s59279 #90 paso 10: DEPOSITO", "m": "DEPOSITO;AC-0001;141700;36"}
+{"hipotesis": "diferencial s59279 #90 paso 11: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #90 paso 12: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;13622;68"}
+{"hipotesis": "diferencial s59279 #91: reset abre la secuencia de 12 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #91 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #91 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #91 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;828;32"}
+{"hipotesis": "diferencial s59279 #91 paso 4: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #91 paso 5: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #91 paso 6: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #91 paso 7: racha", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "diferencial s59279 #91 paso 8: DEPOSITO", "m": "DEPOSITO;AC-0002;128;5"}
+{"hipotesis": "diferencial s59279 #91 paso 9: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #91 paso 10: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;100000;12"}
+{"hipotesis": "diferencial s59279 #91 paso 11: DEPOSITO", "m": "DEPOSITO;AC-0001;212918;73"}
+{"hipotesis": "diferencial s59279 #91 paso 12: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #92: reset abre la secuencia de 8 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #92 paso 1: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #92 paso 2: ALTA", "m": "ALTA;Lucia;82"}
+{"hipotesis": "diferencial s59279 #92 paso 3: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #92 paso 4: minúsculas", "m": "transfer;AC-0002;AC-0001;100000;40"}
+{"hipotesis": "diferencial s59279 #92 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #92 paso 6: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;1;37"}
+{"hipotesis": "diferencial s59279 #92 paso 7: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;24372;83"}
+{"hipotesis": "diferencial s59279 #92 paso 8: DEPOSITO", "m": "DEPOSITO;AC-0002;9910;50"}
+{"hipotesis": "diferencial s59279 #93: reset abre la secuencia de 10 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #93 paso 1: id inexistente", "m": "TRANSFER;AC-0001;ac-0001;873;26"}
+{"hipotesis": "diferencial s59279 #93 paso 2: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #93 paso 3: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #93 paso 4: CONSULTA", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "diferencial s59279 #93 paso 5: aridad", "m": "CONSULTA;AC-0001;X;65"}
+{"hipotesis": "diferencial s59279 #93 paso 6: comando cercano", "m": "CSONSULTAW;AC-0001;7"}
+{"hipotesis": "diferencial s59279 #93 paso 7: DEPOSITO", "m": "DEPOSITO;AC-0001;916;59"}
+{"hipotesis": "diferencial s59279 #93 paso 8: control alterado", "m": "ANULA;OP-0001;73"}
+{"hipotesis": "diferencial s59279 #93 paso 9: DEPOSITO", "m": "DEPOSITO;AC-0001;79971;45"}
+{"hipotesis": "diferencial s59279 #93 paso 10: control alterado", "m": "CONSULTA;AC-0001;15"}
+{"hipotesis": "diferencial s59279 #94: reset abre la secuencia de 8 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #94 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #94 paso 2: ALTA", "m": "ALTA;X;84"}
+{"hipotesis": "diferencial s59279 #94 paso 3: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;100000;40"}
+{"hipotesis": "diferencial s59279 #94 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;463;60"}
+{"hipotesis": "diferencial s59279 #94 paso 5: aridad", "m": "ALTA;85"}
+{"hipotesis": "diferencial s59279 #94 paso 6: DEPOSITO", "m": "DEPOSITO;AC-0002;210;50"}
+{"hipotesis": "diferencial s59279 #94 paso 7: DEPOSITO", "m": "DEPOSITO;AC-0001;841;90"}
+{"hipotesis": "diferencial s59279 #94 paso 8: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #95: reset abre la secuencia de 6 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #95 paso 1: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #95 paso 2: ALTA", "m": "ALTA;Mateo;3"}
+{"hipotesis": "diferencial s59279 #95 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0002;550;97"}
+{"hipotesis": "diferencial s59279 #95 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;703;19"}
+{"hipotesis": "diferencial s59279 #95 paso 5: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #95 paso 6: DEPOSITO", "m": "DEPOSITO;AC-0001;546;5"}
+{"hipotesis": "diferencial s59279 #96: reset abre la secuencia de 12 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #96 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #96 paso 2: DEPOSITO", "m": "DEPOSITO;AC-0001;625;59"}
+{"hipotesis": "diferencial s59279 #96 paso 3: monto en el borde", "m": "DEPOSITO;AC-0001;1e3;20"}
+{"hipotesis": "diferencial s59279 #96 paso 4: DEPOSITO", "m": "DEPOSITO;AC-0001;279371;49"}
+{"hipotesis": "diferencial s59279 #96 paso 5: ANULA", "m": "ANULA;OP-0002;69"}
+{"hipotesis": "diferencial s59279 #96 paso 6: ALTA", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "diferencial s59279 #96 paso 7: anula repetida", "m": "ANULA;OP-0002;69"}
+{"hipotesis": "diferencial s59279 #96 paso 8: ANULA", "m": "ANULA;OP-0002;69"}
+{"hipotesis": "diferencial s59279 #96 paso 9: DEPOSITO", "m": "DEPOSITO;AC-0002;164624;53"}
+{"hipotesis": "diferencial s59279 #96 paso 10: ANULA", "m": "ANULA;OP-0003;66"}
+{"hipotesis": "diferencial s59279 #96 paso 11: control alterado", "m": "ANULA;OP-0002;70"}
+{"hipotesis": "diferencial s59279 #96 paso 12: minúsculas", "m": "depOSito;AC-0002;109023;16"}
+{"hipotesis": "diferencial s59279 #97: reset abre la secuencia de 8 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #97 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #97 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #97 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;2269;11"}
+{"hipotesis": "diferencial s59279 #97 paso 4: racha", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #97 paso 5: racha", "m": "TRANSFER;AC-0001;AC-0002;900000;83"}
+{"hipotesis": "diferencial s59279 #97 paso 6: racha", "m": "TRANSFER;AC-0001;AC-0002;900000;83"}
+{"hipotesis": "diferencial s59279 #97 paso 7: racha", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "diferencial s59279 #97 paso 8: control alterado", "m": "TRANSFER;AC-0001;AC-0002;2269;14"}
+{"hipotesis": "diferencial s59279 #98: reset abre la secuencia de 11 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #98 paso 1: ALTA", "m": "ALTA;Ñandú;41"}
+{"hipotesis": "diferencial s59279 #98 paso 2: ALTA", "m": "ALTA;Zoe-Lee;37"}
+{"hipotesis": "diferencial s59279 #98 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;250540;18"}
+{"hipotesis": "diferencial s59279 #98 paso 4: CONSULTA", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "diferencial s59279 #98 paso 5: DEPOSITO", "m": "DEPOSITO;AC-0002;143733;64"}
+{"hipotesis": "diferencial s59279 #98 paso 6: DEPOSITO", "m": "DEPOSITO;AC-0001;105;67"}
+{"hipotesis": "diferencial s59279 #98 paso 7: ANULA", "m": "ANULA;OP-0003;66"}
+{"hipotesis": "diferencial s59279 #98 paso 8: ANULA", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "diferencial s59279 #98 paso 9: TRANSFER", "m": "TRANSFER;AC-0001;AC-0002;1;41"}
+{"hipotesis": "diferencial s59279 #98 paso 10: control alterado", "m": "DEPOSITO;AC-0001;860;34"}
+{"hipotesis": "diferencial s59279 #98 paso 11: TRANSFER", "m": "TRANSFER;AC-0002;AC-0001;143733;82"}
+{"hipotesis": "diferencial s59279 #99: reset abre la secuencia de 7 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #99 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #99 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #99 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;4348;79"}
+{"hipotesis": "diferencial s59279 #99 paso 4: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #99 paso 5: racha", "m": "TRANSFER;AC-0001;AC-0002;99999;24"}
+{"hipotesis": "diferencial s59279 #99 paso 6: racha", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #99 paso 7: racha", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "diferencial s59279 #100: reset abre la secuencia de 6 pasos", "reset": true}
+{"hipotesis": "diferencial s59279 #100 paso 1: ALTA", "m": "ALTA;Ana;50"}
+{"hipotesis": "diferencial s59279 #100 paso 2: ALTA", "m": "ALTA;Beto;11"}
+{"hipotesis": "diferencial s59279 #100 paso 3: DEPOSITO", "m": "DEPOSITO;AC-0001;4359;46"}
+{"hipotesis": "diferencial s59279 #100 paso 4: racha", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
+{"hipotesis": "diferencial s59279 #100 paso 5: racha", "m": "TRANSFER;AC-0001;AC-0002;900000;83"}
+{"hipotesis": "diferencial s59279 #100 paso 6: racha", "m": "TRANSFER;AC-0001;AC-0002;100001;9"}
