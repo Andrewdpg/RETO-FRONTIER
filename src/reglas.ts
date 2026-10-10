@@ -45,7 +45,8 @@ type Pedido = {
 type Comando = {
   args: Arg[];
   validaControl: boolean;
-  limite?: number; // monto máximo por operación (E506)
+  // Monto máximo por operación (E506); `salvo` dice cuándo no se aplica.
+  limite?: { monto: number; salvo?: (p: Pedido) => boolean };
   confirmacion?: string; // único argumento que ejecuta un comando destructivo
   efecto: (p: Pedido, e: Estado) => Respuesta;
 };
@@ -109,7 +110,13 @@ const COMANDOS: Record<string, Comando> = {
     efecto: () => [200, { pong: true }],
   },
   TRANSFER: {
-    args: ['origen', 'destino', 'monto'], validaControl: true, limite: 100_000, // 100.000 pasa (log 155–157)
+    args: ['origen', 'destino', 'monto'], validaControl: true,
+    limite: {
+      monto: 100_000, // 100.000 pasa (log 155–157)
+      // Mismo titular: nombre del ALTA idéntico, distinguiendo mayúsculas (log 11782, 11794; Ana→Beto 11788, Ana→ana 11800).
+      // El saldo se sigue revisando (log 11575, 11805). Supuesto sin medir: como no hay E506, no suma al bloqueo.
+      salvo: (p) => p.cuentas.origen!.nombre === p.cuentas.destino!.nombre,
+    },
     efecto: (p, e) => {
       const { origen, destino } = p.cuentas as Required<Pedido['cuentas']>;
       origen.saldo -= p.monto;
@@ -165,7 +172,7 @@ const ESTACIONES: ((p: Pedido, e: Estado) => Respuesta | undefined)[] = [
     }
     if (p.args.length !== p.fila.args.length) return error('E302');
   },
-  // 8. Monto
+  // 8. Monto. E301/E302 van antes que E303 (log 11328–11335).
   (p) => {
     const i = indice(p.fila!, 'monto');
     if (i < 0) return;
@@ -192,7 +199,10 @@ const ESTACIONES: ((p: Pedido, e: Estado) => Respuesta | undefined)[] = [
   // 11. Bloqueo del origen
   (p) => ((p.cuentas.origen?.rechazosSeguidos ?? 0) >= RECHAZOS_PARA_BLOQUEO ? error('E510') : undefined),
   // 12. Límite por operación
-  (p) => (p.fila!.limite !== undefined && p.monto > p.fila!.limite ? error('E506') : undefined),
+  (p) => {
+    const l = p.fila!.limite;
+    if (l && p.monto > l.monto && !l.salvo?.(p)) return error('E506');
+  },
   // 13. Saldo del origen
   (p) => (p.cuentas.origen && p.cuentas.origen.saldo < p.monto ? error('E507') : undefined),
 ];

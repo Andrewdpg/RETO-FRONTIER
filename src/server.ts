@@ -56,11 +56,10 @@ function atender(metodo: string, url: string, auth: string | undefined, cuerpo: 
     return [200, { ok: true }];
   }
 
-  if (Buffer.byteLength(cuerpo) > TOPE_BYTES) return [413, E101];
-  // Supuesto: E101 antes que E599. Con el servicio detenido no se midió un cuerpo grande (DESIGN §3.9);
-  // lo dejamos así porque el tamaño se revisa antes de mirar el contenido.
+  // Detenido, E599 gana incluso a un cuerpo de 8.193 bytes (log 11320, 11324).
   const detenido = servicioDetenido(estado);
   if (detenido) return detenido;
+  if (Buffer.byteLength(cuerpo) > TOPE_BYTES) return [413, E101];
   // Buffer.toString conserva el BOM, y JSON.parse lo rechaza como el original (log 10966).
   const texto = cuerpo.toString('utf8');
   let json: unknown;
