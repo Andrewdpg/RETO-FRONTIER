@@ -12,3 +12,4 @@ received/
 *.lock
 __pycache__/
 material/
+logs/canario.pausa
