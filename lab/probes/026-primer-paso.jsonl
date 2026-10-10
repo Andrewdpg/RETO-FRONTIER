@@ -1,0 +1,422 @@
+{"hipotesis": "primer paso #1: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #1: nombre 'PINGG'; con estado vacío la respuesta depende solo del mensaje", "m": "PINGG;28"}
+{"hipotesis": "primer paso #2: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #2: nombre ' PING'; con estado vacío la respuesta depende solo del mensaje", "m": " PING;64"}
+{"hipotesis": "primer paso #3: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #3: nombre 'ping'; con estado vacío la respuesta depende solo del mensaje", "m": "ping;64"}
+{"hipotesis": "primer paso #4: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #4: nombre 'PING '; con estado vacío la respuesta depende solo del mensaje", "m": "PING ;64"}
+{"hipotesis": "primer paso #5: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #5: nombre 'PIGX'; con estado vacío la respuesta depende solo del mensaje", "m": "PIGX;79"}
+{"hipotesis": "primer paso #6: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #6: nombre 'ING'; con estado vacío la respuesta depende solo del mensaje", "m": "ING;11"}
+{"hipotesis": "primer paso #7: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #7: nombre 'GNIG'; con estado vacío la respuesta depende solo del mensaje", "m": "GNIG;74"}
+{"hipotesis": "primer paso #8: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #8: nombre 'Ping'; con estado vacío la respuesta depende solo del mensaje", "m": "Ping;64"}
+{"hipotesis": "primer paso #9: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #9: nombre 'IPNG'; con estado vacío la respuesta depende solo del mensaje", "m": "IPNG;55"}
+{"hipotesis": "primer paso #10: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #10: nombre 'PIN'; con estado vacío la respuesta depende solo del mensaje", "m": "PIN;87"}
+{"hipotesis": "primer paso #11: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #11: nombre ' ALTA'; con estado vacío la respuesta depende solo del mensaje", "m": " ALTA;Ana;50"}
+{"hipotesis": "primer paso #12: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #12: nombre 'LATA'; con estado vacío la respuesta depende solo del mensaje", "m": "LATA;Ana;35"}
+{"hipotesis": "primer paso #13: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #13: nombre 'LTA'; con estado vacío la respuesta depende solo del mensaje", "m": "LTA;Ana;55"}
+{"hipotesis": "primer paso #14: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #14: nombre 'Alta'; con estado vacío la respuesta depende solo del mensaje", "m": "Alta;Ana;50"}
+{"hipotesis": "primer paso #15: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #15: nombre 'alta'; con estado vacío la respuesta depende solo del mensaje", "m": "alta;Ana;50"}
+{"hipotesis": "primer paso #16: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #16: nombre 'ATLA'; con estado vacío la respuesta depende solo del mensaje", "m": "ATLA;Ana;95"}
+{"hipotesis": "primer paso #17: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #17: nombre 'ALTA '; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA ;Ana;50"}
+{"hipotesis": "primer paso #18: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #18: nombre 'ALT'; con estado vacío la respuesta depende solo del mensaje", "m": "ALT;Ana;61"}
+{"hipotesis": "primer paso #19: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #19: nombre 'ALAX'; con estado vacío la respuesta depende solo del mensaje", "m": "ALAX;Ana;92"}
+{"hipotesis": "primer paso #20: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #20: nombre 'ALTAA'; con estado vacío la respuesta depende solo del mensaje", "m": "ALTAA;Ana;37"}
+{"hipotesis": "primer paso #21: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #21: nombre 'CONSULTA '; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA ;AC-0001;14"}
+{"hipotesis": "primer paso #22: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #22: nombre 'Consulta'; con estado vacío la respuesta depende solo del mensaje", "m": "Consulta;AC-0001;14"}
+{"hipotesis": "primer paso #23: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #23: nombre 'CONSULTAA'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTAA;AC-0001;35"}
+{"hipotesis": "primer paso #24: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #24: nombre 'COSULTAX'; con estado vacío la respuesta depende solo del mensaje", "m": "COSULTAX;AC-0001;52"}
+{"hipotesis": "primer paso #25: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #25: nombre 'ATLSULTA'; con estado vacío la respuesta depende solo del mensaje", "m": "ATLSULTA;AC-0001;10"}
+{"hipotesis": "primer paso #26: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #26: nombre 'OCNSULTA'; con estado vacío la respuesta depende solo del mensaje", "m": "OCNSULTA;AC-0001;52"}
+{"hipotesis": "primer paso #27: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #27: nombre 'CONSULT'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULT;AC-0001;41"}
+{"hipotesis": "primer paso #28: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #28: nombre 'consulta'; con estado vacío la respuesta depende solo del mensaje", "m": "consulta;AC-0001;14"}
+{"hipotesis": "primer paso #29: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #29: nombre 'ONSULTA'; con estado vacío la respuesta depende solo del mensaje", "m": "ONSULTA;AC-0001;70"}
+{"hipotesis": "primer paso #30: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #30: nombre ' CONSULTA'; con estado vacío la respuesta depende solo del mensaje", "m": " CONSULTA;AC-0001;14"}
+{"hipotesis": "primer paso #31: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #31: nombre 'DEPOSITOO'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITOO;AC-0001;10;29"}
+{"hipotesis": "primer paso #32: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #32: nombre 'DEOSITOX'; con estado vacío la respuesta depende solo del mensaje", "m": "DEOSITOX;AC-0001;10;47"}
+{"hipotesis": "primer paso #33: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #33: nombre 'DEPOSIT'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSIT;AC-0001;10;93"}
+{"hipotesis": "primer paso #34: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #34: nombre 'EDPOSITO'; con estado vacío la respuesta depende solo del mensaje", "m": "EDPOSITO;AC-0001;10;6"}
+{"hipotesis": "primer paso #35: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #35: nombre 'OTIOSITO'; con estado vacío la respuesta depende solo del mensaje", "m": "OTIOSITO;AC-0001;10;74"}
+{"hipotesis": "primer paso #36: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #36: nombre ' DEPOSITO'; con estado vacío la respuesta depende solo del mensaje", "m": " DEPOSITO;AC-0001;10;77"}
+{"hipotesis": "primer paso #37: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #37: nombre 'Deposito'; con estado vacío la respuesta depende solo del mensaje", "m": "Deposito;AC-0001;10;77"}
+{"hipotesis": "primer paso #38: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #38: nombre 'DEPOSITO '; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO ;AC-0001;10;77"}
+{"hipotesis": "primer paso #39: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #39: nombre 'EPOSITO'; con estado vacío la respuesta depende solo del mensaje", "m": "EPOSITO;AC-0001;10;80"}
+{"hipotesis": "primer paso #40: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #40: nombre 'deposito'; con estado vacío la respuesta depende solo del mensaje", "m": "deposito;AC-0001;10;77"}
+{"hipotesis": "primer paso #41: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #41: nombre 'TRANSFER '; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER ;AC-0001;AC-0002;10;13"}
+{"hipotesis": "primer paso #42: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #42: nombre 'TRANSFE'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFE;AC-0001;AC-0002;10;24"}
+{"hipotesis": "primer paso #43: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #43: nombre ' TRANSFER'; con estado vacío la respuesta depende solo del mensaje", "m": " TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "primer paso #44: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #44: nombre 'transfer'; con estado vacío la respuesta depende solo del mensaje", "m": "transfer;AC-0001;AC-0002;10;13"}
+{"hipotesis": "primer paso #45: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #45: nombre 'Transfer'; con estado vacío la respuesta depende solo del mensaje", "m": "Transfer;AC-0001;AC-0002;10;13"}
+{"hipotesis": "primer paso #46: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #46: nombre 'TRNSFERX'; con estado vacío la respuesta depende solo del mensaje", "m": "TRNSFERX;AC-0001;AC-0002;10;61"}
+{"hipotesis": "primer paso #47: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #47: nombre 'REFNSFER'; con estado vacío la respuesta depende solo del mensaje", "m": "REFNSFER;AC-0001;AC-0002;10;92"}
+{"hipotesis": "primer paso #48: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #48: nombre 'RANSFER'; con estado vacío la respuesta depende solo del mensaje", "m": "RANSFER;AC-0001;AC-0002;10;5"}
+{"hipotesis": "primer paso #49: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #49: nombre 'TRANSFERR'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFERR;AC-0001;AC-0002;10;77"}
+{"hipotesis": "primer paso #50: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #50: nombre 'RTANSFER'; con estado vacío la respuesta depende solo del mensaje", "m": "RTANSFER;AC-0001;AC-0002;10;6"}
+{"hipotesis": "primer paso #51: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #51: nombre 'ANULA '; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA ;OP-0001;72"}
+{"hipotesis": "primer paso #52: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #52: nombre ' ANULA'; con estado vacío la respuesta depende solo del mensaje", "m": " ANULA;OP-0001;72"}
+{"hipotesis": "primer paso #53: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #53: nombre 'ANULAA'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULAA;OP-0001;89"}
+{"hipotesis": "primer paso #54: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #54: nombre 'ANUL'; con estado vacío la respuesta depende solo del mensaje", "m": "ANUL;OP-0001;80"}
+{"hipotesis": "primer paso #55: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #55: nombre 'ALULA'; con estado vacío la respuesta depende solo del mensaje", "m": "ALULA;OP-0001;65"}
+{"hipotesis": "primer paso #56: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #56: nombre 'NULA'; con estado vacío la respuesta depende solo del mensaje", "m": "NULA;OP-0001;13"}
+{"hipotesis": "primer paso #57: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #57: nombre 'Anula'; con estado vacío la respuesta depende solo del mensaje", "m": "Anula;OP-0001;72"}
+{"hipotesis": "primer paso #58: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #58: nombre 'ANLAX'; con estado vacío la respuesta depende solo del mensaje", "m": "ANLAX;OP-0001;60"}
+{"hipotesis": "primer paso #59: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #59: nombre 'anula'; con estado vacío la respuesta depende solo del mensaje", "m": "anula;OP-0001;72"}
+{"hipotesis": "primer paso #60: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #60: nombre 'NAULA'; con estado vacío la respuesta depende solo del mensaje", "m": "NAULA;OP-0001;21"}
+{"hipotesis": "primer paso #61: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #61: nombre 'HALTT'; con estado vacío la respuesta depende solo del mensaje", "m": "HALTT;AC-0001;11"}
+{"hipotesis": "primer paso #62: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #62: nombre ' HALT'; con estado vacío la respuesta depende solo del mensaje", "m": " HALT;AC-0001;82"}
+{"hipotesis": "primer paso #63: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #63: nombre 'halt'; con estado vacío la respuesta depende solo del mensaje", "m": "halt;AC-0001;82"}
+{"hipotesis": "primer paso #64: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #64: nombre 'AHLT'; con estado vacío la respuesta depende solo del mensaje", "m": "AHLT;AC-0001;31"}
+{"hipotesis": "primer paso #65: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #65: nombre 'HALT '; con estado vacío la respuesta depende solo del mensaje", "m": "HALT ;AC-0001;82"}
+{"hipotesis": "primer paso #66: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #66: nombre 'Halt'; con estado vacío la respuesta depende solo del mensaje", "m": "Halt;AC-0001;82"}
+{"hipotesis": "primer paso #67: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #67: nombre 'ALT'; con estado vacío la respuesta depende solo del mensaje", "m": "ALT;AC-0001;8"}
+{"hipotesis": "primer paso #68: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #68: nombre 'HAL'; con estado vacío la respuesta depende solo del mensaje", "m": "HAL;AC-0001;41"}
+{"hipotesis": "primer paso #69: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #69: nombre 'HATX'; con estado vacío la respuesta depende solo del mensaje", "m": "HATX;AC-0001;45"}
+{"hipotesis": "primer paso #70: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #70: nombre 'TLAT'; con estado vacío la respuesta depende solo del mensaje", "m": "TLAT;AC-0001;43"}
+{"hipotesis": "primer paso #71: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #71: aridad PING 0; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64"}
+{"hipotesis": "primer paso #72: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #72: aridad PING 1; con estado vacío la respuesta depende solo del mensaje", "m": "PING;AC-0001;87"}
+{"hipotesis": "primer paso #73: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #73: aridad PING 2; con estado vacío la respuesta depende solo del mensaje", "m": "PING;AC-0001;AC-0002;26"}
+{"hipotesis": "primer paso #74: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #74: aridad PING 3; con estado vacío la respuesta depende solo del mensaje", "m": "PING;AC-0001;AC-0002;10;46"}
+{"hipotesis": "primer paso #75: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #75: aridad PING 4; con estado vacío la respuesta depende solo del mensaje", "m": "PING;AC-0001;AC-0002;10;X;64"}
+{"hipotesis": "primer paso #76: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #76: aridad ALTA 0; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;85"}
+{"hipotesis": "primer paso #77: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #77: aridad ALTA 1; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;AC-0001;72"}
+{"hipotesis": "primer paso #78: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #78: aridad ALTA 2; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;AC-0001;AC-0002;9"}
+{"hipotesis": "primer paso #79: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #79: aridad ALTA 3; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;AC-0001;AC-0002;10;92"}
+{"hipotesis": "primer paso #80: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #80: aridad ALTA 4; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;AC-0001;AC-0002;10;X;8"}
+{"hipotesis": "primer paso #81: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #81: aridad CONSULTA 0; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;11"}
+{"hipotesis": "primer paso #82: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #82: aridad CONSULTA 1; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "primer paso #83: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #83: aridad CONSULTA 2; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;AC-0002;92"}
+{"hipotesis": "primer paso #84: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #84: aridad CONSULTA 3; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;AC-0002;10;50"}
+{"hipotesis": "primer paso #85: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #85: aridad CONSULTA 4; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;AC-0002;10;X;76"}
+{"hipotesis": "primer paso #86: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #86: aridad DEPOSITO 0; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;25"}
+{"hipotesis": "primer paso #87: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #87: aridad DEPOSITO 1; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;4"}
+{"hipotesis": "primer paso #88: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #88: aridad DEPOSITO 2; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;AC-0002;16"}
+{"hipotesis": "primer paso #89: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #89: aridad DEPOSITO 3; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;AC-0002;10;16"}
+{"hipotesis": "primer paso #90: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #90: aridad DEPOSITO 4; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;AC-0002;10;X;71"}
+{"hipotesis": "primer paso #91: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #91: aridad TRANSFER 0; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;89"}
+{"hipotesis": "primer paso #92: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #92: aridad TRANSFER 1; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;83"}
+{"hipotesis": "primer paso #93: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #93: aridad TRANSFER 2; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;15"}
+{"hipotesis": "primer paso #94: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #94: aridad TRANSFER 3; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;10;13"}
+{"hipotesis": "primer paso #95: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #95: aridad TRANSFER 4; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;10;X;62"}
+{"hipotesis": "primer paso #96: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #96: aridad ANULA 0; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;45"}
+{"hipotesis": "primer paso #97: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #97: aridad ANULA 1; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;AC-0001;59"}
+{"hipotesis": "primer paso #98: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #98: aridad ANULA 2; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;AC-0001;AC-0002;46"}
+{"hipotesis": "primer paso #99: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #99: aridad ANULA 3; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;AC-0001;AC-0002;10;9"}
+{"hipotesis": "primer paso #100: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #100: aridad ANULA 4; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;AC-0001;AC-0002;10;X;50"}
+{"hipotesis": "primer paso #101: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #101: aridad HALT 0; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;71"}
+{"hipotesis": "primer paso #102: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #102: aridad HALT 1; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;AC-0001;82"}
+{"hipotesis": "primer paso #103: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #103: aridad HALT 2; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;AC-0001;AC-0002;85"}
+{"hipotesis": "primer paso #104: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #104: aridad HALT 3; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;AC-0001;AC-0002;10;29"}
+{"hipotesis": "primer paso #105: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #105: aridad HALT 4; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;AC-0001;AC-0002;10;X;13"}
+{"hipotesis": "primer paso #106: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #106: control '014'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;014"}
+{"hipotesis": "primer paso #107: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #107: control ' 14'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001; 14"}
+{"hipotesis": "primer paso #108: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #108: control '14 '; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;14 "}
+{"hipotesis": "primer paso #109: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #109: control '+14'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;+14"}
+{"hipotesis": "primer paso #110: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #110: control '-14'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;-14"}
+{"hipotesis": "primer paso #111: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #111: control '00'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;00"}
+{"hipotesis": "primer paso #112: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #112: control '0'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;0"}
+{"hipotesis": "primer paso #113: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #113: control '99'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;99"}
+{"hipotesis": "primer paso #114: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #114: control '100'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;100"}
+{"hipotesis": "primer paso #115: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #115: control '1e1'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;1e1"}
+{"hipotesis": "primer paso #116: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #116: control '0x1'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;0x1"}
+{"hipotesis": "primer paso #117: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #117: control '٣'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;٣"}
+{"hipotesis": "primer paso #118: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #118: control '₁'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;₁"}
+{"hipotesis": "primer paso #119: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #119: control '1414'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;1414"}
+{"hipotesis": "primer paso #120: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #120: control '７'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001;７"}
+{"hipotesis": "primer paso #121: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #121: control correcto PING; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64"}
+{"hipotesis": "primer paso #122: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #122: control correcto ALTA;A; con estado vacío la respuesta depende solo del mensaje", "m": "ALTA;A;62"}
+{"hipotesis": "primer paso #123: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #123: control correcto ANULA;OP-0001; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "primer paso #124: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #124: segmentos ';;'; con estado vacío la respuesta depende solo del mensaje", "m": ";;"}
+{"hipotesis": "primer paso #125: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #125: segmentos ';PING;64'; con estado vacío la respuesta depende solo del mensaje", "m": ";PING;64"}
+{"hipotesis": "primer paso #126: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #126: segmentos 'PING;;64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING;;64"}
+{"hipotesis": "primer paso #127: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #127: segmentos 'PING;64;;'; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64;;"}
+{"hipotesis": "primer paso #128: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #128: segmentos 'PING; ;64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING; ;64"}
+{"hipotesis": "primer paso #129: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #129: segmentos ' ;64'; con estado vacío la respuesta depende solo del mensaje", "m": " ;64"}
+{"hipotesis": "primer paso #130: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #130: segmentos 'PING ;64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING ;64"}
+{"hipotesis": "primer paso #131: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #131: segmentos ';'; con estado vacío la respuesta depende solo del mensaje", "m": ";"}
+{"hipotesis": "primer paso #132: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #132: segmentos 'PING;64;64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64;64"}
+{"hipotesis": "primer paso #133: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #133: segmentos 'PING;\\t'; con estado vacío la respuesta depende solo del mensaje", "m": "PING;\t"}
+{"hipotesis": "primer paso #134: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #134: segmentos '\\tPING;64'; con estado vacío la respuesta depende solo del mensaje", "m": "\tPING;64"}
+{"hipotesis": "primer paso #135: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #135: segmentos ' PING;64'; con estado vacío la respuesta depende solo del mensaje", "m": " PING;64"}
+{"hipotesis": "primer paso #136: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #136: segmentos 'PING;64 '; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64 "}
+{"hipotesis": "primer paso #137: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #137: segmentos 'PING;64\\n'; con estado vacío la respuesta depende solo del mensaje", "m": "PING;64\n"}
+{"hipotesis": "primer paso #138: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #138: segmentos 'PING\\n;64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING\n;64"}
+{"hipotesis": "primer paso #139: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #139: segmentos 'PING,64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING,64"}
+{"hipotesis": "primer paso #140: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #140: segmentos 'PING:64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING:64"}
+{"hipotesis": "primer paso #141: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #141: segmentos 'PING|64'; con estado vacío la respuesta depende solo del mensaje", "m": "PING|64"}
+{"hipotesis": "primer paso #142: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #142: monto DEPOSITO '0'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;0;31"}
+{"hipotesis": "primer paso #143: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #143: monto TRANSFER '0'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;0;44"}
+{"hipotesis": "primer paso #144: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #144: monto DEPOSITO '00'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;00;10"}
+{"hipotesis": "primer paso #145: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #145: monto TRANSFER '00'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;00;43"}
+{"hipotesis": "primer paso #146: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #146: monto DEPOSITO '01'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;01;7"}
+{"hipotesis": "primer paso #147: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #147: monto TRANSFER '01'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;01;40"}
+{"hipotesis": "primer paso #148: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #148: monto DEPOSITO '1.0'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;1.0;77"}
+{"hipotesis": "primer paso #149: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #149: monto TRANSFER '1.0'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;1.0;13"}
+{"hipotesis": "primer paso #150: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #150: monto DEPOSITO '1,0'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;1,0;77"}
+{"hipotesis": "primer paso #151: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #151: monto TRANSFER '1,0'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;1,0;13"}
+{"hipotesis": "primer paso #152: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #152: monto DEPOSITO ' 1'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001; 1;28"}
+{"hipotesis": "primer paso #153: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #153: monto TRANSFER ' 1'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002; 1;41"}
+{"hipotesis": "primer paso #154: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #154: monto DEPOSITO '1 '; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;1 ;28"}
+{"hipotesis": "primer paso #155: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #155: monto TRANSFER '1 '; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;1 ;41"}
+{"hipotesis": "primer paso #156: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #156: monto DEPOSITO '-0'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;-0;31"}
+{"hipotesis": "primer paso #157: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #157: monto TRANSFER '-0'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;-0;44"}
+{"hipotesis": "primer paso #158: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #158: monto DEPOSITO '+1'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;+1;28"}
+{"hipotesis": "primer paso #159: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #159: monto TRANSFER '+1'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;+1;41"}
+{"hipotesis": "primer paso #160: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #160: monto DEPOSITO '１'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;１;4"}
+{"hipotesis": "primer paso #161: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #161: monto TRANSFER '１'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;１;15"}
+{"hipotesis": "primer paso #162: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #162: monto DEPOSITO '9999999999'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;9999999999;4"}
+{"hipotesis": "primer paso #163: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #163: monto TRANSFER '9999999999'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;9999999999;58"}
+{"hipotesis": "primer paso #164: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #164: monto DEPOSITO '10000000000'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;10000000000;63"}
+{"hipotesis": "primer paso #165: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #165: monto TRANSFER '10000000000'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;10000000000;21"}
+{"hipotesis": "primer paso #166: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #166: monto DEPOSITO '1e2'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;1e2;23"}
+{"hipotesis": "primer paso #167: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #167: monto TRANSFER '1e2'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;1e2;62"}
+{"hipotesis": "primer paso #168: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #168: monto DEPOSITO '0x10'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;0x10;25"}
+{"hipotesis": "primer paso #169: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #169: monto TRANSFER '0x10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;0x10;45"}
+{"hipotesis": "primer paso #170: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #170: monto DEPOSITO 'Infinity'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;Infinity;15"}
+{"hipotesis": "primer paso #171: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #171: monto TRANSFER 'Infinity'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;Infinity;80"}
+{"hipotesis": "primer paso #172: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #172: monto DEPOSITO 'NaN'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;NaN;27"}
+{"hipotesis": "primer paso #173: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #173: monto TRANSFER 'NaN'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;NaN;47"}
+{"hipotesis": "primer paso #174: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #174: monto DEPOSITO '½'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;½;4"}
+{"hipotesis": "primer paso #175: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #175: monto TRANSFER '½'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;½;15"}
+{"hipotesis": "primer paso #176: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #176: monto DEPOSITO '²'; con estado vacío la respuesta depende solo del mensaje", "m": "DEPOSITO;AC-0001;²;4"}
+{"hipotesis": "primer paso #177: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #177: monto TRANSFER '²'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;²;15"}
+{"hipotesis": "primer paso #178: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #178: orden 'TRANSFER;AC-0001;AC-0001;0'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0001;0;74"}
+{"hipotesis": "primer paso #179: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #179: orden 'TRANSFER;AC-0001;AC-0001;10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0001;10;22"}
+{"hipotesis": "primer paso #180: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #180: orden 'TRANSFER;AC-0001;AC-0002;50001'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0002;50001;56"}
+{"hipotesis": "primer paso #181: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #181: orden 'TRANSFER;AC-0009;AC-0009;50001'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0009;AC-0009;50001;83"}
+{"hipotesis": "primer paso #182: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #182: orden 'TRANSFER;X;Y;10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;X;Y;10;19"}
+{"hipotesis": "primer paso #183: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #183: orden 'TRANSFER;;AC-0002;10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;;AC-0002;10;0"}
+{"hipotesis": "primer paso #184: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #184: orden 'TRANSFER;AC-0001;ac-0001;10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;ac-0001;10;22"}
+{"hipotesis": "primer paso #185: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #185: orden 'TRANSFER;AC-0001;AC-0001 ;10'; con estado vacío la respuesta depende solo del mensaje", "m": "TRANSFER;AC-0001;AC-0001 ;10;22"}
+{"hipotesis": "primer paso #186: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #186: ANULA 'OP-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-0001;72"}
+{"hipotesis": "primer paso #187: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #187: ANULA 'OP-1'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-1;91"}
+{"hipotesis": "primer paso #188: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #188: ANULA 'op-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;op-0001;72"}
+{"hipotesis": "primer paso #189: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #189: ANULA 'OP-0001 '; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-0001 ;72"}
+{"hipotesis": "primer paso #190: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #190: ANULA ' OP-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA; OP-0001;72"}
+{"hipotesis": "primer paso #191: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #191: ANULA 'OP-00001'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-00001;59"}
+{"hipotesis": "primer paso #192: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #192: ANULA 'OP-0000'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-0000;75"}
+{"hipotesis": "primer paso #193: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #193: ANULA 'AC-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;AC-0001;59"}
+{"hipotesis": "primer paso #194: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #194: ANULA 'OP-'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;OP-;20"}
+{"hipotesis": "primer paso #195: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #195: ANULA '-'; con estado vacío la respuesta depende solo del mensaje", "m": "ANULA;-;45"}
+{"hipotesis": "primer paso #196: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #196: CONSULTA 'AC-0000'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0000;17"}
+{"hipotesis": "primer paso #197: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #197: CONSULTA 'AC-1'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-1;5"}
+{"hipotesis": "primer paso #198: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #198: CONSULTA 'ac-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;ac-0001;14"}
+{"hipotesis": "primer paso #199: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #199: CONSULTA 'AC-0001 '; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-0001 ;14"}
+{"hipotesis": "primer paso #200: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #200: CONSULTA 'AC-00001'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-00001;61"}
+{"hipotesis": "primer paso #201: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #201: CONSULTA 'AC-'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;AC-;89"}
+{"hipotesis": "primer paso #202: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #202: CONSULTA 'OP-0001'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;OP-0001;34"}
+{"hipotesis": "primer paso #203: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #203: CONSULTA '0001'; con estado vacío la respuesta depende solo del mensaje", "m": "CONSULTA;0001;88"}
+{"hipotesis": "primer paso #204: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #204: HALT '1'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;1;19"}
+{"hipotesis": "primer paso #205: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #205: HALT ' 1'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT; 1;19"}
+{"hipotesis": "primer paso #206: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #206: HALT '1 '; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;1 ;19"}
+{"hipotesis": "primer paso #207: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #207: HALT '01'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;01;14"}
+{"hipotesis": "primer paso #208: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #208: HALT '１'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;１;71"}
+{"hipotesis": "primer paso #209: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #209: HALT '+1'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;+1;19"}
+{"hipotesis": "primer paso #210: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #210: HALT '1.0'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;1.0;84"}
+{"hipotesis": "primer paso #211: secuencia propia de un paso, como los tests que caen en el primer request", "reset": true}
+{"hipotesis": "primer paso #211: HALT 'true'; con estado vacío la respuesta depende solo del mensaje", "m": "HALT;true;81"}

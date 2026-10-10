@@ -414,8 +414,9 @@ class Replacement:
             return resp.status, text
 
 
-def compare(seed, canario, only=None, log=None):
-    prefixes = [f"diferencial s{seed} " if seed is not None else "diferencial"] + (["canario"] if canario else [])
+def compare(seed, canario, only=None, log=None, prefix=None):
+    prefixes = [prefix] if prefix else \
+        [f"diferencial s{seed} " if seed is not None else "diferencial"] + (["canario"] if canario else [])
     rows = [json.loads(l) for l in Path(log).read_text().splitlines() if l.strip()] if log else load_log()
     seqs = sequences(rows, prefixes, only)
     if not seqs:
@@ -456,6 +457,7 @@ def main():
     # Para reproducir otras secuencias, como la tanda de HTTP raro de t1: --log logs/t1.jsonl --seq t1-s3
     c.add_argument("--seq", nargs="*")
     c.add_argument("--log")
+    c.add_argument("--prefijo", help="compara las secuencias cuya hipótesis empieza así, p. ej. 'primer paso'")
     ch = sub.add_parser("cambios")
     ch.add_argument("--semilla", type=int, required=True)
     a = ap.parse_args()
@@ -469,7 +471,7 @@ def main():
         return record(a.archivo)
     if a.cmd == "cambios":
         return changes(a.semilla)
-    return compare(a.semilla, a.canario, a.seq, a.log)
+    return compare(a.semilla, a.canario, a.seq, a.log, a.prefijo)
 
 
 if __name__ == "__main__":
