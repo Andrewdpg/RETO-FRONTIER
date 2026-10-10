@@ -1,0 +1,298 @@
+2026-10-10T21:50:08.820Z contra http://localhost:8080
+pasos iguales: 3863/4154 (93.0 %)
+secuencias iguales: 320/416 (76.9 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.3 ms, p95 0.6 ms, máx 5.1 ms
+
+id | seq | esperado | obtenido
+5 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+8 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+10 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+13 | t1-s01-ejemplos | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+14 | t1-s01-ejemplos | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+18 | t1-s01-ejemplos | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+19 | t1-s01-ejemplos | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+102 | t1-s05-montos-orden | 200 {"cuenta_id":"AC-0001","saldo":1000000} | 200 {"cuenta_id":"AC-0001","saldo":"10000.00"}
+109 | t1-s05-montos-orden | 200 {"status":"recieved","operacionId":"OP-0002"} | 422 {"error":"E506","mensaje":"límite excedido"}
+113 | t1-s05-montos-orden | 200 {"cuenta_id":"AC-0002","saldo":100000} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+122 | t1-s06-anula | 200 {"cuenta_id":"AC-0002","saldo":-50000} | 200 {"cuenta_id":"AC-0002","saldo":"-500.00"}
+123 | t1-s06-anula | 200 {"cuenta_id":"AC-0001","saldo":100000} | 200 {"cuenta_id":"AC-0001","saldo":"1000.00"}
+125 | t1-s06-anula | 200 {"cuenta_id":"AC-0001","saldo":50000} | 200 {"cuenta_id":"AC-0001","saldo":"500.00"}
+146 | t1-s07-bordes | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+155 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0002"} | 422 {"error":"E506","mensaje":"límite excedido"}
+156 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+157 | t1-s07-bordes | 200 {"status":"recieved","operacionId":"OP-0004"} | 422 {"error":"E506","mensaje":"límite excedido"}
+218 | t1-s12-bordes | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+231 | t1-s14-anula-deposito | 200 {"cuenta_id":"AC-0001","saldo":-50} | 200 {"cuenta_id":"AC-0001","saldo":"-0.50"}
+249 | t1-s15-bloqueo-serie | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+251 | t1-s15-bloqueo-serie | 200 {"cuenta_id":"AC-0001","saldo":105} | 200 {"cuenta_id":"AC-0001","saldo":"1.05"}
+269 | t1-s17-bloqueo-e506 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+308 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+309 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+310 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3}
+319 | t1-s23-bloqueo-alcance | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+322 | t1-s23-bloqueo-alcance | 200 {"cuenta_id":"AC-0001","saldo":110} | 200 {"cuenta_id":"AC-0001","saldo":"1.10"}
+355 | t1-s24-rechazo-mixto | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+379 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":3000000000} | 200 {"cuenta_id":"AC-0001","saldo":"30000000.00"}
+382 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":5000000000} | 200 {"cuenta_id":"AC-0001","saldo":"50000000.00"}
+386 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0002"} | 422 {"error":"E506","mensaje":"límite excedido"}
+387 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+388 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0004"} | 422 {"error":"E506","mensaje":"límite excedido"}
+389 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0005"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+390 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0006"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+391 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0007"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3}
+392 | t1-s28-limite-diario | 200 {"cuenta_id":"AC-0001","saldo":400000} | 200 {"cuenta_id":"AC-0001","saldo":"10000.00"}
+455 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+457 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+465 | t1-s33-desbloqueo-deposito | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+476 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+478 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+487 | t1-s35-racha-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+494 | t1-s25-bloqueo-tiempo | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+10006 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+10009 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+10011 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+10012 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+10014 | t2-s1 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+10015 | t2-s1 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+10019 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+10020 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+11018 | t2-s25 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11021 | t2-s25 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+11023 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11024 | t2-s25 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+11026 | t2-s25 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11027 | t2-s25 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11031 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+11032 | t2-s25 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+11053 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+11054 | t2-s25 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+11055 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+11059 | t2-s25 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11061 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+11062 | t2-s25 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+11063 | t2-s25 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+11071 | t2-s26 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11077 | t2-s27 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11083 | t2-s28 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11089 | t2-s29 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11095 | t2-s30 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11101 | t2-s31 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11107 | t2-s32 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11113 | t2-s33 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11119 | t2-s34 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11125 | t2-s35 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11131 | t2-s36 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11143 | t2-s38 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11149 | t2-s39 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11156 | t2-s40 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11162 | t2-s41 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11168 | t2-s42 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11174 | t2-s43 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11217 | t2-s54 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11220 | t2-s54 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+11222 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11223 | t2-s54 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+11225 | t2-s54 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11226 | t2-s54 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11230 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+11231 | t2-s54 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+11252 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+11253 | t2-s54 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+11254 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+11258 | t2-s54 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11260 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+11261 | t2-s54 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+11262 | t2-s54 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+11270 | t2-s55 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11273 | t2-s55 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+11275 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11276 | t2-s55 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+11278 | t2-s55 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11279 | t2-s55 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11283 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+11284 | t2-s55 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+11305 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+11306 | t2-s55 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+11307 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+11311 | t2-s55 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11313 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+11314 | t2-s55 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+11315 | t2-s55 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+11419 | t2-s100 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11451 | t2-s107 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11468 | t2-s111 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11494 | t2-s116 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11499 | t2-s117 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11500 | t2-s117 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11505 | t2-s118 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11509 | t2-s119 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11515 | t2-s120 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11520 | t2-s121 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11521 | t2-s121 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11544 | t2-s126 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11553 | t2-s128 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11558 | t2-s129 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11610 | t2-s140 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11642 | t2-s146 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11645 | t2-s146 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11648 | t2-s146 | 200 {"cuenta_id":"AC-0003","saldo":0} | 200 {"cuenta_id":"AC-0003","saldo":"0.00"}
+11653 | t2-s147 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11656 | t2-s147 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11671 | t2-s149 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11684 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11685 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11686 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11687 | t2-s150 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11689 | t2-s150 | 200 {"cuenta_id":"AC-0002","saldo":128} | 200 {"cuenta_id":"AC-0002","saldo":"1.28"}
+11690 | t2-s150 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+11697 | t2-s151 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11700 | t2-s151 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11705 | t2-s152 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11706 | t2-s152 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11716 | t2-s153 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11721 | t2-s153 | 200 {"cuenta_id":"AC-0002","saldo":210} | 200 {"cuenta_id":"AC-0002","saldo":"2.10"}
+11749 | t2-s156 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11755 | t2-s157 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11767 | t2-s158 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11768 | t2-s158 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11770 | t2-s158 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11783 | t2-s160 | 200 {"cuenta_id":"AC-0002","saldo":150000} | 200 {"cuenta_id":"AC-0002","saldo":"1500.00"}
+11789 | t2-s161 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11795 | t2-s162 | 200 {"cuenta_id":"AC-0002","saldo":150000} | 200 {"cuenta_id":"AC-0002","saldo":"1500.00"}
+11801 | t2-s163 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11811 | t2-s165 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11814 | t2-s165 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+11816 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11817 | t2-s165 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+11819 | t2-s165 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11820 | t2-s165 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+11824 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+11825 | t2-s165 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+11846 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+11847 | t2-s165 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+11848 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+11852 | t2-s165 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+11854 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+11855 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+11856 | t2-s165 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+11965 | t2-s211 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+11967 | t2-s211 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+11974 | t2-s213 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11989 | t2-s217 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+11997 | t2-s219 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12024 | t2-s226 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12025 | t2-s226 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12030 | t2-s227 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12083 | t2-s239 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12104 | t2-s243 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12116 | t2-s245 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12146 | t2-s251 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12149 | t2-s251 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12150 | t2-s251 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12158 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12160 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2}
+12162 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3}
+12168 | t2-s253 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12170 | t2-s253 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12171 | t2-s253 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12182 | t2-s254 | 200 {"cuenta_id":"AC-0001","saldo":263973} | 200 {"cuenta_id":"AC-0001","saldo":"2639.73"}
+12191 | t2-s255 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12203 | t2-s256 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12210 | t2-s257 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12212 | t2-s257 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12213 | t2-s257 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12217 | t2-s258 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12220 | t2-s258 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12225 | t2-s258 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12232 | t2-s259 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12233 | t2-s259 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12245 | t2-s260 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12250 | t2-s261 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12260 | t2-s262 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12261 | t2-s262 | 200 {"cuenta_id":"AC-0002","saldo":0} | 200 {"cuenta_id":"AC-0002","saldo":"0.00"}
+12265 | t2-s262 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12272 | t2-s263 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12274 | t2-s263 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12277 | t2-s263 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12286 | t2-s264 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12287 | t2-s264 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12294 | t2-s265 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12306 | t2-s266 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12309 | t2-s266 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+12311 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12312 | t2-s266 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+12314 | t2-s266 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12315 | t2-s266 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12319 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+12320 | t2-s266 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+12341 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+12342 | t2-s266 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+12343 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+12347 | t2-s266 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12349 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+12350 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+12351 | t2-s266 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+12359 | t2-s267 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12362 | t2-s267 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+12364 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12365 | t2-s267 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+12367 | t2-s267 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12368 | t2-s267 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12372 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+12373 | t2-s267 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+12394 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+12395 | t2-s267 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+12396 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+12400 | t2-s267 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12402 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+12403 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+12404 | t2-s267 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+12408 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0009"} | 200 {"status":"recieved","operacionId":"OP-0008"}
+12409 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0010"} | 200 {"status":"recieved","operacionId":"OP-0009"}
+12410 | t2-s267 | 200 {"cuenta_id":"AC-0005","saldo":150000} | 200 {"cuenta_id":"AC-0005","saldo":"1500.00"}
+12419 | t2-s268 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12422 | t2-s268 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+12424 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12425 | t2-s268 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+12427 | t2-s268 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12428 | t2-s268 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12432 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+12433 | t2-s268 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+12454 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+12455 | t2-s268 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+12456 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+12460 | t2-s268 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12462 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+12463 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+12464 | t2-s268 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+12468 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0009"} | 200 {"status":"recieved","operacionId":"OP-0008"}
+12469 | t2-s268 | 200 {"status":"recieved","operacionId":"OP-0010"} | 200 {"status":"recieved","operacionId":"OP-0009"}
+12470 | t2-s268 | 200 {"cuenta_id":"AC-0005","saldo":150000} | 200 {"cuenta_id":"AC-0005","saldo":"1500.00"}
+12479 | t2-s269 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12482 | t2-s269 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+12484 | t2-s269 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12485 | t2-s269 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+12487 | t2-s269 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12488 | t2-s269 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12492 | t2-s269 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+12493 | t2-s269 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+12499 | t2-s270 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":"0.00"}
+12502 | t2-s270 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 200 {"cuenta_id":"AC-0002","saldo":"400.00"}
+12504 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E506","mensaje":"límite excedido"}
+12505 | t2-s270 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"}
+12507 | t2-s270 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12508 | t2-s270 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+12512 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+12513 | t2-s270 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":"407.00"}
+12534 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+12535 | t2-s270 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 200 {"cuenta_id":"AC-0004","saldo":"99999999.99"}
+12536 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+12540 | t2-s270 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1}
+12542 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0007"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+12543 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0008"} | 200 {"status":"recieved","operacionId":"OP-0007"}
+12544 | t2-s270 | 200 {"cuenta_id":"AC-0003","saldo":991} | 200 {"cuenta_id":"AC-0003","saldo":"9.91"}
+12548 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0009"} | 200 {"status":"recieved","operacionId":"OP-0008"}
+12549 | t2-s270 | 200 {"status":"recieved","operacionId":"OP-0010"} | 200 {"status":"recieved","operacionId":"OP-0009"}
+12550 | t2-s270 | 200 {"cuenta_id":"AC-0005","saldo":150000} | 200 {"cuenta_id":"AC-0005","saldo":"1500.00"}

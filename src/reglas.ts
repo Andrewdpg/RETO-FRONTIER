@@ -138,7 +138,9 @@ const COMANDOS: Record<string, Comando> = {
   },
 };
 
-function levenshtein(a: string, b: string): number {
+// Por code points, no por unidades UTF-16: "PI😀😀" está a distancia 2 de PING (log 1289, 1314).
+function levenshtein(x: string, y: string): number {
+  const a = Array.from(x), b = Array.from(y);
   let previa = Array.from({ length: b.length + 1 }, (_, j) => j);
   for (let i = 1; i <= a.length; i++) {
     const fila = [i];
