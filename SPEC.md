@@ -1,6 +1,6 @@
 # Especificación del servicio "caja negra"
 
-Describe el servicio tal como responde desde las 15:57 del 10 de octubre (versión 2), que es la que se evalúa a las 20:00. Lo que cambió respecto de la versión de la mañana está en la sección 6.
+Describe el servicio tal como responde desde las 15:57 del 10 de octubre (versión 2), que es la vigente al cierre de la ejecución. Lo que cambió respecto de la versión de la mañana está en la sección 6.
 
 **Evidencia.** Los números son ids de `experimentos.jsonl`. Cada línea tiene los campos del README (`id`, `seq`, `x_req`, `hipotesis`, `request`, `status`, `response`, `conclusion`) y además `token` (t1 o t2, nunca el token en sí), `ts` (hora UTC) y, solo cuando la sonda se sale de un `POST /msg` normal, `metodo`, `ruta`, `auth`, `content_type` o `headers`. Los ids 1–497 se grabaron sin registrar el `POST /__reset` de inicio de secuencia ni la hora: cada secuencia de ese rango empieza tras un reset que no tiene línea propia. Los ids 10001–10958 se renumeraron desde otro archivo y conservan su número viejo en `id_original`.
 
@@ -189,11 +189,12 @@ Cada respuesta tiene un solo error: el de la primera validación que falla, en e
 |---|---|---|---|
 | CAM-01 | **Cómo lo detectamos.** Un canario repite cada 20 minutos la misma secuencia de 59 pasos (los 20 ejemplos y un caso por cada error y comando) y compara cada respuesta, con tipos estrictos, contra la última corrida aceptada como base | 12355–12413 (base de v1), 12631–12689 | confirmado |
 | CAM-02 | **Desde cuándo.** La última corrida igual a la base de la mañana terminó a las 15:35:11 UTC−5 (20:35:11 UTC); la primera respuesta distinta es de las 15:57:17 (20:57:17 UTC). El cambio ocurrió en ese intervalo. Dos corridas posteriores, a las 16:01 y 16:05, son idénticas entre sí | 12495–12553, 12565, 12631–12689, 12691–12749 | confirmado |
-| CAM-03 | **Saldo.** Antes: un número entero (`"saldo":40000`). Ahora: un string con el entero dividido por 100 y dos decimales (`"saldo":"400.00"`) | antes 8, 19; ahora 12638, 12649 | confirmado |
-| CAM-04 | **Cuenta bloqueada.** Antes: 409 `{"error":"E510","mensaje":"cuenta bloqueada"}`. Ahora: 423 con `"intentos"` | antes 249, 308; ahora 12565, 12676 | confirmado |
-| CAM-05 | **Límite por transferencia** entre titulares distintos. Antes: 100.000 (100.000 pasaba). Ahora: 50.000. Los 100.000 del ejemplo 10 de `ejemplos.jsonl` pasaron a dar E506, y por eso las operaciones siguientes del canario cambian de número | antes 10, 109; ahora 12640, 12854, 12856 | confirmado |
-| CAM-06 | **Lo que no cambió.** El resto de los 59 pasos del canario, la regla del bloqueo, el titular, ANULA y HALT responden igual en v2 | 12554–12629, 12631–12689 | confirmado |
-| CAM-07 | El canario sigue corriendo contra la base de v2 hasta las 19:55, para ver un segundo cambio o una reversión | 12691–12749 | probable |
+| CAM-03 | **Saldo.** Antes: un número entero (`"saldo":40000`). Ahora: un string con el entero dividido por 100 y dos decimales (`"saldo":"400.00"`). Se confirmó con saldos internos de 0, 100, 1.000, 991 y −1.000 | antes 8, 19; ahora 12638, 12649, 12780, 12787, 12789 | confirmado |
+| CAM-04 | **Cuenta bloqueada.** Antes: 409 `{"error":"E510","mensaje":"cuenta bloqueada"}`. Ahora: 423 con `"intentos"`. Se confirmó bloqueando una cuenta e insistiendo: 1, 2, 3, y vuelve a 1 tras el depósito que desbloquea | antes 249, 308; ahora 12565, 12676, 12772–12774, 12779 | confirmado |
+| CAM-05 | **Límite por transferencia** entre titulares distintos. Antes: 100.000 (100.000 pasaba). Ahora: 50.000. Los 100.000 del ejemplo 10 de `ejemplos.jsonl` pasaron a dar E506, y por eso las operaciones siguientes del canario cambian de número. El corte se encontró barriendo montos: 50.000 pasa; 50.001, 75.000, 90.000, 99.000, 99.999 y 100.000 no | antes 10, 109; ahora 12640, 12754–12764, 12854, 12856 | confirmado |
+| CAM-06 | **Confirmación con el otro token.** Las 35 secuencias del token 1 se repitieron sobre v2: 45 pasos responden distinto que en v1 y los 45 los explican estos tres cambios; ninguno queda sin explicar | 513–1011 | confirmado |
+| CAM-07 | **Lo que no cambió.** El resto de los 59 pasos del canario, la regla del bloqueo, el titular, ANULA y HALT responden igual en v2 | 12554–12629, 12631–12689 | confirmado |
+| CAM-08 | El canario siguió corriendo contra la base de v2 hasta el cierre, para ver un segundo cambio o una reversión | 12691–12749 | probable |
 
 ## 7. Riesgos
 
