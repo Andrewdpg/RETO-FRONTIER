@@ -4,13 +4,14 @@
 // (DESIGN, encabezado): se manda antes de cada una de esas secuencias. Desde el 498 el reset ya es una línea.
 // Se saltan las secuencias con pasos en paralelo (par): los pasos siguientes dependen de la ráfaga (E-10, paralelo.ts).
 // --sin-espera salta los pasos con espera (log 495–497, 10 min en total).
-import { corto, enviar, enviarLinea, esperado, flags, guardar, leerLog, mismoCuerpo, pct } from "./comun.ts";
+import { corto, enviar, enviarLinea, esperado, flags, guardar, leerLog, mismoCuerpo, pct, percentil } from "./comun.ts";
 
 const sinEspera = flags.includes("--sin-espera");
 const seqs = Map.groupBy(leerLog(), (l) => l.seq);
 
 let pasos = 0, pasosOk = 0, seqsCorridas = 0, seqsOk = 0, saltadasPar = 0, saltadosEspera = 0;
 const diferencias: string[] = [];
+const latencias: number[] = [];
 for (const [seq, ls] of seqs) {
   if (ls.some((l) => l.par != null)) { saltadasPar++; continue; }
   seqsCorridas++;
@@ -26,6 +27,7 @@ for (const [seq, ls] of seqs) {
     }
     const r = await enviarLinea(l);
     pasos++;
+    latencias.push(r.ms);
     if (r.status === l.status && mismoCuerpo(esperado(l), r.texto)) { pasosOk++; continue; }
     ok = false;
     diferencias.push(`${l.id} | ${seq} | ${l.status} ${corto(esperado(l))} | ${r.status} ${corto(r.texto)}`);
@@ -37,4 +39,5 @@ guardar("", [
   `pasos iguales: ${pasosOk}/${pasos} (${pct(pasosOk, pasos)} %)`,
   `secuencias iguales: ${seqsOk}/${seqsCorridas} (${pct(seqsOk, seqsCorridas)} %)`,
   `saltadas: ${saltadasPar} secuencias con par, ${saltadosEspera} pasos con espera`,
+  `latencia por paso (E-08, desde esta máquina): p50 ${percentil(latencias, 50).toFixed(1)} ms, p95 ${percentil(latencias, 95).toFixed(1)} ms, máx ${percentil(latencias, 100).toFixed(1)} ms`,
 ], diferencias);

@@ -39,14 +39,23 @@ export async function enviar(metodo: string, ruta: string, request: unknown, aut
   if (a !== undefined) headers.authorization = a;
   const body = request == null ? undefined : typeof request === "string" ? request : JSON.stringify(request);
   if (body !== undefined) headers["content-type"] = "application/json";
+  // ms: desde que sale el request hasta leer el cuerpo entero (E-08).
+  const t0 = performance.now();
   try {
     // 5 s por paso, como el set.
     const res = await fetch(base + ruta, { method: metodo, headers, body, signal: AbortSignal.timeout(5000) });
-    return { status: res.status, texto: await res.text() };
+    const texto = await res.text();
+    return { status: res.status, texto, ms: performance.now() - t0 };
   } catch (e) {
-    return { status: 0, texto: `(${(e as Error).name}: ${(e as Error).message})` };
+    return { status: 0, texto: `(${(e as Error).name}: ${(e as Error).message})`, ms: performance.now() - t0 };
   }
 }
+
+// Percentil por rango más cercano.
+export const percentil = (xs: number[], p: number) => {
+  const o = xs.toSorted((a, b) => a - b);
+  return o.length ? o[Math.max(0, Math.ceil((p / 100) * o.length) - 1)] : 0;
+};
 
 export const enviarLinea = (l: Linea) => enviar(l.metodo ?? "POST", l.ruta ?? "/msg", l.request, l.auth);
 // Una respuesta guardada como string es un cuerpo que no era JSON.
