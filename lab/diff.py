@@ -34,7 +34,7 @@ PAUSE = LOG.parent / "canario.pausa"
 BUDGET = 3000  # tope del día para el diferencial con t2 (plan, tarea 3)
 SHAPE = [1] * 40 + [None] * 45 + [None] * 15
 ARITY = {"PING": 0, "ALTA": 1, "CONSULTA": 1, "DEPOSITO": 2, "TRANSFER": 3, "ANULA": 1, "HALT": 1}
-AMOUNT = re.compile(r"[1-9]\d{0,9}")
+AMOUNT = re.compile(r"[1-9][0-9]{0,9}")  # [0-9] y no \d: los dígitos de ancho completo no valen (log 1408)
 NAMES = ["Ana", "Beto", "Lucia", "Mateo", "José", "Ñandú", "Maria Paz", "X", "007", "Zoe-Lee"]
 
 
@@ -66,7 +66,7 @@ class Model:
         cmd = "".join(chr(ord(c) - 32) if "a" <= c <= "z" else c for c in segs[0])
         args, k = segs[1:-1], segs[-1]
         if cmd != "PING":
-            if not re.fullmatch(r"\d{1,2}", k):
+            if not re.fullmatch(r"[0-9]{1,2}", k):  # solo dígitos ASCII (log 1409)
                 return 400, err("E201", "control mal formado")
             if k != ctl(m[:-len(k) - 1]):
                 return 400, err("E202", "control inválido")

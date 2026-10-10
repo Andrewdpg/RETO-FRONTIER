@@ -51,7 +51,8 @@ La confianza sigue la regla del README. **Confirmado** significa que lo vimos en
 | Rutas que solo se parecen a `/msg`: `//msg`, `/msg%2F`, `/%6Dsg` (no se decodifica) y una ruta de 9.001 caracteres | 404 `E404` | 501, 502, 503, 506 | probable |
 | `/msg?` con query vacía, `/msg` con una query de 9.000 caracteres y `/msg#x` con el fragmento en la línea del request | respuesta normal | 505, 507, 504 | probable |
 | `Content-Type` ausente o `text/plain` con un cuerpo JSON válido: no se mira el header | respuesta normal | 508, 509 | probable |
-| `bearer` en minúscula o dos espacios después de `Bearer`: la comparación del header es exacta | 401 `E001` | 510, 511 | probable |
+| `bearer` en minúscula, dos espacios después de `Bearer` o el token sin `Bearer`: el esquema y el separador se comparan exactos | 401 `E001` | 510, 511, 1427 | probable |
+| Un espacio o un tab al final del header se ignoran: el token sigue valiendo | respuesta normal | 1425, 1426 | probable |
 | Cuerpo que no es JSON (texto, JSON truncado, vacío) | 400 `{"error":"E100","mensaje":"json inválido"}` | 69, 70, 71 | confirmado |
 | JSON válido sin un campo `m` de tipo string (objeto vacío, `M`, número, null, array, string JSON) | 400 `{"error":"E102","mensaje":"falta m"}` | 72–78 | confirmado |
 | Claves extra junto a `m` se ignoran; un `m` de 5.000 caracteres se procesa | respuesta normal | 79, 80 | probable |

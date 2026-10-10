@@ -34,7 +34,11 @@ def ctl(body):
     # DESIGN 3.2: se descarta todo lo que no sea A–Z o 0–9 antes de pasar a mayúsculas.
     n = "".join(str(ord(c) - 64) if "A" <= c <= "Z" else c
                 for c in "".join(c for c in body if c.isascii() and c.isalnum()).upper())
-    return str(98 - (int(n) * 100) % 97)
+    # Módulo 97 dígito por dígito: un m de miles de caracteres da un N que int() no convierte.
+    r = 0
+    for d in n:
+        r = (r * 10 + int(d)) % 97
+    return str(98 - (r * 100) % 97)
 
 
 def msg(body):
