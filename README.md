@@ -36,11 +36,21 @@ Cada corrida deja un archivo con hora en `evals/results/`, con una línea `id | 
 
 ## Deploy
 
+El entrypoint corre en Railway, con el `Dockerfile` de la raíz:
+
+```
+railway up
+```
+
+En el servicio de Railway: la variable `TEAM_ENTRYPOINT_TOKEN`, 1 réplica y sin sleep (el estado vive en memoria). Railway pone `PORT`.
+
+Alternativa en Cloud Run:
+
 ```
 ./deploy.sh
 ```
 
-Pide `gcloud` con un proyecto activo y facturación, y `TEAM_ENTRYPOINT_TOKEN` en `.env`, que sube a Secret Manager. Antes de desplegar pide confirmación. El servicio queda en Cloud Run con min=1 y max=1. Al final llama a `/health` con el token y muestra la URL.
+Pide `gcloud` con un proyecto activo y facturación, y `TEAM_ENTRYPOINT_TOKEN` en `.env`, que sube a Secret Manager. Antes de desplegar pide confirmación. El servicio queda con min=1 y max=1. Al final llama a `/health` con el token y muestra la URL.
 
 ## Lo demás
 
