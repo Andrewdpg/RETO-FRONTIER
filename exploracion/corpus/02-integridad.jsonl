@@ -1,0 +1,29 @@
+{"seq":"s02-integridad","hipotesis":"H-mod97: control con 0 a la izquierda (03) vale igual que 3","request":{"m":"ALTA;Tom;03"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control de un dígito sin relleno","request":{"m":"ALTA;Zoe;3"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control 98 cuando N·100 mod 97 = 0","request":{"m":"CONSULTA;AC-0070;98"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: 1 ≡ 98 mod 97, ¿lo acepta?","request":{"m":"CONSULTA;AC-0070;1"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control +97 (161) ¿se reduce mod 97?","request":{"m":"PING;161"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control negativo","request":{"m":"PING;-33"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control decimal","request":{"m":"PING;64.0"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control con espacio final","request":{"m":"PING;64 "}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control con espacio inicial","request":{"m":"PING; 64"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: control vacío → ¿E201?","request":{"m":"PING;"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: sin campo de control → ¿E201 o E302?","request":{"m":"PING"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: letras no ASCII (í) se descartan del cálculo","request":{"m":"ALTA;Lucía;14"}}
+{"seq":"s02-integridad","hipotesis":"H-mod97: minúsculas cuentan como mayúsculas en el nombre","request":{"m":"ALTA;LUCIA;82"}}
+{"seq":"s02-integridad","hipotesis":"comando en minúsculas","request":{"m":"ping;64"}}
+{"seq":"s02-integridad","hipotesis":"comando con espacio inicial","request":{"m":"  PING;64"}}
+{"seq":"s02-integridad","hipotesis":"mensaje vacío","request":{"m":""}}
+{"seq":"s02-integridad","hipotesis":"solo separador","request":{"m":";"}}
+{"seq":"s02-integridad","hipotesis":"orden: comando desconocido + control inválido","request":{"m":"SALDOS;AC-0001;99"}}
+{"seq":"s02-integridad","hipotesis":"orden: comando desconocido + control mal formado","request":{"m":"SALDOS;AC-0001;XX"}}
+{"seq":"s02-integridad","hipotesis":"orden: aridad + control inválido","request":{"m":"ALTA;Lucia;Gomez;99"}}
+{"seq":"s02-integridad","hipotesis":"orden: aridad + control mal formado","request":{"m":"ALTA;Lucia;Gomez;X1"}}
+{"seq":"s02-integridad","hipotesis":"orden: comando desconocido con aridad rara y control válido","request":{"m":"FOO;47"}}
+{"seq":"s02-integridad","hipotesis":"PING con argumento extra y control válido → ¿E302?","request":{"m":"PING;x;21"}}
+{"seq":"s02-integridad","hipotesis":"cuenta inexistente + control inválido → ¿E202 antes que E401?","request":{"m":"CONSULTA;AC-0009;88"}}
+{"seq":"s02-integridad","hipotesis":"campo extra vacío al final","request":{"m":"PING;64;"}}
+{"seq":"s02-integridad","hipotesis":"separador distinto (coma)","request":{"m":"PING,64"}}
+{"seq":"s02-integridad","hipotesis":"nombre vacío en ALTA","request":{"m":"ALTA;;85"}}
+{"seq":"s02-integridad","hipotesis":"nombre numérico en ALTA","request":{"m":"ALTA;123;18"}}
+{"seq":"s02-integridad","hipotesis":"PING repetido es idempotente","request":{"m":"PING;64"}}

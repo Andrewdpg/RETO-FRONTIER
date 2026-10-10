@@ -1,0 +1,244 @@
+specification {
+  element actor     { notation "Persona";         style { shape person } }
+  element external  { notation "Sistema externo"; style { color gray; border dashed } }
+  element system    { notation "Sistema" }
+  element container { notation "Contenedor" }
+  element component { notation "Componente";      style { color sky } }
+  element queue     { notation "Cola";            style { shape queue; color secondary } }
+  element database  { notation "Almacenamiento";  style { shape storage } }
+
+  deploymentNode zone { notation "Zona de red";            style { color gray } }
+  deploymentNode node { notation "Nodo de infraestructura" }
+
+  relationship async { line dotted; color amber }
+}
+
+model {
+  evaluador = actor "Set de evaluación" {
+    description "100 secuencias en serie, /__reset antes de cada una, 5 s por paso. Solo 3 corridas en el día"
+  }
+  equipo = actor "Equipo" {
+    description "Dos personas, un token cada una contra el original, 8.000 requests por día cada token"
+  }
+  original = external "Caja negra original" {
+    technology "HTTPS · Railway"
+    description "Un estado por token, 10 req/s y 8.000 por día. Cambia a las 15:30"
+  }
+
+  reemplazo = system "Reemplazo" {
+    http = container "Router HTTP" {
+      technology "Node 26 · node:http, sin dependencias"
+      description "Resuelve ruta, token y cuerpo antes de tocar el mensaje. Atiende /health y /__reset"
+
+      rutas = component "Tabla de rutas" {
+        description "POST /msg, POST /__reset y GET /health. Cualquier otra ruta o método responde 404 E404 antes de mirar el token (log 57)"
+      }
+      auth = component "Chequeo de token" {
+        description "Compara el Bearer con TEAM_TOKEN; sin token, otro token o esquema Basic → 401 E001 (log 50–52)"
+      }
+      cuerpo = component "Lector del cuerpo" {
+        description "JSON.parse del cuerpo crudo → E100 si falla; exige m de tipo string → E102; ignora claves extra (log 69–79)"
+      }
+    }
+
+    reglas = container "Motor de reglas" {
+      technology "TypeScript · tablas declarativas"
+      description "Recorre las validaciones en el orden medido y aplica el efecto. Síncrono: no hay await entre validar y modificar el estado, así cada mensaje es atómico"
+
+      segmentos = component "Partidor de segmentos" {
+        description "Separa m por ';' sin recortar espacios: menos de 2 segmentos → E103, algún segmento vacío → E104 (log 30, 31)"
+      }
+      control = component "Verificador de control" {
+        description "Formato \\d{1,2} o E201; esperado 98 − (N·100 mod 97) con A→1…Z→26, dígitos tal cual y el resto descartado; compara como texto o E202. PING lo saltea"
+      }
+      comandos = component "Tabla de comandos" {
+        description "Una fila por comando (PING, ALTA, CONSULTA, DEPOSITO, TRANSFER, ANULA, HALT): aridad, tipos, reglas, efecto y respuesta. Nombre en mayúsculas; si no existe → E301; aridad → E302"
+      }
+      argumentos = component "Validador de argumentos" {
+        description "Monto ^[1-9]\\d*$ con tope → E303; en TRANSFER origen distinto de destino → E304. No mira el estado"
+      }
+      negocio = component "Reglas contra el estado" {
+        description "Existencia E401/E402, bloqueo E510, límite 100.000 E506, saldo E507, en ese orden. E506 y E507 suman un rechazo al origen; una transferencia exitosa o un depósito lo ponen en 0. Aplica el efecto si todo pasa"
+      }
+      respuestas = component "Catálogo de respuestas" {
+        description "Código → status y cuerpo exactos. Copia las rarezas: \"recieved\", cuentaId en ALTA y cuenta_id en CONSULTA, \"comando desconocido \" con espacio final, sugerencia por Levenshtein ≤ 2, E520 de HALT"
+      }
+    }
+
+    estado = database "Estado" {
+      technology "Map en el proceso Node"
+      description "Cuentas (saldo, rechazos seguidos) y operaciones (tipo, cuentas, monto, anulada). Los próximos AC-/OP- se derivan del tamaño de cada Map. /__reset vacía todo"
+    }
+  }
+
+  laboratorio = system "Laboratorio" {
+    herramientas = container "Herramientas de exploración" {
+      technology "Node 26 · exploracion/"
+      description "Scripts locales que hablan con el original con el token personal. Nunca forman parte del reemplazo"
+
+      ejecutor = component "Arnés (arnes.ts)" {
+        description "Reset y secuencia en orden, 110 ms entre requests, ráfagas paralelas marcadas con par, reintenta rate-limit sin registrarlo, modo replay"
+      }
+      generador = component "Generador diferencial" {
+        description "Secuencias aleatorias de una gramática de los 7 comandos con mutaciones (control, aridad, bordes de monto, ids inexistentes, rachas de rechazos). Forma del set: 1, 2–5 y 6–12 pasos"
+      }
+      comparador = component "Comparador del README" {
+        description "Mismo status y mismo cuerpo: JSON sin importar el orden de claves y arrays en orden; si no es JSON, texto exacto. Lo usan replay, canario y evals"
+      }
+      buscador = component "Buscador de algoritmos de control" {
+        description "Offline, sin requests: prueba MOD 97-10 con varios mapeos, Luhn, sumas mod N, ponderadas y polinomios contra los pares (cuerpo, control) aceptados del log"
+      }
+    }
+    log = database "experimentos.jsonl" {
+      technology "JSONL en el repo"
+      description "Una línea por request al original: id, seq, x_req, hipótesis, request, status, response, conclusión"
+    }
+    evals = container "Evals" {
+      technology "Node 26 · evals/run.ts"
+      description "Reproduce secuencias del log contra el reemplazo: todo el log como regresión y las diferenciales como generalización"
+    }
+  }
+
+  equipo -> laboratorio.herramientas.ejecutor "corre corpus, replay y canario" { technology "CLI" }
+  laboratorio.herramientas.generador -> laboratorio.herramientas.ejecutor "secuencias con su hipótesis"
+  laboratorio.herramientas.ejecutor -> original "POST /msg y /__reset" { technology "HTTPS · Bearer token personal" }
+  laboratorio.herramientas.ejecutor -> laboratorio.log "agrega una línea por request"
+  laboratorio.herramientas.ejecutor -> laboratorio.herramientas.comparador "compara replay con la línea vieja"
+  laboratorio.herramientas.buscador -> laboratorio.log "lee pares (cuerpo, control) aceptados"
+  laboratorio.evals -> laboratorio.log "lee secuencias grabadas"
+  laboratorio.evals -> laboratorio.herramientas.comparador "compara cada paso"
+  laboratorio.evals -> reemplazo.http.rutas "reproduce secuencias" { technology "HTTPS · token del equipo" }
+  evaluador -> reemplazo.http.rutas "POST /msg, /__reset, GET /health" { technology "HTTPS · token del equipo" }
+
+  reemplazo.http.rutas -> reemplazo.http.auth "ruta conocida"
+  reemplazo.http.auth -> reemplazo.http.cuerpo "token válido"
+  reemplazo.http.cuerpo -> reemplazo.reglas.segmentos "m como string"
+  reemplazo.http.rutas -> reemplazo.estado "vacía en /__reset"
+  reemplazo.reglas.segmentos -> reemplazo.reglas.control "segmentos no vacíos"
+  reemplazo.reglas.control -> reemplazo.reglas.comandos "control válido"
+  reemplazo.reglas.comandos -> reemplazo.reglas.argumentos "fila del comando"
+  reemplazo.reglas.argumentos -> reemplazo.reglas.negocio "argumentos tipados"
+  reemplazo.reglas.negocio -> reemplazo.estado "lee y escribe cuentas y operaciones"
+  reemplazo.reglas.negocio -> reemplazo.reglas.respuestas "código o resultado"
+  reemplazo.reglas.segmentos -> reemplazo.reglas.respuestas "E103, E104"
+  reemplazo.reglas.control -> reemplazo.reglas.respuestas "E201, E202"
+  reemplazo.reglas.comandos -> reemplazo.reglas.respuestas "E301 con sugerencia, E302, E520"
+  reemplazo.reglas.argumentos -> reemplazo.reglas.respuestas "E303, E304"
+}
+
+deployment {
+  zone internet "Internet" {
+    instanceOf evaluador
+  }
+  zone railway "Railway" {
+    instanceOf original
+  }
+  zone gcp "Google Cloud · us-central1" {
+    node run "Cloud Run · min=1, max=1 · estado en memoria" {
+      technology "node:26-slim · 1 vCPU · 512 MiB"
+      description "Un solo proceso: el set le habla a uno y resetea antes de cada test. Sin llamadas salientes"
+      instanceOf reemplazo.http
+      instanceOf reemplazo.reglas
+      instanceOf reemplazo.estado
+    }
+  }
+  zone laptop "Laptops del equipo" {
+    node dev "Node 26 · un token por persona" {
+      instanceOf laboratorio.herramientas
+      instanceOf laboratorio.evals
+      instanceOf laboratorio.log
+    }
+  }
+}
+
+views {
+  view contexto {
+    title "Contexto"
+    include evaluador, equipo, reemplazo, laboratorio, original
+  }
+
+  view contenedores of reemplazo {
+    title "Contenedores del reemplazo"
+    include *
+    include evaluador, laboratorio.evals
+  }
+
+  view router of reemplazo.http {
+    title "Router HTTP"
+    include *
+    include evaluador, reemplazo.reglas.segmentos, reemplazo.estado
+  }
+
+  view componentes of reemplazo.reglas {
+    title "Motor de reglas"
+    include *
+    include reemplazo.http.cuerpo, reemplazo.estado
+  }
+
+  view lab of laboratorio {
+    title "Laboratorio: exploración y medición"
+    include *
+    include original, reemplazo.http, equipo
+  }
+
+  view herramientas of laboratorio.herramientas {
+    title "Herramientas de exploración"
+    include *
+    include original, laboratorio.log, laboratorio.evals, equipo
+  }
+
+  deployment view despliegue {
+    title "Despliegue"
+    include internet.**, railway.**, gcp.**, laptop.**
+  }
+
+  dynamic view pipeline {
+    variant sequence
+    title "Pipeline de un POST /msg: una etapa por flecha, con su error y el log que prueba el orden"
+    evaluador -> reemplazo.http.rutas "POST /msg"
+    reemplazo.http.rutas -> reemplazo.http.auth "ruta ok · si no 404 E404, antes que el token (log 57)"
+    reemplazo.http.auth -> reemplazo.http.cuerpo "token ok · si no 401 E001 (log 50), antes que el cuerpo (log 296–298)"
+    reemplazo.http.cuerpo -> reemplazo.reglas.segmentos "JSON ok · E100 (log 69); m string · E102 (log 72)"
+    reemplazo.reglas.segmentos -> reemplazo.reglas.control "segmentos · E103 (log 31) / E104, antes que el control (log 30)"
+    reemplazo.reglas.control -> reemplazo.reglas.comandos "control · E201/E202 antes que comando y aridad (log 38–41); PING lo saltea (log 81)"
+    reemplazo.reglas.comandos -> reemplazo.reglas.argumentos "comando/aridad · E301/E302; antes que el monto: supuesto"
+    reemplazo.reglas.argumentos -> reemplazo.reglas.negocio "monto E303 antes que E304 (log 141); origen≠destino E304 antes que E401 (log 140)"
+    reemplazo.reglas.negocio -> reemplazo.estado "existencia E401/E402, antes que el bloqueo (log 307)"
+    reemplazo.reglas.negocio -> reemplazo.estado "bloqueo E510 (3 rechazos E506/E507 seguidos), antes que el límite (log 308, 309)"
+    reemplazo.reglas.negocio -> reemplazo.estado "límite E506, antes que el saldo (log 110); saldo E507"
+    reemplazo.reglas.negocio -> reemplazo.estado "efecto: saldos, operación, rechazos en 0"
+    reemplazo.reglas.negocio -> reemplazo.reglas.respuestas "código o resultado"
+    evaluador <- reemplazo.reglas.respuestas "status + cuerpo exacto"
+  }
+
+  dynamic view diferencial {
+    variant sequence
+    title "Prueba diferencial: original primero, reemplazo después"
+    equipo -> laboratorio.herramientas.ejecutor "corre una tanda"
+    laboratorio.herramientas.generador -> laboratorio.herramientas.ejecutor "100 secuencias (40 de 1, 45 de 2–5, 15 de 6–12)"
+    loop 'por cada secuencia, hasta el tope de 1.500 requests' {
+      laboratorio.herramientas.ejecutor -> original "/__reset y pasos en orden"
+      laboratorio.herramientas.ejecutor -> laboratorio.log "una línea por paso con su hipótesis"
+    }
+    laboratorio.evals -> laboratorio.log "lee las secuencias nuevas"
+    loop 'por cada secuencia' {
+      laboratorio.evals -> reemplazo.http.rutas "/__reset y los mismos pasos"
+      laboratorio.evals -> laboratorio.herramientas.comparador "paso a paso"
+    }
+    equipo <- laboratorio.evals "% de secuencias idénticas y lista de diferencias"
+  }
+
+  dynamic view canario {
+    variant sequence
+    title "Canario de las 15:30 y reacción"
+    equipo -> laboratorio.herramientas.ejecutor "replay del canario"
+    loop 'cada 10 min desde las 15:00 hasta el primer diff' {
+      laboratorio.herramientas.ejecutor -> original "/__reset y unos 45 requests"
+      laboratorio.herramientas.ejecutor -> laboratorio.herramientas.comparador "compara con la línea vieja"
+      laboratorio.herramientas.ejecutor -> laboratorio.log "replay con CAMBIÓ o sin cambios"
+    }
+    laboratorio.herramientas.generador -> laboratorio.herramientas.ejecutor "diferencial completo del área afectada (D4)"
+    laboratorio.herramientas.buscador -> laboratorio.log "si aparecen E202 nuevos: busca la fórmula nueva"
+    laboratorio.evals -> reemplazo.http.rutas "verifica la regla corregida"
+  }
+}

@@ -1,0 +1,85 @@
+{"seq":"s08-ocultos","hipotesis":"ALTA para tener AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe RETIRO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"RETIRO;AC-0001;18"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe BAJA? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"BAJA;AC-0001;91"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe SALDO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"SALDO;AC-0001;64"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe HISTORIAL? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"HISTORIAL;AC-0001;68"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe EXTRACTO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"EXTRACTO;AC-0001;61"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe MOVIMIENTOS? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"MOVIMIENTOS;AC-0001;77"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe CIERRE? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"CIERRE;AC-0001;84"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe BLOQUEO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"BLOQUEO;AC-0001;57"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe PAGO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"PAGO;AC-0001;97"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe REVERSA? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"REVERSA;AC-0001;87"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe LISTA? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"LISTA;AC-0001;57"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe AYUDA? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"AYUDA;AC-0001;8"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe HELP? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"HELP;AC-0001;12"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe ESTADO? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"ESTADO;AC-0001;85"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe VERSION? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"VERSION;AC-0001;2"}}
+{"seq":"s08-ocultos","hipotesis":"¿existe RESET? control válido y 1 argumento: E301 = no existe; E302 o éxito = existe","request":{"m":"RESET;AC-0001;53"}}
+{"seq":"s09-conc-deposito","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 1 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;1;28"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 2 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;2;25"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 4 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;4;19"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 8 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;8;7"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 16 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;16;59"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 32 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;32;11"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 64 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;64;12"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 128 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;128;95"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 256 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;256;2"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"10 DEPOSITO en paralelo; monto 512 (potencia de 2: el saldo final dice cuáles se aplicaron)","request":{"m":"DEPOSITO;AC-0001;512;10"},"par":"dep"}
+{"seq":"s09-conc-deposito","hipotesis":"saldo final: 1023 si no se pierde ninguna actualización","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s10-conc-alta","hipotesis":"5 ALTA en paralelo: ¿ids repetidos?","request":{"m":"ALTA;PA;98"},"par":"alta"}
+{"seq":"s10-conc-alta","hipotesis":"5 ALTA en paralelo: ¿ids repetidos?","request":{"m":"ALTA;PB;95"},"par":"alta"}
+{"seq":"s10-conc-alta","hipotesis":"5 ALTA en paralelo: ¿ids repetidos?","request":{"m":"ALTA;PC;92"},"par":"alta"}
+{"seq":"s10-conc-alta","hipotesis":"5 ALTA en paralelo: ¿ids repetidos?","request":{"m":"ALTA;PD;89"},"par":"alta"}
+{"seq":"s10-conc-alta","hipotesis":"5 ALTA en paralelo: ¿ids repetidos?","request":{"m":"ALTA;PE;86"},"par":"alta"}
+{"seq":"s10-conc-alta","hipotesis":"¿existe AC-0005? (si no, se repitió un id)","request":{"m":"CONSULTA;AC-0005;2"}}
+{"seq":"s10-conc-alta","hipotesis":"¿existe AC-0006? (debería no existir)","request":{"m":"CONSULTA;AC-0006;96"}}
+{"seq":"s10-conc-alta","hipotesis":"siguiente ALTA en serie: ¿AC-0006?","request":{"m":"ALTA;Fin;94"}}
+{"seq":"s11-conc-transfer","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s11-conc-transfer","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s11-conc-transfer","hipotesis":"fondos para una sola transfer de 60","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s11-conc-transfer","hipotesis":"5 TRANSFER de 60 en paralelo con saldo 100: si valida y descuenta sin atomicidad, pasa más de una","request":{"m":"TRANSFER;AC-0001;AC-0002;60;57"},"par":"tr"}
+{"seq":"s11-conc-transfer","hipotesis":"5 TRANSFER de 60 en paralelo con saldo 100: si valida y descuenta sin atomicidad, pasa más de una","request":{"m":"TRANSFER;AC-0001;AC-0002;60;57"},"par":"tr"}
+{"seq":"s11-conc-transfer","hipotesis":"5 TRANSFER de 60 en paralelo con saldo 100: si valida y descuenta sin atomicidad, pasa más de una","request":{"m":"TRANSFER;AC-0001;AC-0002;60;57"},"par":"tr"}
+{"seq":"s11-conc-transfer","hipotesis":"5 TRANSFER de 60 en paralelo con saldo 100: si valida y descuenta sin atomicidad, pasa más de una","request":{"m":"TRANSFER;AC-0001;AC-0002;60;57"},"par":"tr"}
+{"seq":"s11-conc-transfer","hipotesis":"5 TRANSFER de 60 en paralelo con saldo 100: si valida y descuenta sin atomicidad, pasa más de una","request":{"m":"TRANSFER;AC-0001;AC-0002;60;57"},"par":"tr"}
+{"seq":"s11-conc-transfer","hipotesis":"saldo origen: 40 si solo pasó una","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s11-conc-transfer","hipotesis":"saldo destino: 60 si solo pasó una","request":{"m":"CONSULTA;AC-0002;11"}}
+{"seq":"s12-bordes","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s12-bordes","hipotesis":"monto con espacio inicial","request":{"m":"DEPOSITO;AC-0001; 100;82"}}
+{"seq":"s12-bordes","hipotesis":"monto con espacio final","request":{"m":"DEPOSITO;AC-0001;100 ;82"}}
+{"seq":"s12-bordes","hipotesis":"monto con espacio interno","request":{"m":"DEPOSITO;AC-0001;1 000;35"}}
+{"seq":"s12-bordes","hipotesis":"monto con coma","request":{"m":"DEPOSITO;AC-0001;1,000;35"}}
+{"seq":"s12-bordes","hipotesis":"monto con punto de miles","request":{"m":"DEPOSITO;AC-0001;1.000;35"}}
+{"seq":"s12-bordes","hipotesis":"monto 0 (repetición de 94)","request":{"m":"DEPOSITO;AC-0001;0;31"}}
+{"seq":"s12-bordes","hipotesis":"monto negativo (repetición de 95)","request":{"m":"DEPOSITO;AC-0001;-1;28"}}
+{"seq":"s12-bordes","hipotesis":"monto decimal menor que 1","request":{"m":"DEPOSITO;AC-0001;0.5;92"}}
+{"seq":"s12-bordes","hipotesis":"tope del monto: 15 dígitos","request":{"m":"DEPOSITO;AC-0001;999999999999999;4"}}
+{"seq":"s12-bordes","hipotesis":"tope del monto: 2^53−1 (máximo entero seguro)","request":{"m":"DEPOSITO;AC-0001;9007199254740991;94"}}
+{"seq":"s12-bordes","hipotesis":"tope del monto: 2^53","request":{"m":"DEPOSITO;AC-0001;9007199254740992;91"}}
+{"seq":"s12-bordes","hipotesis":"tope del monto: 10^15 exacto","request":{"m":"DEPOSITO;AC-0001;1000000000000000;52"}}
+{"seq":"s12-bordes","hipotesis":"saldo tras los montos grandes: ¿pierde precisión?","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s12-bordes","hipotesis":"nombre largo (300 caracteres)","request":{"m":"ALTA;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;46"}}
+{"seq":"s12-bordes","hipotesis":"nombre largo (3000 caracteres)","request":{"m":"ALTA;BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB;76"}}
+{"seq":"s12-bordes","hipotesis":"nombre solo con símbolos (no cuentan en el control)","request":{"m":"ALTA;!!!;85"}}
+{"seq":"s12-bordes","hipotesis":"nombre con ß: en mayúsculas es SS, ¿lo cuenta?","request":{"m":"ALTA;ß;44"}}
+{"seq":"s12-bordes","hipotesis":"ANULA con OP sin relleno","request":{"m":"ANULA;OP-1;91"}}
+{"seq":"s12-bordes","hipotesis":"ANULA con OP-0000","request":{"m":"ANULA;OP-0000;75"}}
+{"seq":"s12-bordes","hipotesis":"ANULA con 5 dígitos","request":{"m":"ANULA;OP-00001;59"}}
+{"seq":"s14-anula-deposito","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s14-anula-deposito","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s14-anula-deposito","hipotesis":"depósito OP-0001","request":{"m":"DEPOSITO;AC-0001;50;54"}}
+{"seq":"s14-anula-deposito","hipotesis":"saco los 50 con una transfer OP-0002","request":{"m":"TRANSFER;AC-0001;AC-0002;50;87"}}
+{"seq":"s14-anula-deposito","hipotesis":"ANULA del depósito cuando el dinero ya salió: ¿se rechaza o deja −50?","request":{"m":"ANULA;OP-0001;72"}}
+{"seq":"s14-anula-deposito","hipotesis":"saldo de AC-0001 tras anular el depósito","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: TRANSF — distancia 2 a TRANSFER: si sugiere, el umbral es 2 y TRANS (3) quedó afuera","request":{"m":"TRANSF;AC-0001;19"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: TRANSFE — distancia 1","request":{"m":"TRANSFE;AC-0001;52"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: PNIGX — Levenshtein 3 / Damerau 2 a PING: separa los dos algoritmos","request":{"m":"PNIGX;AC-0001;35"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: TPANSFRE — Levenshtein 3 / Damerau 2 a TRANSFER","request":{"m":"TPANSFRE;AC-0001;69"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: PI — distancia 2 con 2 letras: ¿umbral fijo o relativo al largo?","request":{"m":"PI;AC-0001;23"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: AL — distancia 2 a ALTA con 2 letras","request":{"m":"AL;AC-0001;81"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: ANA — empate a distancia 2 entre ALTA y ANULA","request":{"m":"ANA;AC-0001;55"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: AUA — otro empate ALTA/ANULA a distancia 2","request":{"m":"AUA;AC-0001;11"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: TRANSFERIR — distancia 2 por inserción al final","request":{"m":"TRANSFERIR;AC-0001;61"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: CONSULTAS — distancia 1 con S final","request":{"m":"CONSULTAS;AC-0001;82"}}
+{"seq":"s13-sugerencia","hipotesis":"sugerencia: XXXX — distancia 4 a todo: sin sugerencia","request":{"m":"XXXX;AC-0001;69"}}

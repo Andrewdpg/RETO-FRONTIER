@@ -1,0 +1,28 @@
+{"seq":"s07-bordes","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s07-bordes","hipotesis":"control: 3 dígitos → ¿E201 o E202?","request":{"m":"CONSULTA;AC-0001;114"}}
+{"seq":"s07-bordes","hipotesis":"control: signo +","request":{"m":"CONSULTA;AC-0001;+14"}}
+{"seq":"s07-bordes","hipotesis":"control: decimal","request":{"m":"CONSULTA;AC-0001;14.0"}}
+{"seq":"s07-bordes","hipotesis":"control: espacio final","request":{"m":"CONSULTA;AC-0001;14 "}}
+{"seq":"s07-bordes","hipotesis":"control: 0 a la izquierda en 2 dígitos válido (014)","request":{"m":"CONSULTA;AC-0001;014"}}
+{"seq":"s07-bordes","hipotesis":"argumento con espacio final","request":{"m":"CONSULTA;AC-0001 ;14"}}
+{"seq":"s07-bordes","hipotesis":"nombre con espacio interno","request":{"m":"ALTA;Ana Maria;44"}}
+{"seq":"s07-bordes","hipotesis":"nombre con espacio inicial","request":{"m":"ALTA; Ana;50"}}
+{"seq":"s07-bordes","hipotesis":"orden: monto inválido + cuenta inexistente","request":{"m":"DEPOSITO;AC-0099;0;98"}}
+{"seq":"s07-bordes","hipotesis":"orden: origen=destino + cuenta inexistente","request":{"m":"TRANSFER;AC-0099;AC-0099;10;61"}}
+{"seq":"s07-bordes","hipotesis":"orden: origen=destino + monto inválido","request":{"m":"TRANSFER;AC-0001;AC-0001;0;74"}}
+{"seq":"s07-bordes","hipotesis":"orden: aridad en comando conocido vs control válido","request":{"m":"CONSULTA;11"}}
+{"seq":"s07-bordes","hipotesis":"orden: aridad de comando desconocido con 1 arg","request":{"m":"FOO;x;67"}}
+{"seq":"s07-bordes","hipotesis":"monto con signo +","request":{"m":"DEPOSITO;AC-0001;+5;16"}}
+{"seq":"s07-bordes","hipotesis":"monto enorme (20 dígitos)","request":{"m":"DEPOSITO;AC-0001;99999999999999999999;4"}}
+{"seq":"s07-bordes","hipotesis":"saldo tras monto enorme","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: distancia 1 por borrado (PIN)","request":{"m":"PIN;87"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: distancia 1 por inserción (ANULAR)","request":{"m":"ANULAR;OP-0001;13"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: distancia 2 (CONSUL)","request":{"m":"CONSUL;AC-0001;92"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: distancia 2 por sustitución (DEPOZYTO)","request":{"m":"DEPOZYTO;AC-0001;10;18"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: trasposición (ATLA)","request":{"m":"ATLA;Ana;95"}}
+{"seq":"s07-bordes","hipotesis":"sugerencia: comando en minúsculas con error (consult)","request":{"m":"consult;AC-0001;41"}}
+{"seq":"s07-bordes","hipotesis":"límite acumulado: segunda transfer de 100000","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s07-bordes","hipotesis":"depósito para tener fondos","request":{"m":"DEPOSITO;AC-0001;500000;90"}}
+{"seq":"s07-bordes","hipotesis":"transfer 1 de 100000","request":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}
+{"seq":"s07-bordes","hipotesis":"transfer 2 de 100000 (¿límite diario?)","request":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}
+{"seq":"s07-bordes","hipotesis":"transfer 3 de 100000","request":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}

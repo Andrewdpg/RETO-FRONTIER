@@ -1,0 +1,40 @@
+{"seq":"s32-desbloqueo-entrante","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"fondos 1000 en AC-0002 (OP-0002)","request":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"rechazo E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"rechazo E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"rechazo E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"confirmo el bloqueo (E510)","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"H: recibir una transferencia NO desbloquea (s23 mezclaba recibir y depositar)","request":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"seq":"s32-desbloqueo-entrante","hipotesis":"transfer desde AC-0001: E510 si recibir no desbloquea","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"fondos 1000 en AC-0002 (OP-0002)","request":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"rechazo E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"rechazo E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"rechazo E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"confirmo el bloqueo (E510)","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"H: un depósito en la cuenta bloqueada la desbloquea","request":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"seq":"s33-desbloqueo-deposito","hipotesis":"transfer desde AC-0001: 200 si el depósito desbloquea","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"fondos 1000 en AC-0002 (OP-0002)","request":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"transfer exitosa previa para tener algo que anular (OP-0003)","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"rechazo E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"rechazo E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"rechazo E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"confirmo el bloqueo (E510)","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"H: anular una transfer que devuelve fondos a la bloqueada no la desbloquea","request":{"m":"ANULA;OP-0003;66"}}
+{"seq":"s34-desbloqueo-anula","hipotesis":"transfer desde AC-0001 tras la ANULA","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s35-racha-entrante","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s35-racha-entrante","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s35-racha-entrante","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s35-racha-entrante","hipotesis":"fondos 1000 en AC-0002 (OP-0002)","request":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"seq":"s35-racha-entrante","hipotesis":"E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s35-racha-entrante","hipotesis":"E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s35-racha-entrante","hipotesis":"recibe una transferencia en medio de la racha","request":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"seq":"s35-racha-entrante","hipotesis":"E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s35-racha-entrante","hipotesis":"E510 si recibir no corta la racha","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}

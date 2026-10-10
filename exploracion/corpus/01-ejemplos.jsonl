@@ -1,0 +1,20 @@
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 1: espera 200 {\"pong\":true}","request":{"m":"PING;64"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 2: espera 400 {\"error\":\"E202\",\"mensaje\":\"control inválido\"}","request":{"m":"ALTA;Lucia;83"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 3: espera 201 {\"cuentaId\":\"AC-0001\"}","request":{"m":"ALTA;Lucia;82"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 4: espera 201 {\"cuentaId\":\"AC-0002\"}","request":{"m":"ALTA;Mateo;3"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 5: espera 200 {\"cuenta_id\":\"AC-0001\",\"saldo\":0}","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 6: espera 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0001\"}","request":{"m":"DEPOSITO;AC-0001;250000;86"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 7: espera 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0002\"}","request":{"m":"TRANSFER;AC-0001;AC-0002;40000;86"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 8: espera 200 {\"cuenta_id\":\"AC-0002\",\"saldo\":40000}","request":{"m":"CONSULTA;AC-0002;11"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 9: espera 422 {\"error\":\"E506\",\"mensaje\":\"límite excedido\"}","request":{"m":"TRANSFER;AC-0001;AC-0002;120000;55"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 10: espera 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0003\"}","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 11: espera 200 {\"cuenta_id\":\"AC-0001\",\"saldo\":110000}","request":{"m":"CONSULTa;AC-0001;14"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 12: espera 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \"}","request":{"m":"SALDOS;AC-0001;38"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 13: espera 200 {\"ok\":true,\"anulada\":\"OP-0003\"}","request":{"m":"ANULA;OP-0003;66"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 14: espera 200 {\"ok\":false,\"motivo\":\"ya anulada\"}","request":{"m":"ANULA;OP-0003;66"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 15: espera 404 {\"error\":\"E401\",\"mensaje\":\"cuenta inexistente\"}","request":{"m":"CONSULTA;AC-0009;87"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 16: espera 422 {\"error\":\"E507\",\"mensaje\":\"saldo insuficiente\"}","request":{"m":"TRANSFER;AC-0002;AC-0001;50000;23"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 17: espera 400 {\"error\":\"E201\",\"mensaje\":\"control mal formado\"}","request":{"m":"DEPOSITO;AC-0002;700;5X"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 18: espera 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0004\"}","request":{"m":"DEPOSITO;AC-0002;700;35"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 19: espera 200 {\"cuenta_id\":\"AC-0002\",\"saldo\":40700}","request":{"m":"CONSULTA;AC-0002;11"}}
+{"seq":"s01-ejemplos","hipotesis":"reproduce ejemplo 20: espera 400 {\"error\":\"E302\",\"mensaje\":\"aridad inválida\"}","request":{"m":"ALTA;Lucia;Gomez;11"}}

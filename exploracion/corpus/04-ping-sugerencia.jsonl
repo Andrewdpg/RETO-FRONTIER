@@ -1,0 +1,11 @@
+{"seq":"s04-ping-sugerencia","hipotesis":"PING no valida el control: letras","request":{"m":"PING;XX"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"PING no valida el control: 0","request":{"m":"PING;0"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"PING con aridad mala y control inválido: ¿E302 o E202?","request":{"m":"PING;x;99"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"PING con segmento vacío en medio","request":{"m":"PING;;64"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: comando con espacio inicial (ALTA)","request":{"m":"  ALTA;Ana;50"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: comando con espacio final","request":{"m":"PING ;64"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: comando a 1 letra de distancia (CONSULT)","request":{"m":"CONSULT;AC-0001;41"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: comando con letra cambiada (DEPOSlTO)","request":{"m":"DEPOSlTO;AC-0001;10;74"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: prefijo (TRANS)","request":{"m":"TRANS;AC-0001;AC-0002;10;29"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: palabra lejana (SALDOS) no sugiere","request":{"m":"SALDOS;AC-0001;38"}}
+{"seq":"s04-ping-sugerencia","hipotesis":"sugerencia: tabulación inicial","request":{"m":"\tPING;64"}}

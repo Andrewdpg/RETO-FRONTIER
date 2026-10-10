@@ -1,0 +1,152 @@
+{"seq":"s21-auth-vs-cuerpo","hipotesis":"orden: sin token y cuerpo no JSON → ¿E001 o E100?","request":"hola","auth":"sin token"}
+{"seq":"s21-auth-vs-cuerpo","hipotesis":"orden: sin token y JSON sin m → ¿E001 o E102?","request":{},"auth":"sin token"}
+{"seq":"s21-auth-vs-cuerpo","hipotesis":"orden: token ajeno y cuerpo no JSON → ¿E001 o E100?","request":"hola","auth":"token ajeno"}
+{"seq":"s22-bloqueo-orden","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"rechazo E507 n.º 1 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"rechazo E507 n.º 2 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"rechazo E507 n.º 3 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"bloqueada + monto inválido: ¿E303 o E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"bloqueada + origen=destino: ¿E304 o E510?","request":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"bloqueada + destino inexistente: ¿E401 o E510?","request":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"bloqueada + límite: ¿E506 o E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"bloqueada + saldo insuficiente: ¿E507 o E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s22-bloqueo-orden","hipotesis":"tras varios rechazos más, transfer válida: ¿sigue E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"ALTA AC-0003","request":{"m":"ALTA;Ceci;34"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"fondos 1000 en AC-0002 (OP-0002)","request":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"rechazo E507 n.º 1 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"rechazo E507 n.º 2 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"rechazo E507 n.º 3 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"confirmo el bloqueo de AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"¿bloqueo global? transfer desde AC-0002 fondeada hacia AC-0003","request":{"m":"TRANSFER;AC-0002;AC-0003;10;52"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"¿la bloqueada puede recibir? AC-0002 fondeada → AC-0001","request":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"saldo de AC-0001: 110 si recibió","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"¿un depósito desbloquea? depósito en AC-0001","request":{"m":"DEPOSITO;AC-0001;50;54"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"transfer desde AC-0001 tras el depósito","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"¿una ANULA desbloquea? anulo el depósito OP-0001","request":{"m":"ANULA;OP-0001;72"}}
+{"seq":"s23-bloqueo-alcance","hipotesis":"transfer desde AC-0001 tras la ANULA","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s24-rechazo-e303","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s24-rechazo-e303","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s24-rechazo-e303","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s24-rechazo-e303","hipotesis":"¿E303 monto 0 cuenta para el bloqueo? n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"seq":"s24-rechazo-e303","hipotesis":"¿E303 monto 0 cuenta para el bloqueo? n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"seq":"s24-rechazo-e303","hipotesis":"¿E303 monto 0 cuenta para el bloqueo? n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"seq":"s24-rechazo-e303","hipotesis":"tras 3 E303 monto 0: transfer válida → E510 si cuentan","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s24-rechazo-e304","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s24-rechazo-e304","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s24-rechazo-e304","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s24-rechazo-e304","hipotesis":"¿E304 origen=destino cuenta para el bloqueo? n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"seq":"s24-rechazo-e304","hipotesis":"¿E304 origen=destino cuenta para el bloqueo? n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"seq":"s24-rechazo-e304","hipotesis":"¿E304 origen=destino cuenta para el bloqueo? n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"seq":"s24-rechazo-e304","hipotesis":"tras 3 E304 origen=destino: transfer válida → E510 si cuentan","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s24-rechazo-e401","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s24-rechazo-e401","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s24-rechazo-e401","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s24-rechazo-e401","hipotesis":"¿E401 destino inexistente cuenta para el bloqueo? n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"seq":"s24-rechazo-e401","hipotesis":"¿E401 destino inexistente cuenta para el bloqueo? n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"seq":"s24-rechazo-e401","hipotesis":"¿E401 destino inexistente cuenta para el bloqueo? n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"seq":"s24-rechazo-e401","hipotesis":"tras 3 E401 destino inexistente: transfer válida → E510 si cuentan","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"E303 en medio: ¿corta la racha?","request":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-mixto","hipotesis":"E510 si E303 no corta la racha; 200 si la corta","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"depósito en medio: ¿corta la racha?","request":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"E507 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s24-rechazo-deposito","hipotesis":"E510 si el depósito no corta la racha","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s26-monto-tope","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 2^31−1 (2147483647)","request":{"m":"DEPOSITO;AC-0001;2147483647;50"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 2^31 (2147483648)","request":{"m":"DEPOSITO;AC-0001;2147483648;47"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 2^32−1 (4294967295)","request":{"m":"DEPOSITO;AC-0001;4294967295;46"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 2^32 (4294967296)","request":{"m":"DEPOSITO;AC-0001;4294967296;43"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 10^10−1 (9999999999)","request":{"m":"DEPOSITO;AC-0001;9999999999;4"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 10^10 (10000000000)","request":{"m":"DEPOSITO;AC-0001;10000000000;63"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 11 dígitos (99999999999)","request":{"m":"DEPOSITO;AC-0001;99999999999;4"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 12 dígitos (999999999999)","request":{"m":"DEPOSITO;AC-0001;999999999999;4"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 10^12 (1000000000000)","request":{"m":"DEPOSITO;AC-0001;1000000000000;90"}}
+{"seq":"s26-monto-tope","hipotesis":"tope del monto: 13 dígitos (9999999999999)","request":{"m":"DEPOSITO;AC-0001;9999999999999;4"}}
+{"seq":"s27-saldo-grande","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s27-saldo-grande","hipotesis":"acumulo 10^9 n.º 1 (saldo 1·10^9)","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s27-saldo-grande","hipotesis":"acumulo 10^9 n.º 2 (saldo 2·10^9)","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s27-saldo-grande","hipotesis":"acumulo 10^9 n.º 3 (saldo 3·10^9)","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s27-saldo-grande","hipotesis":"saldo 3.000.000.000 > 2^31: ¿desborda?","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s27-saldo-grande","hipotesis":"acumulo 10^9 n.º 4","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s27-saldo-grande","hipotesis":"acumulo 10^9 n.º 5","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s27-saldo-grande","hipotesis":"saldo 5.000.000.000 > 2^32: ¿desborda?","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s28-limite-diario","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s28-limite-diario","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s28-limite-diario","hipotesis":"fondos 1000000 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;1000000;51"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 4","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 5","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"¿límite acumulado? transfer de 100.000 n.º 6","request":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"seq":"s28-limite-diario","hipotesis":"saldo origen: 400.000 si pasaron las seis","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate PING/HALT: alfabético → HALT, PING primero en la tabla → PING","request":{"m":"PANT;AC-0001;58"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate PING/HALT, otro empate","request":{"m":"HINT;AC-0001;69"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate PING/ALTA: alfabético → ALTA, PING primero → PING","request":{"m":"PITA;AC-0001;78"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate PING/ALTA, otro empate","request":{"m":"AINA;AC-0001;62"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate HALT/ALTA: alfabético → ALTA","request":{"m":"HATA;AC-0001;33"}}
+{"seq":"s29-sugerencia-empates","hipotesis":"sugerencia, empate HALT/ANULA: alfabético → ANULA","request":{"m":"HULA;AC-0001;97"}}
+{"seq":"s30-ocultos-admin","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe PURGE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"PURGE;AC-0001;7"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe DROP? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"DROP;AC-0001;93"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe WIPE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"WIPE;AC-0001;25"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe FLUSH? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"FLUSH;AC-0001;29"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe REBOOT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"REBOOT;AC-0001;42"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe SHUTDOWN? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"SHUTDOWN;AC-0001;90"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe RESTART? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"RESTART;AC-0001;65"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CLOSE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CLOSE;AC-0001;49"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe FREEZE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"FREEZE;AC-0001;65"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe UNLOCK? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"UNLOCK;AC-0001;30"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe DESBLOQUEO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"DESBLOQUEO;AC-0001;67"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe DESBLOQUEAR? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"DESBLOQUEAR;AC-0001;37"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe ADMIN? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"ADMIN;AC-0001;28"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe AUDIT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"AUDIT;AC-0001;52"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe REPORT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"REPORT;AC-0001;82"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe EXPORT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"EXPORT;AC-0001;16"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe BACKUP? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"BACKUP;AC-0001;33"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe RESTORE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"RESTORE;AC-0001;70"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe ROLLBACK? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"ROLLBACK;AC-0001;12"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe COMMIT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"COMMIT;AC-0001;29"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe UNDO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"UNDO;AC-0001;82"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe VOID? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"VOID;AC-0001;92"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CANCEL? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CANCEL;AC-0001;49"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe LIMIT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"LIMIT;AC-0001;48"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CONFIG? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CONFIG;AC-0001;87"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe SET? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"SET;AC-0001;15"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe GET? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"GET;AC-0001;75"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe TOKEN? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"TOKEN;AC-0001;95"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe USER? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"USER;AC-0001;56"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe LOGIN? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"LOGIN;AC-0001;46"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe DELETE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"DELETE;AC-0001;14"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe REMOVE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"REMOVE;AC-0001;84"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe TRUNCATE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"TRUNCATE;AC-0001;11"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe ABORT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"ABORT;AC-0001;27"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe PAUSE? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"PAUSE;AC-0001;53"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe RESUME? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"RESUME;AC-0001;76"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe START? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"START;AC-0001;14"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe INIT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"INIT;AC-0001;97"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe SEED? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"SEED;AC-0001;74"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe DEBITO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"DEBITO;AC-0001;19"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CREDITO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CREDITO;AC-0001;21"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CARGO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CARGO;AC-0001;56"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe ABONO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"ABONO;AC-0001;46"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CIERRA? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CIERRA;AC-0001;20"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe CERRAR? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"CERRAR;AC-0001;85"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe LIBERAR? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"LIBERAR;AC-0001;18"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe SUDO? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"SUDO;AC-0001;77"}}
+{"seq":"s30-ocultos-admin","hipotesis":"¿existe ROOT? control válido, 1 argumento; mirar E301 vs E302 y la sugerencia","request":{"m":"ROOT;AC-0001;50"}}

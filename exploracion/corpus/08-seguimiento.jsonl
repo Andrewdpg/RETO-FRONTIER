@@ -1,0 +1,53 @@
+{"seq":"s15-bloqueo-serie","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"fondos 100","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"H-bloqueo: rechazo por saldo n.º 1 en serie","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"H-bloqueo: rechazo por saldo n.º 2 en serie","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"H-bloqueo: rechazo por saldo n.º 3 en serie","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"H-bloqueo: tras 3 E507 una transfer que sí alcanza, ¿E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"¿el bloqueo impide depositar?","request":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"¿el bloqueo impide consultar?","request":{"m":"CONSULTA;AC-0001;14"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"¿la cuenta bloqueada puede recibir?","request":{"m":"TRANSFER;AC-0002;AC-0001;1;37"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"¿la otra cuenta sigue libre? (deposito en AC-0002)","request":{"m":"DEPOSITO;AC-0002;5;83"}}
+{"seq":"s15-bloqueo-serie","hipotesis":"¿ANULA sobre operación de la cuenta bloqueada?","request":{"m":"ANULA;OP-0001;72"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"fondos 100","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"E507 n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"E507 n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"éxito en medio: ¿reinicia el contador?","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"E507 n.º 3 en total, 1 desde el éxito","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s16-bloqueo-cuenta","hipotesis":"si da E510 el contador es total; si pasa, es de rechazos seguidos","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"fondos 300000","request":{"m":"DEPOSITO;AC-0001;300000;48"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"¿E506 cuenta para el bloqueo? n.º 1","request":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"¿E506 cuenta para el bloqueo? n.º 2","request":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"¿E506 cuenta para el bloqueo? n.º 3","request":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"seq":"s17-bloqueo-e506","hipotesis":"tras 3 E506, transfer válida: ¿E510?","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s18-monto-max","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 7 dígitos (9999999)","request":{"m":"DEPOSITO;AC-0001;9999999;4"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 8 dígitos (10000000)","request":{"m":"DEPOSITO;AC-0001;10000000;16"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 8 dígitos (99999999)","request":{"m":"DEPOSITO;AC-0001;99999999;4"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 9 dígitos (100000000)","request":{"m":"DEPOSITO;AC-0001;100000000;54"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 9 dígitos (999999999)","request":{"m":"DEPOSITO;AC-0001;999999999;4"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 10 dígitos (1000000000)","request":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"seq":"s18-monto-max","hipotesis":"tope del monto: 14 dígitos (99999999999999)","request":{"m":"DEPOSITO;AC-0001;99999999999999;4"}}
+{"seq":"s18-monto-max","hipotesis":"ß se descarta (222 rechazó el control con SS): control de ALTA sola","request":{"m":"ALTA;ß;85"}}
+{"seq":"s18-monto-max","hipotesis":"ñ minúscula: ¿se descarta igual que í?","request":{"m":"ALTA;ñ;85"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: DUMP","request":{"m":"DUMP;AC-0001;41"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: DEBUG","request":{"m":"DEBUG;AC-0001;83"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: ECHO","request":{"m":"ECHO;AC-0001;6"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: INFO","request":{"m":"INFO;AC-0001;67"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: STAT","request":{"m":"STAT;AC-0001;18"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: LOCK","request":{"m":"LOCK;AC-0001;3"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: SHOW","request":{"m":"SHOW;AC-0001;50"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: EXIT","request":{"m":"EXIT;AC-0001;10"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: KILL","request":{"m":"KILL;AC-0001;91"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: LOGS","request":{"m":"LOGS;AC-0001;32"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: TIME","request":{"m":"TIME;AC-0001;83"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: STOP","request":{"m":"STOP;AC-0001;71"}}
+{"seq":"s19-oculto-sondeo","hipotesis":"sondeo de comandos ocultos por sugerencia: HALT","request":{"m":"HALT;AC-0001;82"}}
+{"seq":"s20-halt","hipotesis":"HALT sin argumentos","request":{"m":"HALT;71"}}
+{"seq":"s20-halt","hipotesis":"¿responde después de HALT?","request":{"m":"PING;64"}}
+{"seq":"s20-halt","hipotesis":"ALTA después de HALT","request":{"m":"ALTA;Ana;50"}}

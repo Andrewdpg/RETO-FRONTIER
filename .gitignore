@@ -1,0 +1,9 @@
+.env
+.env.*
+node_modules/
+
+# proceso y material del evento: no van al repo público
+CLAUDE.md
+AGENTS.md
+.claude/
+received/

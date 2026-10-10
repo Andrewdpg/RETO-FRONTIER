@@ -1,0 +1,10 @@
+{"seq":"s25-bloqueo-tiempo","hipotesis":"ALTA AC-0001","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"ALTA AC-0002","request":{"m":"ALTA;Bea;22"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"fondos 100 en AC-0001 (OP-0001)","request":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"rechazo E507 n.º 1 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"rechazo E507 n.º 2 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"rechazo E507 n.º 3 para bloquear AC-0001","request":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"confirmo el bloqueo","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"¿desbloquea el tiempo? 1 min después","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"},"espera":60000}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"5 min después del bloqueo","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"},"espera":240000}
+{"seq":"s25-bloqueo-tiempo","hipotesis":"10 min después del bloqueo","request":{"m":"TRANSFER;AC-0001;AC-0002;10;13"},"espera":300000}

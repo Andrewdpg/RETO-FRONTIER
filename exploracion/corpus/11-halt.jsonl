@@ -1,0 +1,31 @@
+{"seq":"s31-halt-confirmacion","hipotesis":"ALTA AC-0001 para ver si el estado sobrevive","request":{"m":"ALTA;Ana;50"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata CONFIRM: ¿se detiene?","request":{"m":"HALT;CONFIRM;51"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;CONFIRM?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata CONFIRMAR: ¿se detiene?","request":{"m":"HALT;CONFIRMAR;80"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;CONFIRMAR?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata CONFIRMACION: ¿se detiene?","request":{"m":"HALT;CONFIRMACION;65"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;CONFIRMACION?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata CONFIRMACIÓN: ¿se detiene?","request":{"m":"HALT;CONFIRMACIÓN;7"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;CONFIRMACIÓN?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata CONFIRMADO: ¿se detiene?","request":{"m":"HALT;CONFIRMADO;86"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;CONFIRMADO?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata SI: ¿se detiene?","request":{"m":"HALT;SI;49"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;SI?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata SÍ: ¿se detiene?","request":{"m":"HALT;SÍ;57"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;SÍ?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata YES: ¿se detiene?","request":{"m":"HALT;YES;69"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;YES?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata Y: ¿se detiene?","request":{"m":"HALT;Y;39"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;Y?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata TRUE: ¿se detiene?","request":{"m":"HALT;TRUE;81"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;TRUE?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata OK: ¿se detiene?","request":{"m":"HALT;OK;75"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;OK?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata 1: ¿se detiene?","request":{"m":"HALT;1;19"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;1?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata HALT: ¿se detiene?","request":{"m":"HALT;HALT;21"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;HALT?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con confirmación candidata confirmar: ¿se detiene?","request":{"m":"HALT;confirmar;80"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después de HALT;confirmar?","request":{"m":"PING;64"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"HALT con dos argumentos: ¿aridad 2?","request":{"m":"HALT;AC-0001;CONFIRMAR;81"}}
+{"seq":"s31-halt-confirmacion","hipotesis":"¿responde después?","request":{"m":"PING;64"}}
