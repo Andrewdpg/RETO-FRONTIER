@@ -2,7 +2,7 @@
 
     python3 lab/diff.py generar [--semilla N]          # escribe lab/probes/NNN-diff-sN.jsonl y muestra el --dry
     BB_TOKEN=... python3 lab/diff.py grabar ARCHIVO     # pausa el canario, la manda con send.py y lo despausa
-    REPL_URL=... REPL_TOKEN=... python3 lab/diff.py comparar [--semilla N] [--canario]
+    REPL_URL=... REPL_TOKEN=... python3 lab/diff.py comparar [--semilla N] [--canario] [--log L --seq S ...]
 
 Cada tanda tiene 100 secuencias como el set: 40 de 1 paso, 45 de 2 a 5 y 15 de 6 a 12, cada una tras un reset.
 Cerca del 70 % de los pasos son mensajes bien formados (control correcto, aridad e ids que existen en el
@@ -315,7 +315,7 @@ def record(path):
         print(f"canario despausado ({PAUSE.name} borrado)")
 
 
-def sequences(log, prefixes):
+def sequences(log, prefixes, only=None):
     by_seq = {}
     for r in log:
         by_seq.setdefault(r["seq"], []).append(r)
@@ -323,7 +323,7 @@ def sequences(log, prefixes):
     for seq, rows in by_seq.items():
         if rows[0].get("ruta") != "/__reset" or len(rows) < 2 or any("error" in r for r in rows):
             continue
-        if any(rows[0]["hipotesis"].startswith(p) for p in prefixes):
+        if (seq in only) if only else any(rows[0]["hipotesis"].startswith(p) for p in prefixes):
             out.append((seq, rows[1:]))
     return out
 
@@ -339,10 +339,16 @@ class Replacement:
         method, path = row.get("metodo", "POST"), row.get("ruta", "/msg")
         req = row["request"]
         data = None if req is None else (req if isinstance(req, str) else json.dumps(req)).encode()
-        headers = {"Content-Type": row.get("content_type") or "application/json"} if data is not None else {}
+        # content_type null en el log significa que la sonda lo omitió a propósito.
+        ct = row["content_type"] if "content_type" in row else "application/json"
+        headers = {"Content-Type": ct} if data is not None and ct is not None else {}
         auth = row.get("auth", "ok")
-        if auth == "ok":
+        if auth in ("ok", "propio"):
             headers["Authorization"] = f"Bearer {self.token}"
+        elif "{token}" in auth:
+            headers["Authorization"] = auth.replace("{token}", self.token)
+        elif auth not in ("none", "sin token"):
+            headers["Authorization"] = "Bearer token-ajeno"
         for attempt in range(2):
             try:
                 self.conn.request(method, path, body=data, headers=headers)
@@ -360,9 +366,10 @@ class Replacement:
             return resp.status, text
 
 
-def compare(seed, canario):
+def compare(seed, canario, only=None, log=None):
     prefixes = [f"diferencial s{seed} " if seed is not None else "diferencial"] + (["canario"] if canario else [])
-    seqs = sequences(load_log(), prefixes)
+    rows = [json.loads(l) for l in Path(log).read_text().splitlines() if l.strip()] if log else load_log()
+    seqs = sequences(rows, prefixes, only)
     if not seqs:
         sys.exit(f"no hay secuencias que empiecen por {prefixes} en {LOG}")
     repl, equal_seqs, equal_steps, total_steps, bad = Replacement(), 0, 0, 0, []
@@ -398,6 +405,9 @@ def main():
     c = sub.add_parser("comparar")
     c.add_argument("--semilla", type=int, default=None)
     c.add_argument("--canario", action="store_true")
+    # Para reproducir otras secuencias, como la tanda de HTTP raro de t1: --log logs/t1.jsonl --seq t1-s3
+    c.add_argument("--seq", nargs="*")
+    c.add_argument("--log")
     a = ap.parse_args()
     if a.cmd == "generar":
         # Una semilla nueva por grabación; queda en el nombre del archivo para poder regenerarla.
@@ -407,7 +417,7 @@ def main():
         return 0
     if a.cmd == "grabar":
         return record(a.archivo)
-    return compare(a.semilla, a.canario)
+    return compare(a.semilla, a.canario, a.seq, a.log)
 
 
 if __name__ == "__main__":

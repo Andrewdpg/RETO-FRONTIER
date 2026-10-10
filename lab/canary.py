@@ -96,6 +96,16 @@ EXTRA = [
     ({"m": "HALT;AC-0001;82"}, 409,
      err("E520", "operación destructiva: detiene el servicio; reenvía con confirmación"), "HALT", "292"),
     ({"m": "PING;64"}, 200, {"pong": True}, "responde tras HALT", "294"),
+    ({"m": msg("ALTA;Ana")}, 201, {"cuentaId": "AC-0005"}, "segunda cuenta de Ana", "3, 4"),
+    ({"m": msg("DEPOSITO;AC-0003;300000")}, 200, recieved("OP-0009"), "depósito", "6"),
+    ({"m": msg("TRANSFER;AC-0003;AC-0005;150000")}, 200, recieved("OP-0010"),
+     "mismo titular sin límite", "11782, 11794"),
+    ({"m": msg("CONSULTA;AC-0005")}, 200, {"cuenta_id": "AC-0005", "saldo": 150000}, "mismo titular sin límite",
+     "11783, 11795"),
+    # HALT;1 deja el servicio detenido: va al final y lo que sigue solo mide E599.
+    ({"m": "HALT;1;19"}, 503, err("E599", "service halted"), "HALT;1 detiene", "11134, 11199"),
+    ({"raw": E101_RAW}, 503, err("E599", "service halted"), "E599 antes que E101", "11320, 11324"),
+    ({"m": "PING;64"}, 503, err("E599", "service halted"), "detenido", "11135"),
 ]
 
 
