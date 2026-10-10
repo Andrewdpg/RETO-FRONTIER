@@ -1,0 +1,8 @@
+2026-10-10T21:26:59.382Z contra http://localhost:8080
+pasos iguales: 499/499 (100.0 %)
+secuencias iguales: 35/35 (100.0 %)
+solo seqs grabadas desde 2026-10-10T20:57:00Z
+saltadas: 0 secuencias con par, 0 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.6 ms, p95 1.0 ms, máx 49.2 ms
+
+id | seq | esperado | obtenido

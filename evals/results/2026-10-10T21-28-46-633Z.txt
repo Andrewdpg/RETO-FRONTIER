@@ -1,0 +1,1514 @@
+2026-10-10T21:28:46.633Z contra http://localhost:9105
+pasos iguales: 0/1506 (0.0 %)
+secuencias iguales: 0/205 (0.0 %)
+solo seqs grabadas desde 2026-10-10T19:14:19Z
+saltadas: 0 secuencias con par, 0 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.4 ms, p95 0.8 ms, máx 52.2 ms
+
+id | seq | esperado | obtenido
+498 | t1-s1 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+499 | t1-s2 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+500 | t1-s3 | 200 {"ok":true} | 501 {}
+501 | t1-s3 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+502 | t1-s3 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+503 | t1-s3 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+504 | t1-s3 | 200 {"pong":true} | 501 {}
+505 | t1-s3 | 200 {"pong":true} | 501 {}
+506 | t1-s3 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+507 | t1-s3 | 200 {"pong":true} | 501 {}
+508 | t1-s3 | 200 {"pong":true} | 501 {}
+509 | t1-s3 | 200 {"pong":true} | 501 {}
+510 | t1-s3 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+511 | t1-s3 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+512 | t1-s3 | 200 {"pong":true} | 501 {}
+513 | t1-s4 | 200 {"ok":true} | 501 {}
+514 | t1-s4 | 200 {"pong":true} | 501 {}
+515 | t1-s4 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+516 | t1-s4 | 201 {"cuentaId":"AC-0001"} | 501 {}
+517 | t1-s4 | 201 {"cuentaId":"AC-0002"} | 501 {}
+518 | t1-s4 | 200 {"cuenta_id":"AC-0001","saldo":"0.00"} | 501 {}
+519 | t1-s4 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+520 | t1-s4 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+521 | t1-s4 | 200 {"cuenta_id":"AC-0002","saldo":"400.00"} | 501 {}
+522 | t1-s4 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+523 | t1-s4 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+524 | t1-s4 | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"} | 501 {}
+525 | t1-s4 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+526 | t1-s4 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+527 | t1-s4 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+528 | t1-s4 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+529 | t1-s4 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+530 | t1-s4 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+531 | t1-s4 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+532 | t1-s4 | 200 {"cuenta_id":"AC-0002","saldo":"407.00"} | 501 {}
+533 | t1-s4 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+534 | t1-s5 | 200 {"ok":true} | 501 {}
+535 | t1-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+536 | t1-s5 | 201 {"cuentaId":"AC-0001"} | 501 {}
+537 | t1-s5 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+538 | t1-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+539 | t1-s5 | 200 {"pong":true} | 501 {}
+540 | t1-s5 | 200 {"pong":true} | 501 {}
+541 | t1-s5 | 200 {"pong":true} | 501 {}
+542 | t1-s5 | 200 {"pong":true} | 501 {}
+543 | t1-s5 | 200 {"pong":true} | 501 {}
+544 | t1-s5 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+545 | t1-s5 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+546 | t1-s5 | 201 {"cuentaId":"AC-0002"} | 501 {}
+547 | t1-s5 | 201 {"cuentaId":"AC-0003"} | 501 {}
+548 | t1-s5 | 200 {"pong":true} | 501 {}
+549 | t1-s5 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+550 | t1-s5 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+551 | t1-s5 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+552 | t1-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+553 | t1-s5 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+554 | t1-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+555 | t1-s5 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+556 | t1-s5 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+557 | t1-s5 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+558 | t1-s5 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+559 | t1-s5 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+560 | t1-s5 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+561 | t1-s5 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+562 | t1-s5 | 201 {"cuentaId":"AC-0004"} | 501 {}
+563 | t1-s5 | 200 {"pong":true} | 501 {}
+564 | t1-s6 | 200 {"ok":true} | 501 {}
+565 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+566 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+567 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+568 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+569 | t1-s6 | 200 {"ok":true} | 501 {}
+570 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+571 | t1-s6 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+572 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+573 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+574 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+575 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+576 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+577 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+578 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+579 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+580 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+581 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+582 | t1-s6 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+583 | t1-s6 | 200 {"pong":true} | 501 {}
+584 | t1-s6 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+585 | t1-s6 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+586 | t1-s6 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+587 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+588 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+589 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+590 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+591 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+592 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+593 | t1-s6 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+594 | t1-s6 | 200 {"pong":true} | 501 {}
+595 | t1-s6 | 200 {"pong":true} | 501 {}
+596 | t1-s7 | 200 {"ok":true} | 501 {}
+597 | t1-s7 | 200 {"pong":true} | 501 {}
+598 | t1-s7 | 200 {"pong":true} | 501 {}
+599 | t1-s7 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+600 | t1-s7 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+601 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+602 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+603 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+604 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"DEPOSITO"} | 501 {}
+605 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+606 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+607 | t1-s7 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+608 | t1-s8 | 200 {"ok":true} | 501 {}
+609 | t1-s8 | 201 {"cuentaId":"AC-0001"} | 501 {}
+610 | t1-s8 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+611 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+612 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+613 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+614 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+615 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+616 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+617 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+618 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+619 | t1-s8 | 200 {"cuenta_id":"AC-0001","saldo":"10000.00"} | 501 {}
+620 | t1-s8 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+621 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+622 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+623 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+624 | t1-s8 | 201 {"cuentaId":"AC-0002"} | 501 {}
+625 | t1-s8 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+626 | t1-s8 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+627 | t1-s8 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+628 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+629 | t1-s8 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+630 | t1-s8 | 200 {"cuenta_id":"AC-0002","saldo":"0.00"} | 501 {}
+631 | t1-s8 | 201 {"cuentaId":"AC-0003"} | 501 {}
+632 | t1-s8 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+633 | t1-s9 | 200 {"ok":true} | 501 {}
+634 | t1-s9 | 201 {"cuentaId":"AC-0001"} | 501 {}
+635 | t1-s9 | 201 {"cuentaId":"AC-0002"} | 501 {}
+636 | t1-s9 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+637 | t1-s9 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+638 | t1-s9 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+639 | t1-s9 | 200 {"ok":true,"anulada":"OP-0002"} | 501 {}
+640 | t1-s9 | 200 {"cuenta_id":"AC-0002","saldo":"-500.00"} | 501 {}
+641 | t1-s9 | 200 {"cuenta_id":"AC-0001","saldo":"1000.00"} | 501 {}
+642 | t1-s9 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+643 | t1-s9 | 200 {"cuenta_id":"AC-0001","saldo":"500.00"} | 501 {}
+644 | t1-s9 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+645 | t1-s9 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+646 | t1-s9 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+647 | t1-s9 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+648 | t1-s10 | 200 {"ok":true} | 501 {}
+649 | t1-s10 | 201 {"cuentaId":"AC-0001"} | 501 {}
+650 | t1-s10 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+651 | t1-s10 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+652 | t1-s10 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+653 | t1-s10 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+654 | t1-s10 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+655 | t1-s10 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+656 | t1-s10 | 201 {"cuentaId":"AC-0002"} | 501 {}
+657 | t1-s10 | 201 {"cuentaId":"AC-0003"} | 501 {}
+658 | t1-s10 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+659 | t1-s10 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+660 | t1-s10 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+661 | t1-s10 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+662 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+663 | t1-s10 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+664 | t1-s10 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+665 | t1-s10 | 200 {"cuenta_id":"AC-0001","saldo":"0.00"} | 501 {}
+666 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+667 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {}
+668 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+669 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"DEPOSITO"} | 501 {}
+670 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+671 | t1-s10 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+672 | t1-s10 | 201 {"cuentaId":"AC-0004"} | 501 {}
+673 | t1-s10 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+674 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+675 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+676 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+677 | t1-s11 | 200 {"ok":true} | 501 {}
+678 | t1-s11 | 201 {"cuentaId":"AC-0001"} | 501 {}
+679 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+680 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+681 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+682 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+683 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+684 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+685 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+686 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+687 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+688 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+689 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+690 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {}
+691 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {}
+692 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+693 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+694 | t1-s11 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+695 | t1-s12 | 200 {"ok":true} | 501 {}
+696 | t1-s12 | 201 {"cuentaId":"AC-0001"} | 501 {}
+697 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+698 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+699 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+700 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+701 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+702 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+703 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+704 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+705 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+706 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+707 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+708 | t1-s12 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+709 | t1-s12 | 200 {"cuenta_id":"AC-0001","saldo":"0.00"} | 501 {}
+710 | t1-s12 | 201 {"cuentaId":"AC-0002"} | 501 {}
+711 | t1-s12 | 201 {"cuentaId":"AC-0003"} | 501 {}
+712 | t1-s12 | 201 {"cuentaId":"AC-0004"} | 501 {}
+713 | t1-s12 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+714 | t1-s12 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+715 | t1-s12 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+716 | t1-s12 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+717 | t1-s13 | 200 {"ok":true} | 501 {}
+718 | t1-s13 | 201 {"cuentaId":"AC-0001"} | 501 {}
+719 | t1-s13 | 201 {"cuentaId":"AC-0002"} | 501 {}
+720 | t1-s13 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+721 | t1-s13 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+722 | t1-s13 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+723 | t1-s13 | 200 {"cuenta_id":"AC-0001","saldo":"-0.50"} | 501 {}
+724 | t1-s14 | 200 {"ok":true} | 501 {}
+725 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+726 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+727 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+728 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+729 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+730 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+731 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+732 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+733 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+734 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+735 | t1-s14 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+736 | t1-s15 | 200 {"ok":true} | 501 {}
+737 | t1-s15 | 201 {"cuentaId":"AC-0001"} | 501 {}
+738 | t1-s15 | 201 {"cuentaId":"AC-0002"} | 501 {}
+739 | t1-s15 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+740 | t1-s15 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+741 | t1-s15 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+742 | t1-s15 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+743 | t1-s15 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+744 | t1-s15 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+745 | t1-s15 | 200 {"cuenta_id":"AC-0001","saldo":"1.05"} | 501 {}
+746 | t1-s15 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+747 | t1-s15 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+748 | t1-s15 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+749 | t1-s16 | 200 {"ok":true} | 501 {}
+750 | t1-s16 | 201 {"cuentaId":"AC-0001"} | 501 {}
+751 | t1-s16 | 201 {"cuentaId":"AC-0002"} | 501 {}
+752 | t1-s16 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+753 | t1-s16 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+754 | t1-s16 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+755 | t1-s16 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+756 | t1-s16 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+757 | t1-s16 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+758 | t1-s17 | 200 {"ok":true} | 501 {}
+759 | t1-s17 | 201 {"cuentaId":"AC-0001"} | 501 {}
+760 | t1-s17 | 201 {"cuentaId":"AC-0002"} | 501 {}
+761 | t1-s17 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+762 | t1-s17 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+763 | t1-s17 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+764 | t1-s17 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+765 | t1-s17 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+766 | t1-s18 | 200 {"ok":true} | 501 {}
+767 | t1-s18 | 201 {"cuentaId":"AC-0001"} | 501 {}
+768 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+769 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+770 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+771 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+772 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+773 | t1-s18 | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {}
+774 | t1-s18 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+775 | t1-s18 | 201 {"cuentaId":"AC-0002"} | 501 {}
+776 | t1-s18 | 201 {"cuentaId":"AC-0003"} | 501 {}
+777 | t1-s19 | 200 {"ok":true} | 501 {}
+778 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+779 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+780 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+781 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+782 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+783 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+784 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+785 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+786 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+787 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+788 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+789 | t1-s19 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+790 | t1-s19 | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"} | 501 {}
+791 | t1-s20 | 200 {"ok":true} | 501 {}
+792 | t1-s20 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+793 | t1-s20 | 200 {"pong":true} | 501 {}
+794 | t1-s20 | 201 {"cuentaId":"AC-0001"} | 501 {}
+795 | t1-s21 | 200 {"ok":true} | 501 {}
+796 | t1-s21 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+797 | t1-s21 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+798 | t1-s21 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+799 | t1-s22 | 200 {"ok":true} | 501 {}
+800 | t1-s22 | 201 {"cuentaId":"AC-0001"} | 501 {}
+801 | t1-s22 | 201 {"cuentaId":"AC-0002"} | 501 {}
+802 | t1-s22 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+803 | t1-s22 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+804 | t1-s22 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+805 | t1-s22 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+806 | t1-s22 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+807 | t1-s22 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+808 | t1-s22 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+809 | t1-s22 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+810 | t1-s22 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2} | 501 {}
+811 | t1-s22 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3} | 501 {}
+812 | t1-s23 | 200 {"ok":true} | 501 {}
+813 | t1-s23 | 201 {"cuentaId":"AC-0001"} | 501 {}
+814 | t1-s23 | 201 {"cuentaId":"AC-0002"} | 501 {}
+815 | t1-s23 | 201 {"cuentaId":"AC-0003"} | 501 {}
+816 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+817 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+818 | t1-s23 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+819 | t1-s23 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+820 | t1-s23 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+821 | t1-s23 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+822 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+823 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+824 | t1-s23 | 200 {"cuenta_id":"AC-0001","saldo":"1.10"} | 501 {}
+825 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+826 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {}
+827 | t1-s23 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+828 | t1-s23 | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {}
+829 | t1-s24 | 200 {"ok":true} | 501 {}
+830 | t1-s24 | 201 {"cuentaId":"AC-0001"} | 501 {}
+831 | t1-s24 | 201 {"cuentaId":"AC-0002"} | 501 {}
+832 | t1-s24 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+833 | t1-s24 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+834 | t1-s24 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+835 | t1-s24 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+836 | t1-s24 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+837 | t1-s25 | 200 {"ok":true} | 501 {}
+838 | t1-s25 | 201 {"cuentaId":"AC-0001"} | 501 {}
+839 | t1-s25 | 201 {"cuentaId":"AC-0002"} | 501 {}
+840 | t1-s25 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+841 | t1-s25 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+842 | t1-s25 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+843 | t1-s25 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+844 | t1-s25 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+845 | t1-s26 | 200 {"ok":true} | 501 {}
+846 | t1-s26 | 201 {"cuentaId":"AC-0001"} | 501 {}
+847 | t1-s26 | 201 {"cuentaId":"AC-0002"} | 501 {}
+848 | t1-s26 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+849 | t1-s26 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+850 | t1-s26 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+851 | t1-s26 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+852 | t1-s26 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+853 | t1-s27 | 200 {"ok":true} | 501 {}
+854 | t1-s27 | 201 {"cuentaId":"AC-0001"} | 501 {}
+855 | t1-s27 | 201 {"cuentaId":"AC-0002"} | 501 {}
+856 | t1-s27 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+857 | t1-s27 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+858 | t1-s27 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+859 | t1-s27 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+860 | t1-s27 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+861 | t1-s27 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+862 | t1-s28 | 200 {"ok":true} | 501 {}
+863 | t1-s28 | 201 {"cuentaId":"AC-0001"} | 501 {}
+864 | t1-s28 | 201 {"cuentaId":"AC-0002"} | 501 {}
+865 | t1-s28 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+866 | t1-s28 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+867 | t1-s28 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+868 | t1-s28 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+869 | t1-s28 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+870 | t1-s28 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+871 | t1-s29 | 200 {"ok":true} | 501 {}
+872 | t1-s29 | 201 {"cuentaId":"AC-0001"} | 501 {}
+873 | t1-s29 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+874 | t1-s29 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+875 | t1-s29 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+876 | t1-s29 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+877 | t1-s29 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+878 | t1-s29 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+879 | t1-s29 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+880 | t1-s29 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+881 | t1-s29 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+882 | t1-s29 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+883 | t1-s30 | 200 {"ok":true} | 501 {}
+884 | t1-s30 | 201 {"cuentaId":"AC-0001"} | 501 {}
+885 | t1-s30 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+886 | t1-s30 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+887 | t1-s30 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+888 | t1-s30 | 200 {"cuenta_id":"AC-0001","saldo":"30000000.00"} | 501 {}
+889 | t1-s30 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+890 | t1-s30 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+891 | t1-s30 | 200 {"cuenta_id":"AC-0001","saldo":"50000000.00"} | 501 {}
+892 | t1-s31 | 200 {"ok":true} | 501 {}
+893 | t1-s31 | 201 {"cuentaId":"AC-0001"} | 501 {}
+894 | t1-s31 | 201 {"cuentaId":"AC-0002"} | 501 {}
+895 | t1-s31 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+896 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+897 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+898 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+899 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+900 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2} | 501 {}
+901 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3} | 501 {}
+902 | t1-s31 | 200 {"cuenta_id":"AC-0001","saldo":"10000.00"} | 501 {}
+903 | t1-s32 | 200 {"ok":true} | 501 {}
+904 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {}
+905 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"HALT"} | 501 {}
+906 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+907 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+908 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ALTA"} | 501 {}
+909 | t1-s32 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {}
+910 | t1-s33 | 200 {"ok":true} | 501 {}
+911 | t1-s33 | 201 {"cuentaId":"AC-0001"} | 501 {}
+912 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+913 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+914 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+915 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+916 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+917 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+918 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+919 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+920 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+921 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+922 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+923 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+924 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+925 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+926 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+927 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+928 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+929 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+930 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+931 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+932 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+933 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+934 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+935 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+936 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+937 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+938 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+939 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+940 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+941 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+942 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+943 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+944 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+945 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+946 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+947 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+948 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+949 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+950 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+951 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+952 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+953 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+954 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+955 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+956 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+957 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+958 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+959 | t1-s33 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+960 | t1-s34 | 200 {"ok":true} | 501 {}
+961 | t1-s34 | 201 {"cuentaId":"AC-0001"} | 501 {}
+962 | t1-s34 | 201 {"cuentaId":"AC-0002"} | 501 {}
+963 | t1-s34 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+964 | t1-s34 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+965 | t1-s34 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+966 | t1-s34 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+967 | t1-s34 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+968 | t1-s34 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+969 | t1-s34 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+970 | t1-s34 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2} | 501 {}
+971 | t1-s35 | 200 {"ok":true} | 501 {}
+972 | t1-s35 | 201 {"cuentaId":"AC-0001"} | 501 {}
+973 | t1-s35 | 201 {"cuentaId":"AC-0002"} | 501 {}
+974 | t1-s35 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+975 | t1-s35 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+976 | t1-s35 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+977 | t1-s35 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+978 | t1-s35 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+979 | t1-s35 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+980 | t1-s35 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+981 | t1-s35 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+982 | t1-s36 | 200 {"ok":true} | 501 {}
+983 | t1-s36 | 201 {"cuentaId":"AC-0001"} | 501 {}
+984 | t1-s36 | 201 {"cuentaId":"AC-0002"} | 501 {}
+985 | t1-s36 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+986 | t1-s36 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+987 | t1-s36 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+988 | t1-s36 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+989 | t1-s36 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+990 | t1-s36 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+991 | t1-s36 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+992 | t1-s36 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+993 | t1-s36 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2} | 501 {}
+994 | t1-s37 | 200 {"ok":true} | 501 {}
+995 | t1-s37 | 201 {"cuentaId":"AC-0001"} | 501 {}
+996 | t1-s37 | 201 {"cuentaId":"AC-0002"} | 501 {}
+997 | t1-s37 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+998 | t1-s37 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+999 | t1-s37 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1000 | t1-s37 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1001 | t1-s37 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+1002 | t1-s37 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1003 | t1-s37 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+1004 | t1-s38 | 200 {"ok":true} | 501 {}
+1005 | t1-s38 | 201 {"cuentaId":"AC-0001"} | 501 {}
+1006 | t1-s38 | 201 {"cuentaId":"AC-0002"} | 501 {}
+1007 | t1-s38 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+1008 | t1-s38 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1009 | t1-s38 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1010 | t1-s38 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+1011 | t1-s38 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 501 {}
+11422 | t2-s101 | 200 {"ok":true} | 501 {}
+11423 | t2-s101 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11424 | t2-s101 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11425 | t2-s101 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11426 | t2-s102 | 200 {"ok":true} | 501 {}
+11427 | t2-s102 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11428 | t2-s102 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11429 | t2-s102 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11430 | t2-s102 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11431 | t2-s103 | 200 {"ok":true} | 501 {}
+11432 | t2-s103 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11433 | t2-s103 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11434 | t2-s103 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11435 | t2-s103 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11436 | t2-s104 | 200 {"ok":true} | 501 {}
+11437 | t2-s104 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11438 | t2-s104 | 200 {"pong":true} | 501 {}
+11439 | t2-s105 | 200 {"ok":true} | 501 {}
+11440 | t2-s105 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11441 | t2-s105 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11442 | t2-s105 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11443 | t2-s106 | 200 {"ok":true} | 501 {}
+11444 | t2-s106 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11445 | t2-s106 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11446 | t2-s106 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11447 | t2-s106 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"ANULA"} | 501 {}
+11448 | t2-s107 | 200 {"ok":true} | 501 {}
+11449 | t2-s107 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11450 | t2-s107 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11451 | t2-s107 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11452 | t2-s108 | 200 {"ok":true} | 501 {}
+11453 | t2-s108 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11454 | t2-s108 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11455 | t2-s108 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11456 | t2-s108 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11457 | t2-s108 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11458 | t2-s109 | 200 {"ok":true} | 501 {}
+11459 | t2-s109 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11460 | t2-s109 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11461 | t2-s110 | 200 {"ok":true} | 501 {}
+11462 | t2-s110 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11463 | t2-s110 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+11464 | t2-s111 | 200 {"ok":true} | 501 {}
+11465 | t2-s111 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11466 | t2-s111 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11467 | t2-s111 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11468 | t2-s111 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11469 | t2-s111 | 200 {"pong":true} | 501 {}
+11470 | t2-s112 | 200 {"ok":true} | 501 {}
+11471 | t2-s112 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11472 | t2-s112 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11473 | t2-s112 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+11474 | t2-s112 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11475 | t2-s112 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11476 | t2-s113 | 200 {"ok":true} | 501 {}
+11477 | t2-s113 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11478 | t2-s113 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11479 | t2-s114 | 200 {"ok":true} | 501 {}
+11480 | t2-s114 | 200 {"pong":true} | 501 {}
+11481 | t2-s114 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11482 | t2-s114 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11483 | t2-s114 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11484 | t2-s114 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11485 | t2-s115 | 200 {"ok":true} | 501 {}
+11486 | t2-s115 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11487 | t2-s115 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11488 | t2-s115 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11489 | t2-s116 | 200 {"ok":true} | 501 {}
+11490 | t2-s116 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11491 | t2-s116 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11492 | t2-s116 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11493 | t2-s116 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11494 | t2-s116 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11495 | t2-s117 | 200 {"ok":true} | 501 {}
+11496 | t2-s117 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11497 | t2-s117 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11498 | t2-s117 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11499 | t2-s117 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11500 | t2-s117 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11501 | t2-s118 | 200 {"ok":true} | 501 {}
+11502 | t2-s118 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11503 | t2-s118 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11504 | t2-s118 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11505 | t2-s118 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11506 | t2-s118 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11507 | t2-s119 | 200 {"ok":true} | 501 {}
+11508 | t2-s119 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11509 | t2-s119 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11510 | t2-s119 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11511 | t2-s120 | 200 {"ok":true} | 501 {}
+11512 | t2-s120 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11513 | t2-s120 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11514 | t2-s120 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11515 | t2-s120 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11516 | t2-s120 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11517 | t2-s121 | 200 {"ok":true} | 501 {}
+11518 | t2-s121 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11519 | t2-s121 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11520 | t2-s121 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11521 | t2-s121 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11522 | t2-s121 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11523 | t2-s122 | 200 {"ok":true} | 501 {}
+11524 | t2-s122 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11525 | t2-s122 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11526 | t2-s122 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11527 | t2-s122 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+11528 | t2-s123 | 200 {"ok":true} | 501 {}
+11529 | t2-s123 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11530 | t2-s123 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11531 | t2-s123 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11532 | t2-s123 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11533 | t2-s124 | 200 {"ok":true} | 501 {}
+11534 | t2-s124 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11535 | t2-s124 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11536 | t2-s124 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11537 | t2-s125 | 200 {"ok":true} | 501 {}
+11538 | t2-s125 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11539 | t2-s125 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11540 | t2-s125 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11541 | t2-s125 | 201 {"cuentaId":"AC-0003"} | 501 {}
+11542 | t2-s126 | 200 {"ok":true} | 501 {}
+11543 | t2-s126 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11544 | t2-s126 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11545 | t2-s127 | 200 {"ok":true} | 501 {}
+11546 | t2-s127 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11547 | t2-s127 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11548 | t2-s127 | 200 {"pong":true} | 501 {}
+11549 | t2-s128 | 200 {"ok":true} | 501 {}
+11550 | t2-s128 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11551 | t2-s128 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11552 | t2-s128 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11553 | t2-s128 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11554 | t2-s129 | 200 {"ok":true} | 501 {}
+11555 | t2-s129 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11556 | t2-s129 | 200 {"pong":true} | 501 {}
+11557 | t2-s129 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+11558 | t2-s129 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11559 | t2-s129 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+11560 | t2-s130 | 200 {"ok":true} | 501 {}
+11561 | t2-s130 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11562 | t2-s130 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11563 | t2-s130 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11564 | t2-s130 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11565 | t2-s131 | 200 {"ok":true} | 501 {}
+11566 | t2-s131 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11567 | t2-s131 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11568 | t2-s131 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11569 | t2-s131 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11570 | t2-s131 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11571 | t2-s132 | 200 {"ok":true} | 501 {}
+11572 | t2-s132 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11573 | t2-s132 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11574 | t2-s132 | 200 {"pong":true} | 501 {}
+11575 | t2-s132 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11576 | t2-s133 | 200 {"ok":true} | 501 {}
+11577 | t2-s133 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11578 | t2-s133 | 200 {"pong":true} | 501 {}
+11579 | t2-s134 | 200 {"ok":true} | 501 {}
+11580 | t2-s134 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11581 | t2-s134 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11582 | t2-s134 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11583 | t2-s134 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11584 | t2-s134 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11585 | t2-s135 | 200 {"ok":true} | 501 {}
+11586 | t2-s135 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11587 | t2-s135 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11588 | t2-s136 | 200 {"ok":true} | 501 {}
+11589 | t2-s136 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+11590 | t2-s136 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+11591 | t2-s137 | 200 {"ok":true} | 501 {}
+11592 | t2-s137 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11593 | t2-s137 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11594 | t2-s137 | 200 {"pong":true} | 501 {}
+11595 | t2-s137 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11596 | t2-s138 | 200 {"ok":true} | 501 {}
+11597 | t2-s138 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11598 | t2-s138 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11599 | t2-s138 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+11600 | t2-s138 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11601 | t2-s138 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11602 | t2-s139 | 200 {"ok":true} | 501 {}
+11603 | t2-s139 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11604 | t2-s139 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11605 | t2-s139 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11606 | t2-s139 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11607 | t2-s139 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11608 | t2-s140 | 200 {"ok":true} | 501 {}
+11609 | t2-s140 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11610 | t2-s140 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11611 | t2-s141 | 200 {"ok":true} | 501 {}
+11612 | t2-s141 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11613 | t2-s141 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11614 | t2-s141 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11615 | t2-s142 | 200 {"ok":true} | 501 {}
+11616 | t2-s142 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11617 | t2-s142 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11618 | t2-s142 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11619 | t2-s142 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11620 | t2-s142 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11621 | t2-s143 | 200 {"ok":true} | 501 {}
+11622 | t2-s143 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11623 | t2-s143 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11624 | t2-s143 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11625 | t2-s144 | 200 {"ok":true} | 501 {}
+11626 | t2-s144 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11627 | t2-s144 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11628 | t2-s144 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11629 | t2-s144 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11630 | t2-s144 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11631 | t2-s145 | 200 {"ok":true} | 501 {}
+11632 | t2-s145 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11633 | t2-s145 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11634 | t2-s145 | 200 {"pong":true} | 501 {}
+11635 | t2-s145 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11636 | t2-s145 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11637 | t2-s145 | 201 {"cuentaId":"AC-0003"} | 501 {}
+11638 | t2-s146 | 200 {"ok":true} | 501 {}
+11639 | t2-s146 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11640 | t2-s146 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11641 | t2-s146 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11642 | t2-s146 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11643 | t2-s146 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11644 | t2-s146 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11645 | t2-s146 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11646 | t2-s146 | 201 {"cuentaId":"AC-0003"} | 501 {}
+11647 | t2-s146 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11648 | t2-s146 | 200 {"cuenta_id":"AC-0003","saldo":0} | 501 {}
+11649 | t2-s146 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+11650 | t2-s147 | 200 {"ok":true} | 501 {}
+11651 | t2-s147 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11652 | t2-s147 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11653 | t2-s147 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11654 | t2-s147 | 200 {"pong":true} | 501 {}
+11655 | t2-s147 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11656 | t2-s147 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11657 | t2-s147 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11658 | t2-s148 | 200 {"ok":true} | 501 {}
+11659 | t2-s148 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11660 | t2-s148 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11661 | t2-s148 | 200 {"pong":true} | 501 {}
+11662 | t2-s148 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11663 | t2-s148 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11664 | t2-s148 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11665 | t2-s148 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11666 | t2-s148 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11667 | t2-s149 | 200 {"ok":true} | 501 {}
+11668 | t2-s149 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11669 | t2-s149 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11670 | t2-s149 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+11671 | t2-s149 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11672 | t2-s149 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+11673 | t2-s149 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11674 | t2-s149 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11675 | t2-s149 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11676 | t2-s149 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11677 | t2-s149 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11678 | t2-s149 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11679 | t2-s149 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11680 | t2-s150 | 200 {"ok":true} | 501 {}
+11681 | t2-s150 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11682 | t2-s150 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11683 | t2-s150 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11684 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11685 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11686 | t2-s150 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11687 | t2-s150 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11688 | t2-s150 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11689 | t2-s150 | 200 {"cuenta_id":"AC-0002","saldo":128} | 501 {}
+11690 | t2-s150 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11691 | t2-s150 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11692 | t2-s150 | 201 {"cuentaId":"AC-0003"} | 501 {}
+11693 | t2-s151 | 200 {"ok":true} | 501 {}
+11694 | t2-s151 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11695 | t2-s151 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11696 | t2-s151 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11697 | t2-s151 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11698 | t2-s151 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11699 | t2-s151 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11700 | t2-s151 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11701 | t2-s151 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11702 | t2-s152 | 200 {"ok":true} | 501 {}
+11703 | t2-s152 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+11704 | t2-s152 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11705 | t2-s152 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11706 | t2-s152 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11707 | t2-s152 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11708 | t2-s152 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+11709 | t2-s152 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11710 | t2-s152 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11711 | t2-s152 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11712 | t2-s152 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11713 | t2-s153 | 200 {"ok":true} | 501 {}
+11714 | t2-s153 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11715 | t2-s153 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11716 | t2-s153 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11717 | t2-s153 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11718 | t2-s153 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11719 | t2-s153 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11720 | t2-s153 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11721 | t2-s153 | 200 {"cuenta_id":"AC-0002","saldo":210} | 501 {}
+11722 | t2-s154 | 200 {"ok":true} | 501 {}
+11723 | t2-s154 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11724 | t2-s154 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11725 | t2-s154 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11726 | t2-s154 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11727 | t2-s154 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11728 | t2-s154 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11729 | t2-s155 | 200 {"ok":true} | 501 {}
+11730 | t2-s155 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11731 | t2-s155 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11732 | t2-s155 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11733 | t2-s155 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11734 | t2-s155 | 200 {"ok":true,"anulada":"OP-0002"} | 501 {}
+11735 | t2-s155 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11736 | t2-s155 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+11737 | t2-s155 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+11738 | t2-s155 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11739 | t2-s155 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+11740 | t2-s155 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11741 | t2-s155 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+11742 | t2-s156 | 200 {"ok":true} | 501 {}
+11743 | t2-s156 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11744 | t2-s156 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11745 | t2-s156 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11746 | t2-s156 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11747 | t2-s156 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11748 | t2-s156 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11749 | t2-s156 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11750 | t2-s156 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11751 | t2-s157 | 200 {"ok":true} | 501 {}
+11752 | t2-s157 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11753 | t2-s157 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11754 | t2-s157 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11755 | t2-s157 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11756 | t2-s157 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11757 | t2-s157 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11758 | t2-s157 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+11759 | t2-s157 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11760 | t2-s157 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11761 | t2-s157 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11762 | t2-s157 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11763 | t2-s158 | 200 {"ok":true} | 501 {}
+11764 | t2-s158 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11765 | t2-s158 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11766 | t2-s158 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11767 | t2-s158 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11768 | t2-s158 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11769 | t2-s158 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11770 | t2-s158 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11771 | t2-s159 | 200 {"ok":true} | 501 {}
+11772 | t2-s159 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11773 | t2-s159 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11774 | t2-s159 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11775 | t2-s159 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11776 | t2-s159 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11777 | t2-s159 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11778 | t2-s160 | 200 {"ok":true} | 501 {}
+11779 | t2-s160 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11780 | t2-s160 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11781 | t2-s160 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11782 | t2-s160 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11783 | t2-s160 | 200 {"cuenta_id":"AC-0002","saldo":150000} | 501 {}
+11784 | t2-s161 | 200 {"ok":true} | 501 {}
+11785 | t2-s161 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11786 | t2-s161 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11787 | t2-s161 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11788 | t2-s161 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11789 | t2-s161 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11790 | t2-s162 | 200 {"ok":true} | 501 {}
+11791 | t2-s162 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11792 | t2-s162 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11793 | t2-s162 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11794 | t2-s162 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11795 | t2-s162 | 200 {"cuenta_id":"AC-0002","saldo":150000} | 501 {}
+11796 | t2-s163 | 200 {"ok":true} | 501 {}
+11797 | t2-s163 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11798 | t2-s163 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11799 | t2-s163 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11800 | t2-s163 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11801 | t2-s163 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11802 | t2-s164 | 200 {"ok":true} | 501 {}
+11803 | t2-s164 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11804 | t2-s164 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11805 | t2-s164 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11806 | t2-s165 | 200 {"ok":true} | 501 {}
+11807 | t2-s165 | 200 {"pong":true} | 501 {}
+11808 | t2-s165 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11809 | t2-s165 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11810 | t2-s165 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11811 | t2-s165 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11812 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11813 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+11814 | t2-s165 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 501 {}
+11815 | t2-s165 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11816 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+11817 | t2-s165 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 501 {}
+11818 | t2-s165 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+11819 | t2-s165 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+11820 | t2-s165 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+11821 | t2-s165 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+11822 | t2-s165 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11823 | t2-s165 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+11824 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+11825 | t2-s165 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 501 {}
+11826 | t2-s165 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11827 | t2-s165 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+11828 | t2-s165 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+11829 | t2-s165 | 200 {"ok":true} | 501 {}
+11830 | t2-s165 | 413 {"error":"E101","mensaje":"cuerpo demasiado grande"} | 501 {}
+11831 | t2-s165 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+11832 | t2-s165 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+11833 | t2-s165 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+11834 | t2-s165 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+11835 | t2-s165 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+11836 | t2-s165 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11837 | t2-s165 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+11838 | t2-s165 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11839 | t2-s165 | 201 {"cuentaId":"AC-0003"} | 501 {}
+11840 | t2-s165 | 201 {"cuentaId":"AC-0004"} | 501 {}
+11841 | t2-s165 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11842 | t2-s165 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11843 | t2-s165 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+11844 | t2-s165 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+11845 | t2-s165 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11846 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+11847 | t2-s165 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 501 {}
+11848 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {}
+11849 | t2-s165 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+11850 | t2-s165 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11851 | t2-s165 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11852 | t2-s165 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+11853 | t2-s165 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11854 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {}
+11855 | t2-s165 | 200 {"status":"recieved","operacionId":"OP-0008"} | 501 {}
+11856 | t2-s165 | 200 {"cuenta_id":"AC-0003","saldo":991} | 501 {}
+11857 | t2-s165 | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"} | 501 {}
+11858 | t2-s165 | 200 {"pong":true} | 501 {}
+11859 | t2-s166 | 200 {"ok":true} | 501 {}
+11860 | t2-s166 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+11861 | t2-s167 | 200 {"ok":true} | 501 {}
+11862 | t2-s167 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11863 | t2-s168 | 200 {"ok":true} | 501 {}
+11864 | t2-s168 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11865 | t2-s169 | 200 {"ok":true} | 501 {}
+11866 | t2-s169 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11867 | t2-s170 | 200 {"ok":true} | 501 {}
+11868 | t2-s170 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11869 | t2-s171 | 200 {"ok":true} | 501 {}
+11870 | t2-s171 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11871 | t2-s172 | 200 {"ok":true} | 501 {}
+11872 | t2-s172 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11873 | t2-s173 | 200 {"ok":true} | 501 {}
+11874 | t2-s173 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11875 | t2-s174 | 200 {"ok":true} | 501 {}
+11876 | t2-s174 | 200 {"pong":true} | 501 {}
+11877 | t2-s175 | 200 {"ok":true} | 501 {}
+11878 | t2-s175 | 200 {"pong":true} | 501 {}
+11879 | t2-s176 | 200 {"ok":true} | 501 {}
+11880 | t2-s176 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11881 | t2-s177 | 200 {"ok":true} | 501 {}
+11882 | t2-s177 | 200 {"pong":true} | 501 {}
+11883 | t2-s178 | 200 {"ok":true} | 501 {}
+11884 | t2-s178 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11885 | t2-s179 | 200 {"ok":true} | 501 {}
+11886 | t2-s179 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11887 | t2-s180 | 200 {"ok":true} | 501 {}
+11888 | t2-s180 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11889 | t2-s181 | 200 {"ok":true} | 501 {}
+11890 | t2-s181 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11891 | t2-s182 | 200 {"ok":true} | 501 {}
+11892 | t2-s182 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11893 | t2-s183 | 200 {"ok":true} | 501 {}
+11894 | t2-s183 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11895 | t2-s184 | 200 {"ok":true} | 501 {}
+11896 | t2-s184 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11897 | t2-s185 | 200 {"ok":true} | 501 {}
+11898 | t2-s185 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11899 | t2-s186 | 200 {"ok":true} | 501 {}
+11900 | t2-s186 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11901 | t2-s187 | 200 {"ok":true} | 501 {}
+11902 | t2-s187 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11903 | t2-s188 | 200 {"ok":true} | 501 {}
+11904 | t2-s188 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11905 | t2-s189 | 200 {"ok":true} | 501 {}
+11906 | t2-s189 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11907 | t2-s190 | 200 {"ok":true} | 501 {}
+11908 | t2-s190 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11909 | t2-s191 | 200 {"ok":true} | 501 {}
+11910 | t2-s191 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11911 | t2-s192 | 200 {"ok":true} | 501 {}
+11912 | t2-s192 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11913 | t2-s193 | 200 {"ok":true} | 501 {}
+11914 | t2-s193 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11915 | t2-s194 | 200 {"ok":true} | 501 {}
+11916 | t2-s194 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+11917 | t2-s195 | 200 {"ok":true} | 501 {}
+11918 | t2-s195 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+11919 | t2-s196 | 200 {"ok":true} | 501 {}
+11920 | t2-s196 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11921 | t2-s197 | 200 {"ok":true} | 501 {}
+11922 | t2-s197 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11923 | t2-s198 | 200 {"ok":true} | 501 {}
+11924 | t2-s198 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11925 | t2-s199 | 200 {"ok":true} | 501 {}
+11926 | t2-s199 | 200 {"pong":true} | 501 {}
+11927 | t2-s200 | 200 {"ok":true} | 501 {}
+11928 | t2-s200 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11929 | t2-s201 | 200 {"ok":true} | 501 {}
+11930 | t2-s201 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11931 | t2-s202 | 200 {"ok":true} | 501 {}
+11932 | t2-s202 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11933 | t2-s203 | 200 {"ok":true} | 501 {}
+11934 | t2-s203 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11935 | t2-s204 | 200 {"ok":true} | 501 {}
+11936 | t2-s204 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11937 | t2-s205 | 200 {"ok":true} | 501 {}
+11938 | t2-s205 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11939 | t2-s206 | 200 {"ok":true} | 501 {}
+11940 | t2-s206 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11941 | t2-s206 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11942 | t2-s206 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11943 | t2-s206 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+11944 | t2-s206 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+11945 | t2-s207 | 200 {"ok":true} | 501 {}
+11946 | t2-s207 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11947 | t2-s207 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11948 | t2-s208 | 200 {"ok":true} | 501 {}
+11949 | t2-s208 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11950 | t2-s208 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+11951 | t2-s208 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11952 | t2-s208 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11953 | t2-s209 | 200 {"ok":true} | 501 {}
+11954 | t2-s209 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11955 | t2-s209 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11956 | t2-s209 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+11957 | t2-s210 | 200 {"ok":true} | 501 {}
+11958 | t2-s210 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11959 | t2-s210 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11960 | t2-s210 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+11961 | t2-s210 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+11962 | t2-s211 | 200 {"ok":true} | 501 {}
+11963 | t2-s211 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11964 | t2-s211 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11965 | t2-s211 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+11966 | t2-s211 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+11967 | t2-s211 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11968 | t2-s212 | 200 {"ok":true} | 501 {}
+11969 | t2-s212 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11970 | t2-s212 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11971 | t2-s212 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11972 | t2-s213 | 200 {"ok":true} | 501 {}
+11973 | t2-s213 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11974 | t2-s213 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11975 | t2-s214 | 200 {"ok":true} | 501 {}
+11976 | t2-s214 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11977 | t2-s214 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+11978 | t2-s215 | 200 {"ok":true} | 501 {}
+11979 | t2-s215 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11980 | t2-s215 | 200 {"pong":true} | 501 {}
+11981 | t2-s216 | 200 {"ok":true} | 501 {}
+11982 | t2-s216 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11983 | t2-s216 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11984 | t2-s216 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11985 | t2-s217 | 200 {"ok":true} | 501 {}
+11986 | t2-s217 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11987 | t2-s217 | 201 {"cuentaId":"AC-0002"} | 501 {}
+11988 | t2-s217 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+11989 | t2-s217 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11990 | t2-s218 | 200 {"ok":true} | 501 {}
+11991 | t2-s218 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11992 | t2-s218 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11993 | t2-s219 | 200 {"ok":true} | 501 {}
+11994 | t2-s219 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+11995 | t2-s219 | 201 {"cuentaId":"AC-0001"} | 501 {}
+11996 | t2-s219 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+11997 | t2-s219 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+11998 | t2-s219 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+11999 | t2-s220 | 200 {"ok":true} | 501 {}
+12000 | t2-s220 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12001 | t2-s220 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12002 | t2-s221 | 200 {"ok":true} | 501 {}
+12003 | t2-s221 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12004 | t2-s221 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12005 | t2-s222 | 200 {"ok":true} | 501 {}
+12006 | t2-s222 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12007 | t2-s222 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12008 | t2-s222 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+12009 | t2-s223 | 200 {"ok":true} | 501 {}
+12010 | t2-s223 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12011 | t2-s223 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12012 | t2-s224 | 200 {"ok":true} | 501 {}
+12013 | t2-s224 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12014 | t2-s224 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12015 | t2-s224 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12016 | t2-s224 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12017 | t2-s225 | 200 {"ok":true} | 501 {}
+12018 | t2-s225 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12019 | t2-s225 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12020 | t2-s225 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+12021 | t2-s226 | 200 {"ok":true} | 501 {}
+12022 | t2-s226 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12023 | t2-s226 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12024 | t2-s226 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12025 | t2-s226 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12026 | t2-s226 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+12027 | t2-s227 | 200 {"ok":true} | 501 {}
+12028 | t2-s227 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12029 | t2-s227 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12030 | t2-s227 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12031 | t2-s228 | 200 {"ok":true} | 501 {}
+12032 | t2-s228 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12033 | t2-s228 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12034 | t2-s229 | 200 {"ok":true} | 501 {}
+12035 | t2-s229 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12036 | t2-s229 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12037 | t2-s229 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12038 | t2-s229 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12039 | t2-s229 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12040 | t2-s230 | 200 {"ok":true} | 501 {}
+12041 | t2-s230 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12042 | t2-s230 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12043 | t2-s231 | 200 {"ok":true} | 501 {}
+12044 | t2-s231 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12045 | t2-s231 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12046 | t2-s231 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12047 | t2-s231 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12048 | t2-s231 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12049 | t2-s232 | 200 {"ok":true} | 501 {}
+12050 | t2-s232 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12051 | t2-s232 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12052 | t2-s233 | 200 {"ok":true} | 501 {}
+12053 | t2-s233 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12054 | t2-s233 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12055 | t2-s234 | 200 {"ok":true} | 501 {}
+12056 | t2-s234 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12057 | t2-s234 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12058 | t2-s234 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+12059 | t2-s234 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12060 | t2-s234 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12061 | t2-s235 | 200 {"ok":true} | 501 {}
+12062 | t2-s235 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12063 | t2-s235 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12064 | t2-s235 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12065 | t2-s235 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12066 | t2-s236 | 200 {"ok":true} | 501 {}
+12067 | t2-s236 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12068 | t2-s236 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12069 | t2-s237 | 200 {"ok":true} | 501 {}
+12070 | t2-s237 | 200 {"pong":true} | 501 {}
+12071 | t2-s237 | 200 {"pong":true} | 501 {}
+12072 | t2-s237 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12073 | t2-s237 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12074 | t2-s238 | 200 {"ok":true} | 501 {}
+12075 | t2-s238 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12076 | t2-s238 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12077 | t2-s238 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12078 | t2-s238 | 200 {"pong":true} | 501 {}
+12079 | t2-s239 | 200 {"ok":true} | 501 {}
+12080 | t2-s239 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12081 | t2-s239 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12082 | t2-s239 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12083 | t2-s239 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12084 | t2-s240 | 200 {"ok":true} | 501 {}
+12085 | t2-s240 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12086 | t2-s240 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12087 | t2-s240 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12088 | t2-s240 | 200 {"pong":true} | 501 {}
+12089 | t2-s240 | 201 {"cuentaId":"AC-0003"} | 501 {}
+12090 | t2-s241 | 200 {"ok":true} | 501 {}
+12091 | t2-s241 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12092 | t2-s241 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12093 | t2-s241 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12094 | t2-s241 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12095 | t2-s241 | 201 {"cuentaId":"AC-0003"} | 501 {}
+12096 | t2-s242 | 200 {"ok":true} | 501 {}
+12097 | t2-s242 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12098 | t2-s242 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12099 | t2-s242 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12100 | t2-s242 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12101 | t2-s243 | 200 {"ok":true} | 501 {}
+12102 | t2-s243 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12103 | t2-s243 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12104 | t2-s243 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12105 | t2-s243 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12106 | t2-s243 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12107 | t2-s244 | 200 {"ok":true} | 501 {}
+12108 | t2-s244 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12109 | t2-s244 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12110 | t2-s244 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12111 | t2-s244 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12112 | t2-s244 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12113 | t2-s245 | 200 {"ok":true} | 501 {}
+12114 | t2-s245 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12115 | t2-s245 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12116 | t2-s245 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12117 | t2-s245 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12118 | t2-s246 | 200 {"ok":true} | 501 {}
+12119 | t2-s246 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12120 | t2-s246 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12121 | t2-s247 | 200 {"ok":true} | 501 {}
+12122 | t2-s247 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12123 | t2-s247 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12124 | t2-s248 | 200 {"ok":true} | 501 {}
+12125 | t2-s248 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12126 | t2-s248 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12127 | t2-s248 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12128 | t2-s248 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12129 | t2-s248 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12130 | t2-s249 | 200 {"ok":true} | 501 {}
+12131 | t2-s249 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12132 | t2-s249 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12133 | t2-s249 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12134 | t2-s249 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12135 | t2-s249 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12136 | t2-s250 | 200 {"ok":true} | 501 {}
+12137 | t2-s250 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12138 | t2-s250 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12139 | t2-s250 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12140 | t2-s251 | 200 {"ok":true} | 501 {}
+12141 | t2-s251 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12142 | t2-s251 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12143 | t2-s251 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12144 | t2-s251 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+12145 | t2-s251 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 501 {}
+12146 | t2-s251 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12147 | t2-s251 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12148 | t2-s251 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12149 | t2-s251 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12150 | t2-s251 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12151 | t2-s252 | 200 {"ok":true} | 501 {}
+12152 | t2-s252 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12153 | t2-s252 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12154 | t2-s252 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12155 | t2-s252 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12156 | t2-s252 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12157 | t2-s252 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12158 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12159 | t2-s252 | 200 {"pong":true} | 501 {}
+12160 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12161 | t2-s252 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+12162 | t2-s252 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12163 | t2-s253 | 200 {"ok":true} | 501 {}
+12164 | t2-s253 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12165 | t2-s253 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12166 | t2-s253 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12167 | t2-s253 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12168 | t2-s253 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12169 | t2-s253 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12170 | t2-s253 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12171 | t2-s253 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12172 | t2-s253 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12173 | t2-s254 | 200 {"ok":true} | 501 {}
+12174 | t2-s254 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12175 | t2-s254 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12176 | t2-s254 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12177 | t2-s254 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12178 | t2-s254 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+12179 | t2-s254 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+12180 | t2-s254 | 200 {"ok":true,"anulada":"OP-0002"} | 501 {}
+12181 | t2-s254 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12182 | t2-s254 | 200 {"cuenta_id":"AC-0001","saldo":263973} | 501 {}
+12183 | t2-s254 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+12184 | t2-s255 | 200 {"ok":true} | 501 {}
+12185 | t2-s255 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12186 | t2-s255 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12187 | t2-s255 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12188 | t2-s255 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12189 | t2-s255 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12190 | t2-s255 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12191 | t2-s255 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12192 | t2-s255 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12193 | t2-s255 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+12194 | t2-s255 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+12195 | t2-s255 | 200 {"pong":true} | 501 {}
+12196 | t2-s256 | 200 {"ok":true} | 501 {}
+12197 | t2-s256 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12198 | t2-s256 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12199 | t2-s256 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12200 | t2-s256 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+12201 | t2-s256 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12202 | t2-s256 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12203 | t2-s256 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12204 | t2-s256 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+12205 | t2-s256 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12206 | t2-s257 | 200 {"ok":true} | 501 {}
+12207 | t2-s257 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12208 | t2-s257 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12209 | t2-s257 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12210 | t2-s257 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12211 | t2-s257 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12212 | t2-s257 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12213 | t2-s257 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12214 | t2-s258 | 200 {"ok":true} | 501 {}
+12215 | t2-s258 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12216 | t2-s258 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12217 | t2-s258 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12218 | t2-s258 | 200 {"pong":true} | 501 {}
+12219 | t2-s258 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 501 {}
+12220 | t2-s258 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12221 | t2-s258 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12222 | t2-s258 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12223 | t2-s258 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12224 | t2-s258 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12225 | t2-s258 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12226 | t2-s259 | 200 {"ok":true} | 501 {}
+12227 | t2-s259 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12228 | t2-s259 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12229 | t2-s259 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12230 | t2-s259 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12231 | t2-s259 | 200 {"pong":true} | 501 {}
+12232 | t2-s259 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12233 | t2-s259 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12234 | t2-s259 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12235 | t2-s259 | 200 {"pong":true} | 501 {}
+12236 | t2-s259 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+12237 | t2-s259 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12238 | t2-s259 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12239 | t2-s260 | 200 {"ok":true} | 501 {}
+12240 | t2-s260 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12241 | t2-s260 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12242 | t2-s260 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+12243 | t2-s260 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12244 | t2-s260 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12245 | t2-s260 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+12246 | t2-s260 | 200 {"pong":true} | 501 {}
+12247 | t2-s261 | 200 {"ok":true} | 501 {}
+12248 | t2-s261 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12249 | t2-s261 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12250 | t2-s261 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12251 | t2-s261 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12252 | t2-s261 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12253 | t2-s261 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+12254 | t2-s261 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12255 | t2-s261 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12256 | t2-s262 | 200 {"ok":true} | 501 {}
+12257 | t2-s262 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12258 | t2-s262 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12259 | t2-s262 | 200 {"pong":true} | 501 {}
+12260 | t2-s262 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12261 | t2-s262 | 200 {"cuenta_id":"AC-0002","saldo":0} | 501 {}
+12262 | t2-s262 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12263 | t2-s262 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12264 | t2-s262 | 201 {"cuentaId":"AC-0003"} | 501 {}
+12265 | t2-s262 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12266 | t2-s262 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12267 | t2-s262 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12268 | t2-s263 | 200 {"ok":true} | 501 {}
+12269 | t2-s263 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12270 | t2-s263 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12271 | t2-s263 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12272 | t2-s263 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12273 | t2-s263 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12274 | t2-s263 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12275 | t2-s263 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12276 | t2-s263 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12277 | t2-s263 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12278 | t2-s263 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12279 | t2-s264 | 200 {"ok":true} | 501 {}
+12280 | t2-s264 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12281 | t2-s264 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12282 | t2-s264 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12283 | t2-s264 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12284 | t2-s264 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12285 | t2-s264 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12286 | t2-s264 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12287 | t2-s264 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12288 | t2-s264 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12289 | t2-s264 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12290 | t2-s265 | 200 {"ok":true} | 501 {}
+12291 | t2-s265 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12292 | t2-s265 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12293 | t2-s265 | 200 {"pong":true} | 501 {}
+12294 | t2-s265 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12295 | t2-s265 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12296 | t2-s265 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12297 | t2-s265 | 200 {"ok":true,"anulada":"OP-0001"} | 501 {}
+12298 | t2-s265 | 200 {"pong":true} | 501 {}
+12299 | t2-s265 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+12300 | t2-s265 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12301 | t2-s266 | 200 {"ok":true} | 501 {}
+12302 | t2-s266 | 200 {"pong":true} | 501 {}
+12303 | t2-s266 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12304 | t2-s266 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12305 | t2-s266 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12306 | t2-s266 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12307 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12308 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12309 | t2-s266 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 501 {}
+12310 | t2-s266 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12311 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+12312 | t2-s266 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 501 {}
+12313 | t2-s266 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+12314 | t2-s266 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+12315 | t2-s266 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+12316 | t2-s266 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12317 | t2-s266 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12318 | t2-s266 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12319 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+12320 | t2-s266 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 501 {}
+12321 | t2-s266 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12322 | t2-s266 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+12323 | t2-s266 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+12324 | t2-s266 | 200 {"ok":true} | 501 {}
+12325 | t2-s266 | 413 {"error":"E101","mensaje":"cuerpo demasiado grande"} | 501 {}
+12326 | t2-s266 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+12327 | t2-s266 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+12328 | t2-s266 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+12329 | t2-s266 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+12330 | t2-s266 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+12331 | t2-s266 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12332 | t2-s266 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+12333 | t2-s266 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12334 | t2-s266 | 201 {"cuentaId":"AC-0003"} | 501 {}
+12335 | t2-s266 | 201 {"cuentaId":"AC-0004"} | 501 {}
+12336 | t2-s266 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12337 | t2-s266 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12338 | t2-s266 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12339 | t2-s266 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+12340 | t2-s266 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12341 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+12342 | t2-s266 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 501 {}
+12343 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {}
+12344 | t2-s266 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12345 | t2-s266 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12346 | t2-s266 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12347 | t2-s266 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12348 | t2-s266 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12349 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {}
+12350 | t2-s266 | 200 {"status":"recieved","operacionId":"OP-0008"} | 501 {}
+12351 | t2-s266 | 200 {"cuenta_id":"AC-0003","saldo":991} | 501 {}
+12352 | t2-s266 | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"} | 501 {}
+12353 | t2-s266 | 200 {"pong":true} | 501 {}
+12354 | t2-s267 | 200 {"ok":true} | 501 {}
+12355 | t2-s267 | 200 {"pong":true} | 501 {}
+12356 | t2-s267 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12357 | t2-s267 | 201 {"cuentaId":"AC-0001"} | 501 {}
+12358 | t2-s267 | 201 {"cuentaId":"AC-0002"} | 501 {}
+12359 | t2-s267 | 200 {"cuenta_id":"AC-0001","saldo":0} | 501 {}
+12360 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0001"} | 501 {}
+12361 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0002"} | 501 {}
+12362 | t2-s267 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 501 {}
+12363 | t2-s267 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12364 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0003"} | 501 {}
+12365 | t2-s267 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 501 {}
+12366 | t2-s267 | 400 {"error":"E301","mensaje":"comando desconocido "} | 501 {}
+12367 | t2-s267 | 200 {"ok":true,"anulada":"OP-0003"} | 501 {}
+12368 | t2-s267 | 200 {"ok":false,"motivo":"ya anulada"} | 501 {}
+12369 | t2-s267 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12370 | t2-s267 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12371 | t2-s267 | 400 {"error":"E201","mensaje":"control mal formado"} | 501 {}
+12372 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0004"} | 501 {}
+12373 | t2-s267 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 501 {}
+12374 | t2-s267 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12375 | t2-s267 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 501 {}
+12376 | t2-s267 | 401 {"error":"E001","mensaje":"no autorizado"} | 501 {}
+12377 | t2-s267 | 200 {"ok":true} | 501 {}
+12378 | t2-s267 | 413 {"error":"E101","mensaje":"cuerpo demasiado grande"} | 501 {}
+12379 | t2-s267 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+12380 | t2-s267 | 400 {"error":"E100","mensaje":"json inválido"} | 501 {}
+12381 | t2-s267 | 400 {"error":"E102","mensaje":"falta m"} | 501 {}
+12382 | t2-s267 | 400 {"error":"E103","mensaje":"falta control"} | 501 {}
+12383 | t2-s267 | 400 {"error":"E104","mensaje":"segmento vacío"} | 501 {}
+12384 | t2-s267 | 400 {"error":"E202","mensaje":"control inválido"} | 501 {}
+12385 | t2-s267 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"CONSULTA"} | 501 {}
+12386 | t2-s267 | 400 {"error":"E302","mensaje":"aridad inválida"} | 501 {}
+12387 | t2-s267 | 201 {"cuentaId":"AC-0003"} | 501 {}
+12388 | t2-s267 | 201 {"cuentaId":"AC-0004"} | 501 {}
+12389 | t2-s267 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12390 | t2-s267 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12391 | t2-s267 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 501 {}
+12392 | t2-s267 | 404 {"error":"E402","mensaje":"operación inexistente"} | 501 {}
+12393 | t2-s267 | 400 {"error":"E303","mensaje":"monto inválido"} | 501 {}
+12394 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0005"} | 501 {}
+12395 | t2-s267 | 200 {"cuenta_id":"AC-0004","saldo":9999999999} | 501 {}
+12396 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0006"} | 501 {}
+12397 | t2-s267 | 422 {"error":"E506","mensaje":"límite excedido"} | 501 {}
+12398 | t2-s267 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12399 | t2-s267 | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 501 {}
+12400 | t2-s267 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 501 {}
+12401 | t2-s267 | 400 {"error":"E304","mensaje":"origen y destino iguales"} | 501 {}
+12402 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0007"} | 501 {}
+12403 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0008"} | 501 {}
+12404 | t2-s267 | 200 {"cuenta_id":"AC-0003","saldo":991} | 501 {}
+12405 | t2-s267 | 409 {"error":"E520","mensaje":"operación destructiva: detiene el servicio; reenvía con confirmación"} | 501 {}
+12406 | t2-s267 | 200 {"pong":true} | 501 {}
+12407 | t2-s267 | 201 {"cuentaId":"AC-0005"} | 501 {}
+12408 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0009"} | 501 {}
+12409 | t2-s267 | 200 {"status":"recieved","operacionId":"OP-0010"} | 501 {}
+12410 | t2-s267 | 200 {"cuenta_id":"AC-0005","saldo":150000} | 501 {}
+12411 | t2-s267 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12412 | t2-s267 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}
+12413 | t2-s267 | 503 {"error":"E599","mensaje":"service halted"} | 501 {}

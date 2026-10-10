@@ -1,0 +1,35 @@
+2026-10-10T21:32:31.122Z contra http://localhost:8080
+pasos iguales: 742/769 (96.5 %)
+secuencias iguales: 75/85 (88.2 %)
+solo seqs grabadas desde 2026-10-10T20:57:00Z
+saltadas: 0 secuencias con par, 0 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.5 ms, p95 0.9 ms, máx 51.5 ms
+
+id | seq | esperado | obtenido
+523 | t1-s4 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+524 | t1-s4 | 200 {"cuenta_id":"AC-0001","saldo":"2100.00"} | 200 {"cuenta_id":"AC-0001","saldo":"1100.00"}
+526 | t1-s4 | 404 {"error":"E402","mensaje":"operación inexistente"} | 200 {"ok":true,"anulada":"OP-0003"}
+527 | t1-s4 | 404 {"error":"E402","mensaje":"operación inexistente"} | 200 {"ok":false,"motivo":"ya anulada"}
+531 | t1-s4 | 200 {"status":"recieved","operacionId":"OP-0003"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+626 | t1-s8 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+630 | t1-s8 | 200 {"cuenta_id":"AC-0002","saldo":"0.00"} | 200 {"cuenta_id":"AC-0002","saldo":"1000.00"}
+674 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+675 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+676 | t1-s10 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+896 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+897 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+898 | t1-s31 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+899 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":1} | 200 {"status":"recieved","operacionId":"OP-0005"}
+900 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":2} | 200 {"status":"recieved","operacionId":"OP-0006"}
+901 | t1-s31 | 423 {"error":"E510","mensaje":"cuenta bloqueada","intentos":3} | 200 {"status":"recieved","operacionId":"OP-0007"}
+902 | t1-s31 | 200 {"cuenta_id":"AC-0001","saldo":"10000.00"} | 200 {"cuenta_id":"AC-0001","saldo":"4000.00"}
+1102 | t1-s53 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+1103 | t1-s53 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+1104 | t1-s53 | 200 {"cuenta_id":"AC-0003","saldo":"0.00"} | 200 {"cuenta_id":"AC-0003","saldo":"2000.00"}
+1173 | t1-s60 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+1174 | t1-s60 | 422 {"error":"E506","mensaje":"límite excedido"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+1175 | t1-s60 | 200 {"cuenta_id":"AC-0003","saldo":"0.00"} | 200 {"cuenta_id":"AC-0003","saldo":"2000.00"}
+1239 | t1-s67 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+1241 | t1-s68 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 200 {"pong":true}
+1261 | t1-s78 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"TRANSFER"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+1263 | t1-s79 | 400 {"error":"E301","mensaje":"comando desconocido ","sugerencia":"PING"} | 200 {"pong":true}

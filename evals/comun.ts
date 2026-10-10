@@ -5,7 +5,7 @@ import { isDeepStrictEqual } from "node:util";
 
 export type Linea = {
   id: number; seq: string; metodo?: string; ruta?: string; auth?: string | null;
-  request: unknown; status: number; response: unknown; par?: string | null; espera?: number | null;
+  request: unknown; status: number; response: unknown; par?: string | null; espera?: number | null; ts?: string;
 };
 
 const [url, ...resto] = process.argv.slice(2);
