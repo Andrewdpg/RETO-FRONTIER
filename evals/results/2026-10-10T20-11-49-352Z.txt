@@ -1,0 +1,119 @@
+2026-10-10T20:11:49.352Z contra https://cheerful-generosity-production-4366.up.railway.app
+pasos iguales: 2225/2337 (95.2 %)
+secuencias iguales: 181/203 (89.2 %)
+saltadas: 3 secuencias con par, 3 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 129.1 ms, p95 151.0 ms, máx 761.0 ms
+
+id | seq | esperado | obtenido
+219 | t1-s12-bordes | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+220 | t1-s12-bordes | 201 {"cuentaId":"AC-0003"} | 201 {"cuentaId":"AC-0004"}
+221 | t1-s12-bordes | 201 {"cuentaId":"AC-0004"} | 201 {"cuentaId":"AC-0005"}
+244 | t1-s15-bloqueo-serie | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+253 | t1-s15-bloqueo-serie | 200 {"status":"recieved","operacionId":"OP-0003"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+262 | t1-s16-bloqueo-cuenta | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+264 | t1-s17-bloqueo-e506 | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+269 | t1-s17-bloqueo-e506 | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+309 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+310 | t1-s22-bloqueo-orden | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+311 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0002"}
+312 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0004"}
+313 | t1-s23-bloqueo-alcance | 201 {"cuentaId":"AC-0003"} | 201 {"cuentaId":"AC-0005"}
+314 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0001"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+315 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0002"} | 200 {"status":"recieved","operacionId":"OP-0004"}
+316 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 200 {"status":"recieved","operacionId":"OP-0005"}
+317 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 200 {"status":"recieved","operacionId":"OP-0006"}
+318 | t1-s23-bloqueo-alcance | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 200 {"status":"recieved","operacionId":"OP-0008"}
+319 | t1-s23-bloqueo-alcance | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 200 {"status":"recieved","operacionId":"OP-0009"}
+320 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0003"} | 200 {"status":"recieved","operacionId":"OP-0010"}
+321 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0011"}
+322 | t1-s23-bloqueo-alcance | 200 {"cuenta_id":"AC-0001","saldo":110} | 200 {"cuenta_id":"AC-0001","saldo":148600}
+323 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0005"} | 200 {"status":"recieved","operacionId":"OP-0012"}
+324 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0006"} | 200 {"status":"recieved","operacionId":"OP-0014"}
+326 | t1-s23-bloqueo-alcance | 200 {"status":"recieved","operacionId":"OP-0007"} | 422 {"error":"E507","mensaje":"saldo insuficiente"}
+357 | t1-s24-rechazo-deposito | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0001"}
+359 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+360 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+361 | t1-s24-rechazo-deposito | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+362 | t1-s24-rechazo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+363 | t1-s24-rechazo-deposito | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+365 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0001"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+366 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+367 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0003"} | 200 {"status":"recieved","operacionId":"OP-0001"}
+368 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0004"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+369 | t1-s26-monto-tope | 200 {"status":"recieved","operacionId":"OP-0005"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+377 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+378 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+379 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":3000000000} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+380 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0004"} | 200 {"status":"recieved","operacionId":"OP-0001"}
+381 | t1-s27-saldo-grande | 200 {"status":"recieved","operacionId":"OP-0005"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+382 | t1-s27-saldo-grande | 200 {"cuenta_id":"AC-0001","saldo":5000000000} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+383 | t1-s28-limite-diario | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0002"}
+384 | t1-s28-limite-diario | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0001"}
+386 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+387 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+388 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0004"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+389 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0005"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+390 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0006"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+391 | t1-s28-limite-diario | 200 {"status":"recieved","operacionId":"OP-0007"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+392 | t1-s28-limite-diario | 200 {"cuenta_id":"AC-0001","saldo":400000} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+439 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 503 {"error":"E599","mensaje":"service halted"}
+440 | t1-s30-ocultos-admin | 400 {"error":"E301","mensaje":"comando desconocido "} | 503 {"error":"E599","mensaje":"service halted"}
+450 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0001"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+451 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+452 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+453 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+454 | t1-s32-desbloqueo-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+455 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 422 {"error":"E507","mensaje":"saldo insuficiente"}
+456 | t1-s32-desbloqueo-entrante | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E507","mensaje":"saldo insuficiente"}
+457 | t1-s32-desbloqueo-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+458 | t1-s33-desbloqueo-deposito | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0002"}
+459 | t1-s33-desbloqueo-deposito | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+460 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0001"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+461 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0002"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+462 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+463 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+464 | t1-s33-desbloqueo-deposito | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+465 | t1-s33-desbloqueo-deposito | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+466 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+467 | t1-s33-desbloqueo-deposito | 200 {"status":"recieved","operacionId":"OP-0004"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+470 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0001"} | 200 {"status":"recieved","operacionId":"OP-0003"}
+471 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+472 | t1-s34-desbloqueo-anula | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+473 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+474 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+475 | t1-s34-desbloqueo-anula | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+476 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+477 | t1-s34-desbloqueo-anula | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+478 | t1-s34-desbloqueo-anula | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+482 | t1-s35-racha-entrante | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+483 | t1-s35-racha-entrante | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+485 | t1-s35-racha-entrante | 200 {"status":"recieved","operacionId":"OP-0003"} | 422 {"error":"E507","mensaje":"saldo insuficiente"}
+487 | t1-s35-racha-entrante | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 422 {"error":"E507","mensaje":"saldo insuficiente"}
+488 | t1-s25-bloqueo-tiempo | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0002"}
+489 | t1-s25-bloqueo-tiempo | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+490 | t1-s25-bloqueo-tiempo | 200 {"status":"recieved","operacionId":"OP-0001"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+491 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+492 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+493 | t1-s25-bloqueo-tiempo | 422 {"error":"E507","mensaje":"saldo insuficiente"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+494 | t1-s25-bloqueo-tiempo | 409 {"error":"E510","mensaje":"cuenta bloqueada"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10004 | t2-s1 | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0003"}
+10005 | t2-s1 | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0004"}
+10006 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":0} | 200 {"cuenta_id":"AC-0001","saldo":928}
+10007 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0001"} | 200 {"status":"recieved","operacionId":"OP-0002"}
+10008 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0002"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10009 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40000} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10010 | t2-s1 | 422 {"error":"E506","mensaje":"límite excedido"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10011 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0003"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10012 | t2-s1 | 200 {"cuenta_id":"AC-0001","saldo":110000} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10014 | t2-s1 | 200 {"ok":true,"anulada":"OP-0003"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+10015 | t2-s1 | 200 {"ok":false,"motivo":"ya anulada"} | 404 {"error":"E402","mensaje":"operación inexistente"}
+10019 | t2-s1 | 200 {"status":"recieved","operacionId":"OP-0004"} | 404 {"error":"E401","mensaje":"cuenta inexistente"}
+10020 | t2-s1 | 200 {"cuenta_id":"AC-0002","saldo":40700} | 200 {"cuenta_id":"AC-0002","saldo":0}
+10054 | t2-s2 | 404 {"error":"E401","mensaje":"cuenta inexistente"} | 200 {"cuenta_id":"AC-0001","saldo":0}
+10056 | t2-s3 | 201 {"cuentaId":"AC-0001"} | 201 {"cuentaId":"AC-0002"}
+10058 | t2-s3 | 201 {"cuentaId":"AC-0002"} | 201 {"cuentaId":"AC-0003"}
+10428 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 503 {"error":"E599","mensaje":"service halted"}
+10429 | t2-s10 | 400 {"error":"E202","mensaje":"control inválido"} | 503 {"error":"E599","mensaje":"service halted"}
+10488 | t2-s11 | 400 {"error":"E202","mensaje":"control inválido"} | 503 {"error":"E599","mensaje":"service halted"}
+10726 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 503 {"error":"E599","mensaje":"service halted"}
+10727 | t2-s14 | 400 {"error":"E202","mensaje":"control inválido"} | 503 {"error":"E599","mensaje":"service halted"}
