@@ -1,0 +1,499 @@
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s01-ejemplos"}
+{"hipotesis":"v2: repite log 1","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 2","body":{"m":"ALTA;Lucia;83"}}
+{"hipotesis":"v2: repite log 3","body":{"m":"ALTA;Lucia;82"}}
+{"hipotesis":"v2: repite log 4","body":{"m":"ALTA;Mateo;3"}}
+{"hipotesis":"v2: repite log 5","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 6","body":{"m":"DEPOSITO;AC-0001;250000;86"}}
+{"hipotesis":"v2: repite log 7","body":{"m":"TRANSFER;AC-0001;AC-0002;40000;86"}}
+{"hipotesis":"v2: repite log 8","body":{"m":"CONSULTA;AC-0002;11"}}
+{"hipotesis":"v2: repite log 9","body":{"m":"TRANSFER;AC-0001;AC-0002;120000;55"}}
+{"hipotesis":"v2: repite log 10","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 11","body":{"m":"CONSULTa;AC-0001;14"}}
+{"hipotesis":"v2: repite log 12","body":{"m":"SALDOS;AC-0001;38"}}
+{"hipotesis":"v2: repite log 13","body":{"m":"ANULA;OP-0003;66"}}
+{"hipotesis":"v2: repite log 14","body":{"m":"ANULA;OP-0003;66"}}
+{"hipotesis":"v2: repite log 15","body":{"m":"CONSULTA;AC-0009;87"}}
+{"hipotesis":"v2: repite log 16","body":{"m":"TRANSFER;AC-0002;AC-0001;50000;23"}}
+{"hipotesis":"v2: repite log 17","body":{"m":"DEPOSITO;AC-0002;700;5X"}}
+{"hipotesis":"v2: repite log 18","body":{"m":"DEPOSITO;AC-0002;700;35"}}
+{"hipotesis":"v2: repite log 19","body":{"m":"CONSULTA;AC-0002;11"}}
+{"hipotesis":"v2: repite log 20","body":{"m":"ALTA;Lucia;Gomez;11"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s02-integridad"}
+{"hipotesis":"v2: repite log 21","body":{"m":"ALTA;Tom;03"}}
+{"hipotesis":"v2: repite log 22","body":{"m":"ALTA;Zoe;3"}}
+{"hipotesis":"v2: repite log 23","body":{"m":"CONSULTA;AC-0070;98"}}
+{"hipotesis":"v2: repite log 24","body":{"m":"CONSULTA;AC-0070;1"}}
+{"hipotesis":"v2: repite log 25","body":{"m":"PING;161"}}
+{"hipotesis":"v2: repite log 26","body":{"m":"PING;-33"}}
+{"hipotesis":"v2: repite log 27","body":{"m":"PING;64.0"}}
+{"hipotesis":"v2: repite log 28","body":{"m":"PING;64 "}}
+{"hipotesis":"v2: repite log 29","body":{"m":"PING; 64"}}
+{"hipotesis":"v2: repite log 30","body":{"m":"PING;"}}
+{"hipotesis":"v2: repite log 31","body":{"m":"PING"}}
+{"hipotesis":"v2: repite log 32","body":{"m":"ALTA;Lucía;14"}}
+{"hipotesis":"v2: repite log 33","body":{"m":"ALTA;LUCIA;82"}}
+{"hipotesis":"v2: repite log 34","body":{"m":"ping;64"}}
+{"hipotesis":"v2: repite log 35","body":{"m":"  PING;64"}}
+{"hipotesis":"v2: repite log 36","body":{"m":""}}
+{"hipotesis":"v2: repite log 37","body":{"m":";"}}
+{"hipotesis":"v2: repite log 38","body":{"m":"SALDOS;AC-0001;99"}}
+{"hipotesis":"v2: repite log 39","body":{"m":"SALDOS;AC-0001;XX"}}
+{"hipotesis":"v2: repite log 40","body":{"m":"ALTA;Lucia;Gomez;99"}}
+{"hipotesis":"v2: repite log 41","body":{"m":"ALTA;Lucia;Gomez;X1"}}
+{"hipotesis":"v2: repite log 42","body":{"m":"FOO;47"}}
+{"hipotesis":"v2: repite log 43","body":{"m":"PING;x;21"}}
+{"hipotesis":"v2: repite log 44","body":{"m":"CONSULTA;AC-0009;88"}}
+{"hipotesis":"v2: repite log 45","body":{"m":"PING;64;"}}
+{"hipotesis":"v2: repite log 46","body":{"m":"PING,64"}}
+{"hipotesis":"v2: repite log 47","body":{"m":"ALTA;;85"}}
+{"hipotesis":"v2: repite log 48","body":{"m":"ALTA;123;18"}}
+{"hipotesis":"v2: repite log 49","body":{"m":"PING;64"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s03-entrada"}
+{"hipotesis":"v2: repite log 50","auth":"none","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 51","auth":"Bearer token-que-no-existe-0000","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 52","auth":"Basic dXNlcjpwYXNz","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 53","method":"GET","path":"/health","auth":"none"}
+{"hipotesis":"v2: repite log 54","method":"GET","path":"/health"}
+{"hipotesis":"v2: repite log 55","path":"/__reset","auth":"none"}
+{"hipotesis":"v2: repite log 56","path":"/__reset","auth":"Bearer token-que-no-existe-0000"}
+{"hipotesis":"v2: repite log 57","method":"GET","path":"/nada","auth":"none"}
+{"hipotesis":"v2: repite log 58","method":"GET","path":"/nada"}
+{"hipotesis":"v2: repite log 59","path":"/nada","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 60","method":"GET","path":"/"}
+{"hipotesis":"v2: repite log 61","method":"GET"}
+{"hipotesis":"v2: repite log 62","method":"PUT","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 63","method":"DELETE"}
+{"hipotesis":"v2: repite log 64","method":"GET","path":"/__reset"}
+{"hipotesis":"v2: repite log 65","path":"/health"}
+{"hipotesis":"v2: repite log 66","path":"/msg/","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 67","path":"/MSG","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 68","path":"/msg?x=1","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 69","raw":"hola"}
+{"hipotesis":"v2: repite log 70","raw":"{\"m\":\"PING;64\""}
+{"hipotesis":"v2: repite log 71","raw":""}
+{"hipotesis":"v2: repite log 72","body":{}}
+{"hipotesis":"v2: repite log 73","body":{"M":"PING;64"}}
+{"hipotesis":"v2: repite log 74","body":{"m":64}}
+{"hipotesis":"v2: repite log 75","body":{"m":null}}
+{"hipotesis":"v2: repite log 76","body":{"m":["PING;64"]}}
+{"hipotesis":"v2: repite log 77","body":[{"m":"PING;64"}]}
+{"hipotesis":"v2: repite log 78","raw":"\"PING;64\""}
+{"hipotesis":"v2: repite log 79","body":{"m":"PING;64","extra":1}}
+{"hipotesis":"v2: repite log 80","body":{"m":"PING;99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s04-ping-sugerencia"}
+{"hipotesis":"v2: repite log 81","body":{"m":"PING;XX"}}
+{"hipotesis":"v2: repite log 82","body":{"m":"PING;0"}}
+{"hipotesis":"v2: repite log 83","body":{"m":"PING;x;99"}}
+{"hipotesis":"v2: repite log 84","body":{"m":"PING;;64"}}
+{"hipotesis":"v2: repite log 85","body":{"m":"  ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 86","body":{"m":"PING ;64"}}
+{"hipotesis":"v2: repite log 87","body":{"m":"CONSULT;AC-0001;41"}}
+{"hipotesis":"v2: repite log 88","body":{"m":"DEPOSlTO;AC-0001;10;74"}}
+{"hipotesis":"v2: repite log 89","body":{"m":"TRANS;AC-0001;AC-0002;10;29"}}
+{"hipotesis":"v2: repite log 90","body":{"m":"SALDOS;AC-0001;38"}}
+{"hipotesis":"v2: repite log 91","body":{"m":"\tPING;64"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s05-montos-orden"}
+{"hipotesis":"v2: repite log 92","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 93","body":{"m":"DEPOSITO;AC-0001;1000000;51"}}
+{"hipotesis":"v2: repite log 94","body":{"m":"DEPOSITO;AC-0001;0;31"}}
+{"hipotesis":"v2: repite log 95","body":{"m":"DEPOSITO;AC-0001;-5;16"}}
+{"hipotesis":"v2: repite log 96","body":{"m":"DEPOSITO;AC-0001;10.5;67"}}
+{"hipotesis":"v2: repite log 97","body":{"m":"DEPOSITO;AC-0001;1e3;20"}}
+{"hipotesis":"v2: repite log 98","body":{"m":"DEPOSITO;AC-0001;abc;13"}}
+{"hipotesis":"v2: repite log 99","body":{"m":"DEPOSITO;AC-0001;007;70"}}
+{"hipotesis":"v2: repite log 100","body":{"m":"DEPOSITO;ac-0001;10;77"}}
+{"hipotesis":"v2: repite log 101","body":{"m":"DEPOSITO;AC-1;10;79"}}
+{"hipotesis":"v2: repite log 102","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 103","body":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"hipotesis":"v2: repite log 104","body":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"hipotesis":"v2: repite log 105","body":{"m":"TRANSFER;AC-0099;AC-0001;10;70"}}
+{"hipotesis":"v2: repite log 106","body":{"m":"TRANSFER;AC-0001;AC-0099;200000;33"}}
+{"hipotesis":"v2: repite log 107","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 108","body":{"m":"TRANSFER;AC-0001;AC-0002;100001;9"}}
+{"hipotesis":"v2: repite log 109","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 110","body":{"m":"TRANSFER;AC-0002;AC-0001;200000;61"}}
+{"hipotesis":"v2: repite log 111","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 112","body":{"m":"TRANSFER;AC-0001;AC-0002;-10;13"}}
+{"hipotesis":"v2: repite log 113","body":{"m":"CONSULTA;AC-0002;11"}}
+{"hipotesis":"v2: repite log 114","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 115","body":{"m":"CONSULTA;OP-0001;34"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s06-anula"}
+{"hipotesis":"v2: repite log 116","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 117","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 118","body":{"m":"DEPOSITO;AC-0001;50000;39"}}
+{"hipotesis":"v2: repite log 119","body":{"m":"TRANSFER;AC-0001;AC-0002;50000;59"}}
+{"hipotesis":"v2: repite log 120","body":{"m":"TRANSFER;AC-0002;AC-0001;50000;23"}}
+{"hipotesis":"v2: repite log 121","body":{"m":"ANULA;OP-0002;69"}}
+{"hipotesis":"v2: repite log 122","body":{"m":"CONSULTA;AC-0002;11"}}
+{"hipotesis":"v2: repite log 123","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 124","body":{"m":"ANULA;OP-0001;72"}}
+{"hipotesis":"v2: repite log 125","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 126","body":{"m":"ANULA;OP-0099;69"}}
+{"hipotesis":"v2: repite log 127","body":{"m":"ANULA;op-0003;66"}}
+{"hipotesis":"v2: repite log 128","body":{"m":"ANULA;AC-0001;59"}}
+{"hipotesis":"v2: repite log 129","body":{"m":"DEPOSITO;AC-0001;1;28"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s07-bordes"}
+{"hipotesis":"v2: repite log 130","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 131","body":{"m":"CONSULTA;AC-0001;114"}}
+{"hipotesis":"v2: repite log 132","body":{"m":"CONSULTA;AC-0001;+14"}}
+{"hipotesis":"v2: repite log 133","body":{"m":"CONSULTA;AC-0001;14.0"}}
+{"hipotesis":"v2: repite log 134","body":{"m":"CONSULTA;AC-0001;14 "}}
+{"hipotesis":"v2: repite log 135","body":{"m":"CONSULTA;AC-0001;014"}}
+{"hipotesis":"v2: repite log 136","body":{"m":"CONSULTA;AC-0001 ;14"}}
+{"hipotesis":"v2: repite log 137","body":{"m":"ALTA;Ana Maria;44"}}
+{"hipotesis":"v2: repite log 138","body":{"m":"ALTA; Ana;50"}}
+{"hipotesis":"v2: repite log 139","body":{"m":"DEPOSITO;AC-0099;0;98"}}
+{"hipotesis":"v2: repite log 140","body":{"m":"TRANSFER;AC-0099;AC-0099;10;61"}}
+{"hipotesis":"v2: repite log 141","body":{"m":"TRANSFER;AC-0001;AC-0001;0;74"}}
+{"hipotesis":"v2: repite log 142","body":{"m":"CONSULTA;11"}}
+{"hipotesis":"v2: repite log 143","body":{"m":"FOO;x;67"}}
+{"hipotesis":"v2: repite log 144","body":{"m":"DEPOSITO;AC-0001;+5;16"}}
+{"hipotesis":"v2: repite log 145","body":{"m":"DEPOSITO;AC-0001;99999999999999999999;4"}}
+{"hipotesis":"v2: repite log 146","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 147","body":{"m":"PIN;87"}}
+{"hipotesis":"v2: repite log 148","body":{"m":"ANULAR;OP-0001;13"}}
+{"hipotesis":"v2: repite log 149","body":{"m":"CONSUL;AC-0001;92"}}
+{"hipotesis":"v2: repite log 150","body":{"m":"DEPOZYTO;AC-0001;10;18"}}
+{"hipotesis":"v2: repite log 151","body":{"m":"ATLA;Ana;95"}}
+{"hipotesis":"v2: repite log 152","body":{"m":"consult;AC-0001;41"}}
+{"hipotesis":"v2: repite log 153","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 154","body":{"m":"DEPOSITO;AC-0001;500000;90"}}
+{"hipotesis":"v2: repite log 155","body":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}
+{"hipotesis":"v2: repite log 156","body":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}
+{"hipotesis":"v2: repite log 157","body":{"m":"TRANSFER;AC-0001;AC-0003;100000;28"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s08-ocultos"}
+{"hipotesis":"v2: repite log 158","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 159","body":{"m":"RETIRO;AC-0001;18"}}
+{"hipotesis":"v2: repite log 160","body":{"m":"BAJA;AC-0001;91"}}
+{"hipotesis":"v2: repite log 161","body":{"m":"SALDO;AC-0001;64"}}
+{"hipotesis":"v2: repite log 162","body":{"m":"HISTORIAL;AC-0001;68"}}
+{"hipotesis":"v2: repite log 163","body":{"m":"EXTRACTO;AC-0001;61"}}
+{"hipotesis":"v2: repite log 164","body":{"m":"MOVIMIENTOS;AC-0001;77"}}
+{"hipotesis":"v2: repite log 165","body":{"m":"CIERRE;AC-0001;84"}}
+{"hipotesis":"v2: repite log 166","body":{"m":"BLOQUEO;AC-0001;57"}}
+{"hipotesis":"v2: repite log 167","body":{"m":"PAGO;AC-0001;97"}}
+{"hipotesis":"v2: repite log 168","body":{"m":"REVERSA;AC-0001;87"}}
+{"hipotesis":"v2: repite log 169","body":{"m":"LISTA;AC-0001;57"}}
+{"hipotesis":"v2: repite log 170","body":{"m":"AYUDA;AC-0001;8"}}
+{"hipotesis":"v2: repite log 171","body":{"m":"HELP;AC-0001;12"}}
+{"hipotesis":"v2: repite log 172","body":{"m":"ESTADO;AC-0001;85"}}
+{"hipotesis":"v2: repite log 173","body":{"m":"VERSION;AC-0001;2"}}
+{"hipotesis":"v2: repite log 174","body":{"m":"RESET;AC-0001;53"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s12-bordes"}
+{"hipotesis":"v2: repite log 205","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 206","body":{"m":"DEPOSITO;AC-0001; 100;82"}}
+{"hipotesis":"v2: repite log 207","body":{"m":"DEPOSITO;AC-0001;100 ;82"}}
+{"hipotesis":"v2: repite log 208","body":{"m":"DEPOSITO;AC-0001;1 000;35"}}
+{"hipotesis":"v2: repite log 209","body":{"m":"DEPOSITO;AC-0001;1,000;35"}}
+{"hipotesis":"v2: repite log 210","body":{"m":"DEPOSITO;AC-0001;1.000;35"}}
+{"hipotesis":"v2: repite log 211","body":{"m":"DEPOSITO;AC-0001;0;31"}}
+{"hipotesis":"v2: repite log 212","body":{"m":"DEPOSITO;AC-0001;-1;28"}}
+{"hipotesis":"v2: repite log 213","body":{"m":"DEPOSITO;AC-0001;0.5;92"}}
+{"hipotesis":"v2: repite log 214","body":{"m":"DEPOSITO;AC-0001;999999999999999;4"}}
+{"hipotesis":"v2: repite log 215","body":{"m":"DEPOSITO;AC-0001;9007199254740991;94"}}
+{"hipotesis":"v2: repite log 216","body":{"m":"DEPOSITO;AC-0001;9007199254740992;91"}}
+{"hipotesis":"v2: repite log 217","body":{"m":"DEPOSITO;AC-0001;1000000000000000;52"}}
+{"hipotesis":"v2: repite log 218","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 219","body":{"m":"ALTA;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;46"}}
+{"hipotesis":"v2: repite log 220","body":{"m":"ALTA;BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB;76"}}
+{"hipotesis":"v2: repite log 221","body":{"m":"ALTA;!!!;85"}}
+{"hipotesis":"v2: repite log 222","body":{"m":"ALTA;ß;44"}}
+{"hipotesis":"v2: repite log 223","body":{"m":"ANULA;OP-1;91"}}
+{"hipotesis":"v2: repite log 224","body":{"m":"ANULA;OP-0000;75"}}
+{"hipotesis":"v2: repite log 225","body":{"m":"ANULA;OP-00001;59"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s14-anula-deposito"}
+{"hipotesis":"v2: repite log 226","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 227","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 228","body":{"m":"DEPOSITO;AC-0001;50;54"}}
+{"hipotesis":"v2: repite log 229","body":{"m":"TRANSFER;AC-0001;AC-0002;50;87"}}
+{"hipotesis":"v2: repite log 230","body":{"m":"ANULA;OP-0001;72"}}
+{"hipotesis":"v2: repite log 231","body":{"m":"CONSULTA;AC-0001;14"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s13-sugerencia"}
+{"hipotesis":"v2: repite log 232","body":{"m":"TRANSF;AC-0001;19"}}
+{"hipotesis":"v2: repite log 233","body":{"m":"TRANSFE;AC-0001;52"}}
+{"hipotesis":"v2: repite log 234","body":{"m":"PNIGX;AC-0001;35"}}
+{"hipotesis":"v2: repite log 235","body":{"m":"TPANSFRE;AC-0001;69"}}
+{"hipotesis":"v2: repite log 236","body":{"m":"PI;AC-0001;23"}}
+{"hipotesis":"v2: repite log 237","body":{"m":"AL;AC-0001;81"}}
+{"hipotesis":"v2: repite log 238","body":{"m":"ANA;AC-0001;55"}}
+{"hipotesis":"v2: repite log 239","body":{"m":"AUA;AC-0001;11"}}
+{"hipotesis":"v2: repite log 240","body":{"m":"TRANSFERIR;AC-0001;61"}}
+{"hipotesis":"v2: repite log 241","body":{"m":"CONSULTAS;AC-0001;82"}}
+{"hipotesis":"v2: repite log 242","body":{"m":"XXXX;AC-0001;69"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s15-bloqueo-serie"}
+{"hipotesis":"v2: repite log 243","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 244","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 245","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 246","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 247","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 248","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 249","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 250","body":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"hipotesis":"v2: repite log 251","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 252","body":{"m":"TRANSFER;AC-0002;AC-0001;1;37"}}
+{"hipotesis":"v2: repite log 253","body":{"m":"DEPOSITO;AC-0002;5;83"}}
+{"hipotesis":"v2: repite log 254","body":{"m":"ANULA;OP-0001;72"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s16-bloqueo-cuenta"}
+{"hipotesis":"v2: repite log 255","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 256","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 257","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 258","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 259","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 260","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 261","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 262","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s17-bloqueo-e506"}
+{"hipotesis":"v2: repite log 263","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 264","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 265","body":{"m":"DEPOSITO;AC-0001;300000;48"}}
+{"hipotesis":"v2: repite log 266","body":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"hipotesis":"v2: repite log 267","body":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"hipotesis":"v2: repite log 268","body":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"hipotesis":"v2: repite log 269","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s18-monto-max"}
+{"hipotesis":"v2: repite log 270","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 271","body":{"m":"DEPOSITO;AC-0001;9999999;4"}}
+{"hipotesis":"v2: repite log 272","body":{"m":"DEPOSITO;AC-0001;10000000;16"}}
+{"hipotesis":"v2: repite log 273","body":{"m":"DEPOSITO;AC-0001;99999999;4"}}
+{"hipotesis":"v2: repite log 274","body":{"m":"DEPOSITO;AC-0001;100000000;54"}}
+{"hipotesis":"v2: repite log 275","body":{"m":"DEPOSITO;AC-0001;999999999;4"}}
+{"hipotesis":"v2: repite log 276","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 277","body":{"m":"DEPOSITO;AC-0001;99999999999999;4"}}
+{"hipotesis":"v2: repite log 278","body":{"m":"ALTA;ß;85"}}
+{"hipotesis":"v2: repite log 279","body":{"m":"ALTA;ñ;85"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s19-oculto-sondeo"}
+{"hipotesis":"v2: repite log 280","body":{"m":"DUMP;AC-0001;41"}}
+{"hipotesis":"v2: repite log 281","body":{"m":"DEBUG;AC-0001;83"}}
+{"hipotesis":"v2: repite log 282","body":{"m":"ECHO;AC-0001;6"}}
+{"hipotesis":"v2: repite log 283","body":{"m":"INFO;AC-0001;67"}}
+{"hipotesis":"v2: repite log 284","body":{"m":"STAT;AC-0001;18"}}
+{"hipotesis":"v2: repite log 285","body":{"m":"LOCK;AC-0001;3"}}
+{"hipotesis":"v2: repite log 286","body":{"m":"SHOW;AC-0001;50"}}
+{"hipotesis":"v2: repite log 287","body":{"m":"EXIT;AC-0001;10"}}
+{"hipotesis":"v2: repite log 288","body":{"m":"KILL;AC-0001;91"}}
+{"hipotesis":"v2: repite log 289","body":{"m":"LOGS;AC-0001;32"}}
+{"hipotesis":"v2: repite log 290","body":{"m":"TIME;AC-0001;83"}}
+{"hipotesis":"v2: repite log 291","body":{"m":"STOP;AC-0001;71"}}
+{"hipotesis":"v2: repite log 292","body":{"m":"HALT;AC-0001;82"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s20-halt"}
+{"hipotesis":"v2: repite log 293","body":{"m":"HALT;71"}}
+{"hipotesis":"v2: repite log 294","body":{"m":"PING;64"}}
+{"hipotesis":"v2: repite log 295","body":{"m":"ALTA;Ana;50"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s21-auth-vs-cuerpo"}
+{"hipotesis":"v2: repite log 296","auth":"none","raw":"hola"}
+{"hipotesis":"v2: repite log 297","auth":"none","body":{}}
+{"hipotesis":"v2: repite log 298","auth":"Bearer token-que-no-existe-0000","raw":"hola"}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s22-bloqueo-orden"}
+{"hipotesis":"v2: repite log 299","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 300","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 301","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 302","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 303","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 304","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 305","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 306","body":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"hipotesis":"v2: repite log 307","body":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"hipotesis":"v2: repite log 308","body":{"m":"TRANSFER;AC-0001;AC-0002;200000;33"}}
+{"hipotesis":"v2: repite log 309","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 310","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s23-bloqueo-alcance"}
+{"hipotesis":"v2: repite log 311","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 312","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 313","body":{"m":"ALTA;Ceci;34"}}
+{"hipotesis":"v2: repite log 314","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 315","body":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"hipotesis":"v2: repite log 316","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 317","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 318","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 319","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 320","body":{"m":"TRANSFER;AC-0002;AC-0003;10;52"}}
+{"hipotesis":"v2: repite log 321","body":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"hipotesis":"v2: repite log 322","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 323","body":{"m":"DEPOSITO;AC-0001;50;54"}}
+{"hipotesis":"v2: repite log 324","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 325","body":{"m":"ANULA;OP-0001;72"}}
+{"hipotesis":"v2: repite log 326","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s24-rechazo-e303"}
+{"hipotesis":"v2: repite log 327","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 328","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 329","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 330","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 331","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 332","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 333","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s24-rechazo-e304"}
+{"hipotesis":"v2: repite log 334","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 335","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 336","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 337","body":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"hipotesis":"v2: repite log 338","body":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"hipotesis":"v2: repite log 339","body":{"m":"TRANSFER;AC-0001;AC-0001;10;22"}}
+{"hipotesis":"v2: repite log 340","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s24-rechazo-e401"}
+{"hipotesis":"v2: repite log 341","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 342","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 343","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 344","body":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"hipotesis":"v2: repite log 345","body":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"hipotesis":"v2: repite log 346","body":{"m":"TRANSFER;AC-0001;AC-0099;10;13"}}
+{"hipotesis":"v2: repite log 347","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s24-rechazo-mixto"}
+{"hipotesis":"v2: repite log 348","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 349","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 350","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 351","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 352","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 353","body":{"m":"TRANSFER;AC-0001;AC-0002;0;44"}}
+{"hipotesis":"v2: repite log 354","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 355","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s24-rechazo-deposito"}
+{"hipotesis":"v2: repite log 356","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 357","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 358","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 359","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 360","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 361","body":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"hipotesis":"v2: repite log 362","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 363","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s26-monto-tope"}
+{"hipotesis":"v2: repite log 364","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 365","body":{"m":"DEPOSITO;AC-0001;2147483647;50"}}
+{"hipotesis":"v2: repite log 366","body":{"m":"DEPOSITO;AC-0001;2147483648;47"}}
+{"hipotesis":"v2: repite log 367","body":{"m":"DEPOSITO;AC-0001;4294967295;46"}}
+{"hipotesis":"v2: repite log 368","body":{"m":"DEPOSITO;AC-0001;4294967296;43"}}
+{"hipotesis":"v2: repite log 369","body":{"m":"DEPOSITO;AC-0001;9999999999;4"}}
+{"hipotesis":"v2: repite log 370","body":{"m":"DEPOSITO;AC-0001;10000000000;63"}}
+{"hipotesis":"v2: repite log 371","body":{"m":"DEPOSITO;AC-0001;99999999999;4"}}
+{"hipotesis":"v2: repite log 372","body":{"m":"DEPOSITO;AC-0001;999999999999;4"}}
+{"hipotesis":"v2: repite log 373","body":{"m":"DEPOSITO;AC-0001;1000000000000;90"}}
+{"hipotesis":"v2: repite log 374","body":{"m":"DEPOSITO;AC-0001;9999999999999;4"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s27-saldo-grande"}
+{"hipotesis":"v2: repite log 375","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 376","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 377","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 378","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 379","body":{"m":"CONSULTA;AC-0001;14"}}
+{"hipotesis":"v2: repite log 380","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 381","body":{"m":"DEPOSITO;AC-0001;1000000000;46"}}
+{"hipotesis":"v2: repite log 382","body":{"m":"CONSULTA;AC-0001;14"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s28-limite-diario"}
+{"hipotesis":"v2: repite log 383","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 384","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 385","body":{"m":"DEPOSITO;AC-0001;1000000;51"}}
+{"hipotesis":"v2: repite log 386","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 387","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 388","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 389","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 390","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 391","body":{"m":"TRANSFER;AC-0001;AC-0002;100000;12"}}
+{"hipotesis":"v2: repite log 392","body":{"m":"CONSULTA;AC-0001;14"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s29-sugerencia-empates"}
+{"hipotesis":"v2: repite log 393","body":{"m":"PANT;AC-0001;58"}}
+{"hipotesis":"v2: repite log 394","body":{"m":"HINT;AC-0001;69"}}
+{"hipotesis":"v2: repite log 395","body":{"m":"PITA;AC-0001;78"}}
+{"hipotesis":"v2: repite log 396","body":{"m":"AINA;AC-0001;62"}}
+{"hipotesis":"v2: repite log 397","body":{"m":"HATA;AC-0001;33"}}
+{"hipotesis":"v2: repite log 398","body":{"m":"HULA;AC-0001;97"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s30-ocultos-admin"}
+{"hipotesis":"v2: repite log 399","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 400","body":{"m":"PURGE;AC-0001;7"}}
+{"hipotesis":"v2: repite log 401","body":{"m":"DROP;AC-0001;93"}}
+{"hipotesis":"v2: repite log 402","body":{"m":"WIPE;AC-0001;25"}}
+{"hipotesis":"v2: repite log 403","body":{"m":"FLUSH;AC-0001;29"}}
+{"hipotesis":"v2: repite log 404","body":{"m":"REBOOT;AC-0001;42"}}
+{"hipotesis":"v2: repite log 405","body":{"m":"SHUTDOWN;AC-0001;90"}}
+{"hipotesis":"v2: repite log 406","body":{"m":"RESTART;AC-0001;65"}}
+{"hipotesis":"v2: repite log 407","body":{"m":"CLOSE;AC-0001;49"}}
+{"hipotesis":"v2: repite log 408","body":{"m":"FREEZE;AC-0001;65"}}
+{"hipotesis":"v2: repite log 409","body":{"m":"UNLOCK;AC-0001;30"}}
+{"hipotesis":"v2: repite log 410","body":{"m":"DESBLOQUEO;AC-0001;67"}}
+{"hipotesis":"v2: repite log 411","body":{"m":"DESBLOQUEAR;AC-0001;37"}}
+{"hipotesis":"v2: repite log 412","body":{"m":"ADMIN;AC-0001;28"}}
+{"hipotesis":"v2: repite log 413","body":{"m":"AUDIT;AC-0001;52"}}
+{"hipotesis":"v2: repite log 414","body":{"m":"REPORT;AC-0001;82"}}
+{"hipotesis":"v2: repite log 415","body":{"m":"EXPORT;AC-0001;16"}}
+{"hipotesis":"v2: repite log 416","body":{"m":"BACKUP;AC-0001;33"}}
+{"hipotesis":"v2: repite log 417","body":{"m":"RESTORE;AC-0001;70"}}
+{"hipotesis":"v2: repite log 418","body":{"m":"ROLLBACK;AC-0001;12"}}
+{"hipotesis":"v2: repite log 419","body":{"m":"COMMIT;AC-0001;29"}}
+{"hipotesis":"v2: repite log 420","body":{"m":"UNDO;AC-0001;82"}}
+{"hipotesis":"v2: repite log 421","body":{"m":"VOID;AC-0001;92"}}
+{"hipotesis":"v2: repite log 422","body":{"m":"CANCEL;AC-0001;49"}}
+{"hipotesis":"v2: repite log 423","body":{"m":"LIMIT;AC-0001;48"}}
+{"hipotesis":"v2: repite log 424","body":{"m":"CONFIG;AC-0001;87"}}
+{"hipotesis":"v2: repite log 425","body":{"m":"SET;AC-0001;15"}}
+{"hipotesis":"v2: repite log 426","body":{"m":"GET;AC-0001;75"}}
+{"hipotesis":"v2: repite log 427","body":{"m":"TOKEN;AC-0001;95"}}
+{"hipotesis":"v2: repite log 428","body":{"m":"USER;AC-0001;56"}}
+{"hipotesis":"v2: repite log 429","body":{"m":"LOGIN;AC-0001;46"}}
+{"hipotesis":"v2: repite log 430","body":{"m":"DELETE;AC-0001;14"}}
+{"hipotesis":"v2: repite log 431","body":{"m":"REMOVE;AC-0001;84"}}
+{"hipotesis":"v2: repite log 432","body":{"m":"TRUNCATE;AC-0001;11"}}
+{"hipotesis":"v2: repite log 433","body":{"m":"ABORT;AC-0001;27"}}
+{"hipotesis":"v2: repite log 434","body":{"m":"PAUSE;AC-0001;53"}}
+{"hipotesis":"v2: repite log 435","body":{"m":"RESUME;AC-0001;76"}}
+{"hipotesis":"v2: repite log 436","body":{"m":"START;AC-0001;14"}}
+{"hipotesis":"v2: repite log 437","body":{"m":"INIT;AC-0001;97"}}
+{"hipotesis":"v2: repite log 438","body":{"m":"SEED;AC-0001;74"}}
+{"hipotesis":"v2: repite log 439","body":{"m":"DEBITO;AC-0001;19"}}
+{"hipotesis":"v2: repite log 440","body":{"m":"CREDITO;AC-0001;21"}}
+{"hipotesis":"v2: repite log 441","body":{"m":"CARGO;AC-0001;56"}}
+{"hipotesis":"v2: repite log 442","body":{"m":"ABONO;AC-0001;46"}}
+{"hipotesis":"v2: repite log 443","body":{"m":"CIERRA;AC-0001;20"}}
+{"hipotesis":"v2: repite log 444","body":{"m":"CERRAR;AC-0001;85"}}
+{"hipotesis":"v2: repite log 445","body":{"m":"LIBERAR;AC-0001;18"}}
+{"hipotesis":"v2: repite log 446","body":{"m":"SUDO;AC-0001;77"}}
+{"hipotesis":"v2: repite log 447","body":{"m":"ROOT;AC-0001;50"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s32-desbloqueo-entrante"}
+{"hipotesis":"v2: repite log 448","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 449","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 450","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 451","body":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"hipotesis":"v2: repite log 452","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 453","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 454","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 455","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 456","body":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"hipotesis":"v2: repite log 457","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s33-desbloqueo-deposito"}
+{"hipotesis":"v2: repite log 458","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 459","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 460","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 461","body":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"hipotesis":"v2: repite log 462","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 463","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 464","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 465","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 466","body":{"m":"DEPOSITO;AC-0001;5;16"}}
+{"hipotesis":"v2: repite log 467","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s34-desbloqueo-anula"}
+{"hipotesis":"v2: repite log 468","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 469","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 470","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 471","body":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"hipotesis":"v2: repite log 472","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 473","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 474","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 475","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 476","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"hipotesis":"v2: repite log 477","body":{"m":"ANULA;OP-0003;66"}}
+{"hipotesis":"v2: repite log 478","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s35-racha-entrante"}
+{"hipotesis":"v2: repite log 479","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 480","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 481","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 482","body":{"m":"DEPOSITO;AC-0002;1000;8"}}
+{"hipotesis":"v2: repite log 483","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 484","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 485","body":{"m":"TRANSFER;AC-0002;AC-0001;10;70"}}
+{"hipotesis":"v2: repite log 486","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 487","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
+{"reset":true,"hipotesis":"v2: reset antes de repetir t1-s25-bloqueo-tiempo"}
+{"hipotesis":"v2: repite log 488","body":{"m":"ALTA;Ana;50"}}
+{"hipotesis":"v2: repite log 489","body":{"m":"ALTA;Bea;22"}}
+{"hipotesis":"v2: repite log 490","body":{"m":"DEPOSITO;AC-0001;100;82"}}
+{"hipotesis":"v2: repite log 491","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 492","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 493","body":{"m":"TRANSFER;AC-0001;AC-0002;500;85"}}
+{"hipotesis":"v2: repite log 494","body":{"m":"TRANSFER;AC-0001;AC-0002;10;13"}}
