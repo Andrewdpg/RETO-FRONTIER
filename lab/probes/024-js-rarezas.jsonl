@@ -1,0 +1,50 @@
+{"reset":true,"hipotesis":"024 rarezas JS (¿objeto plano o Map?): seq A, repetición 1: estado limpio"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): AC-0001 para tener una cuenta real. Con Map: 201 AC-0001","m":"ALTA;Ana;50"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): saldo en AC-0001. Con Map: 200 OP-0001","m":"DEPOSITO;AC-0001;1000;35"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'constructor'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'constructor' se hereda del prototipo","m":"CONSULTA;constructor;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de '__proto__'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y '__proto__' se hereda del prototipo","m":"CONSULTA;__proto__;44"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'toString'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'toString' se hereda del prototipo","m":"CONSULTA;toString;59"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'hasOwnProperty'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'hasOwnProperty' se hereda del prototipo","m":"CONSULTA;hasOwnProperty;26"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): comando 'PI😀😀'. Si la distancia cuenta caracteres: E301 con sugerencia PING (distancia 2). Si cuenta unidades UTF-16 (como nuestro levenshtein): E301 sin sugerencia (distancia 4)","m":"PI😀😀;76"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): cuerpo {\"m\":5,\"m\":\"PING;64\"}. JSON.parse se queda con la última clave: 200 {\"pong\":true}. E102 = gana la primera o rechaza claves repetidas","raw":"{\"m\":5,\"m\":\"PING;64\"}"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): cuerpo {\"__proto__\":{\"m\":\"PING;64\"}}. JSON.parse crea \"__proto__\" como clave propia: 400 E102 (falta m). 200 {\"pong\":true} = copia el cuerpo con Object.assign o spread y m se hereda","raw":"{\"__proto__\":{\"m\":\"PING;64\"}}"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): primera cuenta del titular '__proto__'. Con Map: 201 AC-0002. Error = el titular se usa como clave de un objeto","m":"ALTA;__proto__;81"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): segunda cuenta del titular '__proto__'. Con Map: 201 AC-0003","m":"ALTA;__proto__;81"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): fondos para la TRANSFER. Con Map: 200 OP-0002","m":"DEPOSITO;AC-0002;60000;33"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): 60.000 entre dos cuentas del titular '__proto__', sobre el límite v2 de 50.000. Si los titulares se comparan bien: 200 (mismo titular, sin límite). E506 = el titular se busca en un objeto y '__proto__' no coincide consigo mismo","m":"TRANSFER;AC-0002;AC-0003;60000;38"}
+{"reset":true,"hipotesis":"024 rarezas JS (¿objeto plano o Map?): seq B, repetición 1: estado limpio"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): AC-0001 para tener una cuenta real. Con Map: 201 AC-0001","m":"ALTA;Ana;50"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): saldo en AC-0001. Con Map: 200 OP-0001","m":"DEPOSITO;AC-0001;1000;35"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): DEPOSITO en 'toString'. Con Map: 404 E401. 200 = la cuenta se hereda del prototipo y el depósito se aplica sobre una función","m":"DEPOSITO;toString;100;33"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'toString' después de depositarle. Con Map: 404 E401. Un saldo = el depósito anterior escribió en el objeto","m":"CONSULTA;toString;59"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): DEPOSITO en 'constructor'. Con Map: 404 E401. 200 = la cuenta se hereda del prototipo y el depósito se aplica sobre una función","m":"DEPOSITO;constructor;100;54"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'constructor' después de depositarle. Con Map: 404 E401. Un saldo = el depósito anterior escribió en el objeto","m":"CONSULTA;constructor;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): ANULA de '__proto__'. Con Map: 404 E402. 200 o 500 = las operaciones viven en un objeto plano","m":"ANULA;__proto__;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): ANULA de 'hasOwnProperty'. Con Map: 404 E402. 200 o 500 = las operaciones viven en un objeto plano","m":"ANULA;hasOwnProperty;15"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): TRANSFER con origen 'valueOf'. Con Map: 404 E401. Otra cosa = el origen se hereda del prototipo","m":"TRANSFER;valueOf;AC-0001;10;66"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): TRANSFER con destino 'constructor'. Con Map: 404 E401. 200 = el destino se hereda y AC-0001 pierde 10","m":"TRANSFER;AC-0001;constructor;10;11"}
+{"reset":true,"hipotesis":"024 rarezas JS (¿objeto plano o Map?): seq A, repetición 2: estado limpio"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): AC-0001 para tener una cuenta real. Con Map: 201 AC-0001","m":"ALTA;Ana;50"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): saldo en AC-0001. Con Map: 200 OP-0001","m":"DEPOSITO;AC-0001;1000;35"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'constructor'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'constructor' se hereda del prototipo","m":"CONSULTA;constructor;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de '__proto__'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y '__proto__' se hereda del prototipo","m":"CONSULTA;__proto__;44"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'toString'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'toString' se hereda del prototipo","m":"CONSULTA;toString;59"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'hasOwnProperty'. Con Map: 404 E401. Otra cosa (200, 500, saldo raro) = las cuentas viven en un objeto plano y 'hasOwnProperty' se hereda del prototipo","m":"CONSULTA;hasOwnProperty;26"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): comando 'PI😀😀'. Si la distancia cuenta caracteres: E301 con sugerencia PING (distancia 2). Si cuenta unidades UTF-16 (como nuestro levenshtein): E301 sin sugerencia (distancia 4)","m":"PI😀😀;76"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): cuerpo {\"m\":5,\"m\":\"PING;64\"}. JSON.parse se queda con la última clave: 200 {\"pong\":true}. E102 = gana la primera o rechaza claves repetidas","raw":"{\"m\":5,\"m\":\"PING;64\"}"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): cuerpo {\"__proto__\":{\"m\":\"PING;64\"}}. JSON.parse crea \"__proto__\" como clave propia: 400 E102 (falta m). 200 {\"pong\":true} = copia el cuerpo con Object.assign o spread y m se hereda","raw":"{\"__proto__\":{\"m\":\"PING;64\"}}"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): primera cuenta del titular '__proto__'. Con Map: 201 AC-0002. Error = el titular se usa como clave de un objeto","m":"ALTA;__proto__;81"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): segunda cuenta del titular '__proto__'. Con Map: 201 AC-0003","m":"ALTA;__proto__;81"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): fondos para la TRANSFER. Con Map: 200 OP-0002","m":"DEPOSITO;AC-0002;60000;33"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): 60.000 entre dos cuentas del titular '__proto__', sobre el límite v2 de 50.000. Si los titulares se comparan bien: 200 (mismo titular, sin límite). E506 = el titular se busca en un objeto y '__proto__' no coincide consigo mismo","m":"TRANSFER;AC-0002;AC-0003;60000;38"}
+{"reset":true,"hipotesis":"024 rarezas JS (¿objeto plano o Map?): seq B, repetición 2: estado limpio"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): AC-0001 para tener una cuenta real. Con Map: 201 AC-0001","m":"ALTA;Ana;50"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): saldo en AC-0001. Con Map: 200 OP-0001","m":"DEPOSITO;AC-0001;1000;35"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): DEPOSITO en 'toString'. Con Map: 404 E401. 200 = la cuenta se hereda del prototipo y el depósito se aplica sobre una función","m":"DEPOSITO;toString;100;33"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'toString' después de depositarle. Con Map: 404 E401. Un saldo = el depósito anterior escribió en el objeto","m":"CONSULTA;toString;59"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): DEPOSITO en 'constructor'. Con Map: 404 E401. 200 = la cuenta se hereda del prototipo y el depósito se aplica sobre una función","m":"DEPOSITO;constructor;100;54"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): CONSULTA de 'constructor' después de depositarle. Con Map: 404 E401. Un saldo = el depósito anterior escribió en el objeto","m":"CONSULTA;constructor;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): ANULA de '__proto__'. Con Map: 404 E402. 200 o 500 = las operaciones viven en un objeto plano","m":"ANULA;__proto__;61"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): ANULA de 'hasOwnProperty'. Con Map: 404 E402. 200 o 500 = las operaciones viven en un objeto plano","m":"ANULA;hasOwnProperty;15"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): TRANSFER con origen 'valueOf'. Con Map: 404 E401. Otra cosa = el origen se hereda del prototipo","m":"TRANSFER;valueOf;AC-0001;10;66"}
+{"hipotesis":"024 rarezas JS (¿objeto plano o Map?): TRANSFER con destino 'constructor'. Con Map: 404 E401. 200 = el destino se hereda y AC-0001 pierde 10","m":"TRANSFER;AC-0001;constructor;10;11"}
