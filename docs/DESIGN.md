@@ -322,11 +322,11 @@ Estos son los riesgos del servicio original que un cliente nuevo no debería her
 
 ## 12. Pendientes con su hipótesis
 
+El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo desbloquea, la posición de E510 en el orden y los desempates de la sugerencia se cerraron durante el diseño; están en 3.6, 3.7, 3.10 y 3.11 con su evidencia. Queda abierto:
+
 | Pendiente | Hipótesis | Experimento propuesto |
 |---|---|---|
-| Corte exacto del monto máximo | ≤ 2^31 − 1 o ≤ 10 dígitos (10^9 pasa y 14 dígitos no) | DEPOSITO con 2147483647, 2147483648 y 9999999999 |
-| Qué rechazos cuentan para el bloqueo | Solo E506 y E507; E303, E304 y E401 no cuentan | Tres E303 seguidos y después una TRANSFER válida |
-| Alcance del bloqueo | Por cuenta de origen, permanente hasta `/__reset`, y la cuenta bloqueada puede recibir | Bloquear AC-0001, transferir desde otra cuenta con saldo hacia AC-0001 y repetir TRANSFER desde AC-0001 |
-| Posición de E510 en el orden de errores | Después de E401 y antes de E506 | TRANSFER desde una cuenta bloqueada con monto 0, con destino inexistente y con monto mayor que 100.000 |
-| Confirmación de HALT | Un segundo argumento del estilo `CONFIRMAR` | No se ejecuta sin una decisión del equipo |
-| Desempates de la sugerencia fuera de ALTA/ANULA | Orden alfabético | Palabras equidistantes de otros pares de comandos |
+| Confirmación de HALT y qué pasa después | Un argumento de confirmación (del estilo `CONFIRMAR`) detiene el servicio para el token y `/__reset` lo repara | `exploracion/corpus/11-halt.jsonl` (31 requests), ya armado |
+| Comandos ocultos fuera del barrido | No hay más: el barrido de 76 palabras solo encontró HALT | Sondeo por sugerencia con palabras nuevas si el diferencial muestra un E301 inesperado |
+| Desborde de los ids `AC-9999` y `OP-9999` | Pasan a 5 dígitos | No se prueba: cuesta 10.000 requests. Supuesto del reemplazo: seguir con 5 dígitos |
+| Bloqueo después de 10 minutos | Permanente hasta un depósito o `/__reset` (sigue bloqueada a los 1, 5 y 10 min) | Re-chequear una cuenta bloqueada a los 30 minutos |
