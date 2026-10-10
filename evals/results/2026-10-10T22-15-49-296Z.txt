@@ -1,0 +1,13 @@
+2026-10-10T22:15:49.296Z contra http://localhost:8080
+pasos iguales: 1251/1256 (99.6 %)
+secuencias iguales: 123/125 (98.4 %)
+solo seqs grabadas desde 2026-10-10T20:57:00Z
+saltadas: 0 secuencias con par, 0 pasos con espera
+latencia por paso (E-08, desde esta máquina): p50 0.5 ms, p95 0.9 ms, máx 55.7 ms
+
+id | seq | esperado | obtenido
+1422 | t1-s105 | 404 {"error":"E404","mensaje":"ruta desconocida"} | 200 {"pong":true}
+1425 | t1-s105 | 200 {"pong":true} | 401 {"error":"E001","mensaje":"no autorizado"}
+1426 | t1-s105 | 200 {"pong":true} | 401 {"error":"E001","mensaje":"no autorizado"}
+1429 | t1-s105 | 200 {"ok":true} | 0 (TypeError: Request with GET/HEAD method cannot have body.)
+1465 | t1-s109 | null null | 431 
