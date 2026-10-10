@@ -7,6 +7,10 @@
 
 Mientras exista logs/canario.pausa, vigilar se salta las corridas (por ejemplo, durante la tanda de HALT).
 Salida de comparar: 0 sin cambios, 1 cambió, 2 no hay corrida completa.
+
+Las corridas se reconocen por sus requests: si cambian los casos de EXTRA (o los ejemplos), las corridas
+viejas dejan de reconocerse y la línea base desaparece. Antes de tocarlos hay que avisar, reiniciar
+vigilar y aceptar una corrida nueva como base.
 """
 import json
 import os
@@ -260,8 +264,12 @@ def watch():
             continue
         run_once()
         print(f"{stamp} ", end="")
-        if compare() == 1:
-            print("\a", end="")
+        # Una base que no aparece o una corrida que no se puede aceptar no deben matar la vigilancia.
+        try:
+            if compare() == 1:
+                print("\a", end="")
+        except SystemExit as e:
+            print(f"no se pudo comparar: {e.code}")
         sys.stdout.flush()
 
 
