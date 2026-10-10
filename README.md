@@ -1,6 +1,6 @@
 # Reemplazo de la caja negra
 
-Responde igual que el servicio original del reto 2: mismo status y mismo cuerpo en `POST /msg`, `POST /__reset`, `GET /health` y cualquier otra ruta. Es Node 26 con `node:http` y sin dependencias (D6). El estado vive en memoria, así que corre en una sola instancia (D1).
+Responde igual que el servicio original del reto 2 en su versión 2 (la vigente desde el incidente de las 15:30): mismo status y mismo cuerpo en `POST /msg`, `POST /__reset`, `GET /health` y cualquier otra ruta. Es Node 26 con `node:http` y sin dependencias (D6). El estado vive en memoria, así que corre en una sola instancia (D1).
 
 ## Correrlo local
 
@@ -29,14 +29,14 @@ node --env-file=.env evals/run.ts http://localhost:8080
 node --env-file=.env evals/paralelo.ts http://localhost:8080
 ```
 
-- `run.ts` (E-01) reproduce cada secuencia de `experimentos.jsonl` y da el % de pasos y de secuencias iguales. Con `--sin-espera` saltea los pasos 495–497, que esperan 10 minutos.
-- `paralelo.ts` (E-10) reproduce las ráfagas en paralelo del log 175–204 y compara el estado final: saldos, ids y cuántos 200, E507 y E510.
+- `run.ts` (E-01) reproduce cada secuencia de `experimentos.jsonl` y da el % de pasos y de secuencias iguales. Con `--sin-espera` saltea los pasos 495–497, que esperan 10 minutos. El log tiene líneas de las dos versiones; para medir solo lo grabado contra la v2: `--desde 2026-10-10T20:57:00Z`. Sin ese corte, las líneas de la v1 difieren donde cambió el servicio.
+- `paralelo.ts` (E-10) reproduce las ráfagas en paralelo del log 175–204 y compara el estado final: saldos, ids y cuántos 200, E507 y E510. Esas líneas son de la v1: contra la v2 solo difieren el formato del saldo y el 423 de E510.
 
 Cada corrida deja un archivo con hora en `evals/results/`, con una línea `id | seq | esperado | obtenido` por diferencia. No correr las dos a la vez: comparten el estado del token.
 
 ## Deploy
 
-El entrypoint corre en Railway, con el `Dockerfile` de la raíz:
+El entrypoint corre en Railway con la v2, desde el `Dockerfile` de la raíz:
 
 ```
 railway up
