@@ -1,0 +1,70 @@
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"PI NG\""}
+{"hipotesis":"027 sugerencia: espacio dentro de PING (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"PI NG;64"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"TRANS FER;AC-0001;AC-0002;10\""}
+{"hipotesis":"027 sugerencia: espacio dentro de TRANSFER (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"TRANSFER\"}","m":"TRANS FER;AC-0001;AC-0002;10;13"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"DEPO-SITO;AC-0001;10\""}
+{"hipotesis":"027 sugerencia: guion dentro de DEPOSITO (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"DEPOSITO\"}","m":"DEPO-SITO;AC-0001;10;77"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ALTA1;Ana\""}
+{"hipotesis":"027 sugerencia: dígito pegado a ALTA (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ALTA1;Ana;37"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"C0NSULTA;AC-0001\""}
+{"hipotesis":"027 sugerencia: cero en lugar de la O de CONSULTA (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"CONSULTA\"}","m":"C0NSULTA;AC-0001;9"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ANULA.;OP-0001\""}
+{"hipotesis":"027 sugerencia: punto al final de ANULA (distancia 1). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ANULA\"}","m":"ANULA.;OP-0001;72"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"HALT!;AC-0001\""}
+{"hipotesis":"027 sugerencia: signo al final de HALT (distancia 1); con un argumento que no es la confirmación: si se ejecutara sería E520, no detiene. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"HALT\"}","m":"HALT!;AC-0001;82"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"AALA;x\""}
+{"hipotesis":"027 sugerencia: empate a distancia 2 entre ALTA, ANULA y HALT: ¿gana el alfabético (ALTA) también con 3?. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"AALA;x;41"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ANLT;x\""}
+{"hipotesis":"027 sugerencia: empate a distancia 2 entre ALTA, ANULA y HALT. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ANLT;x;85"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"AULT;x\""}
+{"hipotesis":"027 sugerencia: empate a distancia 2 entre ALTA, ANULA y HALT. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"AULT;x;3"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"NALA;x\""}
+{"hipotesis":"027 sugerencia: empate a distancia 2 entre ALTA, ANULA y HALT. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"NALA;x;55"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"pínG\""}
+{"hipotesis":"027 sugerencia: í minúscula: queda í y cuenta como cambio (distancia 1 de PING). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"pínG;60"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ALTÁ;Ana\""}
+{"hipotesis":"027 sugerencia: Á: no es A (distancia 1 de ALTA). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ALTÁ;Ana;61"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"DEPÓSITO;AC-0001;10\""}
+{"hipotesis":"027 sugerencia: Ó: no es O (distancia 1 de DEPOSITO). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"DEPOSITO\"}","m":"DEPÓSITO;AC-0001;10;95"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"transfér;AC-0001;AC-0002;10\""}
+{"hipotesis":"027 sugerencia: é minúscula: queda é (distancia 1 de TRANSFER). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"TRANSFER\"}","m":"transfér;AC-0001;AC-0002;10;45"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"consultá;AC-0001\""}
+{"hipotesis":"027 sugerencia: á minúscula: queda á (distancia 1 de CONSULTA). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"CONSULTA\"}","m":"consultá;AC-0001;41"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"😀😀PING\""}
+{"hipotesis":"027 sugerencia: dos emoji antes de PING (distancia 2 en code points). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"😀😀PING;64"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"PI😀😀NG\""}
+{"hipotesis":"027 sugerencia: dos emoji en el medio de PING (distancia 2 en code points). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"PI😀😀NG;64"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"PING😀😀\""}
+{"hipotesis":"027 sugerencia: dos emoji después de PING (distancia 2 en code points). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"PING😀😀;64"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ÑALTAÑ;Ana\""}
+{"hipotesis":"027 sugerencia: Ñ antes y después de ALTA (distancia 2). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ÑALTAÑ;Ana;50"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"TRANSFER€€;AC-0001;AC-0002;10\""}
+{"hipotesis":"027 sugerencia: dos € después de TRANSFER (distancia 2). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"TRANSFER\"}","m":"TRANSFER€€;AC-0001;AC-0002;10;13"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \" \""}
+{"hipotesis":"027 sugerencia: comando de un espacio: el control sale de un cuerpo sin letras ni dígitos. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \"}","m":" ;98"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"   \""}
+{"hipotesis":"027 sugerencia: comando de tres espacios. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \"}","m":"   ;98"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"P\""}
+{"hipotesis":"027 sugerencia: una letra: distancia 3 de PING, sin sugerencia. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \"}","m":"P;50"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"AL;Ana\""}
+{"hipotesis":"027 sugerencia: dos letras: distancia 2 de ALTA y de HALT (empate de 2). Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"AL;Ana;53"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"HA;x\""}
+{"hipotesis":"027 sugerencia: dos letras: distancia 2 de HALT. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"HALT\"}","m":"HA;x;73"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"PI NG;x\""}
+{"hipotesis":"027 sugerencia: como PI NG pero con un argumento de más. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"PI NG;x;21"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ALTA1\""}
+{"hipotesis":"027 sugerencia: como ALTA1 pero sin argumentos. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ALTA1;62"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"ALTA1;Ana;Lopez\""}
+{"hipotesis":"027 sugerencia: como ALTA1 pero con un argumento de más. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"ALTA1;Ana;Lopez;54"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"C0NSULTA\""}
+{"hipotesis":"027 sugerencia: como C0NSULTA pero sin argumentos. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"CONSULTA\"}","m":"C0NSULTA;18"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"consultá;AC-0001;AC-0002\""}
+{"hipotesis":"027 sugerencia: como consultá pero con un argumento de más. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"CONSULTA\"}","m":"consultá;AC-0001;AC-0002;45"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"pínG;x;y\""}
+{"hipotesis":"027 sugerencia: como pínG pero con dos argumentos de más. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"PING\"}","m":"pínG;x;y;47"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"AL\""}
+{"hipotesis":"027 sugerencia: como AL pero sin argumentos. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"ALTA\"}","m":"AL;53"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"TRANS FER;AC-0001;10\""}
+{"hipotesis":"027 sugerencia: como TRANS FER pero con un argumento de menos. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"TRANSFER\"}","m":"TRANS FER;AC-0001;10;23"}
+{"reset":true,"hipotesis":"027 sugerencia: estado limpio para \"DEPÓSITO;AC-0001\""}
+{"hipotesis":"027 sugerencia: como DEPÓSITO pero sin el monto. Nuestro reemplazo: 400 {\"error\":\"E301\",\"mensaje\":\"comando desconocido \",\"sugerencia\":\"DEPOSITO\"}","m":"DEPÓSITO;AC-0001;10"}

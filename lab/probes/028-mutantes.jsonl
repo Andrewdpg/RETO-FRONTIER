@@ -1,0 +1,22 @@
+{"reset":true,"hipotesis":"[028 E303-bloqueo rep1] reset: estado inicial limpio"}
+{"m":"ALTA;Ana;50","hipotesis":"[028 E303-bloqueo rep1] paso 1, preparación ALTA;Ana: esperado 201 {\"cuentaId\":\"AC-0001\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"ALTA;Beto;11","hipotesis":"[028 E303-bloqueo rep1] paso 2, preparación ALTA;Beto: esperado 201 {\"cuentaId\":\"AC-0002\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"DEPOSITO;AC-0001;100;82","hipotesis":"[028 E303-bloqueo rep1] paso 3, preparación DEPOSITO;AC-0001;100: esperado 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0001\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep1] paso 4, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep1] paso 5, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep1] paso 6, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;10;13","hipotesis":"[028 E303-bloqueo rep1] paso 7, Tres E303 seguidos desde el origen no lo bloquean en la v2 (en la v1: log 330–333). Original esperado: 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0002\"}. Mutante: 423 E510 si E303 sumara a la racha"}
+{"reset":true,"hipotesis":"[028 HALT-01 rep1] reset: estado inicial limpio"}
+{"m":"HALT;01;14","hipotesis":"[028 HALT-01 rep1] paso 1, HALT con \"01\" no confirma en la v2 (en la v1: log 11184, 11193). Original esperado: 409 {\"error\":\"E520\",\"mensaje\":\"operación destructiva: detiene el servicio; reenvía con confirmación\"}. Mutante: 503 E599 si la confirmación se comparara como número"}
+{"m":"PING;64","hipotesis":"[028 HALT-01 rep1] paso 2, Después de HALT;01 el servicio sigue respondiendo. Original esperado: 200 {\"pong\":true}. Mutante: 503 E599 si HALT;01 lo hubiera detenido"}
+{"reset":true,"hipotesis":"[028 E303-bloqueo rep2] reset: estado inicial limpio"}
+{"m":"ALTA;Ana;50","hipotesis":"[028 E303-bloqueo rep2] paso 1, preparación ALTA;Ana: esperado 201 {\"cuentaId\":\"AC-0001\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"ALTA;Beto;11","hipotesis":"[028 E303-bloqueo rep2] paso 2, preparación ALTA;Beto: esperado 201 {\"cuentaId\":\"AC-0002\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"DEPOSITO;AC-0001;100;82","hipotesis":"[028 E303-bloqueo rep2] paso 3, preparación DEPOSITO;AC-0001;100: esperado 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0001\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep2] paso 4, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep2] paso 5, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;0;44","hipotesis":"[028 E303-bloqueo rep2] paso 6, preparación TRANSFER;AC-0001;AC-0002;0: esperado 400 {\"error\":\"E303\",\"mensaje\":\"monto inválido\"}; si difiere, lo que sigue no prueba la mutante"}
+{"m":"TRANSFER;AC-0001;AC-0002;10;13","hipotesis":"[028 E303-bloqueo rep2] paso 7, Tres E303 seguidos desde el origen no lo bloquean en la v2 (en la v1: log 330–333). Original esperado: 200 {\"status\":\"recieved\",\"operacionId\":\"OP-0002\"}. Mutante: 423 E510 si E303 sumara a la racha"}
+{"reset":true,"hipotesis":"[028 HALT-01 rep2] reset: estado inicial limpio"}
+{"m":"HALT;01;14","hipotesis":"[028 HALT-01 rep2] paso 1, HALT con \"01\" no confirma en la v2 (en la v1: log 11184, 11193). Original esperado: 409 {\"error\":\"E520\",\"mensaje\":\"operación destructiva: detiene el servicio; reenvía con confirmación\"}. Mutante: 503 E599 si la confirmación se comparara como número"}
+{"m":"PING;64","hipotesis":"[028 HALT-01 rep2] paso 2, Después de HALT;01 el servicio sigue respondiendo. Original esperado: 200 {\"pong\":true}. Mutante: 503 E599 si HALT;01 lo hubiera detenido"}
