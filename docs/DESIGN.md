@@ -48,6 +48,10 @@ La confianza sigue la regla del README. **Confirmado** significa que lo vimos en
 | Ruta inexistente (`/nada`, `/`), con o sin token: la ruta se evalúa antes que el token | 404 `{"error":"E404","mensaje":"ruta desconocida"}` | 57, 58, 59, 60 | confirmado |
 | Método equivocado en ruta conocida (`GET /msg`, `PUT /msg`, `GET /__reset`, `POST /health`) | 404 `E404` | 61–65 | confirmado |
 | Variantes de la ruta: `/msg/` y `/MSG` no existen; `/msg?x=1` sí funciona | 404 `E404` / respuesta normal | 66, 67, 68 | confirmado / probable |
+| Rutas que solo se parecen a `/msg`: `//msg`, `/msg%2F`, `/%6Dsg` (no se decodifica) y una ruta de 9.001 caracteres | 404 `E404` | 501, 502, 503, 506 | probable |
+| `/msg?` con query vacía, `/msg` con una query de 9.000 caracteres y `/msg#x` con el fragmento en la línea del request | respuesta normal | 505, 507, 504 | probable |
+| `Content-Type` ausente o `text/plain` con un cuerpo JSON válido: no se mira el header | respuesta normal | 508, 509 | probable |
+| `bearer` en minúscula o dos espacios después de `Bearer`: la comparación del header es exacta | 401 `E001` | 510, 511 | probable |
 | Cuerpo que no es JSON (texto, JSON truncado, vacío) | 400 `{"error":"E100","mensaje":"json inválido"}` | 69, 70, 71 | confirmado |
 | JSON válido sin un campo `m` de tipo string (objeto vacío, `M`, número, null, array, string JSON) | 400 `{"error":"E102","mensaje":"falta m"}` | 72–78 | confirmado |
 | Claves extra junto a `m` se ignoran; un `m` de 5.000 caracteres se procesa | respuesta normal | 79, 80 | probable |
@@ -344,12 +348,10 @@ Estos son los riesgos del servicio original que un cliente nuevo no debería her
 
 ## 12. Pendientes con su hipótesis
 
-El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo desbloquea, la posición de E510 en el orden y los desempates de la sugerencia se cerraron durante el diseño, y la confirmación de HALT a las 13:40; están en 3.6, 3.7, 3.9, 3.10 y 3.11 con su evidencia. Queda abierto:
+El tope del monto, qué rechazos cuentan para el bloqueo, su alcance, qué lo desbloquea, la posición de E510 en el orden y los desempates de la sugerencia se cerraron durante el diseño; la confirmación de HALT, el orden de E301/E302 frente a E303 y las rutas y headers raros, durante la ejecución. Están en 3.1, 3.6, 3.7, 3.9, 3.10 y 3.11 con su evidencia. En las rutas raras el reemplazo en Cloud Run responde distinto que el original en `//msg`, `/%6Dsg` y `/msg#x`, por el proxy de Google y no por el código (evals del reemplazo, no son líneas del log). Queda abierto:
 
 | Pendiente | Hipótesis | Experimento propuesto |
 |---|---|---|
 | Comandos ocultos fuera del barrido | No hay más: el barrido de 76 palabras solo encontró HALT | Sondeo por sugerencia con palabras nuevas si el diferencial muestra un E301 inesperado |
 | Desborde de los ids `AC-9999` y `OP-9999` | Pasan a 5 dígitos | No se prueba: cuesta 10.000 requests. Supuesto del reemplazo: seguir con 5 dígitos |
 | Bloqueo después de 10 minutos | Permanente hasta un depósito o `/__reset` (sigue bloqueada a los 1, 5 y 10 min) | Re-chequear una cuenta bloqueada a los 30 minutos |
-| Orden entre E301/E302 y E303 | E301/E302 antes, porque sin comando conocido no hay fila que diga qué argumento es un monto | Comando a distancia 1 con monto inválido y control correcto; DEPOSITO con un argumento de más y monto 0 |
-| Respuestas del proxy de Cloud Run frente al de Railway ante requests raros a nivel HTTP (rutas con `//` o `%2F`, headers malformados) | Pueden diferir, porque el original está detrás del proxy de Railway | Misma tanda contra el original y contra el reemplazo desplegado, apenas exista |
