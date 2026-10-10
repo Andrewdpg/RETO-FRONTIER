@@ -2,21 +2,19 @@
 # Despliega el servicio en Cloud Run. Idempotente: cada paso revisa el estado y se salta si ya está hecho.
 #
 #   ./deploy.sh                       # usa el proyecto activo de gcloud
-#   OPENROUTER_API_KEY=sk-or-... ./deploy.sh
 #
-# Variables (con su valor por defecto): REGION=us-central1 SERVICE=frontier MODEL=anthropic/claude-haiku-5.5
-#   MIN_INSTANCES=1 MAX_INSTANCES=3 CPU=1 MEMORY=512Mi BUDGET_USD=5
-# Secretos: TEAM_TOKEN (si no existe y no lo pasás, se genera), OPENROUTER_API_KEY y NEON_CONNECTION_STRING
-# (opcionales al arrancar). Con un .env: set -a; . ./.env; set +a; ./deploy.sh
+# Variables (con su valor por defecto): REGION=us-central1 SERVICE=reemplazo
+#   MIN_INSTANCES=1 MAX_INSTANCES=1 CPU=1 MEMORY=512Mi BUDGET_USD=5
+# Un solo proceso porque el estado vive en memoria (D1).
+# Secreto: TEAM_ENTRYPOINT_TOKEN, leído de ./.env y montado con el mismo nombre. Nunca se imprime.
 # El deploy siempre pide confirmación: no hay flag para saltarla.
 set -euo pipefail
 
 PROJECT=$(gcloud config get-value project 2>/dev/null)
 REGION=${REGION:-us-central1}
-SERVICE=${SERVICE:-frontier}
-MODEL=${MODEL:-anthropic/claude-haiku-5.5}
+SERVICE=${SERVICE:-reemplazo}
 MIN_INSTANCES=${MIN_INSTANCES:-1}
-MAX_INSTANCES=${MAX_INSTANCES:-3}
+MAX_INSTANCES=${MAX_INSTANCES:-1}
 CPU=${CPU:-1}
 MEMORY=${MEMORY:-512Mi}
 BUDGET_USD=${BUDGET_USD:-5}
@@ -80,13 +78,10 @@ put_secret() {  # nombre, valor (vacío = no tocar)
   else gcloud secrets add-iam-policy-binding "$name" --member="serviceAccount:$RUNTIME_SA" --role=roles/secretmanager.secretAccessor -q >/dev/null; ok "$name: acceso del servicio"; fi
   SECRETS+=("$name=$name:latest")
 }
-if ! gcloud secrets describe TEAM_TOKEN >/dev/null 2>&1 && [[ -z ${TEAM_TOKEN:-} ]]; then
-  TEAM_TOKEN=$(openssl rand -hex 24)
-  printf '  ! TEAM_TOKEN generado (guardalo): %s\n' "$TEAM_TOKEN"
-fi
-put_secret TEAM_TOKEN "${TEAM_TOKEN:-}"
-put_secret OPENROUTER_API_KEY "${OPENROUTER_API_KEY:-}"
-put_secret NEON_CONNECTION_STRING "${NEON_CONNECTION_STRING:-}"
+# El secreto viejo TEAM_TOKEN tenía otro valor: este nombre nuevo evita heredarlo.
+TEAM_ENTRYPOINT_TOKEN=$(sed -n 's/^TEAM_ENTRYPOINT_TOKEN=//p' .env 2>/dev/null | tail -n1 | tr -d "\"'\r")
+[[ -n $TEAM_ENTRYPOINT_TOKEN ]] || die "falta TEAM_ENTRYPOINT_TOKEN en ./.env"
+put_secret TEAM_ENTRYPOINT_TOKEN "$TEAM_ENTRYPOINT_TOKEN"
 
 info "7. Deploy"
 CURRENT=$(gcloud run services describe "$SERVICE" --region="$REGION" --format='value(status.url,status.latestReadyRevisionName)' 2>/dev/null || true)
@@ -96,7 +91,7 @@ if [[ -n $CURRENT ]]; then
 else
   printf '  DEPLOY NUEVO de %s (todavía no existe)\n' "$SERVICE"
 fi
-printf '  código: %s · modelo %s · instancias %s-%s · %s CPU · %s\n' "$PWD" "$MODEL" "$MIN_INSTANCES" "$MAX_INSTANCES" "$CPU" "$MEMORY"
+printf '  código: %s · instancias %s-%s · %s CPU · %s\n' "$PWD" "$MIN_INSTANCES" "$MAX_INSTANCES" "$CPU" "$MEMORY"
 read -r -p "  ¿Confirmás? [s/N] " answer
 [[ $answer == [sS] ]] || die "cancelado"
 
@@ -104,9 +99,10 @@ SECRET_FLAG=()
 ((${#SECRETS[@]})) && SECRET_FLAG=(--set-secrets="$(IFS=,; echo "${SECRETS[*]}")")
 gcloud run deploy "$SERVICE" --source . --region="$REGION" --allow-unauthenticated --port=8080 \
   --min-instances="$MIN_INSTANCES" --max-instances="$MAX_INSTANCES" --cpu="$CPU" --memory="$MEMORY" \
-  --set-env-vars="MODEL=$MODEL" "${SECRET_FLAG[@]}" -q
+  "${SECRET_FLAG[@]}" -q
 
 URL=$(gcloud run services describe "$SERVICE" --region="$REGION" --format='value(status.url)')
 info "8. Verificación"
-if curl -fsS --max-time 20 "$URL/health" >/dev/null; then ok "$URL/health responde"; else die "$URL/health no responde"; fi
+# /health pide token (log 53). El header va por stdin para que el token no aparezca en la lista de procesos.
+if printf 'Authorization: Bearer %s\n' "$TEAM_ENTRYPOINT_TOKEN" | curl -fsS --max-time 20 -H @- "$URL/health" >/dev/null; then ok "$URL/health responde"; else die "$URL/health no responde"; fi
 printf '\nEntrypoint: %s\n' "$URL"
