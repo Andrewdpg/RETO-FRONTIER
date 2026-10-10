@@ -1,0 +1,48 @@
+{"hipotesis": "reset deja el estado inicial; abre la secuencia de rutas y auth", "reset": true}
+{"hipotesis": "línea base: PING con control válido del ejemplo 01 responde pong", "m": "PING;64"}
+{"hipotesis": "sin header Authorization se rechaza, y con qué error", "m": "PING;64", "auth": "none"}
+{"hipotesis": "token inválido con esquema Bearer se rechaza igual que sin token", "m": "PING;64", "auth": "Bearer invalido"}
+{"hipotesis": "Bearer sin token", "m": "PING;64", "auth": "Bearer "}
+{"hipotesis": "header sin esquema Bearer", "m": "PING;64", "auth": "invalido"}
+{"hipotesis": "la ruta se evalúa antes que la auth: ruta desconocida sin token", "method": "GET", "path": "/nada", "auth": "none"}
+{"hipotesis": "ruta desconocida con token válido da el mismo E404", "method": "GET", "path": "/nada"}
+{"hipotesis": "GET / con token válido", "method": "GET", "path": "/"}
+{"hipotesis": "GET /health con token", "method": "GET", "path": "/health"}
+{"hipotesis": "GET /health sin token", "method": "GET", "path": "/health", "auth": "none"}
+{"hipotesis": "/msg solo acepta POST: GET /msg", "method": "GET", "path": "/msg"}
+{"hipotesis": "PUT /msg con cuerpo válido", "method": "PUT", "path": "/msg", "m": "PING;64"}
+{"hipotesis": "DELETE /msg", "method": "DELETE", "path": "/msg"}
+{"hipotesis": "POST a ruta desconocida con token", "method": "POST", "path": "/nada", "m": "PING;64"}
+{"hipotesis": "barra final: POST /msg/", "path": "/msg/", "m": "PING;64"}
+{"hipotesis": "los query params se ignoran en /msg", "path": "/msg?x=1", "m": "PING;64"}
+{"hipotesis": "GET /__reset (el reset solo existe como POST)", "method": "GET", "path": "/__reset"}
+{"hipotesis": "POST /__reset sin token responde como una ruta protegida", "method": "POST", "path": "/__reset", "auth": "none"}
+{"hipotesis": "cuerpo vacío en /msg", "raw": ""}
+{"hipotesis": "cuerpo que no es JSON", "raw": "no es json"}
+{"hipotesis": "JSON que es un array, no un objeto", "raw": "[]"}
+{"hipotesis": "objeto sin la clave m", "body": {"x": "PING;64"}}
+{"hipotesis": "objeto vacío", "body": {}}
+{"hipotesis": "m es null", "body": {"m": null}}
+{"hipotesis": "m es número en vez de string", "body": {"m": 5}}
+{"hipotesis": "m es string vacío", "m": ""}
+{"hipotesis": "claves extra se ignoran", "body": {"m": "PING;64", "extra": 1}}
+{"hipotesis": "PING no valida que el control sea numérico (README del reto lo sugiere)", "m": "PING;XX"}
+{"hipotesis": "PING sin campo de control", "m": "PING"}
+{"hipotesis": "PING con control vacío", "m": "PING;"}
+{"hipotesis": "PING con argumentos de más", "m": "PING;1;64"}
+{"hipotesis": "el comando es case-insensitive en minúsculas completas, con el control de CONSULTA", "m": "consulta;AC-0001;14"}
+{"hipotesis": "reset antes de la numeración de cuentas y del orden de validación", "reset": true}
+{"hipotesis": "ALTA con control válido justo después del reset deja AC-0001 como en el ejemplo 03", "m": "ALTA;Lucia;82"}
+{"hipotesis": "ALTA con control mal formado se rechaza con E201 (como DEPOSITO en el ejemplo 17)", "m": "ALTA;Lucia;5X"}
+{"hipotesis": "un ALTA rechazado con E201 no consume número: el siguiente ALTA válido da AC-0002 y no AC-0003", "m": "ALTA;Mateo;3"}
+{"hipotesis": "comando desconocido con control mal formado: gana E301 o E201", "m": "SALDOS;AC-0001;5X"}
+{"hipotesis": "comando desconocido sin control", "m": "FOOBAR"}
+{"hipotesis": "aridad inválida con control mal formado: gana E302 o E201", "m": "ALTA;Lucia;Gomez;5X"}
+{"hipotesis": "ALTA con aridad de menos (sin nombre)", "m": "ALTA;82"}
+{"hipotesis": "control de un dígito: 5 es bien formado o es E201", "m": "ALTA;Lucia;5"}
+{"hipotesis": "control con cero a la izquierda 082 equivale a 82", "m": "ALTA;Lucia;082"}
+{"hipotesis": "control de tres dígitos", "m": "ALTA;Lucia;100"}
+{"hipotesis": "control negativo", "m": "ALTA;Lucia;-1"}
+{"hipotesis": "control decimal", "m": "ALTA;Lucia;8.2"}
+{"hipotesis": "control con espacio", "m": "ALTA;Lucia; 82"}
+{"hipotesis": "control vacío en ALTA", "m": "ALTA;Lucia;"}

@@ -1,0 +1,21 @@
+{"hipotesis": "reset abre el replay de los 20 ejemplos grabados en la mañana", "reset": true}
+{"hipotesis": "replay ejemplo 1: responde 200 {\"pong\": true} como en la grabación de la mañana", "m": "PING;64"}
+{"hipotesis": "replay ejemplo 2: responde 400 {\"error\": \"E202\", \"mensaje\": \"control inválido\"} como en la grabación de la mañana", "m": "ALTA;Lucia;83"}
+{"hipotesis": "replay ejemplo 3: responde 201 {\"cuentaId\": \"AC-0001\"} como en la grabación de la mañana", "m": "ALTA;Lucia;82"}
+{"hipotesis": "replay ejemplo 4: responde 201 {\"cuentaId\": \"AC-0002\"} como en la grabación de la mañana", "m": "ALTA;Mateo;3"}
+{"hipotesis": "replay ejemplo 5: responde 200 {\"cuenta_id\": \"AC-0001\", \"saldo\": 0} como en la grabación de la mañana", "m": "CONSULTA;AC-0001;14"}
+{"hipotesis": "replay ejemplo 6: responde 200 {\"status\": \"recieved\", \"operacionId\": \"OP-0001\"} como en la grabación de la mañana", "m": "DEPOSITO;AC-0001;250000;86"}
+{"hipotesis": "replay ejemplo 7: responde 200 {\"status\": \"recieved\", \"operacionId\": \"OP-0002\"} como en la grabación de la mañana", "m": "TRANSFER;AC-0001;AC-0002;40000;86"}
+{"hipotesis": "replay ejemplo 8: responde 200 {\"cuenta_id\": \"AC-0002\", \"saldo\": 40000} como en la grabación de la mañana", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "replay ejemplo 9: responde 422 {\"error\": \"E506\", \"mensaje\": \"límite excedido\"} como en la grabación de la mañana", "m": "TRANSFER;AC-0001;AC-0002;120000;55"}
+{"hipotesis": "replay ejemplo 10: responde 200 {\"status\": \"recieved\", \"operacionId\": \"OP-0003\"} como en la grabación de la mañana", "m": "TRANSFER;AC-0001;AC-0002;100000;12"}
+{"hipotesis": "replay ejemplo 11: responde 200 {\"cuenta_id\": \"AC-0001\", \"saldo\": 110000} como en la grabación de la mañana", "m": "CONSULTa;AC-0001;14"}
+{"hipotesis": "replay ejemplo 12: responde 400 {\"error\": \"E301\", \"mensaje\": \"comando desconocido \"} como en la grabación de la mañana", "m": "SALDOS;AC-0001;38"}
+{"hipotesis": "replay ejemplo 13: responde 200 {\"ok\": true, \"anulada\": \"OP-0003\"} como en la grabación de la mañana", "m": "ANULA;OP-0003;66"}
+{"hipotesis": "replay ejemplo 14: responde 200 {\"ok\": false, \"motivo\": \"ya anulada\"} como en la grabación de la mañana", "m": "ANULA;OP-0003;66"}
+{"hipotesis": "replay ejemplo 15: responde 404 {\"error\": \"E401\", \"mensaje\": \"cuenta inexistente\"} como en la grabación de la mañana", "m": "CONSULTA;AC-0009;87"}
+{"hipotesis": "replay ejemplo 16: responde 422 {\"error\": \"E507\", \"mensaje\": \"saldo insuficiente\"} como en la grabación de la mañana", "m": "TRANSFER;AC-0002;AC-0001;50000;23"}
+{"hipotesis": "replay ejemplo 17: responde 400 {\"error\": \"E201\", \"mensaje\": \"control mal formado\"} como en la grabación de la mañana", "m": "DEPOSITO;AC-0002;700;5X"}
+{"hipotesis": "replay ejemplo 18: responde 200 {\"status\": \"recieved\", \"operacionId\": \"OP-0004\"} como en la grabación de la mañana", "m": "DEPOSITO;AC-0002;700;35"}
+{"hipotesis": "replay ejemplo 19: responde 200 {\"cuenta_id\": \"AC-0002\", \"saldo\": 40700} como en la grabación de la mañana", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "replay ejemplo 20: responde 400 {\"error\": \"E302\", \"mensaje\": \"aridad inválida\"} como en la grabación de la mañana", "m": "ALTA;Lucia;Gomez;11"}

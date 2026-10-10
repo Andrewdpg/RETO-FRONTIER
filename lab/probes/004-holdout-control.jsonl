@@ -1,0 +1,8 @@
+{"hipotesis": "reset antes del holdout de la fórmula del control", "reset": true}
+{"hipotesis": "holdout de la fórmula: 85 es el control válido de 'CONSULTA;AC-0042' (si no, E202)", "m": "CONSULTA;AC-0042;85"}
+{"hipotesis": "holdout de la fórmula: 3 es el control válido de 'ALTA;Zoe' (si no, E202)", "m": "ALTA;Zoe;3"}
+{"hipotesis": "holdout de la fórmula: 13 es el control válido de 'DEPOSITO;AC-0009;1000' (si no, E202)", "m": "DEPOSITO;AC-0009;1000;13"}
+{"hipotesis": "holdout de la fórmula: 89 es el control válido de 'TRANSFER;AC-0003;AC-0004;500' (si no, E202)", "m": "TRANSFER;AC-0003;AC-0004;500;89"}
+{"hipotesis": "holdout de la fórmula: 54 es el control válido de 'ANULA;OP-0007' (si no, E202)", "m": "ANULA;OP-0007;54"}
+{"hipotesis": "control predicho + 1 para 'CONSULTA;AC-0042' da E202", "m": "CONSULTA;AC-0042;86"}
+{"hipotesis": "comando desconocido con control válido de formato pero incorrecto (el predicho es 38): gana E202 o E301", "m": "SALDOS;AC-0001;39"}

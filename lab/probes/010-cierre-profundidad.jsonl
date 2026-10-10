@@ -1,0 +1,7 @@
+{"hipotesis": "reset antes de cerrar el umbral de profundidad", "reset": true}
+{"hipotesis": "array anidado 21 niveles (20 dio E102 y 25 dio E100)", "raw": "[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 22 niveles (20 dio E102 y 25 dio E100)", "raw": "[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 23 niveles (20 dio E102 y 25 dio E100)", "raw": "[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 24 niveles (20 dio E102 y 25 dio E100)", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "objeto con m válido y una clave extra anidada 19 niveles: profundidad total 20 contando el objeto exterior; pong si el máximo es 20 y cuenta igual que los arrays", "raw": "{\"m\":\"PING;64\",\"x\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":1}}}}}}}}}}}}}}}}}}}}"}
+{"hipotesis": "objeto con m válido y una clave extra anidada 20 niveles: profundidad total 21 contando el objeto exterior; pong si el máximo es 20 y cuenta igual que los arrays", "raw": "{\"m\":\"PING;64\",\"x\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":{\"a\":1}}}}}}}}}}}}}}}}}}}}}"}

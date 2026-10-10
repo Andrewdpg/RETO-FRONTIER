@@ -1,0 +1,12 @@
+{"hipotesis": "reset antes de buscar qué stack hay detrás del original", "reset": true}
+{"hipotesis": "headers de una respuesta normal: Server, X-Powered-By y Content-Type exacto dicen el stack si el proxy de Railway no los tapa", "m": "PING;64", "headers": true}
+{"hipotesis": "headers de una respuesta E404, por si el router los cambia", "method": "GET", "path": "/nada", "headers": true}
+{"hipotesis": "cuerpo NaN: Python lo acepta como JSON válido (daría E102), JavaScript lo rechaza (daría E100)", "raw": "NaN"}
+{"hipotesis": "NaN como valor de una clave extra: Python responde pong, JavaScript da E100", "raw": "{\"m\":\"PING;64\",\"x\":NaN}"}
+{"hipotesis": "cuerpo Infinity: Python lo acepta (E102), JavaScript lo rechaza (E100)", "raw": "Infinity"}
+{"hipotesis": "coma final dentro del objeto: los dos parsers estándar la rechazan (E100); si pasa, el parser es otro", "raw": "{\"m\":\"PING;64\",}"}
+{"hipotesis": "cuerpo con BOM UTF-8 al inicio: algunos parsers lo aceptan y otros dan E100", "raw": "﻿{\"m\":\"PING;64\"}"}
+{"hipotesis": "HEAD /msg: router propio da 404 E404 sin cuerpo; Express o http.server responden distinto", "method": "HEAD", "path": "/msg", "headers": true}
+{"hipotesis": "OPTIONS /msg: Express suele dar 200 con Allow; http.server de Python da 501 en HTML; router propio da 404 E404", "method": "OPTIONS", "path": "/msg", "headers": true}
+{"hipotesis": "PATCH /msg con cuerpo válido: método que nadie midió, el set podría mandarlo", "method": "PATCH", "path": "/msg", "m": "PING;64", "headers": true}
+{"hipotesis": "HEAD /health con token: ¿200 sin cuerpo como un GET, o 404 por ser otro método?", "method": "HEAD", "path": "/health", "headers": true}

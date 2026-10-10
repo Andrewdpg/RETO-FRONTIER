@@ -1,0 +1,9 @@
+{"hipotesis": "reset antes de buscar el umbral exacto de profundidad", "reset": true}
+{"hipotesis": "array anidado 16 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 20 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 25 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 32 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 33 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 50 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 64 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"}
+{"hipotesis": "array anidado 65 niveles: E102 si está dentro del límite de profundidad, E100 si lo pasa", "raw": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"}
