@@ -1,0 +1,28 @@
+{"hipotesis": "límite con titulares iguales (Ana y Ana): secuencia propia", "reset": true}
+{"hipotesis": "cuenta AC-0001 a nombre de Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "cuenta AC-0002 a nombre de Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "saldo de 300.000 en AC-0001 para que el saldo no sea el motivo", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "TRANSFER de 150.000 con titulares iguales (Ana y Ana): 200 si el límite no aplica entre cuentas del mismo titular (hipótesis por 11575 frente a 11624); 422 E506 si aplica (log 108)", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "CONSULTA AC-0002: 150.000 si pasó, 0 si no", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "límite con titulares distintos (Ana y Beto), control: secuencia propia", "reset": true}
+{"hipotesis": "cuenta AC-0001 a nombre de Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "cuenta AC-0002 a nombre de Beto", "m": "ALTA;Beto;11"}
+{"hipotesis": "saldo de 300.000 en AC-0001 para que el saldo no sea el motivo", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "TRANSFER de 150.000 con titulares distintos (Ana y Beto), control: 422 E506 como en log 108 y 11624", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "CONSULTA AC-0002: 150.000 si pasó, 0 si no", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "límite con titulares iguales (Maria Paz y Maria Paz), repetición: secuencia propia", "reset": true}
+{"hipotesis": "cuenta AC-0001 a nombre de Maria Paz", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "cuenta AC-0002 a nombre de Maria Paz", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "saldo de 300.000 en AC-0001 para que el saldo no sea el motivo", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "TRANSFER de 150.000 con titulares iguales (Maria Paz y Maria Paz), repetición: 200 si la hipótesis se sostiene con otro nombre", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "CONSULTA AC-0002: 150.000 si pasó, 0 si no", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "límite con titulares que difieren en mayúsculas (Ana y ana): secuencia propia", "reset": true}
+{"hipotesis": "cuenta AC-0001 a nombre de Ana", "m": "ALTA;Ana;50"}
+{"hipotesis": "cuenta AC-0002 a nombre de ana", "m": "ALTA;ana;50"}
+{"hipotesis": "saldo de 300.000 en AC-0001 para que el saldo no sea el motivo", "m": "DEPOSITO;AC-0001;300000;48"}
+{"hipotesis": "TRANSFER de 150.000 con titulares que difieren en mayúsculas (Ana y ana): 200 si el nombre se compara sin distinguir mayúsculas; 422 E506 si se compara exacto", "m": "TRANSFER;AC-0001;AC-0002;150000;71"}
+{"hipotesis": "CONSULTA AC-0002: 150.000 si pasó, 0 si no", "m": "CONSULTA;AC-0002;11"}
+{"hipotesis": "repetición exacta de 11575: secuencia propia", "reset": true}
+{"hipotesis": "AC-0001 Maria Paz", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "AC-0002 Maria Paz", "m": "ALTA;Maria Paz;20"}
+{"hipotesis": "TRANSFER de 100.001 desde saldo 0 entre mismo titular: 422 E507 como 11575 (sin el PING de por medio)", "m": "TRANSFER;AC-0002;AC-0001;100001;37"}

@@ -125,7 +125,9 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 | Monto inválido (mismas reglas que DEPOSITO) | 400 `E303` | 111, 112 | confirmado |
 | Origen igual a destino | 400 `{"error":"E304","mensaje":"origen y destino iguales"}` | 103, 140 | confirmado |
 | Origen o destino inexistente | 404 `E401` | 104, 105, 106 | confirmado |
-| Monto mayor que 100.000 (100.000 exacto pasa). Es por transferencia: seis de 100.000 seguidas pasan todas | 422 `{"error":"E506","mensaje":"límite excedido"}` | 9, 108, 109, 155–157, 386–392 | confirmado |
+| Monto mayor que 100.000 (100.000 exacto pasa) entre cuentas de titulares distintos. Es por transferencia: seis de 100.000 seguidas pasan todas | 422 `{"error":"E506","mensaje":"límite excedido"}` | 9, 108, 109, 155–157, 386–392 | confirmado |
+| Entre dos cuentas del mismo titular (el nombre del ALTA) no hay límite: 150.000 pasan, y con saldo insuficiente el error es E507 aunque el monto pase de 100.000 | 200 / 422 `E507` | 11575, 11782, 11783, 11794, 11795, 11805; control con titulares distintos: 11624, 11788 | confirmado |
+| El titular se compara exacto: `Ana` y `ana` son titulares distintos | 422 `E506` | 11800 | probable |
 | Saldo menor que el monto | 422 `{"error":"E507","mensaje":"saldo insuficiente"}` | 16, 246 | confirmado |
 | Después de tres rechazos E506 o E507 seguidos con el mismo origen, la siguiente TRANSFER desde ese origen se bloquea, aunque alcance el saldo | 409 `{"error":"E510","mensaje":"cuenta bloqueada"}` | 200, 249, 269, 319, 455 | confirmado |
 | Solo cuentan E506 y E507. Tres E303, tres E304 o tres E401 seguidos no bloquean | la siguiente TRANSFER válida da 200 | 330–333, 337–340, 344–347 | confirmado |
@@ -163,7 +165,7 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 | Detenido, la ruta y el token se siguen evaluando antes | 404 `E404` / 401 `E001` | 11200, 11201 | probable |
 | Detenido, `GET /health` no cambia: 200 con token, E001 sin token | 200 `{"ok":true}` / 401 | 11136, 11208, 11209 | confirmado |
 | `/__reset` lo repara: estado en cero y HALT vuelve a pedir confirmación | 200, después `AC-0001` | 11138–11140, 11210, 11211 | confirmado |
-| Detenido, un cuerpo de más de 8.192 bytes | sin probar; el reemplazo responde E101, porque el tamaño se revisa antes de parsear | — | supuesto |
+| Detenido, un cuerpo de más de 8.192 bytes: E599 va antes que el tamaño | 503 `E599` | 11320, 11324 | confirmado |
 
 ### 3.10 Comando desconocido y sugerencia
 
@@ -177,19 +179,19 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 
 ### 3.11 Orden de los errores
 
-El orden medido es: E404 → E001 → E101 → E599 (solo con el servicio detenido) → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57) y que el tamaño (10985), el token antes que el cuerpo (296–298) y que el tamaño (10984), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Con el servicio detenido por `HALT;1`, E599 va después de la ruta y del token (11200, 11201) y antes del JSON y de todo lo demás (11202–11207). Quedan dos posiciones sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303, y E101 antes que E599.
+El orden medido es: E404 → E001 → E599 (solo con el servicio detenido) → E101 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57) y que el tamaño (10985), el token antes que el cuerpo (296–298) y que el tamaño (10984), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Con el servicio detenido por `HALT;1`, E599 va después de la ruta y del token (11200, 11201) y antes del tamaño (11320, 11324), del JSON y de todo lo demás (11202–11207). El comando y la aridad van antes que el monto: un comando a distancia 1 con monto 0 da E301 (11328, 11333) y una aridad equivocada con monto 0 da E302 (11329, 11330, 11334, 11335).
 
 | Estación | Qué revisa | Error si falla | Log que prueba su lugar |
 |---|---|---|---|
 | 1. Ruta | Método y ruta exactos (`POST /msg`, `POST /__reset`, `GET /health`); cualquier otro método, incluidos HEAD y OPTIONS, no existe | 404 `E404` | 57 (antes que el token), 10985 (antes que el tamaño) |
 | 2. Token | Bearer igual al token del equipo | 401 `E001` | 296–298 (antes que el cuerpo), 10984 (antes que el tamaño) |
-| 2b. Tamaño | Cuerpo de 8.192 bytes o menos, contados en bytes | 413 `E101` | 10977, 10987, 10989 |
-| 2c. Detenido | El token no está detenido por un `HALT;1` posterior al último reset | 503 `E599` | 11200, 11201 (después de ruta y token), 11202–11207 (antes que el resto); frente a E101: supuesto |
+| 2b. Detenido | El token no está detenido por un `HALT;1` posterior al último reset | 503 `E599` | 11200, 11201 (después de ruta y token), 11320, 11324 (antes que el tamaño), 11202–11207 (antes que el resto) |
+| 2c. Tamaño | Cuerpo de 8.192 bytes o menos, contados en bytes | 413 `E101` | 10977, 10987, 10989 |
 | 3. JSON | El cuerpo se puede parsear como JSON estricto y no pasa de 20 niveles de anidamiento | 400 `E100` | 69, 10962–10966, 11007, 11012 |
 | 4. Campo m | `m` existe y es string | 400 `E102` | 72 |
 | 5. Segmentos | Hay al menos un `;` y ningún segmento vacío | 400 `E103` / `E104` | 30, 31 (antes que el control) |
 | 6. Control | Uno o dos dígitos e igual al calculado; PING la saltea | 400 `E201` / `E202` | 38–41 (antes que comando y aridad), 81 |
-| 7. Comando y aridad | El comando existe y tiene la cantidad de argumentos de su fila | 400 `E301` (con sugerencia) / `E302`; HALT responde 409 `E520` | 12, 20; antes que el monto: supuesto |
+| 7. Comando y aridad | El comando existe y tiene la cantidad de argumentos de su fila | 400 `E301` (con sugerencia) / `E302`; HALT responde 409 `E520` | 12, 20; antes que el monto: 11328–11330, 11333–11335 |
 | 8. Monto | Entero positivo de hasta 10 dígitos sin ceros a la izquierda | 400 `E303` | 139, 141 (antes que E304 y E401) |
 | 9. Origen y destino | En TRANSFER, origen distinto de destino | 400 `E304` | 140 (antes que E401) |
 | 10. Existencia | Las cuentas o la operación existen | 404 `E401` / `E402` | 106, 307 (antes que E506 y E510) |
