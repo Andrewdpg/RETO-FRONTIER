@@ -27,6 +27,8 @@ Describe el servicio tal como responde desde las 15:57 del 10 de octubre (versi�
 | ENT-13 | El header `Content-Type` no se mira: ausente o `text/plain` con un cuerpo JSON válido responde normal | 508, 509 | probable |
 | ENT-14 | Todas las respuestas son JSON con `Content-Type: application/json; charset=utf-8`. El header `X-Req` cuenta los `/msg` autenticados del token y `/__reset` no lo reinicia (los headers no se comparan) | 10959–10970, 11860, 11862 | confirmado |
 | ENT-15 | Solo vale el token del equipo; cualquier otro token recibe E001 y no tiene estado propio | — | supuesto |
+| ENT-16 | Si la clave `m` aparece dos veces en el JSON, vale la última: `{"m":5,"m":"PING;64"}` responde pong | 1290, 1315 | confirmado |
+| ENT-17 | `{"__proto__":{"m":"PING;64"}}` no cuenta como `m`: error E102 | 1291, 1316 | confirmado |
 
 ## 2. Integridad
 
@@ -92,7 +94,7 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 | CMD-TRANSFER-03 | Origen igual a destino: error E304 | 103, 140, 12629 | confirmado |
 | CMD-TRANSFER-04 | Origen o destino inexistente: error E401 | 104, 105, 106, 12667 | confirmado |
 | CMD-TRANSFER-05 | Entre cuentas de titulares distintos, un monto mayor que 50.000 da error E506. 50.000 pasa; 50.001, 75.000, 99.999 y 100.000 no | 12640, 12754, 12756, 12758, 12760, 12854, 12856 | confirmado |
-| CMD-TRANSFER-06 | Entre dos cuentas del mismo titular no hay límite: pasan 150.000 y 9.999.999.999. Si no alcanza el saldo, el error es E507 aunque el monto pase del límite | 11782, 11794, 12604, 12685, 11575, 11805 | confirmado |
+| CMD-TRANSFER-06 | Entre dos cuentas del mismo titular no hay límite: pasan 150.000 y 9.999.999.999. Si no alcanza el saldo, el error es E507 aunque el monto pase del límite | 11782, 11794, 12604, 12685, 11575, 11805, 1295, 1320 | confirmado |
 | CMD-TRANSFER-07 | El titular se compara exacto, sin recortar ni normalizar: `Ana` y `ana`, `Ana` y ` Ana`, `José` y `Jose` son titulares distintos | 11800, 12609, 12614 | confirmado |
 | CMD-TRANSFER-08 | El límite es por transferencia, no acumulado: varias transferencias seguidas dentro del límite pasan todas | 386–392 | probable |
 | CMD-TRANSFER-09 | Saldo del origen menor que el monto: error E507 | 16, 246, 12557 | confirmado |
@@ -124,6 +126,7 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 | CMD-OTRO-02 | Si el nombre (en mayúsculas ASCII, sin recortar espacios) está a distancia de Levenshtein ≤ 2 de un comando, se agrega `"sugerencia":"<COMANDO>"`. Las trasposiciones cuentan como dos cambios | 35, 85–88, 147–152, 234, 235 | confirmado |
 | CMD-OTRO-03 | En un empate gana el comando que va primero en orden alfabético (ALTA, ANULA, CONSULTA, DEPOSITO, HALT, PING, TRANSFER). La sugerencia incluye HALT | 171, 238, 239, 393–398 | confirmado |
 | CMD-OTRO-04 | No hay más comandos: 76 palabras bancarias y administrativas, con el control bien calculado, dan E301 | 159–174, 280–291, 400–447 | probable |
+| CMD-OTRO-05 | La distancia se cuenta en caracteres y no en unidades UTF-16: `PI😀😀` sugiere PING | 1289, 1314 | confirmado |
 
 ## 4. Memoria entre requests
 
@@ -144,6 +147,7 @@ Las respuestas de error siguen el orden de la sección 5: si un mensaje tiene va
 | MEM-13 | Después de `HALT;1` el token queda detenido hasta el próximo reset: todo `POST /msg` con token da E599, incluso PING, JSON inválido o un cuerpo demasiado grande. `GET /health` sigue en 200 | 11135, 11137, 11202–11207, 11320, 11324, 11136, 11209 | confirmado |
 | MEM-14 | Los mensajes se procesan de a uno: con depósitos o ALTA en paralelo no se pierde ninguno y los ids siguen el orden de llegada | 175–194 | probable |
 | MEM-15 | Un bloqueo no expira solo, tampoco después de 10 minutos | — | supuesto |
+| MEM-16 | Cuentas y operaciones se buscan por id exacto: nombres internos de JavaScript como `constructor`, `__proto__`, `toString`, `hasOwnProperty` o `valueOf` dan E401 (cuentas) o E402 (operaciones) | 1285–1288, 1299–1306, 1310–1313 | confirmado |
 
 ## 5. Errores
 

@@ -45,8 +45,11 @@ def err(code, mensaje):
 class Model:
     """Lo que el catálogo dice del original, lo justo para elegir ids y montos que tengan sentido."""
 
-    def __init__(self):
+    # v=2 es el servicio desde las 15:57 (DESIGN 3.12); v=1 sirve para revisar lo grabado antes.
+    def __init__(self, v=2):
+        self.v = v
         self.saldo, self.racha, self.titular, self.ops, self.halted = {}, {}, {}, [], False
+        self.intentos = {}
 
     def acct(self, n):
         return f"AC-{n:04d}"
@@ -59,7 +62,9 @@ class Model:
         segs = m.split(";")
         if any(s == "" for s in segs):
             return 400, err("E104", "segmento vacío")
-        cmd, args, k = segs[0].upper(), segs[1:-1], segs[-1]
+        # Mayúsculas solo en ASCII: "tranſfer" no es TRANSFER (log 1239, 1261).
+        cmd = "".join(chr(ord(c) - 32) if "a" <= c <= "z" else c for c in segs[0])
+        args, k = segs[1:-1], segs[-1]
         if cmd != "PING":
             if not re.fullmatch(r"\d{1,2}", k):
                 return 400, err("E201", "control mal formado")
@@ -86,7 +91,13 @@ class Model:
         return 201, {"cuentaId": c}
 
     def consulta(self, c):
-        return (200, {"cuenta_id": c, "saldo": self.saldo[c]}) if c in self.saldo else (404, err("E401", "cuenta inexistente"))
+        if c not in self.saldo:
+            return 404, err("E401", "cuenta inexistente")
+        n = self.saldo[c]
+        if self.v == 1:
+            return 200, {"cuenta_id": c, "saldo": n}
+        # v2: el entero dividido por 100 con dos decimales, como string (12638, 12789).
+        return 200, {"cuenta_id": c, "saldo": f"{'-' if n < 0 else ''}{abs(n) // 100}.{abs(n) % 100:02d}"}
 
     def _op(self, kind, a, b, n):
         self.ops.append({"kind": kind, "a": a, "b": b, "n": n, "anulada": False})
@@ -99,6 +110,7 @@ class Model:
             return 404, err("E401", "cuenta inexistente")
         self.saldo[c] += int(amt)
         self.racha[c] = 0
+        self.intentos[c] = 0
         return self._op("dep", None, c, int(amt))
 
     def transfer(self, a, b, amt):
@@ -109,10 +121,13 @@ class Model:
         if a not in self.saldo or b not in self.saldo:
             return 404, err("E401", "cuenta inexistente")
         if self.racha[a] >= 3:
-            return 409, err("E510", "cuenta bloqueada")
+            if self.v == 1:
+                return 409, err("E510", "cuenta bloqueada")
+            self.intentos[a] = self.intentos.get(a, 0) + 1
+            return 423, {**err("E510", "cuenta bloqueada"), "intentos": self.intentos[a]}
         n = int(amt)
         # Entre cuentas del mismo titular no hay límite (DESIGN 3.7, log 11782, 11794).
-        if n > 100000 and self.titular[a] != self.titular[b]:
+        if n > (100000 if self.v == 1 else 50000) and self.titular[a] != self.titular[b]:
             self.racha[a] += 1
             return 422, err("E506", "límite excedido")
         if self.saldo[a] < n:

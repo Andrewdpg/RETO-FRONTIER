@@ -55,6 +55,8 @@ La confianza sigue la regla del README. **Confirmado** significa que lo vimos en
 | Cuerpo que no es JSON (texto, JSON truncado, vacío) | 400 `{"error":"E100","mensaje":"json inválido"}` | 69, 70, 71 | confirmado |
 | JSON válido sin un campo `m` de tipo string (objeto vacío, `M`, número, null, array, string JSON) | 400 `{"error":"E102","mensaje":"falta m"}` | 72–78 | confirmado |
 | Claves extra junto a `m` se ignoran; un `m` de 5.000 caracteres se procesa | respuesta normal | 79, 80 | probable |
+| Con la clave `m` repetida gana la última: `{"m":5,"m":"PING;64"}` da pong | 200 `{"pong":true}` | 1290, 1315 | confirmado |
+| `{"__proto__":{"m":"PING;64"}}` no aporta un `m`: no hay contaminación por prototipo | 400 `E102` | 1291, 1316 | confirmado |
 | `HEAD`, `OPTIONS` y `PATCH` a `/msg` | 404 `E404`; en HEAD sin cuerpo | 10967–10969 | probable |
 | `HEAD /health` con token: no se deriva de GET | 404 sin cuerpo | 10970 | probable |
 | Cuerpo de más de 8.192 bytes, contados en bytes (8.192 pasa; 8.193 no; 8.200 bytes con `ñ`, que son 4.112 caracteres, tampoco) | 413 `{"error":"E101","mensaje":"cuerpo demasiado grande"}` | 10976, 10977, 10987, 10989 | probable |
@@ -154,6 +156,7 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 | Segunda anulación de la misma operación | 200 `{"ok":false,"motivo":"ya anulada"}` | 14, 10015, 11027, 11736, 12194, 12204, 12299 | confirmado |
 | No revisa saldo: puede dejar una cuenta en negativo | 200, saldo −50.000 o −50 | 122, 231 | confirmado |
 | Operación inexistente o con otro formato (`op-0003`, `OP-1`, `OP-0000`, `OP-00001`, un id `AC-`) | 404 `{"error":"E402","mensaje":"operación inexistente"}` | 126–128, 223–225 | confirmado |
+| Ids con nombres internos de JavaScript (`constructor`, `__proto__`, `toString`, `hasOwnProperty`, `valueOf`) no existen: CONSULTA, DEPOSITO y TRANSFER dan E401 y ANULA da E402 | 404 `E401` / `E402` | 1285–1288, 1299–1306, 1310–1313 | confirmado |
 | ANULA no consume un número de operación | la siguiente operación toma el OP que seguía | 18, 129, 11738, 12183, 12205 | confirmado |
 
 ### 3.9 HALT (comando oculto)
@@ -182,6 +185,7 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 | Comando inexistente lejos de todos los conocidos (`SALDOS`, `TRANS`, `XXXX` y once palabras bancarias) | 400 `{"error":"E301","mensaje":"comando desconocido "}` (con espacio final) | 12, 89, 159–169, 242 | confirmado |
 | A distancia de Levenshtein ≤ 2 de un comando, contando espacios y en mayúsculas | se agrega `"sugerencia":"<COMANDO>"` | 35, 85–88, 147–152, 170, 171, 232, 233, 236, 237, 240, 241 | confirmado |
 | Las trasposiciones cuentan como dos cambios (Levenshtein, no Damerau): `PNIGX` y `TPANSFRE` no sugieren nada | sin sugerencia | 234, 235 | confirmado |
+| La distancia cuenta caracteres, no unidades UTF-16: `PI😀😀` está a distancia 2 de PING | `"sugerencia":"PING"` | 1289, 1314 | confirmado |
 | En un empate gana el comando que va primero en orden alfabético: HALT frente a PING (`PANT`, `HINT`), ALTA frente a PING (`PITA`, `AINA`) y frente a HALT (`HATA`), ANULA frente a HALT (`HULA`). Si PING estuviera primero en una tabla sin ordenar, habría ganado PING | `"sugerencia":"HALT"` o `"ALTA"` | 238, 239, 393–398 | confirmado |
 | Barrido de 76 palabras bancarias y administrativas en inglés y español con el control bien calculado: ninguna existe, y fuera de `HELP` (que sugirió HALT) ninguna sugiere un comando desconocido | 400 `E301` | 159–174, 280–291, 400–447 | confirmado |
 
