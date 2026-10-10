@@ -124,7 +124,7 @@ Crea una cuenta con saldo 0. Acepta cualquier nombre no vacío: con tildes, num�
 | Un E303 en medio de la racha no la corta: E507, E507, E303, E507 bloquea igual | E510 | 351–355 | probable |
 | Una transferencia exitosa desde la cuenta pone en 0 los rechazos | 200 | 258–262 | probable |
 | El bloqueo es por cuenta: otra cuenta con fondos transfiere normal, y la bloqueada puede recibir | 200 | 320, 321, 456 | confirmado |
-| Lo único que la desbloquea es un depósito en ella (ver 3.6). Recibir una transferencia no la desbloquea ni corta la racha, y ANULA tampoco | E510 sigue | 456–457, 477–478, 485–487 | confirmado |
+| Lo único que la desbloquea es un depósito en ella (ver 3.6). Recibir una transferencia no la desbloquea ni corta la racha, ANULA tampoco, y el tiempo tampoco: sigue bloqueada a los 1, 5 y 10 minutos | E510 sigue | 456–457, 477–478, 485–487, 492–495 | confirmado |
 | Mientras está bloqueada, E303, E304 y E401 se evalúan antes que E510, y E510 antes que E506 y E507 | 400 / 404 / 409 | 305–309 | probable |
 | Cinco transferencias de 60 en paralelo con saldo 100: pasa una, las tres siguientes dan E507 y la quinta ya da E510 | 200, E507 ×3, E510 | 195–204 | probable |
 
@@ -161,7 +161,24 @@ Apareció porque la sugerencia de E301 busca entre todos los comandos, incluidos
 
 ### 3.11 Orden de los errores
 
-El orden medido es: E404 → E001 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57), el token antes que el cuerpo (296–298), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Queda una sola posición sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303. La vista `pipeline` del diagrama muestra este mismo orden, una etapa por flecha.
+El orden medido es: E404 → E001 → E100 → E102 → E103 → E104 → E201 → E202 → E301 o E302 → E303 → E304 → E401 o E402 → E510 → E506 → E507. Cada paso tiene su evidencia: la ruta antes que el token (57), el token antes que el cuerpo (296–298), el control antes que el comando y que la aridad (38–41), E202 antes que E401 (44), E303 antes que E304 (141) y que E401 (139), E304 antes que E401 (140), E401 antes que E506 (106), E303, E304 y E401 antes que E510 (305–307), E510 antes que E506 y E507 (308, 309) y E506 antes que E507 (110). Queda una sola posición sin medir, que el reemplazo toma como supuesto: E301/E302 antes que E303.
+
+| Estación | Qué revisa | Error si falla | Log que prueba su lugar |
+|---|---|---|---|
+| 1. Ruta | Método y ruta conocidos (`POST /msg`, `POST /__reset`, `GET /health`) | 404 `E404` | 57 (antes que el token) |
+| 2. Token | Bearer igual al token del equipo | 401 `E001` | 296–298 (antes que el cuerpo) |
+| 3. JSON | El cuerpo se puede parsear | 400 `E100` | 69 |
+| 4. Campo m | `m` existe y es string | 400 `E102` | 72 |
+| 5. Segmentos | Hay al menos un `;` y ningún segmento vacío | 400 `E103` / `E104` | 30, 31 (antes que el control) |
+| 6. Control | Uno o dos dígitos e igual al calculado; PING la saltea | 400 `E201` / `E202` | 38–41 (antes que comando y aridad), 81 |
+| 7. Comando y aridad | El comando existe y tiene la cantidad de argumentos de su fila | 400 `E301` (con sugerencia) / `E302`; HALT responde 409 `E520` | 12, 20; antes que el monto: supuesto |
+| 8. Monto | Entero positivo de hasta 10 dígitos sin ceros a la izquierda | 400 `E303` | 139, 141 (antes que E304 y E401) |
+| 9. Origen y destino | En TRANSFER, origen distinto de destino | 400 `E304` | 140 (antes que E401) |
+| 10. Existencia | Las cuentas o la operación existen | 404 `E401` / `E402` | 106, 307 (antes que E506 y E510) |
+| 11. Bloqueo | El origen no tiene 3 rechazos seguidos | 409 `E510` | 308, 309 (antes que E506 y E507) |
+| 12. Límite | Monto de TRANSFER ≤ 100.000 | 422 `E506` | 110 (antes que E507) |
+| 13. Saldo | Saldo del origen ≥ monto | 422 `E507` | 16, 246 |
+| 14. Efecto y respuesta | Aplica el cambio y responde con el cuerpo exacto | 200 o 201 | 1–20 |
 
 ## 4. Supuestos
 
@@ -184,7 +201,7 @@ No reproducimos el header `X-Req`, porque el README dice que los headers no se c
 
 El reemplazo es un solo proceso Node con tres partes: un router HTTP que resuelve rutas, token y JSON; un motor de reglas que recorre una lista ordenada de validaciones y una tabla de comandos; y el estado en memoria. Aparte está el laboratorio (arnés, generador diferencial, comparador, buscador de control, log y evals), que habla con el original y con el reemplazo pero nunca los conecta entre sí, porque el reemplazo no puede llamar al original.
 
-Los diagramas están en `docs/arquitectura/png/`: contexto, contenedores, router, motor de reglas, laboratorio, herramientas, despliegue y tres vistas dinámicas. `pipeline` muestra cada etapa de validación con su error y el id del log que prueba su lugar en el orden, `diferencial` muestra una tanda de pruebas diferenciales y `canario` la detección del cambio de las 15:30 y la reacción.
+Los diagramas están en `docs/arquitectura/` y su índice en `docs/arquitectura/README.md`: el reemplazo por dentro (`png/reemplazo.png`), el contexto (`png/contexto.png`), el laboratorio (`png/laboratorio.png`), el despliegue (`png/despliegue.png`) y el flujo del canario de las 15:30 (`png/canario.png`). El orden de validación está en la tabla de la sección 3.11, porque como diagrama de secuencia no se leía en una pantalla.
 
 | Decisión | Alternativa descartada | Por qué |
 |---|---|---|

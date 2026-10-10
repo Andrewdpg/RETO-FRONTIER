@@ -152,80 +152,26 @@ deployment {
 }
 
 views {
+  view reemplazo of reemplazo {
+    title "Reemplazo por dentro: router, motor de reglas y estado"
+    include reemplazo.http.*, reemplazo.reglas.*, reemplazo.estado
+    include evaluador
+  }
+
   view contexto {
     title "Contexto"
     include evaluador, equipo, reemplazo, laboratorio, original
   }
 
-  view contenedores of reemplazo {
-    title "Contenedores del reemplazo"
-    include *
-    include evaluador, laboratorio.evals
-  }
-
-  view router of reemplazo.http {
-    title "Router HTTP"
-    include *
-    include evaluador, reemplazo.reglas.segmentos, reemplazo.estado
-  }
-
-  view componentes of reemplazo.reglas {
-    title "Motor de reglas"
-    include *
-    include reemplazo.http.cuerpo, reemplazo.estado
-  }
-
-  view lab of laboratorio {
-    title "Laboratorio: exploración y medición"
-    include *
-    include original, reemplazo.http, equipo
-  }
-
-  view herramientas of laboratorio.herramientas {
-    title "Herramientas de exploración"
-    include *
-    include original, laboratorio.log, laboratorio.evals, equipo
+  view laboratorio of laboratorio {
+    title "Laboratorio: exploración, diferencial y medición"
+    include laboratorio.herramientas.*, laboratorio.log, laboratorio.evals
+    include original, reemplazo.http.rutas, equipo
   }
 
   deployment view despliegue {
     title "Despliegue"
     include internet.**, railway.**, gcp.**, laptop.**
-  }
-
-  dynamic view pipeline {
-    variant sequence
-    title "Pipeline de un POST /msg: una etapa por flecha, con su error y el log que prueba el orden"
-    evaluador -> reemplazo.http.rutas "POST /msg"
-    reemplazo.http.rutas -> reemplazo.http.auth "ruta ok · si no 404 E404, antes que el token (log 57)"
-    reemplazo.http.auth -> reemplazo.http.cuerpo "token ok · si no 401 E001 (log 50), antes que el cuerpo (log 296–298)"
-    reemplazo.http.cuerpo -> reemplazo.reglas.segmentos "JSON ok · E100 (log 69); m string · E102 (log 72)"
-    reemplazo.reglas.segmentos -> reemplazo.reglas.control "segmentos · E103 (log 31) / E104, antes que el control (log 30)"
-    reemplazo.reglas.control -> reemplazo.reglas.comandos "control · E201/E202 antes que comando y aridad (log 38–41); PING lo saltea (log 81)"
-    reemplazo.reglas.comandos -> reemplazo.reglas.argumentos "comando/aridad · E301/E302; antes que el monto: supuesto"
-    reemplazo.reglas.argumentos -> reemplazo.reglas.negocio "monto E303 antes que E304 (log 141); origen≠destino E304 antes que E401 (log 140)"
-    reemplazo.reglas.negocio -> reemplazo.estado "existencia E401/E402, antes que el bloqueo (log 307)"
-    reemplazo.reglas.negocio -> reemplazo.estado "bloqueo E510 (3 rechazos E506/E507 seguidos), antes que el límite (log 308, 309)"
-    reemplazo.reglas.negocio -> reemplazo.estado "límite E506, antes que el saldo (log 110); saldo E507"
-    reemplazo.reglas.negocio -> reemplazo.estado "efecto: saldos, operación, rechazos en 0"
-    reemplazo.reglas.negocio -> reemplazo.reglas.respuestas "código o resultado"
-    evaluador <- reemplazo.reglas.respuestas "status + cuerpo exacto"
-  }
-
-  dynamic view diferencial {
-    variant sequence
-    title "Prueba diferencial: original primero, reemplazo después"
-    equipo -> laboratorio.herramientas.ejecutor "corre una tanda"
-    laboratorio.herramientas.generador -> laboratorio.herramientas.ejecutor "100 secuencias (40 de 1, 45 de 2–5, 15 de 6–12)"
-    loop 'por cada secuencia, hasta el tope de 1.500 requests' {
-      laboratorio.herramientas.ejecutor -> original "/__reset y pasos en orden"
-      laboratorio.herramientas.ejecutor -> laboratorio.log "una línea por paso con su hipótesis"
-    }
-    laboratorio.evals -> laboratorio.log "lee las secuencias nuevas"
-    loop 'por cada secuencia' {
-      laboratorio.evals -> reemplazo.http.rutas "/__reset y los mismos pasos"
-      laboratorio.evals -> laboratorio.herramientas.comparador "paso a paso"
-    }
-    equipo <- laboratorio.evals "% de secuencias idénticas y lista de diferencias"
   }
 
   dynamic view canario {
